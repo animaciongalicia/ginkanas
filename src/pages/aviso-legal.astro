@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Aviso Legal | Ginkanas.es';
+const description = 'Aviso legal y condiciones de uso de Ginkanas.es';
+---
+
+<Layout title={title} description={description}>
+  
+  <section class="legal-page">
+    <div class="container">
+      <h1>Aviso Legal</h1>
+      
+      <h2>1. Datos identificativos</h2>
+      <p>En cumplimiento con el deber de informacion recogido en articulo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Informacion y del Comercio Electronico, a continuacion se reflejan los siguientes datos:</p>
+      
+      <ul>
+        <li><strong>Titular:</strong> INVERSIONES SHISO SL</li>
+        <li><strong>CIF:</strong> B70319223</li>
+        <li><strong>Domicilio:</strong> Ronda de Montealto 4, 5A - 15002 A Coruna</li>
+        <li><strong>Email:</strong> info@ginkanas.es</li>
+        <li><strong>Telefono:</strong> 678 288 284</li>
+      </ul>
+      
+      <h2>2. Objeto</h2>
+      <p>El presente aviso legal regula el uso del sitio web ginkanas.es, del que es titular INVERSIONES SHISO SL.</p>
+      <p>La navegacion por el sitio web atribuye la condicion de usuario del mismo e implica la aceptacion plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.</p>
+      
+      <h2>3. Condiciones de uso</h2>
+      <p>El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que se ofrecen a traves de este sitio web y a no emplearlos para:</p>
+      <ul>
+        <li>Incurrir en actividades ilicitas, ilegales o contrarias a la buena fe y al orden publico.</li>
+        <li>Difundir contenidos o propaganda de caracter racista, xenofobo, pornografico-ilegal, de apologia del terrorismo o atentatorio contra los derechos humanos.</li>
+        <li>Provocar danos en los sistemas fisicos y logicos del sitio web, de sus proveedores o de terceras personas.</li>
+        <li>Introducir o difundir en la red virus informaticos o cualesquiera otros sistemas fisicos o logicos que sean susceptibles de provocar danos.</li>
+      </ul>
+      
+      <h2>4. Propiedad intelectual e industrial</h2>
+      <p>El sitio web, incluyendo a titulo enunciativo pero no limitativo su programacion, edicion, compilacion y demas elementos necesarios para su funcionamiento, los disenos, logotipos, texto y/o graficos son propiedad del titular o dispone de licencia o autorizacion expresa por parte de los autores.</p>
+      <p>Todos los contenidos del sitio web se encuentran debidamente protegidos por la normativa de propiedad intelectual e industrial.</p>
+      
+      <h2>5. Exclusion de garantias y responsabilidad</h2>
+      <p>INVERSIONES SHISO SL no se hace responsable, en ningun caso, de los danos y perjuicios de cualquier naturaleza que pudieran ocasionar, a titulo enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmision de virus o programas maliciosos en los contenidos, a pesar de haber adoptado todas las medidas tecnologicas necesarias para evitarlo.</p>
+      
+      <h2>6. Modificaciones</h2>
+      <p>INVERSIONES SHISO SL se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o anadir tanto los contenidos y servicios que se presten a traves de la misma como la forma en la que estos aparezcan presentados.</p>
+      
+      <h2>7. Legislacion aplicable y jurisdiccion</h2>
+      <p>La relacion entre INVERSIONES SHISO SL y el usuario se regira por la normativa espanola vigente y cualquier controversia se sometera a los Juzgados y tribunales de A Coruna.</p>
+      
+      <p class="fecha-actualizacion">Ultima actualizacion: Febrero 2025</p>
+      
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .legal-page {
+    padding: var(--space-3xl) 0;
+  }
+  
+  .legal-page .container {
+    max-width: 800px;
+  }
+  
+  .legal-page h1 {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 2px solid var(--color-primary);
+  }
+  
+  .legal-page h2 {
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+    font-size: 1.25rem;
+  }
+  
+  .legal-page p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+    line-height: 1.7;
+  }
+  
+  .legal-page ul {
+    margin: var(--space-md) 0 var(--space-lg);
+    padding-left: var(--space-xl);
+  }
+  
+  .legal-page li {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+  }
+  
+  .fecha-actualizacion {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    font-style: italic;
+    font-size: 0.875rem;
+  }
+</style>
