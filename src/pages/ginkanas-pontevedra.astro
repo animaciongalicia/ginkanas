@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Ginkanas en Pontevedra | Despedidas y Grupos';
+const description = 'Ginkanas en Pontevedra para despedidas, empresas y grupos. Casco histórico peatonal, ambiente tranquilo y encanto gallego. Desde 25€/persona.';
+
+const zonas = [
+  {
+    name: 'Casco histórico peatonal',
+    description: 'Uno de los cascos antiguos más bonitos de Galicia, 100% peatonal. Plazas con soportales, iglesias románicas y calles empedradas. Perfecto para ginkanas sin prisas.'
+  },
+  {
+    name: 'Praza da Ferrería',
+    description: 'El corazón de Pontevedra. Terrazas, ambiente y el punto de encuentro natural. Ideal para empezar o terminar la ginkana.'
+  },
+  {
+    name: 'Zona de A Moureira',
+    description: 'El barrio marinero histórico. Ambiente tradicional, casas de pescadores y el río Lérez como telón de fondo.'
+  },
+  {
+    name: 'Illa das Esculturas',
+    description: 'Parque con esculturas al aire libre junto al río. Espacio abierto perfecto para pruebas físicas o grupos grandes.'
+  }
+];
+
+const porque = [
+  { icon: '🚶', titulo: '100% peatonal', texto: 'El casco histórico sin coches. Puedes jugar tranquilo por toda la zona vieja.' },
+  { icon: '🏛️', titulo: 'Patrimonio brutal', texto: 'Románico, gótico, plazas con encanto. Cada esquina es una foto.' },
+  { icon: '😌', titulo: 'Ambiente relajado', texto: 'Menos turismo masivo que Santiago. Más auténtico, más local.' },
+  { icon: '🍷', titulo: 'Buen vino y tapeo', texto: 'Zona de Albariños. El tapeo por el centro es obligatorio.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas en Pontevedra",
+  "provider": { "@type": "LocalBusiness", "name": "Ginkanas.es", "telephone": "+34678288284" },
+  "areaServed": { "@type": "City", "name": "Pontevedra" },
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-city">
+    <div class="container">
+      <span class="hero-badge">🌉 La ciudad peatonal</span>
+      <h1>Ginkanas en <span class="text-gradient">Pontevedra</span></h1>
+      <p class="hero-text">Casco histórico 100% peatonal, plazas con encanto y ambiente tranquilo. Pontevedra es la joya escondida de las Rías Baixas.</p>
+      <div class="hero-meta">
+        <span>💰 Desde 25€/persona</span>
+        <span>⏱️ 2 horas</span>
+        <span>👥 Desde 6 personas</span>
+      </div>
+      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Pontevedra" class="btn btn-whatsapp btn-lg">Reservar en Pontevedra</a>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">¿Dónde jugamos en Pontevedra?</h2>
+      <div class="zones-grid">
+        {zonas.map((z) => (
+          <div class="zone-card">
+            <h3>{z.name}</h3>
+            <p>{z.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">¿Por qué Pontevedra para tu ginkana?</h2>
+      <div class="why-grid">
+        {porque.map((p) => (
+          <div class="why-card">
+            <span class="why-icon">{p.icon}</span>
+            <h4>{p.titulo}</h4>
+            <p>{p.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Te recomendamos según tu plan</h2>
+      <div class="reco-grid">
+        <div class="reco-card">
+          <h3>🎉 Despedida</h3>
+          <p>Ginkana por el casco histórico, tapeo por las plazas y si queréis fiesta, Sanxenxo está a 20 minutos.</p>
+          <a href="/ginkanas-despedidas/">Ver ginkanas despedidas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>🏢 Empresa</h3>
+          <p>Illa das Esculturas para grupos grandes o casco histórico para algo más íntimo. Cena en cualquier restaurante del centro.</p>
+          <a href="/ginkanas-empresas/">Ver ginkanas empresas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>🎂 Cumpleaños</h3>
+          <p>Ginkana Cluedo o Lendas por la zona vieja. Misterio entre plazas y soportales, vinos para cerrar.</p>
+          <a href="/ginkanas-adultos/">Ver ginkanas adultos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>¿Organizando algo en Pontevedra?</h2>
+      <p>Cuéntanos qué celebráis y os ayudamos a elegir la mejor opción.</p>
+      <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-city { background: linear-gradient(135deg, #F3E5F5 0%, #fff 100%); padding: var(--space-3xl) 0; }
+  .hero-badge { display: inline-block; background: rgba(106,27,154,0.1); color: #6A1B9A; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
+  .text-gradient { background: linear-gradient(135deg, #6A1B9A, #AB47BC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
+  .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
+  .zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .zone-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .zone-card h3 { color: #6A1B9A; margin-bottom: var(--space-sm); }
+  .zone-card p { color: var(--color-text-light); margin: 0; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
+  .why-card { text-align: center; padding: var(--space-lg); }
+  .why-icon { font-size: 2.5rem; display: block; margin-bottom: var(--space-md); }
+  .why-card h4 { margin-bottom: var(--space-sm); }
+  .why-card p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  .reco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+  .reco-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .reco-card h3 { margin-bottom: var(--space-md); }
+  .reco-card p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .reco-card a { color: var(--color-primary); font-weight: 600; }
+  .cta-section { background: linear-gradient(135deg, #6A1B9A, #AB47BC); color: white; }
+  .cta-section h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-section p { opacity: 0.9; font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  @media (max-width: 1024px) { .zones-grid, .reco-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+</style>

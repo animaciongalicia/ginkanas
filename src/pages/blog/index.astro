@@ -1,0 +1,221 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Blog | Ideas y Consejos para Despedidas y Eventos';
+const description = 'Ideas para organizar despedidas de soltera, team building, cumpleaños y eventos en Galicia. Consejos prácticos, planes originales y todo lo que necesitas saber.';
+
+const posts = [
+  {
+    slug: 'presupuesto-despedida-soltera',
+    title: '¿Cuánto Cuesta una Despedida de Soltera? Presupuesto Real',
+    excerpt: 'Desglose real de costes. Alojamiento, actividades, comidas. Sin sorpresas.',
+    date: '2025-01-20',
+    category: 'Despedidas',
+    color: '#FF6B35'
+  },
+  {
+    slug: 'ideas-despedida-soltera-galicia',
+    title: '15 Ideas para una Despedida de Soltera en Galicia',
+    excerpt: 'Las mejores ideas para organizar una despedida memorable en tierras gallegas.',
+    date: '2025-01-15',
+    category: 'Despedidas',
+    color: '#FF6B35'
+  },
+  {
+    slug: 'mejores-ciudades-despedida-galicia',
+    title: '¿Qué Ciudad Elegir para tu Despedida en Galicia?',
+    excerpt: 'Vigo, Coruña, Santiago, Sanxenxo... Te ayudamos a elegir según tu plan.',
+    date: '2025-01-10',
+    category: 'Despedidas',
+    color: '#FF6B35'
+  },
+  {
+    slug: 'team-building-diferente-empresas',
+    title: 'Team Building que No Aburre: Ideas que Funcionan',
+    excerpt: 'Olvídate de las dinámicas forzadas. Actividades que de verdad crean equipo.',
+    date: '2025-01-05',
+    category: 'Empresas',
+    color: '#004E89'
+  },
+  {
+    slug: 'organizar-cumpleanos-adultos-original',
+    title: 'Cómo Organizar un Cumpleaños de Adultos Original',
+    excerpt: 'Cuando las cenas ya no sorprenden. Ideas para celebrar los 30, 40, 50...',
+    date: '2024-12-20',
+    category: 'Cumpleaños',
+    color: '#E91E63'
+  },
+  {
+    slug: 'que-es-una-ginkana-urbana',
+    title: '¿Qué es una Ginkana Urbana y Por Qué Mola Tanto?',
+    excerpt: 'Todo lo que necesitas saber: qué son, cómo funcionan, tipos que existen.',
+    date: '2024-12-15',
+    category: 'General',
+    color: '#FF9800'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  
+  <section class="hero-blog">
+    <div class="container">
+      <h1>Blog</h1>
+      <p class="hero-text">Ideas, consejos y todo lo que necesitas para organizar algo memorable.</p>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="posts-grid">
+        {posts.map((post) => (
+          <article class="post-card" style={`--post-color: ${post.color}`}>
+            <span class="post-category">{post.category}</span>
+            <h2><a href={`/blog/${post.slug}/`}>{post.title}</a></h2>
+            <p>{post.excerpt}</p>
+            <div class="post-meta">
+              <time datetime={post.date}>{new Date(post.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+              <a href={`/blog/${post.slug}/`} class="read-more">Leer más →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container cta-box">
+      <img src="/images/mascota-sorprendida.png" alt="¿Dudas?" class="cta-mascota">
+      <div class="cta-content">
+        <h2>¿Tienes algo que organizar?</h2>
+        <p>Deja de leer y cuéntanos qué necesitas. Te ayudamos a montarlo.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-blog {
+    background: var(--color-bg-alt);
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    text-align: center;
+  }
+  
+  .hero-text {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-top: var(--space-md);
+  }
+  
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .post-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: var(--post-color);
+  }
+  
+  .post-category {
+    display: inline-block;
+    background: var(--post-color);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    align-self: flex-start;
+  }
+  
+  .post-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .post-card h2 a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  
+  .post-card h2 a:hover {
+    color: var(--post-color);
+  }
+  
+  .post-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    flex-grow: 1;
+  }
+  
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .post-meta time {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+  
+  .read-more {
+    color: var(--post-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .cta-box {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    background: white;
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+  }
+  
+  .cta-mascota {
+    max-width: 100%;
+  }
+  
+  .cta-content h2 {
+    margin-bottom: var(--space-md);
+  }
+  
+  .cta-content p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+  }
+  
+  @media (max-width: 768px) {
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-box {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .cta-mascota {
+      max-width: 120px;
+      margin: 0 auto;
+    }
+  }
+</style>

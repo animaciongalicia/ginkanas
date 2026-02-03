@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Ginkana Supervivientes | Pruebas Físicas y Competición';
+const description = 'La ginkana más competitiva. Pruebas físicas, de habilidad y resistencia. Equipos enfrentados, ranking y solo los más fuertes sobreviven. Desde 25€/persona.';
+
+const pruebas = [
+  { nombre: 'Pruebas de fuerza', desc: 'Tirar de cuerdas, transportar peso, resistencia física' },
+  { nombre: 'Pruebas de habilidad', desc: 'Puntería, equilibrio, coordinación en equipo' },
+  { nombre: 'Pruebas de velocidad', desc: 'Relevos, carreras con obstáculos, contrarreloj' },
+  { nombre: 'Pruebas de ingenio', desc: 'Acertijos rápidos, memoria, estrategia bajo presión' },
+  { nombre: 'Pruebas sorpresa', desc: 'Retos inesperados que pondrán a prueba vuestra adaptación' },
+  { nombre: 'Prueba final', desc: 'El desafío definitivo para coronar al equipo ganador' }
+];
+
+const faqs = [
+  { q: '¿Hay que estar muy en forma?', a: 'No hace falta ser atleta. Las pruebas son exigentes pero adaptables. Lo importante es la actitud.' },
+  { q: '¿Es peligroso?', a: 'No. Todo está controlado y supervisado. Las pruebas son divertidas, no arriesgadas.' },
+  { q: '¿Cómo se forman los equipos?', a: 'Podéis venir con equipos hechos o los hacemos nosotros equilibrados. Como prefiráis.' },
+  { q: '¿Hay premio para el ganador?', a: 'Gloria eterna y derecho a vacilar al resto. Si queréis un premio físico, podemos organizarlo.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Ginkana Supervivientes",
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-exp">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="exp-tag">🏆 Competición total</span>
+        <h1>Ginkana Supervivientes</h1>
+        <p>Aquí no hay sitio para
+
+ 
+
+blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en vivo y solo los mejores sobreviven. ¿Tu grupo tiene lo que hay que tener?</p>
+        <div class="meta-boxes">
+          <div class="meta-box"><span class="label">Precio</span><span class="value">Desde 25€/persona</span></div>
+          <div class="meta-box"><span class="label">Duración</span><span class="value">2-2.5 horas</span></div>
+          <div class="meta-box"><span class="label">Grupo mín.</span><span class="value">8 personas</span></div>
+        </div>
+        <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Supervivientes" class="btn btn-whatsapp btn-lg">Reservar Supervivientes</a>
+      </div>
+      <div class="hero-image">
+        <img src="/images/mascota-saltando.png" alt="Monitora celebrando victoria" loading="eager">
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container content-grid">
+      <div class="content-main">
+        <h2>¿Qué tipo de pruebas hay?</h2>
+        <p>Inspirada en los concursos de supervivencia de la tele, pero adaptada a la calle. Equipos enfrentados, puntuación en tiempo real y ese puntito de competitividad que saca lo mejor (y lo peor) de cada grupo.</p>
+        
+        <div class="pruebas-grid">
+          {pruebas.map((p) => (
+            <div class="prueba">
+              <h4>{p.nombre}</h4>
+              <p>{p.desc}</p>
+            </div>
+          ))}
+        </div>
+        
+        <h3>¿Dónde se hace?</h3>
+        <p>Necesitamos espacios amplios: parques, paseos marítimos, explanadas. Samil en Vigo, paseo de Riazor en Coruña, Alameda en Santiago, Illa das Esculturas en Pontevedra...</p>
+      </div>
+      
+      <div class="content-side">
+        <div class="info-box">
+          <h4>✅ Incluye</h4>
+          <ul>
+            <li>Monitores/árbitros</li>
+            <li>Todo el material de pruebas</li>
+            <li>Marcador en tiempo real</li>
+            <li>Medallas/diplomas para ganadores</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h4>👯 Ideal para</h4>
+          <ul>
+            <li>Equipos de ventas</li>
+            <li>Grupos deportivos</li>
+            <li>Despedidas competitivas</li>
+            <li>Team building con caña</li>
+          </ul>
+        </div>
+        <div class="warning-box">
+          <h4>⚡ Aviso</h4>
+          <p>Esta ginkana saca el
+
+ 
+
+espíritu competitivo. Si tu grupo tiene rivalidades, prepárate para que afloren. Con
+
+ 
+
+cariño, eso sí.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Preguntas frecuentes</h2>
+      <div class="faqs-grid">
+        {faqs.map((faq) => (
+          <div class="faq-card">
+            <h4>{faq.q}</h4>
+            <p>{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <h2>¿Tu grupo tiene lo que hay que tener?</h2>
+        <p>Demuéstralo. Cuéntanos cuántos sois y os preparamos el desafío.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+      </div>
+      <div class="cta-image">
+        <img src="/images/mascota-mapa-tesoro.png" alt="Monitora con mapa">
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-exp { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); padding: var(--space-3xl) 0; color: white; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .exp-tag { display: inline-block; background: #FFC107; color: #1B5E20; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md); }
+  .hero-text h1 { margin-bottom: var(--space-lg); color: white; }
+  .hero-text p { font-size: 1.125rem; color: rgba(255,255,255,0.9); margin-bottom: var(--space-xl); }
+  .meta-boxes { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); flex-wrap: wrap; }
+  .meta-box { background: rgba(255,255,255,0.15); padding: var(--space-md); border-radius: var(--radius-md); }
+  .meta-box .label { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.7); text-transform: uppercase; }
+  .meta-box .value { font-weight: 700; color: #FFC107; }
+  .hero-image img { max-width: 100%; }
+  
+  .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); }
+  .content-main h2 { margin-bottom: var(--space-lg); }
+  .content-main h3 { margin: var(--space-xl) 0 var(--space-md); }
+  .content-main > p { color: var(--color-text-light); margin-bottom: var(--space-xl); }
+  
+  .pruebas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .prueba { background: #E8F5E9; padding: var(--space-lg); border-radius: var(--radius-md); border-left: 4px solid #2E7D32; }
+  .prueba h4 { margin-bottom: var(--space-xs); color: #1B5E20; font-size: 1rem; }
+  .prueba p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  
+  .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
+  .info-box { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box ul { list-style: none; }
+  .info-box li { padding: var(--space-xs) 0; color: var(--color-text-light); }
+  
+  .warning-box { background: #FFF3E0; border: 2px solid #FF9800; padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .warning-box h4 { color: #E65100; margin-bottom: var(--space-sm); }
+  .warning-box p { color: var(--color-text); margin: 0; font-size: 0.9375rem; }
+  
+  .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+  .faq-card h4 { margin-bottom: var(--space-sm); color: #1B5E20; }
+  .faq-card p { color: var(--color-text-light); margin: 0; }
+  
+  .cta-section { background: linear-gradient(135deg, #1B5E20, #2E7D32); }
+  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-text h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-image img { max-width: 220px; }
+  
+  @media (max-width: 1024px) {
+    .hero-grid, .content-grid, .cta-grid { grid-template-columns: 1fr; }
+    .hero-image, .cta-image { order: -1; text-align: center; }
+    .hero-image img, .cta-image img { max-width: 260px; }
+    .pruebas-grid, .faqs-grid { grid-template-columns: 1fr; }
+  }
+</style>

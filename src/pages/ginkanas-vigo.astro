@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Ginkanas en Vigo | Despedidas, Empresas y Grupos';
+const description = 'Ginkanas en Vigo para despedidas de soltera, team building y grupos. Casco Vello, Berbés, zona de copas. La ciudad con más marcha de Galicia. Desde 25€/persona.';
+
+const zonas = [
+  {
+    name: 'Casco Vello',
+    description: 'El corazón histórico de Vigo. Calles empedradas, plazas con encanto y la Praza da Constitución como punto de partida. Ideal para ginkanas de misterio.'
+  },
+  {
+    name: 'Berbés y Puerto',
+    description: 'El barrio marinero con más sabor. Olor a mar, ostras en la calle, el Mercado da Pedra. Perfecto para rutas gastro-ginkana.'
+  },
+  {
+    name: 'Churruca y Arenal',
+    description: 'El epicentro de la fiesta viguesa. Si la ginkana es para despedida, acabáis donde empieza la noche.'
+  },
+  {
+    name: 'Samil y playas',
+    description: 'Para ginkanas veraniegas. Arena, paseo marítimo y vistas a las Cíes. Ideal para combinar juego y playa.'
+  }
+];
+
+const porque = [
+  { icon: '🌙', titulo: 'La mejor noche de Galicia', texto: 'Churruca, Arenal, Berbés... Hay plan hasta el amanecer.' },
+  { icon: '🦪', titulo: 'Gastronomía brutal', texto: 'Ostras a pie de calle, pulpo, marisco. Ginkana + ruta gastro.' },
+  { icon: '🏖️', titulo: 'Playa en la ciudad', texto: 'Samil a 10 minutos. En verano, ginkana y playa el mismo día.' },
+  { icon: '🚗', titulo: 'Bien comunicado', texto: 'AP-9, AVE, aeropuerto. Fácil llegar desde cualquier punto.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas en Vigo",
+  "provider": { "@type": "LocalBusiness", "name": "Ginkanas.es", "telephone": "+34678288284" },
+  "areaServed": { "@type": "City", "name": "Vigo" },
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-city">
+    <div class="container">
+      <span class="hero-badge">⚓ La ciudad que nunca duerme</span>
+      <h1>Ginkanas en <span class="text-gradient">Vigo</span></h1>
+      <p class="hero-text">Vigo tiene la mejor combinación: puerto con sabor, casco histórico con encanto y una zona de copas que no para. El escenario perfecto.</p>
+      <div class="hero-meta">
+        <span>💰 Desde 25€/persona</span>
+        <span>⏱️ 2 horas</span>
+        <span>👥 Desde 6 personas</span>
+      </div>
+      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Vigo" class="btn btn-whatsapp btn-lg">Reservar en Vigo</a>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">¿Dónde jugamos en Vigo?</h2>
+      <div class="zones-grid">
+        {zonas.map((z) => (
+          <div class="zone-card">
+            <h3>{z.name}</h3>
+            <p>{z.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">¿Por qué Vigo para tu ginkana?</h2>
+      <div class="why-grid">
+        {porque.map((p) => (
+          <div class="why-card">
+            <span class="why-icon">{p.icon}</span>
+            <h4>{p.titulo}</h4>
+            <p>{p.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Te recomendamos según tu plan</h2>
+      <div class="reco-grid">
+        <div class="reco-card">
+          <h3>🎉 Despedida</h3>
+          <p>Ginkana Loca por el Casco Vello, ostras en Berbés y luego Churruca. Plan redondo.</p>
+          <a href="/ginkanas-despedidas/">Ver ginkanas despedidas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>🏢 Empresa</h3>
+          <p>Samil o zona del puerto para grupos grandes. Espacio, vistas y buen ambiente.</p>
+          <a href="/ginkanas-empresas/">Ver ginkanas empresas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>🎂 Cumpleaños</h3>
+          <p>Ginkana Cluedo por el Casco Vello. Misterio, risas y cañas en Praza da Pedra.</p>
+          <a href="/ginkanas-adultos/">Ver ginkanas adultos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>¿Organizando algo en Vigo?</h2>
+      <p>Cuéntanos qué celebráis y os ayudamos a elegir la mejor opción.</p>
+      <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-city { background: linear-gradient(135deg, #E8F4FD 0%, #fff 100%); padding: var(--space-3xl) 0; }
+  .hero-badge { display: inline-block; background: rgba(0,78,137,0.1); color: var(--color-secondary); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
+  .text-gradient { background: linear-gradient(135deg, #004E89, #0077CC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
+  .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
+  .zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .zone-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .zone-card h3 { color: var(--color-secondary); margin-bottom: var(--space-sm); }
+  .zone-card p { color: var(--color-text-light); margin: 0; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
+  .why-card { text-align: center; padding: var(--space-lg); }
+  .why-icon { font-size: 2.5rem; display: block; margin-bottom: var(--space-md); }
+  .why-card h4 { margin-bottom: var(--space-sm); }
+  .why-card p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  .reco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+  .reco-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .reco-card h3 { margin-bottom: var(--space-md); }
+  .reco-card p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .reco-card a { color: var(--color-primary); font-weight: 600; }
+  .cta-section { background: linear-gradient(135deg, var(--color-secondary), #0077CC); color: white; }
+  .cta-section h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-section p { opacity: 0.9; font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  @media (max-width: 1024px) { .zones-grid, .reco-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Ginkana Lendas | Leyendas y Misterios de Galicia';
+const description = 'Descubre las leyendas más fascinantes de Galicia jugando. Meigas, trasnos, la Santa Compaña y tesoros ocultos. Una experiencia única para conocer la cultura gallega. Desde 25€/persona.';
+
+const leyendas = [
+  { nombre: 'La Santa Compaña', desc: 'La procesión de almas en pena que recorre los caminos gallegos' },
+  { nombre: 'Las Meigas', desc: 'Brujas, hechiceras y sanadoras. ¿Haberlas, haylas?' },
+  { nombre: 'Los Trasnos', desc: 'Duendes traviesos que habitan las casas gallegas' },
+  { nombre: 'A Moura', desc: 'Seres encantados que custodian tesoros bajo castros y fuentes' },
+  { nombre: 'El Urco', desc: 'El perro fantasma de las tormentas' },
+  { nombre: 'Tesoros templarios', desc: 'Oro oculto por los caballeros de la Orden del Temple' }
+];
+
+const faqs = [
+  { q: '¿Es una ruta cultural?', a: 'Es un híbrido. Aprendéis sobre leyendas gallegas mientras jugáis y competís. Cultura envuelta en diversión.' },
+  { q: '¿Es de miedo?', a: 'No. Tiene ambiente misterioso pero no es terrorífico. Es apta para todos los públicos.' },
+  { q: '¿Vale para turistas?', a: 'Perfecta. Es una forma diferente de conocer Galicia, más allá de los típicos tours.' },
+  { q: '¿Se hace de noche?', a: 'Puede hacerse de día o de noche. De noche tiene más atmósfera, obviamente.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Ginkana Lendas",
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-exp">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="exp-tag">👻 Cultura y misterio</span>
+        <h1>Ginkana Lendas</h1>
+        <p>Galicia tiene las leyendas más fascinantes de España. Meigas, trasnos, la Santa Compaña, tesoros ocultos... Descúbrelas jugando por las calles de nuestras ciudades.</p>
+        <div class="meta-boxes">
+          <div class="meta-box"><span class="label">Precio</span><span class="value">Desde 25€/persona</span></div>
+          <div class="meta-box"><span class="label">Duración</span><span class="value">2 horas</span></div>
+          <div class="meta-box"><span class="label">Grupo mín.</span><span class="value">6 personas</span></div>
+        </div>
+        <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Lendas" class="btn btn-whatsapp btn-lg">Reservar Ginkana Lendas</a>
+      </div>
+      <div class="hero-image">
+        <img src="/images/mascota-escondida.png" alt="Monitora entre misterios" loading="eager">
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container content-grid">
+      <div class="content-main">
+        <h2>¿Qué leyendas descubriréis?</h2>
+        <p>La ginkana os llevará por lugares con historia, donde las leyendas cobran vida. Cada parada cuenta una historia, cada prueba os acerca al misterio gallego.</p>
+        
+        <div class="leyendas-grid">
+          {leyendas.map((l) => (
+            <div class="leyenda">
+              <h4>{l.nombre}</h4>
+              <p>{l.desc}</p>
+            </div>
+          ))}
+        </div>
+        
+        <h3>¿Dónde tiene más magia?</h3>
+        <p>Santiago, con sus calles medievales y su historia jacobea. Lugo, dentro de la muralla romana. Pontevedra y su leyenda del puente del Burgo. Cualquier villa gallega con castro o iglesia románica.</p>
+        <p>Adaptamos las leyendas a cada lugar. Cada ciudad tiene las suyas propias.</p>
+      </div>
+      
+      <div class="content-side">
+        <div class="info-box">
+          <h4>✅ Incluye</h4>
+          <ul>
+            <li>Monitor/Narrador</li>
+            <li>Guía de leyendas</li>
+            <li>Pruebas temáticas</li>
+            <li>Protección contra meigas (queimada opcional)</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h4>👯 Ideal para</h4>
+          <ul>
+            <li>Amantes de Galicia</li>
+            <li>Turistas curiosos</li>
+            <li>Grupos culturetas</li>
+            <li>Team building diferente</li>
+          </ul>
+        </div>
+        <div class="queimada-box">
+          <h4>🔥 Extra: Queimada</h4>
+          <p>Podemos terminar con una queimada tradicional, con conjuro incluido. Consultar precio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Preguntas frecuentes</h2>
+      <div class="faqs-grid">
+        {faqs.map((faq) => (
+          <div class="faq-card">
+            <h4>{faq.q}</h4>
+            <p>{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <h2>¿Quieres conocer la Galicia mágica?</h2>
+        <p>Cuéntanos en qué ciudad y cuántos sois. Preparamos una experiencia única.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+      </div>
+      <div class="cta-image">
+        <img src="/images/mascota-portapapeles.png" alt="Monitora con siguiente pista">
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-exp { background: linear-gradient(135deg, #1A1A2E 0%, #2D2D44 100%); padding: var(--space-3xl) 0; color: white; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .exp-tag { display: inline-block; background: #9B59B6; color: white; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md); }
+  .hero-text h1 { margin-bottom: var(--space-lg); color: white; }
+  .hero-text p { font-size: 1.125rem; color: rgba(255,255,255,0.85); margin-bottom: var(--space-xl); }
+  .meta-boxes { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); flex-wrap: wrap; }
+  .meta-box { background: rgba(255,255,255,0.1); padding: var(--space-md); border-radius: var(--radius-md); }
+  .meta-box .label { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+  .meta-box .value { font-weight: 700; color: #9B59B6; }
+  .hero-image img { max-width: 100%; }
+  
+  .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); }
+  .content-main h2 { margin-bottom: var(--space-lg); }
+  .content-main h3 { margin: var(--space-xl) 0 var(--space-md); }
+  .content-main > p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  
+  .leyendas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin: var(--space-xl) 0; }
+  .leyenda { background: #F8F4FF; padding: var(--space-lg); border-radius: var(--radius-md); border-left: 4px solid #9B59B6; }
+  .leyenda h4 { margin-bottom: var(--space-xs); color: #1A1A2E; font-size: 1rem; }
+  .leyenda p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  
+  .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
+  .info-box { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box ul { list-style: none; }
+  .info-box li { padding: var(--space-xs) 0; color: var(--color-text-light); }
+  
+  .queimada-box { background: linear-gradient(135deg, #D35400, #E74C3C); color: white; padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .queimada-box h4 { margin-bottom: var(--space-sm); }
+  .queimada-box p { opacity: 0.9; margin: 0; font-size: 0.9375rem; }
+  
+  .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+  .faq-card h4 { margin-bottom: var(--space-sm); color: #9B59B6; }
+  .faq-card p { color: var(--color-text-light); margin: 0; }
+  
+  .cta-section { background: linear-gradient(135deg, #1A1A2E, #2D2D44); }
+  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-text h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-text p { color: rgba(255,255,255,0.85); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-image img { max-width: 280px; }
+  
+  @media (max-width: 1024px) {
+    .hero-grid, .content-grid, .cta-grid { grid-template-columns: 1fr; }
+    .hero-image, .cta-image { order: -1; text-align: center; }
+    .hero-image img, .cta-image img { max-width: 260px; }
+    .leyendas-grid, .faqs-grid { grid-template-columns: 1fr; }
+  }
+</style>

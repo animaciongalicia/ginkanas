@@ -1,0 +1,503 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Ginkanas para Despedidas de Soltera y Soltero en Galicia';
+const description = 'Las mejores ginkanas para despedidas en Galicia. Pruebas divertidas, vacile al novi@ y momentos inolvidables. Desde 25€/persona. Vigo, Coruña, Santiago, Sanxenxo.';
+
+const ginkanas = [
+  {
+    title: 'Ginkana Loca',
+    description: 'La clásica para despedidas. Pruebas comprometidas, vacile al novi@ y risas garantizadas. Besar calvos, vender condones, bailar en la calle...',
+    price: 'Desde 25€/persona',
+    duration: '2 horas',
+    minGroup: '6 personas',
+    href: '/experiencias/ginkana-loca/'
+  },
+  {
+    title: 'Ginkana Escuela Mágica',
+    description: 'Para fans de Harry Potter. Hechizos, pociones, torneo de Quidditch... Una despedida mágica que recordaréis siempre.',
+    price: 'Desde 25€/persona',
+    duration: '2 horas',
+    minGroup: '6 personas',
+    href: '/experiencias/ginkana-escuela-magica/'
+  },
+  {
+    title: 'Ginkana Cluedo',
+    description: 'Resuelve el misterio mientras recorres la ciudad. Pistas, sospechosos y mucha intriga. Perfecta para grupos que les mola pensar.',
+    price: 'Desde 25€/persona',
+    duration: '2 horas',
+    minGroup: '8 personas',
+    href: '/experiencias/ginkana-cluedo/'
+  },
+  {
+    title: 'Ginkana Supervivientes',
+    description: 'Pruebas físicas, de habilidad y resistencia. Solo los más fuertes sobreviven. Ideal si el grupo tiene espíritu competitivo.',
+    price: 'Desde 25€/persona',
+    duration: '2 horas',
+    minGroup: '6 personas',
+    href: '/experiencias/ginkana-supervivientes/'
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas para Despedidas de Soltera y Soltero",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ginkanas.es"
+  },
+  "areaServed": "Galicia, Spain",
+  "description": description,
+  "offers": {
+    "@type": "Offer",
+    "price": "25",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "25",
+      "priceCurrency": "EUR",
+      "unitText": "persona"
+    }
+  }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <!-- HERO -->
+  <section class="hero-inner">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">🎉 La mejor forma de empezar la despedida</span>
+        <h1>Ginkanas para <span class="text-gradient">Despedidas</span></h1>
+        <p class="hero-text">
+          El novi@ va a flipar. Pruebas desternillantes, momentos comprometidos y un recuerdo que no se borra. 
+          Porque las despedidas son para pasarlo bien, no para dar vueltas sin plan.
+        </p>
+        <div class="hero-meta">
+          <span class="meta-item">💰 Desde 25€/persona</span>
+          <span class="meta-item">⏱️ 2 horas de diversión</span>
+          <span class="meta-item">👥 Grupos desde 6 personas</span>
+        </div>
+        <div class="hero-cta">
+          <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20para%20una%20despedida" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            Reservar despedida
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- PARA QUIÉN -->
+  <section class="section">
+    <div class="container">
+      <div class="split-content">
+        <div class="split-text">
+          <h2>¿Para quién es esto?</h2>
+          <p>Para el grupo de amigas (o amigos, aunque reconozcamos que sois minoría) que quiere hacer algo diferente. Algo que no sea solo cena y copas. Algo que el novi@ recuerde siempre.</p>
+          <p>La ginkana es perfecta para:</p>
+          <ul class="check-list">
+            <li>Despedidas de soltera que quieren empezar el día con energía</li>
+            <li>Grupos que buscan algo más que lo típico</li>
+            <li>Organizadoras que quieren quedar bien sin complicarse</li>
+            <li>Cualquiera que entienda que las risas compartidas son el mejor regalo</li>
+          </ul>
+        </div>
+        <div class="split-image">
+          <img src="/images/placeholder-despedida.jpg" alt="Grupo de amigas en despedida de soltera" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- TIPOS DE DESPEDIDAS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Elige tu tipo de despedida</h2>
+        <p>Tenemos ginkanas para todos los gustos. ¿Cuál os pega más?</p>
+      </div>
+      
+      <div class="types-grid">
+        <a href="/ginkanas-despedidas/soltera/" class="type-card">
+          <div class="type-icon">👰</div>
+          <h3>Despedida de Soltera</h3>
+          <p>Las chicas saben montar fiestas. Pruebas, risas, complicidad y mucho vacile a la novia.</p>
+          <span class="type-link">Ver ginkanas soltera →</span>
+        </a>
+        
+        <a href="/ginkanas-despedidas/soltero/" class="type-card">
+          <div class="type-icon">🤵</div>
+          <h3>Despedida de Soltero</h3>
+          <p>Menos frecuentes pero igual de divertidas. Competición, pruebas absurdas y el novio en el centro.</p>
+          <span class="type-link">Ver ginkanas soltero →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- GINKANAS DISPONIBLES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Ginkanas para despedidas</h2>
+        <p>Estas son las que mejor funcionan. Probadas con miles de grupos.</p>
+      </div>
+      
+      <div class="ginkanas-grid">
+        {ginkanas.map((g) => (
+          <div class="ginkana-card">
+            <div class="ginkana-content">
+              <h3>{g.title}</h3>
+              <p>{g.description}</p>
+              <div class="ginkana-meta">
+                <span>{g.price}</span>
+                <span>{g.duration}</span>
+                <span>Mín. {g.minGroup}</span>
+              </div>
+              <a href={g.href} class="btn btn-primary">Ver detalles</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CÓMO FUNCIONA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Cómo funciona?</h2>
+        <p>Súper fácil. Tú solo preocúpate de pasarlo bien.</p>
+      </div>
+      
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Nos cuentas</h3>
+          <p>Cuántas sois, cuándo es la despedida, en qué ciudad y qué rollo tiene la novia/novio.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Te recomendamos</h3>
+          <p>Te decimos qué ginkana encaja mejor. Si es Harry Potter fan, la mágica. Si es
+
+ 
+
+competitiva, supervivientes...</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Reservas</h3>
+          <p>Fecha, hora y lugar. Una pequeña señal y listo. Sin papeleos raros.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>A jugar</h3>
+          <p>El día D, un monitor os espera, os explica las reglas y... ¡que empiece el show!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CIUDADES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Dónde celebras la despedida?</h2>
+        <p>Organizamos ginkanas en toda Galicia. Estas son las favoritas.</p>
+      </div>
+      
+      <div class="cities-list">
+        <a href="/ginkanas-coruna/" class="city-link">A Coruña</a>
+        <a href="/ginkanas-vigo/" class="city-link">Vigo</a>
+        <a href="/ginkanas-santiago/" class="city-link">Santiago</a>
+        <a href="/ginkanas-sanxenxo/" class="city-link">Sanxenxo</a>
+        <a href="/ginkanas-pontevedra/" class="city-link">Pontevedra</a>
+        <a href="/ginkanas-ourense/" class="city-link">Ourense</a>
+        <a href="/ginkanas-lugo/" class="city-link">Lugo</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Organizando una despedida?</h2>
+        <p>Cuéntanos los detalles y te ayudamos a montar algo que la novia (o novio) no olvide jamás.</p>
+        <a href="https://wa.me/34678288284?text=Hola!%20Estoy%20organizando%20una%20despedida%20y%20me%20interesan%20las%20ginkanas" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-inner {
+    background: linear-gradient(135deg, #FFF5F0 0%, var(--color-bg) 100%);
+    padding: var(--space-3xl) 0;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--color-primary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), #FF8F6B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-text {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .meta-item {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+  
+  .split-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+  
+  .split-text h2 {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .split-text p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+  }
+  
+  .check-list {
+    list-style: none;
+    margin-top: var(--space-lg);
+  }
+  
+  .check-list li {
+    padding-left: var(--space-xl);
+    position: relative;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-light);
+  }
+  
+  .check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  
+  .split-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .types-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .type-card {
+    background: var(--color-bg);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    text-align: center;
+    transition: all var(--transition-normal);
+  }
+  
+  .type-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .type-icon {
+    font-size: 4rem;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .type-card h3 {
+    margin-bottom: var(--space-md);
+  }
+  
+  .type-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .type-link {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  
+  .ginkanas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .ginkana-card {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  
+  .ginkana-content {
+    padding: var(--space-xl);
+  }
+  
+  .ginkana-content h3 {
+    margin-bottom: var(--space-md);
+  }
+  
+  .ginkana-content p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .ginkana-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .ginkana-meta span {
+    background: var(--color-bg);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .process-step {
+    text-align: center;
+  }
+  
+  .step-num {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 auto var(--space-lg);
+  }
+  
+  .process-step h3 {
+    margin-bottom: var(--space-sm);
+    font-size: 1.125rem;
+  }
+  
+  .process-step p {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+  }
+  
+  .cities-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+  }
+  
+  .city-link {
+    background: var(--color-bg-alt);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-full);
+    color: var(--color-text);
+    font-weight: 600;
+    transition: all var(--transition-normal);
+  }
+  
+  .city-link:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+  
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-primary), #FF8F6B);
+    text-align: center;
+  }
+  
+  .cta-content h2 {
+    color: white;
+    margin-bottom: var(--space-md);
+  }
+  
+  .cta-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xl);
+  }
+  
+  @media (max-width: 1024px) {
+    .split-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .types-grid,
+    .ginkanas-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .hero-meta {
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+  }
+</style>

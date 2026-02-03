@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Escape Room para Grupos en Galicia | En Local o Donde Quieras';
+const description = 'Escape Room para empresas y grupos en Galicia. En nuestros locales o lo llevamos donde quieras. Acertijos, enigmas y trabajo en equipo. Experiencia premium.';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Escape Room para Grupos",
+  "provider": { "@type": "LocalBusiness", "name": "Ginkanas.es" },
+  "areaServed": "Galicia, Spain",
+  "description": description
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-inner">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">🔐 La experiencia más inmersiva</span>
+        <h1>Escape Room para <span class="text-gradient">Grupos</span></h1>
+        <p class="hero-text">
+          No es solo resolver acertijos. Es trabajar en equipo bajo presión, descubrir que 
+          el compañero callado tiene ideas brillantes y crear una historia que recordaréis.
+        </p>
+        <div class="hero-meta">
+          <span class="meta-item">📍 En nuestros locales o donde quieras</span>
+          <span class="meta-item">👥 Grupos desde 6 hasta 100 personas</span>
+          <span class="meta-item">⏱️ 60-90 minutos de juego</span>
+        </div>
+        <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20escape%20room%20para%20grupos" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          Solicitar información
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Dos formas de vivirlo</h2>
+        <p>Elige la que mejor encaje con tu grupo.</p>
+      </div>
+      
+      <div class="options-grid">
+        <div class="option-card">
+          <div class="option-icon">🏠</div>
+          <h3>En nuestros locales</h3>
+          <p>Salas diseñadas específicamente para escape rooms. Ambientación, atrezzo, tecnología... Todo pensado para la inmersión total.</p>
+          <ul class="option-features">
+            <li>Salas temáticas decoradas al detalle</li>
+            <li>Tecnología integrada (sensores, cerraduras electrónicas...)</li>
+            <li>Game master en directo</li>
+            <li>Grupos de 6 a 20 personas</li>
+          </ul>
+          <span class="option-ideal">Ideal para: grupos pequeños que buscan máxima inmersión</span>
+        </div>
+        
+        <div class="option-card featured">
+          <div class="option-badge">🔥 Más solicitado</div>
+          <div class="option-icon">🚀</div>
+          <h3>Escape Room móvil</h3>
+          <p>Llevamos la experiencia donde quieras. Tu oficina, un hotel, una finca, un salón de eventos... Montamos, jugáis, desmontamos.</p>
+          <ul class="option-features">
+            <li>Lo llevamos a cualquier ubicación en Galicia</li>
+            <li>Adaptable a espacios de todo tipo</li>
+            <li>Para grupos grandes (hasta 100 personas en equipos)</li>
+            <li>Perfecto para eventos de empresa</li>
+          </ul>
+          <span class="option-ideal">Ideal para: empresas, eventos grandes, team building</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Por qué escape room para tu equipo?</h2>
+        <p>Porque en 60 minutos pasan más cosas que en un año de reuniones.</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit">
+          <h4>🧠 Pensamiento lateral</h4>
+          <p>Los acertijos obligan a pensar diferente. Eso se traslada al trabajo.</p>
+        </div>
+        <div class="benefit">
+          <h4>🗣️ Comunicación real</h4>
+          <p>Si no os comunicáis bien, no salís. Así de simple.</p>
+        </div>
+        <div class="benefit">
+          <h4>🏆 Liderazgo emergente</h4>
+          <p>Descubres quién toma las riendas cuando hay presión.</p>
+        </div>
+        <div class="benefit">
+          <h4>😂 Risas compartidas</h4>
+          <p>Los errores tontos y los momentos de tensión crean anécdotas eternas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Montamos un escape room para tu grupo?</h2>
+        <p>Cuéntanos cuántos sois, dónde lo queréis hacer y preparamos una propuesta.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          WhatsApp: 678 288 284
+        </a>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-inner {
+    background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+    padding: var(--space-3xl) 0;
+    color: white;
+  }
+  
+  .hero-content { max-width: 700px; }
+  
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 107, 53, 0.2);
+    color: var(--color-primary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .hero-inner h1 { color: white; }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), #FF8F6B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-text {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .meta-item { font-weight: 500; color: rgba(255,255,255,0.9); }
+  
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .option-card {
+    background: var(--color-bg-alt);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    position: relative;
+  }
+  
+  .option-card.featured {
+    background: var(--color-bg);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--color-primary);
+  }
+  
+  .option-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .option-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .option-card h3 { margin-bottom: var(--space-md); }
+  .option-card > p { color: var(--color-text-light); margin-bottom: var(--space-lg); }
+  
+  .option-features {
+    list-style: none;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .option-features li {
+    padding: var(--space-sm) 0;
+    padding-left: var(--space-xl);
+    position: relative;
+    color: var(--color-text-light);
+  }
+  
+  .option-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  
+  .option-ideal {
+    display: block;
+    background: rgba(0,0,0,0.05);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .benefit {
+    text-align: center;
+    padding: var(--space-lg);
+  }
+  
+  .benefit h4 { margin-bottom: var(--space-sm); }
+  .benefit p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  
+  .cta-section {
+    background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+    text-align: center;
+  }
+  
+  .cta-content h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-content p { color: rgba(255,255,255,0.8); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  
+  @media (max-width: 1024px) {
+    .options-grid { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 640px) {
+    .benefits-grid { grid-template-columns: 1fr; }
+  }
+</style>

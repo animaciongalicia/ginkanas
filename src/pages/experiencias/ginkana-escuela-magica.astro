@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Ginkana Escuela Mágica | Para Fans de Harry Potter';
+const description = 'Conviértete en mago o bruja por un día. Hechizos, pociones, clasificación en casas y torneo de Quidditch. La ginkana perfecta para fans de Harry Potter. Desde 25€/persona.';
+
+const actividades = [
+  { nombre: 'Ceremonia de selección', desc: 'El Sombrero Seleccionador os asignará a vuestras casas' },
+  { nombre: 'Clases de hechizos', desc: 'Aprenderéis a lanzar encantamientos (con pruebas de puntería y habilidad)' },
+  { nombre: 'Pociones', desc: 'Crearéis pociones mágicas (con ingredientes sorpresa)' },
+  { nombre: 'Búsqueda de Horrocruxes', desc: 'Encontrad los objetos ocultos por la ciudad' },
+  { nombre: 'Torneo de Quidditch', desc: 'Versión terrestre del deporte mágico' },
+  { nombre: 'Prueba final', desc: 'Solo los verdaderos magos la superarán' }
+];
+
+const faqs = [
+  { q: '¿Hay que ser muy fan de Harry Potter?', a: 'Ayuda conocer las películas, pero no es imprescindible. Está diseñada para que todos disfruten.' },
+  { q: '¿Hay disfraces?', a: 'Podemos proporcionar capas y varitas. Si el grupo viene disfrazado, mejor que mejor.' },
+  { q: '¿Es para niños?', a: 'Tenemos versiones para niños y para adultos. La de adultos tiene pruebas más elaboradas (y alguna copa de hidromiel).' },
+  { q: '¿Cuántas casas hay?', a: 'Las cuatro de siempre: Gryffindor, Slytherin, Ravenclaw y Hufflepuff. Competiréis entre casas.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Ginkana Escuela Mágica",
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-exp">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="exp-tag">🧙 Magia y diversión</span>
+        <h1>Ginkana Escuela Mágica</h1>
+        <p>Tu carta de Hogwarts llegó tarde, pero nunca es tarde para ser mago. Clasificación en casas, clases de hechizos, pociones y un torneo de Quidditch. La experiencia más mágica de Galicia.</p>
+        <div class="meta-boxes">
+          <div class="meta-box"><span class="label">Precio</span><span class="value">Desde 25€/persona</span></div>
+          <div class="meta-box"><span class="label">Duración</span><span class="value">2-2.5 horas</span></div>
+          <div class="meta-box"><span class="label">Grupo mín.</span><span class="value">6 personas</span></div>
+        </div>
+        <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Escuela%20Mágica" class="btn btn-whatsapp btn-lg">Reservar Escuela Mágica</a>
+      </div>
+      <div class="hero-image">
+        <img src="/images/mascota-mapa-tesoro.png" alt="Monitora con mapa mágico" loading="eager">
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container content-grid">
+      <div class="content-main">
+        <h2>¿Qué haréis en la Escuela Mágica?</h2>
+        <p>Una experiencia inmersiva donde os convertiréis en estudiantes de magia. Competiréis en equipos (casas) por ganar la Copa de las Casas a través de diferentes pruebas y desafíos.</p>
+        
+        <div class="actividades-grid">
+          {actividades.map((a) => (
+            <div class="actividad">
+              <h4>{a.nombre}</h4>
+              <p>{a.desc}</p>
+            </div>
+          ))}
+        </div>
+        
+        <h3>¿Dónde se hace?</h3>
+        <p>Cualquier casco histórico de Galicia tiene el ambiente perfecto. Santiago con sus calles empedradas, Pontevedra con sus soportales, Lugo dentro de la muralla... Parecen sacados del mundo mágico.</p>
+      </div>
+      
+      <div class="content-side">
+        <div class="info-box gryffindor">
+          <h4>✅ Incluye</h4>
+          <ul>
+            <li>Monitor/Profesor de magia</li>
+            <li>Material mágico (varitas, pergaminos)</li>
+            <li>Clasificación en casas</li>
+            <li>Diploma de mago/bruja</li>
+          </ul>
+        </div>
+        <div class="info-box slytherin">
+          <h4>👯 Ideal para</h4>
+          <ul>
+            <li>Fans de Harry Potter</li>
+            <li>Cumpleaños temáticos</li>
+            <li>Despedidas originales</li>
+            <li>Grupos mixtos (adultos + niños)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Preguntas frecuentes</h2>
+      <div class="faqs-grid">
+        {faqs.map((faq) => (
+          <div class="faq-card">
+            <h4>{faq.q}</h4>
+            <p>{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <h2>¿Preparados para la magia?</h2>
+        <p>Cuéntanos cuántos sois y preparamos vuestra experiencia mágica.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+      </div>
+      <div class="cta-image">
+        <img src="/images/mascota-saltando.png" alt="Monitora celebrando">
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-exp { background: linear-gradient(135deg, #4A148C 0%, #7B1FA2 100%); padding: var(--space-3xl) 0; color: white; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .exp-tag { display: inline-block; background: #FFD700; color: #4A148C; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md); }
+  .hero-text h1 { margin-bottom: var(--space-lg); color: white; }
+  .hero-text p { font-size: 1.125rem; color: rgba(255,255,255,0.9); margin-bottom: var(--space-xl); }
+  .meta-boxes { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); flex-wrap: wrap; }
+  .meta-box { background: rgba(255,255,255,0.15); padding: var(--space-md); border-radius: var(--radius-md); }
+  .meta-box .label { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.7); text-transform: uppercase; }
+  .meta-box .value { font-weight: 700; color: #FFD700; }
+  .hero-image img { max-width: 100%; }
+  
+  .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); }
+  .content-main h2 { margin-bottom: var(--space-lg); }
+  .content-main h3 { margin: var(--space-xl) 0 var(--space-md); }
+  .content-main > p { color: var(--color-text-light); margin-bottom: var(--space-xl); }
+  
+  .actividades-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-bottom: var(--space-xl); }
+  .actividad { background: var(--color-bg-alt); padding: var(--space-lg); border-radius: var(--radius-md); border-left: 4px solid #7B1FA2; }
+  .actividad h4 { margin-bottom: var(--space-xs); color: #4A148C; font-size: 1rem; }
+  .actividad p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  
+  .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
+  .info-box { padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .info-box.gryffindor { background: linear-gradient(135deg, #740001, #AE0001); color: white; }
+  .info-box.slytherin { background: linear-gradient(135deg, #1A472A, #2A623D); color: white; }
+  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box ul { list-style: none; }
+  .info-box li { padding: var(--space-xs) 0; opacity: 0.9; }
+  
+  .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+  .faq-card h4 { margin-bottom: var(--space-sm); color: #4A148C; }
+  .faq-card p { color: var(--color-text-light); margin: 0; }
+  
+  .cta-section { background: linear-gradient(135deg, #4A148C, #7B1FA2); }
+  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-text h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-image img { max-width: 220px; }
+  
+  @media (max-width: 1024px) {
+    .hero-grid, .content-grid, .cta-grid { grid-template-columns: 1fr; }
+    .hero-image, .cta-image { order: -1; text-align: center; }
+    .hero-image img, .cta-image img { max-width: 260px; }
+    .actividades-grid, .faqs-grid { grid-template-columns: 1fr; }
+  }
+</style>

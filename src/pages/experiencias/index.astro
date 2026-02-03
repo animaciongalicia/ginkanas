@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Todas las Ginkanas y Experiencias | Ginkanas.es';
+const description = 'Catálogo completo de ginkanas en Galicia. Cluedo, Escuela Mágica, Lendas, Supervivientes y más. Encuentra la perfecta para tu grupo.';
+
+const experiencias = [
+  {
+    title: 'Ginkana Loca',
+    description: 'La clásica para despedidas. Pruebas desternillantes y vacile al novi@.',
+    price: 'Desde 25€',
+    tag: 'Despedidas',
+    href: '/experiencias/ginkana-loca/',
+    color: '#FF6B35'
+  },
+  {
+    title: 'Ginkana Cluedo',
+    description: 'Resuelve el misterio mientras recorres la ciudad.',
+    price: 'Desde 25€',
+    tag: 'Misterio',
+    href: '/experiencias/ginkana-cluedo/',
+    color: '#303F9F'
+  },
+  {
+    title: 'Ginkana Escuela Mágica',
+    description: 'Conviértete en mago. Hechizos, pociones y Quidditch.',
+    price: 'Desde 25€',
+    tag: 'Fantasía',
+    href: '/experiencias/ginkana-escuela-magica/',
+    color: '#7B1FA2'
+  },
+  {
+    title: 'Ginkana Lendas',
+    description: 'Descubre las leyendas de Galicia. Meigas y trasnos.',
+    price: 'Desde 25€',
+    tag: 'Galicia',
+    href: '/experiencias/ginkana-lendas/',
+    color: '#9B59B6'
+  },
+  {
+    title: 'Ginkana Supervivientes',
+    description: 'Pruebas físicas y resistencia. Solo los fuertes sobreviven.',
+    price: 'Desde 25€',
+    tag: 'Aventura',
+    href: '/experiencias/ginkana-supervivientes/',
+    color: '#2E7D32'
+  },
+  {
+    title: 'Escape Room Urbano',
+    description: 'La ciudad es tu sala de escape. Experiencia premium.',
+    price: 'A consultar',
+    tag: 'Premium',
+    href: '/escape-room/',
+    color: '#1A1A2E'
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  
+  <section class="hero-inner">
+    <div class="container">
+      <h1>Nuestras Experiencias</h1>
+      <p class="hero-text">Cada ginkana es un mundo. Encuentra la perfecta para tu grupo.</p>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="experiences-grid">
+        {experiencias.map((exp) => (
+          <a href={exp.href} class="experience-card" style={`--card-color: ${exp.color}`}>
+            <span class="exp-tag">{exp.tag}</span>
+            <h3>{exp.title}</h3>
+            <p>{exp.description}</p>
+            <div class="card-footer">
+              <span class="exp-price">{exp.price}</span>
+              <span class="exp-link">Ver detalles →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <div class="help-box">
+        <h2>¿No sabes cuál elegir?</h2>
+        <p>Cuéntanos cómo es tu grupo y te recomendamos.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank">
+          Pregúntanos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-inner {
+    background: var(--color-bg-alt);
+    padding: var(--space-3xl) 0;
+    text-align: center;
+  }
+  
+  .hero-text {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+  }
+  
+  .experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-3xl);
+  }
+  
+  .experience-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .experience-card:hover {
+    border-color: var(--card-color);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .exp-tag {
+    display: inline-block;
+    background: var(--card-color);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    align-self: flex-start;
+  }
+  
+  .experience-card h3 { margin-bottom: var(--space-sm); }
+  .experience-card p { color: var(--color-text-light); margin-bottom: var(--space-lg); flex-grow: 1; }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .exp-price {
+    font-weight: 700;
+    color: var(--card-color);
+  }
+  
+  .exp-link {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+  
+  .experience-card:hover .exp-link {
+    color: var(--card-color);
+  }
+  
+  .help-box {
+    background: var(--color-bg-alt);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  
+  .help-box h2 { margin-bottom: var(--space-md); }
+  .help-box p { margin-bottom: var(--space-xl); color: var(--color-text-light); }
+  
+  @media (max-width: 1024px) {
+    .experiences-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 640px) {
+    .experiences-grid { grid-template-columns: 1fr; }
+  }
+</style>

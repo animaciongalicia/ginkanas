@@ -1,0 +1,273 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Ginkanas en A Coruña | Despedidas, Empresas y Grupos';
+const description = 'Ginkanas en A Coruña para despedidas de soltera, team building y grupos. Recorre el casco histórico, la Torre de Hércules y el Orzán jugando. Desde 25€/persona.';
+
+const zonas = [
+  {
+    name: 'Ciudad Vieja',
+    description: 'El casco histórico. Calles estrechas, plazas con encanto y la Plaza de María Pita como epicentro. Perfecta para ginkanas de misterio y leyendas.'
+  },
+  {
+    name: 'Torre de Hércules',
+    description: 'El faro romano más antiguo del mundo en funcionamiento. Pruebas con vistas al Atlántico y mucha historia que descubrir.'
+  },
+  {
+    name: 'Paseo Marítimo',
+    description: 'Uno de los más largos de Europa. Ideal para ginkanas que combinan pruebas físicas con paisaje espectacular.'
+  },
+  {
+    name: 'Monte Alto y Orzán',
+    description: 'La zona de marcha. Perfecta si después de la ginkana queréis continuar la fiesta por la noche.'
+  }
+];
+
+const ginkanas = [
+  { title: 'Ginkana Loca', ideal: 'Despedidas', href: '/experiencias/ginkana-loca/' },
+  { title: 'Ginkana Cluedo', ideal: 'Grupos y cumpleaños', href: '/experiencias/ginkana-cluedo/' },
+  { title: 'Ginkana Lendas', ideal: 'Amantes de Galicia', href: '/experiencias/ginkana-lendas/' },
+  { title: 'Ginkana Escuela Mágica', ideal: 'Fans de Harry Potter', href: '/experiencias/ginkana-escuela-magica/' },
+  { title: 'Escape Room Urbano', ideal: 'Empresas y grupos premium', href: '/escape-room/' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas en A Coruña",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ginkanas.es",
+    "telephone": "+34678288284"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "A Coruña",
+    "containedIn": "Galicia, Spain"
+  },
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-city">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">🏰 La ciudad de cristal</span>
+        <h1>Ginkanas en <span class="text-gradient">A Coruña</span></h1>
+        <p class="hero-text">
+          Coruña tiene el mejor ambiente nocturno de Galicia. Y de día, un casco histórico, 
+          un paseo marítimo infinito y la Torre de Hércules como escenario perfecto para jugar.
+        </p>
+        <div class="hero-meta">
+          <span class="meta-item">💰 Desde 25€/persona</span>
+          <span class="meta-item">⏱️ 2 horas de juego</span>
+          <span class="meta-item">👥 Grupos desde 6 personas</span>
+        </div>
+        <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Coruña" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          Reservar en Coruña
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Dónde jugamos en Coruña?</h2>
+        <p>La ciudad tiene zonas perfectas para cada tipo de ginkana.</p>
+      </div>
+      
+      <div class="zones-grid">
+        {zonas.map((z) => (
+          <div class="zone-card">
+            <h3>{z.name}</h3>
+            <p>{z.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Ginkanas disponibles en Coruña</h2>
+        <p>Todas nuestras experiencias están adaptadas a la ciudad.</p>
+      </div>
+      
+      <div class="ginkanas-list">
+        {ginkanas.map((g) => (
+          <a href={g.href} class="ginkana-row">
+            <div class="ginkana-info">
+              <h3>{g.title}</h3>
+              <span class="ginkana-ideal">Ideal para: {g.ideal}</span>
+            </div>
+            <span class="ginkana-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Para qué vienes a Coruña?</h2>
+        <p>Te recomendamos según tu plan.</p>
+      </div>
+      
+      <div class="recommendations-grid">
+        <div class="recommendation">
+          <h3>🎉 Despedida de soltera</h3>
+          <p>La Ginkana Loca por la Ciudad Vieja es perfecta. Después, el Orzán os espera para la fiesta.</p>
+          <a href="/ginkanas-despedidas/" class="rec-link">Ver ginkanas despedidas →</a>
+        </div>
+        <div class="recommendation">
+          <h3>🏢 Team building</h3>
+          <p>El Paseo Marítimo o la zona de la Torre son ideales para grupos grandes. Espacio y vistas.</p>
+          <a href="/ginkanas-empresas/" class="rec-link">Ver ginkanas empresas →</a>
+        </div>
+        <div class="recommendation">
+          <h3>🎂 Cumpleaños o quedada</h3>
+          <p>La Ginkana Cluedo por el casco antiguo. Misterio, risas y acabáis tomando algo en María Pita.</p>
+          <a href="/ginkanas-adultos/" class="rec-link">Ver ginkanas adultos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Organizando algo en Coruña?</h2>
+        <p>Cuéntanos qué celebráis y os ayudamos a elegir la mejor ginkana y zona.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          WhatsApp: 678 288 284
+        </a>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-city {
+    background: linear-gradient(135deg, #E8F4FD 0%, var(--color-bg) 100%);
+    padding: var(--space-3xl) 0;
+  }
+  
+  .hero-content { max-width: 700px; }
+  
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0, 78, 137, 0.1);
+    color: var(--color-secondary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-secondary), #0077CC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-text {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .meta-item { font-weight: 500; }
+  
+  .zones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .zone-card {
+    background: var(--color-bg-alt);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+  }
+  
+  .zone-card h3 {
+    color: var(--color-secondary);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .zone-card p {
+    color: var(--color-text-light);
+    margin: 0;
+  }
+  
+  .ginkanas-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .ginkana-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all var(--transition-normal);
+  }
+  
+  .ginkana-row:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .ginkana-info h3 { margin-bottom: var(--space-xs); }
+  .ginkana-ideal { font-size: 0.875rem; color: var(--color-text-light); }
+  .ginkana-arrow { font-size: 1.5rem; color: var(--color-primary); }
+  
+  .recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .recommendation {
+    background: var(--color-bg-alt);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+  }
+  
+  .recommendation h3 { margin-bottom: var(--space-md); }
+  .recommendation p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .rec-link { color: var(--color-primary); font-weight: 600; }
+  
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-secondary), #0077CC);
+    text-align: center;
+  }
+  
+  .cta-content h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-content p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  
+  @media (max-width: 1024px) {
+    .zones-grid, .recommendations-grid { grid-template-columns: 1fr; }
+  }
+</style>

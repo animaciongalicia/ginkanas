@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Ginkana Loca | La Clásica para Despedidas';
+const description = 'La Ginkana Loca es la más solicitada para despedidas de soltera y soltero. Pruebas desternillantes, vacile al novi@ y risas garantizadas. Desde 25€/persona.';
+
+const pruebas = [
+  'Besar una calva (buscar un calvo y convencerle)',
+  'Vender condones por la calle',
+  'Conseguir que un desconocido os invite a algo',
+  'Hacer un baile viral en plena calle',
+  'Disfrazar al novi@ con lo que encontréis',
+  'Conseguir firmas en partes del cuerpo',
+  'Foto con alguien uniformado',
+  'Cantar una serenata a un desconocido'
+];
+
+const faqs = [
+  { q: '¿Es muy atrevida?', a: 'Hay pruebas picantes pero nada que cruce líneas. Adaptamos el nivel al grupo.' },
+  { q: '¿Qué pasa si alguien no quiere hacer algo?', a: 'No pasa nada. El monitor tiene alternativas. Nadie hace nada que no quiera.' },
+  { q: '¿Necesitamos disfraces?', a: 'No es obligatorio, pero si el novi@ va disfrazado, las pruebas son más divertidas.' },
+  { q: '¿Se puede hacer por la noche?', a: 'Sí, muchos grupos la hacen antes de cenar. La zona de copas es perfecta.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Ginkana Loca",
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-exp">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="exp-tag">🎉 La más solicitada</span>
+        <h1>Ginkana Loca</h1>
+        <p>La clásica de las despedidas. Pruebas desternillantes, retos comprometidos y el novi@ como protagonista absoluto. 20 años haciéndola y sigue siendo la favorita.</p>
+        <div class="meta-boxes">
+          <div class="meta-box"><span class="label">Precio</span><span class="value">Desde 25€/persona</span></div>
+          <div class="meta-box"><span class="label">Duración</span><span class="value">2 horas</span></div>
+          <div class="meta-box"><span class="label">Grupo mín.</span><span class="value">6 personas</span></div>
+        </div>
+        <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Loca" class="btn btn-whatsapp btn-lg">Reservar Ginkana Loca</a>
+      </div>
+      <div class="hero-image">
+        <img src="/images/mascota-grupo.png" alt="Monitora de ginkana con grupo" loading="eager">
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container content-grid">
+      <div class="content-main">
+        <h2>¿En qué consiste?</h2>
+        <p>La Ginkana Loca es un recorrido por la ciudad con pruebas y retos diseñados para que el grupo se desmelene y el novi@ sea el centro de todas las bromas (con cariño, claro).</p>
+        <p>Un monitor os acompaña durante toda la actividad, os explica las pruebas, hace de juez y se asegura de que todo fluya. Su trabajo es que os descojonéis.</p>
+        
+        <h3>Ejemplos de pruebas</h3>
+        <ul class="pruebas-list">
+          {pruebas.map((p) => <li>{p}</li>)}
+        </ul>
+        <p class="nota"><em>Adaptamos el nivel de las pruebas al grupo. Si queréis algo más suave o más atrevido, solo tenéis que decirlo.</em></p>
+        
+        <h3>¿Dónde se hace?</h3>
+        <p>En cualquier ciudad de Galicia. Las zonas de copas o cascos históricos son perfectas: Vigo (Churruca), Coruña (Orzán), Santiago (Franco), Sanxenxo (paseo)...</p>
+      </div>
+      
+      <div class="content-side">
+        <div class="info-box">
+          <h4>✅ Incluye</h4>
+          <ul>
+            <li>Monitor durante toda la actividad</li>
+            <li>Material para las pruebas</li>
+            <li>Pruebas personalizadas</li>
+            <li>Fotos del grupo</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h4>👯 Ideal para</h4>
+          <ul>
+            <li>Despedidas de soltera</li>
+            <li>Despedidas de soltero</li>
+            <li>Preludio de noche de fiesta</li>
+          </ul>
+        </div>
+        <div class="mascota-box">
+          <img src="/images/mascota-señalando.png" alt="Monitora señalando">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Preguntas frecuentes</h2>
+      <div class="faqs-grid">
+        {faqs.map((faq) => (
+          <div class="faq-card">
+            <h4>{faq.q}</h4>
+            <p>{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <h2>¿Preparando una despedida?</h2>
+        <p>Cuéntanos cuántas sois, en qué ciudad y cuándo. Nosotros nos encargamos del resto.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+      </div>
+      <div class="cta-image">
+        <img src="/images/mascota-saltando.png" alt="Monitora celebrando">
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-exp { background: linear-gradient(135deg, #FFF3E0 0%, #fff 100%); padding: var(--space-3xl) 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .exp-tag { display: inline-block; background: var(--color-primary); color: white; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md); }
+  .hero-text h1 { margin-bottom: var(--space-lg); }
+  .hero-text p { font-size: 1.125rem; color: var(--color-text-light); margin-bottom: var(--space-xl); }
+  .meta-boxes { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); flex-wrap: wrap; }
+  .meta-box { background: white; padding: var(--space-md); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+  .meta-box .label { display: block; font-size: 0.75rem; color: var(--color-text-light); text-transform: uppercase; }
+  .meta-box .value { font-weight: 700; color: var(--color-primary); }
+  .hero-image img { max-width: 100%; border-radius: var(--radius-lg); }
+  
+  .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); }
+  .content-main h2 { margin-bottom: var(--space-lg); }
+  .content-main h3 { margin: var(--space-xl) 0 var(--space-md); }
+  .content-main p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .pruebas-list { list-style: none; }
+  .pruebas-list li { padding: var(--space-sm) 0; padding-left: var(--space-xl); position: relative; color: var(--color-text-light); }
+  .pruebas-list li::before { content: '🎯'; position: absolute; left: 0; }
+  .nota { font-size: 0.9375rem; background: var(--color-bg-alt); padding: var(--space-md); border-radius: var(--radius-md); }
+  
+  .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
+  .info-box { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box ul { list-style: none; }
+  .info-box li { padding: var(--space-xs) 0; color: var(--color-text-light); }
+  .mascota-box img { max-width: 200px; margin: 0 auto; display: block; }
+  
+  .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+  .faq-card h4 { margin-bottom: var(--space-sm); color: var(--color-primary); }
+  .faq-card p { color: var(--color-text-light); margin: 0; }
+  
+  .cta-section { background: linear-gradient(135deg, var(--color-primary), #FF8F6B); }
+  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-text h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-image img { max-width: 250px; }
+  
+  @media (max-width: 1024px) {
+    .hero-grid, .content-grid, .cta-grid { grid-template-columns: 1fr; }
+    .hero-image, .cta-image { order: -1; text-align: center; }
+    .hero-image img, .cta-image img { max-width: 300px; }
+    .faqs-grid { grid-template-columns: 1fr; }
+  }
+</style>

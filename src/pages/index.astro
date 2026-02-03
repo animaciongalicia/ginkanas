@@ -1,0 +1,916 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Ginkanas en Galicia | Despedidas, Empresas y Grupos';
+const description = 'Ginkanas en Galicia para despedidas de soltera, team building y grupos. 20 años de experiencia. Vigo, Coruña, Santiago, Sanxenxo. Desde 25€/persona. ¡Reserva ahora!';
+
+const experiencias = [
+  {
+    title: 'Ginkana Cluedo',
+    description: 'Resuelve el misterio mientras recorres la ciudad. Pistas, sospechosos y mucha adrenalina.',
+    image: '/images/placeholder-cluedo.jpg',
+    href: '/experiencias/ginkana-cluedo/',
+    tag: 'Misterio'
+  },
+  {
+    title: 'Ginkana Escuela Mágica',
+    description: 'Conviértete en mago o bruja. Hechizos, pruebas y un torneo de Quidditch te esperan.',
+    image: '/images/placeholder-magica.jpg',
+    href: '/experiencias/ginkana-escuela-magica/',
+    tag: 'Fantasía'
+  },
+  {
+    title: 'Ginkana Lendas',
+    description: 'Descubre las leyendas y misterios de Galicia. Meigas, trasnos y la Santa Compaña.',
+    image: '/images/placeholder-lendas.jpg',
+    href: '/experiencias/ginkana-lendas/',
+    tag: 'Galicia'
+  },
+  {
+    title: 'Ginkana Supervivientes',
+    description: 'Pruebas de resistencia, habilidad y estrategia. Solo los más fuertes sobreviven.',
+    image: '/images/placeholder-supervivientes.jpg',
+    href: '/experiencias/ginkana-supervivientes/',
+    tag: 'Aventura'
+  },
+  {
+    title: 'Ginkana Loca',
+    description: 'La clásica. Pruebas desternillantes, retos comprometidos y mucho vacile al novi@.',
+    image: '/images/placeholder-loca.jpg',
+    href: '/experiencias/ginkana-loca/',
+    tag: 'Despedidas'
+  },
+  {
+    title: 'Escape Room Urbano',
+    description: 'La ciudad es tu sala de escape. Acertijos, enigmas y tiempo en tu contra.',
+    image: '/images/placeholder-escape.jpg',
+    href: '/escape-room/',
+    tag: 'Premium'
+  },
+];
+
+const ciudades = [
+  { name: 'A Coruña', href: '/ginkanas-coruna/', icon: '🏰' },
+  { name: 'Vigo', href: '/ginkanas-vigo/', icon: '⚓' },
+  { name: 'Santiago', href: '/ginkanas-santiago/', icon: '🐚' },
+  { name: 'Sanxenxo', href: '/ginkanas-sanxenxo/', icon: '🏖️' },
+  { name: 'Pontevedra', href: '/ginkanas-pontevedra/', icon: '🌉' },
+  { name: 'Ourense', href: '/ginkanas-ourense/', icon: '♨️' },
+  { name: 'Lugo', href: '/ginkanas-lugo/', icon: '🏛️' },
+];
+
+const testimonios = [
+  {
+    text: 'La mejor despedida que hemos organizado nunca. El grupo flipó con la ginkana de Harry Potter. Repetiremos seguro.',
+    author: 'María G.',
+    location: 'Despedida en Santiago',
+    rating: 5
+  },
+  {
+    text: 'Contratamos la ginkana para un team building y fue un acierto. El equipo se descojonó y se conocieron de verdad.',
+    author: 'Carlos R.',
+    location: 'Empresa en Vigo',
+    rating: 5
+  },
+  {
+    text: 'Cumplí 40 y mis amigas me regalaron la ginkana Cluedo. Brutal. Dos horas que pasaron volando.',
+    author: 'Laura P.',
+    location: 'Cumpleaños en Coruña',
+    rating: 5
+  },
+];
+
+const faqs = [
+  {
+    question: '¿Cuánto dura una ginkana?',
+    answer: 'Aproximadamente 2 horas. Tiempo suficiente para pasarlo en grande sin que se haga pesado.'
+  },
+  {
+    question: '¿Cuántas personas mínimo necesitamos?',
+    answer: 'El mínimo son 6 personas. Si sois menos, podemos adaptarlo, pero el precio es por el grupo mínimo.'
+  },
+  {
+    question: '¿Qué pasa si llueve?',
+    answer: 'Si la lluvia es fuerte, posponemos sin coste. Si es lluvia fina, tiramos palante como buenos gallegos. El grupo decide.'
+  },
+  {
+    question: '¿Se puede hacer en cualquier ciudad de Galicia?',
+    answer: 'Sí. Trabajamos en toda Galicia. Las principales son Vigo, Coruña, Santiago y Sanxenxo, pero nos adaptamos.'
+  },
+  {
+    question: '¿Incluye monitor?',
+    answer: 'Siempre. Un monitor titulado os acompaña, guía el juego y se asegura de que todo fluya.'
+  },
+];
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<Layout title={title} description={description} schema={schemaFAQ}>
+  
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">🎯 20 años creando experiencias en Galicia</span>
+        <h1>La forma más <span class="text-gradient">divertida</span> de jugar en grupo</h1>
+        <p class="hero-text">
+          Ginkanas para despedidas, empresas y grupos que quieren algo más que lo de siempre. 
+          Pruebas, risas, vacile sano y recuerdos que duran.
+        </p>
+        <div class="hero-cta">
+          <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Reservar por WhatsApp
+          </a>
+          <a href="/experiencias/" class="btn btn-outline btn-lg">
+            Ver todas las ginkanas
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">años de experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5000+</span>
+            <span class="stat-label">grupos felices</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">7</span>
+            <span class="stat-label">ciudades en Galicia</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <img src="/images/placeholder-hero.jpg" alt="Grupo disfrutando de una ginkana en Galicia" width="600" height="500" loading="eager">
+          <div class="hero-price-badge">
+            <span class="price-from">Desde</span>
+            <span class="price-amount">25€</span>
+            <span class="price-unit">/persona</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- PARA QUIÉN -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Para quién son nuestras ginkanas?</h2>
+        <p>Da igual el motivo. Si queréis pasarlo bien, esto es para vosotros.</p>
+      </div>
+      
+      <div class="audience-grid">
+        <a href="/ginkanas-despedidas/" class="audience-card">
+          <div class="audience-icon">🎉</div>
+          <h3>Despedidas</h3>
+          <p>La novia o el novio van a flipar. Pruebas, vacile sano y momentos que recordaréis siempre.</p>
+          <span class="audience-price">Desde 25€/persona</span>
+          <span class="audience-link">Ver ginkanas despedidas →</span>
+        </a>
+        
+        <a href="/ginkanas-empresas/" class="audience-card">
+          <div class="audience-icon">🏢</div>
+          <h3>Empresas</h3>
+          <p>Team building que funciona de verdad. Tu equipo se conocerá, reirá y trabajará mejor después.</p>
+          <span class="audience-price">Precio a consultar</span>
+          <span class="audience-link">Ver ginkanas empresas →</span>
+        </a>
+        
+        <a href="/ginkanas-adultos/" class="audience-card">
+          <div class="audience-icon">🎂</div>
+          <h3>Grupos y cumpleaños</h3>
+          <p>Cumples, reencuentros, quedadas. Cualquier excusa es buena para organizar algo diferente.</p>
+          <span class="audience-price">Desde 25€/persona</span>
+          <span class="audience-link">Ver ginkanas adultos →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- EXPERIENCIAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nuestras experiencias</h2>
+        <p>Cada ginkana es un mundo. Elige la que más encaje con tu grupo.</p>
+      </div>
+      
+      <div class="experiences-grid">
+        {experiencias.map((exp) => (
+          <a href={exp.href} class="experience-card">
+            <div class="experience-image">
+              <img src={exp.image} alt={exp.title} width="400" height="250" loading="lazy">
+              <span class="experience-tag">{exp.tag}</span>
+            </div>
+            <div class="experience-content">
+              <h3>{exp.title}</h3>
+              <p>{exp.description}</p>
+              <span class="experience-link">Más información →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <div class="text-center mt-2">
+        <a href="/experiencias/" class="btn btn-primary btn-lg">Ver todas las experiencias</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CIUDADES -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Dónde quieres jugar?</h2>
+        <p>Organizamos ginkanas en toda Galicia. Estas son las ciudades top.</p>
+      </div>
+      
+      <div class="cities-grid">
+        {ciudades.map((ciudad) => (
+          <a href={ciudad.href} class="city-card">
+            <span class="city-icon">{ciudad.icon}</span>
+            <span class="city-name">{ciudad.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CÓMO FUNCIONA -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Cómo funciona?</h2>
+        <p>Tan fácil que da hasta rabia.</p>
+      </div>
+      
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Contacta</h3>
+          <p>WhatsApp o formulario. Cuéntanos cuántos sois, qué celebráis y cuándo queréis hacerlo.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Elige</h3>
+          <p>Te recomendamos la ginkana que mejor encaja con vuestro rollo. Sin presiones.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Reserva</h3>
+          <p>Confirmamos fecha y hora. Una pequeña señal y listo.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Disfruta</h3>
+          <p>El día D, un monitor os recibe, os explica todo y... ¡que empiece el show!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- TESTIMONIOS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lo que dicen de nosotros</h2>
+        <p>No lo decimos nosotros. Lo dicen ellos.</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        {testimonios.map((t) => (
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              {'★'.repeat(t.rating)}
+            </div>
+            <p class="testimonial-text">"{t.text}"</p>
+            <div class="testimonial-author">
+              <span class="author-name">{t.author}</span>
+              <span class="author-location">{t.location}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- POR QUÉ NOSOTROS -->
+  <section class="section">
+    <div class="container">
+      <div class="why-us-grid">
+        <div class="why-us-content">
+          <h2>20 años haciendo esto. Y se nota.</h2>
+          <p>No somos unos
+
+ 
+
+recién llegados. Llevamos organizando despedidas y eventos en Galicia desde antes de que existieran los smartphones. Hemos visto de todo. Y eso nos da una ventaja que no se compra: sabemos lo que funciona y lo que no.</p>
+          
+          <ul class="why-us-list">
+            <li>
+              <span class="check">✓</span>
+              <span><strong>Monitores profesionales</strong> — Titulados, con experiencia y con ganas de que lo paséis bien.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span><strong>Flexibilidad total</strong> — Adaptamos la ginkana a vuestros gustos, horarios y presupuesto.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span><strong>Toda Galicia</strong> — Vigo, Coruña, Santiago, Sanxenxo... Donde queráis.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span><strong>Sin sorpresas</strong> — Precio cerrado. Sin extras raros ni costes ocultos.</span>
+            </li>
+          </ul>
+          
+          <a href="https://wa.me/34678288284" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+            Hablar con nosotros
+          </a>
+        </div>
+        <div class="why-us-image">
+          <img src="/images/placeholder-team.jpg" alt="Equipo de Ginkanas.es" width="500" height="400" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Preguntas frecuentes</h2>
+        <p>Lo que todo el mundo pregunta antes de reservar.</p>
+      </div>
+      
+      <div class="faqs-container">
+        {faqs.map((faq, index) => (
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>{faq.question}</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA FINAL -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Listos para pasarlo bien?</h2>
+        <p>Cuéntanos qué celebráis y os ayudamos a montar algo memorable. Sin compromiso.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp: 678 288 284
+          </a>
+          <a href="/contacto/" class="btn btn-outline btn-lg">
+            Formulario de contacto
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    padding: var(--space-3xl) 0;
+    overflow: hidden;
+  }
+  
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+  
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--color-primary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .hero h1 {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-text {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+    max-width: 500px;
+  }
+  
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+  }
+  
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+  }
+  
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+  
+  .hero-image-wrapper {
+    position: relative;
+  }
+  
+  .hero-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .hero-price-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .price-from {
+    display: block;
+    font-size: 0.75rem;
+    opacity: 0.9;
+  }
+  
+  .price-amount {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .price-unit {
+    font-size: 0.75rem;
+    opacity: 0.9;
+  }
+  
+  /* AUDIENCE CARDS */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .audience-card {
+    background: var(--color-bg);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .audience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .audience-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .audience-card h3 {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .audience-card p {
+    color: var(--color-text-light);
+    flex-grow: 1;
+  }
+  
+  .audience-price {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+  
+  .audience-link {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  
+  /* EXPERIENCES GRID */
+  .experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .experience-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-text);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+  }
+  
+  .experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .experience-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+  
+  .experience-card:hover .experience-image img {
+    transform: scale(1.05);
+  }
+  
+  .experience-tag {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .experience-content {
+    padding: var(--space-lg);
+  }
+  
+  .experience-content h3 {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .experience-content p {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+  }
+  
+  .experience-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  /* CITIES GRID */
+  .cities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+  }
+  
+  .city-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-full);
+    color: var(--color-text-inverse);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+  }
+  
+  .city-card:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+  }
+  
+  .city-icon {
+    font-size: 1.5rem;
+  }
+  
+  /* STEPS */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .step {
+    text-align: center;
+  }
+  
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto var(--space-lg);
+  }
+  
+  .step h3 {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .step p {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+  }
+  
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .testimonial-card {
+    background: var(--color-bg);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .testimonial-stars {
+    color: #FFB800;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .testimonial-text {
+    font-size: 1.0625rem;
+    font-style: italic;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .author-name {
+    font-weight: 600;
+    display: block;
+  }
+  
+  .author-location {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+  
+  /* WHY US */
+  .why-us-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+  
+  .why-us-content h2 {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .why-us-content > p {
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .why-us-list {
+    list-style: none;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .why-us-list li {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+  
+  .why-us-list .check {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  
+  .why-us-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* FAQS */
+  .faqs-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    overflow: hidden;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+  
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+  
+  .faq-icon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    transition: transform var(--transition-normal);
+  }
+  
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  
+  .faq-answer {
+    padding: 0 var(--space-lg) var(--space-lg);
+    color: var(--color-text-light);
+  }
+  
+  /* CTA SECTION */
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    text-align: center;
+  }
+  
+  .cta-content h2 {
+    color: white;
+    margin-bottom: var(--space-md);
+  }
+  
+  .cta-content > p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  
+  .cta-section .btn-outline {
+    border-color: white;
+    color: white;
+  }
+  
+  .cta-section .btn-outline:hover {
+    background: white;
+    color: var(--color-primary);
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+    
+    .hero-image {
+      order: -1;
+    }
+    
+    .audience-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .experiences-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .why-us-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .why-us-image {
+      order: -1;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero-stats {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    
+    .experiences-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .city-card {
+      flex: 1 1 calc(50% - var(--space-md));
+      justify-content: center;
+    }
+  }
+</style>

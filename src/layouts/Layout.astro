@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  schema?: object;
+}
+
+const { 
+  title, 
+  description, 
+  canonical = Astro.url.href,
+  ogImage = '/images/og-default.jpg',
+  schema
+} = Astro.props;
+
+const siteName = 'Ginkanas.es';
+const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Básico -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href={canonical}>
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:site_name" content={siteName}>
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={fullTitle}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- Preconnect a fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org JSON-LD -->
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+  
+  <!-- Schema LocalBusiness por defecto -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ginkanas.es",
+    "description": "Ginkanas y experiencias gamificadas en Galicia para despedidas, empresas y grupos",
+    "url": "https://ginkanas.es",
+    "telephone": "+34678288284",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Galicia",
+      "addressCountry": "ES"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.8782,
+        "longitude": -8.5448
+      },
+      "geoRadius": "150000"
+    },
+    "priceRange": "€€",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  }
+  </script>
+</head>
+<body>
+  <Header />
+  
+  <main>
+    <slot />
+  </main>
+  
+  <Footer />
+  <WhatsAppFloat />
+</body>
+</html>

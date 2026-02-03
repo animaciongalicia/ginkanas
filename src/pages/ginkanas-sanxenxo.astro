@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Ginkanas en Sanxenxo | Despedidas de Verano en la Playa';
+const description = 'Ginkanas en Sanxenxo para despedidas de soltera y grupos. La capital del verano en Galicia. Playa, fiesta y diversión. Desde 25€/persona.';
+
+const zonas = [
+  {
+    name: 'Playa de Silgar',
+    description: 'La playa más famosa de Galicia. Arena fina, paseo marítimo y ambiente. Perfecta para ginkanas playeras en verano.'
+  },
+  {
+    name: 'Puerto deportivo',
+    description: 'Yates, terrazas y vistas. Zona más tranquila y elegante para ginkanas de empresa o grupos que buscan algo diferente.'
+  },
+  {
+    name: 'Casco urbano',
+    description: 'Calles peatonales llenas de tiendas, bares y restaurantes. El epicentro del ambiente sanxenxino.'
+  },
+  {
+    name: 'Playas de alrededor',
+    description: 'Areas, Montalvo, A Lanzada... Si queréis más intimidad, hay playas brutales a pocos minutos.'
+  }
+];
+
+const porque = [
+  { icon: '☀️', titulo: 'Capital del verano', texto: 'De junio a septiembre, Sanxenxo es el sitio. Ambiente garantizado.' },
+  { icon: '🏖️', titulo: 'Playas top', texto: 'Silgar, Areas, Montalvo... Las mejores playas de Galicia a tu alcance.' },
+  { icon: '🎉', titulo: 'Fiesta asegurada', texto: 'Bares, discotecas, terrazas. La noche en Sanxenxo no decepciona.' },
+  { icon: '🦐', titulo: 'Marisco brutal', texto: 'Estás en las Rías Baixas. El marisco aquí es otro nivel.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas en Sanxenxo",
+  "provider": { "@type": "LocalBusiness", "name": "Ginkanas.es", "telephone": "+34678288284" },
+  "areaServed": { "@type": "City", "name": "Sanxenxo" },
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-city">
+    <div class="container">
+      <span class="hero-badge">🏖️ La capital del verano gallego</span>
+      <h1>Ginkanas en <span class="text-gradient">Sanxenxo</span></h1>
+      <p class="hero-text">Sol, playa, fiesta y las mejores despedidas de verano. Sanxenxo es el destino top de Galicia cuando llega el calor. Y nosotros estamos aquí.</p>
+      <div class="hero-meta">
+        <span>💰 Desde 25€/persona</span>
+        <span>⏱️ 2 horas</span>
+        <span>👥 Desde 6 personas</span>
+      </div>
+      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Sanxenxo" class="btn btn-whatsapp btn-lg">Reservar en Sanxenxo</a>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">¿Dónde jugamos en Sanxenxo?</h2>
+      <div class="zones-grid">
+        {zonas.map((z) => (
+          <div class="zone-card">
+            <h3>{z.name}</h3>
+            <p>{z.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">¿Por qué Sanxenxo para tu ginkana?</h2>
+      <div class="why-grid">
+        {porque.map((p) => (
+          <div class="why-card">
+            <span class="why-icon">{p.icon}</span>
+            <h4>{p.titulo}</h4>
+            <p>{p.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Te recomendamos según tu plan</h2>
+      <div class="reco-grid">
+        <div class="reco-card">
+          <h3>🎉 Despedida de soltera</h3>
+          <p>Ginkana Loca por el paseo de Silgar, tardeo en terraza y luego fiesta hasta el amanecer. El plan clásico.</p>
+          <a href="/ginkanas-despedidas/">Ver ginkanas despedidas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>🏢 Empresa</h3>
+          <p>Puerto deportivo o playas menos masificadas. Team building con vistas al mar y mariscada para cerrar.</p>
+          <a href="/ginkanas-empresas/">Ver ginkanas empresas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>🎂 Grupo de amigas</h3>
+          <p>Ginkana por la mañana, playa al mediodía, cena de marisco y fiesta. Fin de semana redondo.</p>
+          <a href="/ginkanas-adultos/">Ver ginkanas adultos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section aviso-temporada">
+    <div class="container text-center">
+      <h2>⚠️ Ojo con la temporada</h2>
+      <p>Sanxenxo es muy estacional. De junio a septiembre está a tope. Fuera de temporada hay menos ambiente pero también menos gente. Para despedidas, el verano es imbatible. Para empresas, primavera u otoño pueden ser mejor opción.</p>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>¿Organizando algo en Sanxenxo?</h2>
+      <p>Cuéntanos las fechas y el plan, y te decimos cómo montarlo.</p>
+      <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-city { background: linear-gradient(135deg, #E0F7FA 0%, #fff 100%); padding: var(--space-3xl) 0; }
+  .hero-badge { display: inline-block; background: rgba(0,150,136,0.1); color: #00796B; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
+  .text-gradient { background: linear-gradient(135deg, #00796B, #4DB6AC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
+  .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
+  .zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .zone-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .zone-card h3 { color: #00796B; margin-bottom: var(--space-sm); }
+  .zone-card p { color: var(--color-text-light); margin: 0; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
+  .why-card { text-align: center; padding: var(--space-lg); }
+  .why-icon { font-size: 2.5rem; display: block; margin-bottom: var(--space-md); }
+  .why-card h4 { margin-bottom: var(--space-sm); }
+  .why-card p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  .reco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+  .reco-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .reco-card h3 { margin-bottom: var(--space-md); }
+  .reco-card p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .reco-card a { color: var(--color-primary); font-weight: 600; }
+  .aviso-temporada { background: #FFF3E0; }
+  .aviso-temporada h2 { color: #E65100; margin-bottom: var(--space-md); }
+  .aviso-temporada p { color: var(--color-text); max-width: 700px; margin: 0 auto; }
+  .cta-section { background: linear-gradient(135deg, #00796B, #4DB6AC); color: white; }
+  .cta-section h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-section p { opacity: 0.9; font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  @media (max-width: 1024px) { .zones-grid, .reco-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Ginkanas en Lugo | Despedidas y Grupos';
+const description = 'Ginkanas en Lugo para despedidas, empresas y grupos. Muralla romana Patrimonio de la Humanidad, tapas gratis y ambiente auténtico. Desde 25€/persona.';
+
+const zonas = [
+  {
+    name: 'Muralla romana (UNESCO)',
+    description: 'La única muralla romana completa del mundo. 2 km caminables por encima. Escenario único e irrepetible para cualquier ginkana.'
+  },
+  {
+    name: 'Casco histórico',
+    description: 'Dentro de la muralla. Catedral, Praza Maior, calles empedradas. Compacto y perfecto para ginkanas de misterio.'
+  },
+  {
+    name: 'Zona de tapas',
+    description: 'En Lugo las tapas son GRATIS con cada consumición. La Rúa Nova y alrededores son el paraíso del tapeo. Obligatorio post-ginkana.'
+  },
+  {
+    name: 'Parque Rosalía de Castro',
+    description: 'El pulmón verde de Lugo. Amplio, con zonas arboladas. Perfecto para ginkanas con pruebas físicas o grupos grandes.'
+  }
+];
+
+const porque = [
+  { icon: '🏛️', titulo: 'Muralla única', texto: 'La única muralla romana completa del mundo. Patrimonio UNESCO. Escenario irrepetible.' },
+  { icon: '🍻', titulo: 'Tapas gratis', texto: 'En Lugo, con cada bebida te ponen tapa. Gratis. El tapeo aquí es legendario.' },
+  { icon: '💰', titulo: 'Muy económica', texto: 'Lugo es probablemente la ciudad más barata de Galicia. El presupuesto da para más.' },
+  { icon: '🥩', titulo: 'Gastronomía top', texto: 'Carne de vacuno gallego, pulpo, quesos. La materia prima es de 10.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas en Lugo",
+  "provider": { "@type": "LocalBusiness", "name": "Ginkanas.es", "telephone": "+34678288284" },
+  "areaServed": { "@type": "City", "name": "Lugo" },
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-city">
+    <div class="container">
+      <span class="hero-badge">🏛️ La ciudad de la muralla</span>
+      <h1>Ginkanas en <span class="text-gradient">Lugo</span></h1>
+      <p class="hero-text">La única muralla romana completa del mundo y tapas gratis. Lugo es ese destino que no esperas y te sorprende.</p>
+      <div class="hero-meta">
+        <span>💰 Desde 25€/persona</span>
+        <span>⏱️ 2 horas</span>
+        <span>👥 Desde 6 personas</span>
+      </div>
+      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Lugo" class="btn btn-whatsapp btn-lg">Reservar en Lugo</a>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">¿Dónde jugamos en Lugo?</h2>
+      <div class="zones-grid">
+        {zonas.map((z) => (
+          <div class="zone-card">
+            <h3>{z.name}</h3>
+            <p>{z.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">¿Por qué Lugo para tu ginkana?</h2>
+      <div class="why-grid">
+        {porque.map((p) => (
+          <div class="why-card">
+            <span class="why-icon">{p.icon}</span>
+            <h4>{p.titulo}</h4>
+            <p>{p.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Te recomendamos según tu plan</h2>
+      <div class="reco-grid">
+        <div class="reco-card">
+          <h3>🎉 Despedida</h3>
+          <p>Ginkana por la muralla y casco histórico. Después, ruta de tapas gratis que puede durar horas. Presupuesto imbatible.</p>
+          <a href="/ginkanas-despedidas/">Ver ginkanas despedidas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>🏢 Empresa</h3>
+          <p>Parque Rosalía para grupos grandes. La muralla como telón de fondo. Cena de empresa con carne gallega.</p>
+          <a href="/ginkanas-empresas/">Ver ginkanas empresas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>🎂 Cumpleaños</h3>
+          <p>Ginkana Templarios por la muralla. Misterio medieval, acertijos históricos. Tapeo épico para cerrar.</p>
+          <a href="/ginkanas-adultos/">Ver ginkanas adultos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section tapas-tip">
+    <div class="container text-center">
+      <h2>🍻 El secreto de Lugo: tapas gratis</h2>
+      <p>En Lugo, con cada bebida que pides te ponen una tapa. Gratis. No es broma. Una caña son 1.50€ y viene con pincho de tortilla, empanada, pulpo... Podéis hacer la ginkana y después cenar de tapas gastando casi nada. Es el plan más económico de toda Galicia.</p>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>¿Organizando algo en Lugo?</h2>
+      <p>Cuéntanos qué celebráis y os ayudamos a montar el plan completo.</p>
+      <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-city { background: linear-gradient(135deg, #E8EAF6 0%, #fff 100%); padding: var(--space-3xl) 0; }
+  .hero-badge { display: inline-block; background: rgba(48,63,159,0.1); color: #303F9F; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
+  .text-gradient { background: linear-gradient(135deg, #303F9F, #5C6BC0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
+  .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
+  .zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .zone-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .zone-card h3 { color: #303F9F; margin-bottom: var(--space-sm); }
+  .zone-card p { color: var(--color-text-light); margin: 0; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
+  .why-card { text-align: center; padding: var(--space-lg); }
+  .why-icon { font-size: 2.5rem; display: block; margin-bottom: var(--space-md); }
+  .why-card h4 { margin-bottom: var(--space-sm); }
+  .why-card p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  .reco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+  .reco-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .reco-card h3 { margin-bottom: var(--space-md); }
+  .reco-card p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .reco-card a { color: var(--color-primary); font-weight: 600; }
+  .tapas-tip { background: #FFF8E1; }
+  .tapas-tip h2 { color: #F57C00; margin-bottom: var(--space-md); }
+  .tapas-tip p { color: var(--color-text); max-width: 700px; margin: 0 auto; }
+  .cta-section { background: linear-gradient(135deg, #303F9F, #5C6BC0); color: white; }
+  .cta-section h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-section p { opacity: 0.9; font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  @media (max-width: 1024px) { .zones-grid, .reco-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+</style>

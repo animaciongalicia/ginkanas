@@ -1,0 +1,232 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Ginkanas para Adultos y Grupos en Galicia';
+const description = 'Ginkanas para cumpleaños, quedadas y grupos de amigos en Galicia. La forma más divertida de celebrar cualquier excusa. Desde 25€/persona.';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas para Adultos y Grupos",
+  "provider": { "@type": "LocalBusiness", "name": "Ginkanas.es" },
+  "areaServed": "Galicia, Spain",
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-inner">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">🎂 Para cualquier excusa para juntarse</span>
+        <h1>Ginkanas para <span class="text-gradient">Adultos</span></h1>
+        <p class="hero-text">
+          Cumples, quedadas, reencuentros, "porque llevamos mucho sin vernos"... 
+          Cualquier excusa es buena para organizar algo diferente.
+        </p>
+        <div class="hero-meta">
+          <span class="meta-item">💰 Desde 25€/persona</span>
+          <span class="meta-item">⏱️ 2 horas de risas</span>
+          <span class="meta-item">👥 Grupos desde 6 personas</span>
+        </div>
+        <div class="hero-cta">
+          <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20para%20un%20grupo" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            Reservar ginkana
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Para qué ocasión?</h2>
+        <p>Da igual el motivo. Si queréis pasarlo bien, esto es para vosotros.</p>
+      </div>
+      
+      <div class="occasions-grid">
+        <div class="occasion-card">
+          <div class="occasion-icon">🎂</div>
+          <h3>Cumpleaños</h3>
+          <p>Los 30, los 40, los 50... Una forma diferente de celebrar. El homenajeado será el centro de las bromas.</p>
+        </div>
+        <div class="occasion-card">
+          <div class="occasion-icon">👯</div>
+          <h3>Quedadas de amigas</h3>
+          <p>Ese grupo de WhatsApp que siempre queda en nada. Ahora tenéis excusa para veros de verdad.</p>
+        </div>
+        <div class="occasion-card">
+          <div class="occasion-icon">🔄</div>
+          <h3>Reencuentros</h3>
+          <p>La pandilla del instituto, los del pueblo, los de la uni... Romped el hielo jugando.</p>
+        </div>
+        <div class="occasion-card">
+          <div class="occasion-icon">👨‍👩‍👧‍👦</div>
+          <h3>Familia</h3>
+          <p>Primos, cuñados, suegros... Una forma de pasar tiempo juntos sin acabar hablando de política.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Ginkanas favoritas para grupos</h2>
+        <p>Estas son las que más eligen los grupos de adultos.</p>
+      </div>
+      
+      <div class="products-grid">
+        <a href="/experiencias/ginkana-cluedo/" class="product-card">
+          <h3>🔍 Ginkana Cluedo</h3>
+          <p>Resuelve el misterio mientras recorres la ciudad. Pistas, sospechosos y mucha intriga.</p>
+          <span class="product-price">Desde 25€/persona</span>
+        </a>
+        <a href="/experiencias/ginkana-escuela-magica/" class="product-card">
+          <h3>🧙 Ginkana Escuela Mágica</h3>
+          <p>Para fans de Harry Potter. Hechizos, pociones y torneo de Quidditch.</p>
+          <span class="product-price">Desde 25€/persona</span>
+        </a>
+        <a href="/experiencias/ginkana-lendas/" class="product-card">
+          <h3>👻 Ginkana Lendas</h3>
+          <p>Descubre las leyendas de Galicia. Meigas, trasnos y la Santa Compaña.</p>
+          <span class="product-price">Desde 25€/persona</span>
+        </a>
+        <a href="/experiencias/ginkana-supervivientes/" class="product-card">
+          <h3>🏝️ Ginkana Supervivientes</h3>
+          <p>Pruebas físicas y de habilidad. Solo los más fuertes sobreviven.</p>
+          <span class="product-price">Desde 25€/persona</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Tenéis excusa para quedar?</h2>
+        <p>Cuéntanos cuántos sois, qué celebráis y cuándo, y os ayudamos a montar algo memorable.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          WhatsApp: 678 288 284
+        </a>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-inner {
+    background: linear-gradient(135deg, #F0FDF4 0%, var(--color-bg) 100%);
+    padding: var(--space-3xl) 0;
+  }
+  
+  .hero-content { max-width: 800px; }
+  
+  .hero-badge {
+    display: inline-block;
+    background: rgba(126, 211, 33, 0.15);
+    color: var(--color-accent-dark);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-text {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .meta-item { font-weight: 500; }
+  
+  .occasions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .occasion-card {
+    text-align: center;
+    padding: var(--space-xl);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+  }
+  
+  .occasion-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .occasion-card h3 { margin-bottom: var(--space-sm); }
+  .occasion-card p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .product-card {
+    background: var(--color-bg);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .product-card h3 { margin-bottom: var(--space-md); }
+  .product-card p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  
+  .product-price {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
+    text-align: center;
+  }
+  
+  .cta-content h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-content p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  
+  @media (max-width: 1024px) {
+    .occasions-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 640px) {
+    .occasions-grid, .products-grid { grid-template-columns: 1fr; }
+  }
+</style>

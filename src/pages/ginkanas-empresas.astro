@@ -1,0 +1,471 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Ginkanas para Empresas y Team Building en Galicia';
+const description = 'Team building que funciona de verdad. Ginkanas para empresas en Galicia que mejoran la comunicación, crean equipo y generan recuerdos. Vigo, Coruña, Santiago.';
+
+const beneficios = [
+  {
+    icon: '🤝',
+    title: 'Mejora la comunicación',
+    text: 'Cuando juegas, las barreras caen. El jefe, el becario y el de contabilidad son iguales en una ginkana.'
+  },
+  {
+    icon: '💡',
+    title: 'Potencia la creatividad',
+    text: 'Resolver pruebas absurdas activa partes del cerebro que Excel no toca. Y eso se nota después.'
+  },
+  {
+    icon: '🎯',
+    title: 'Crea recuerdos compartidos',
+    text: 'Las anécdotas de la ginkana aparecerán en cada cena de empresa durante años. Garantizado.'
+  },
+  {
+    icon: '⚡',
+    title: 'Rompe la rutina',
+    text: 'Un equipo que solo trabaja, se quema. Un equipo que también juega, rinde más.'
+  }
+];
+
+const formatos = [
+  {
+    title: 'Ginkana competitiva',
+    description: 'Equipos enfrentados. Puntos, ranking y premio al ganador. Ideal si tu equipo tiene espíritu competitivo.',
+    ideal: 'Equipos de ventas, startups, perfiles comerciales'
+  },
+  {
+    title: 'Ginkana colaborativa',
+    description: 'Todos juntos contra el reloj. Si no colaboráis, no ganáis. Perfecta para mejorar comunicación.',
+    ideal: 'Departamentos nuevos, equipos con roces, integraciones post-fusión'
+  },
+  {
+    title: 'Escape Room urbano',
+    description: 'La ciudad es vuestra sala de escape. Acertijos, enigmas y tiempo en contra. Premium y diferente.',
+    ideal: 'Directivos, equipos de innovación, eventos especiales'
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas para Empresas y Team Building",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ginkanas.es"
+  },
+  "areaServed": "Galicia, Spain",
+  "description": description
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <!-- HERO -->
+  <section class="hero-inner">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">🏢 Team building que no aburre</span>
+        <h1>Ginkanas para <span class="text-gradient">Empresas</span></h1>
+        <p class="hero-text">
+          El team building típico es un coñazo. Dinámicas forzadas, silencios incómodos y ganas de volver al curro. 
+          Esto es otra cosa. Aquí se juega, se ríe y se crea equipo de verdad.
+        </p>
+        <div class="hero-meta">
+          <span class="meta-item">📍 En toda Galicia</span>
+          <span class="meta-item">👥 Desde 10 hasta 200 personas</span>
+          <span class="meta-item">⏱️ 2-4 horas de actividad</span>
+        </div>
+        <div class="hero-cta">
+          <a href="https://wa.me/34678288284?text=Hola!%20Necesito%20info%20sobre%20ginkanas%20para%20empresa" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+            Solicitar presupuesto
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- BENEFICIOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Por qué una ginkana para tu equipo?</h2>
+        <p>Porque las cenas de empresa están bien, pero no crean equipo. Esto sí.</p>
+      </div>
+      
+      <div class="benefits-grid">
+        {beneficios.map((b) => (
+          <div class="benefit-card">
+            <div class="benefit-icon">{b.icon}</div>
+            <h3>{b.title}</h3>
+            <p>{b.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- FORMATOS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Formatos que funcionan</h2>
+        <p>Cada equipo es diferente. Adaptamos la experiencia a lo que necesitáis.</p>
+      </div>
+      
+      <div class="formats-grid">
+        {formatos.map((f) => (
+          <div class="format-card">
+            <h3>{f.title}</h3>
+            <p>{f.description}</p>
+            <div class="format-ideal">
+              <strong>Ideal para:</strong> {f.ideal}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- PROCESO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Cómo trabajamos con empresas?</h2>
+        <p>Sin burocracia. Queremos que sea fácil para ti.</p>
+      </div>
+      
+      <div class="process-timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">1</div>
+          <div class="timeline-content">
+            <h3>Nos cuentas</h3>
+            <p>Cuántas personas, qué objetivo buscáis (cohesión, celebración, integración...), fechas posibles y presupuesto orientativo.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">2</div>
+          <div class="timeline-content">
+            <h3>Proponemos</h3>
+            <p>Te mandamos una propuesta personalizada con el formato que mejor encaja, ubicación y precio cerrado.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">3</div>
+          <div class="timeline-content">
+            <h3>Ajustamos</h3>
+            <p>Si quieres cambiar algo, lo adaptamos. Podemos incluir pruebas específicas de vuestra empresa o sector.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">4</div>
+          <div class="timeline-content">
+            <h3>Ejecutamos</h3>
+            <p>El día D nos encargamos de todo. Tú solo tienes que disfrutar con tu equipo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CASOS DE USO -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Para qué ocasión?</h2>
+        <p>Hay mil excusas para organizar una ginkana de empresa. Estas son las más frecuentes.</p>
+      </div>
+      
+      <div class="occasions-grid">
+        <div class="occasion">
+          <h4>🎯 Kick-offs y arranques</h4>
+          <p>Empezar el año o un proyecto con energía y buen rollo.</p>
+        </div>
+        <div class="occasion">
+          <h4>🤝 Integraciones</h4>
+          <p>Cuando se fusionan equipos o llegan muchas incorporaciones.</p>
+        </div>
+        <div class="occasion">
+          <h4>🏆 Celebraciones</h4>
+          <p>Cerrar un buen trimestre, un aniversario, un logro importante.</p>
+        </div>
+        <div class="occasion">
+          <h4>🔄 Cambios de cultura</h4>
+          <p>Cuando quieres transmitir que esto es diferente, que aquí se trabaja distinto.</p>
+        </div>
+        <div class="occasion">
+          <h4>📅 Eventos anuales</h4>
+          <p>La típica jornada de empresa pero con algo que de verdad mola.</p>
+        </div>
+        <div class="occasion">
+          <h4>🌟 Incentivos</h4>
+          <p>Premiar al equipo con algo memorable, no con otra cena aburrida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-content">
+          <h2>¿Hablamos de tu equipo?</h2>
+          <p>Cuéntanos qué necesitas y te preparamos una propuesta sin compromiso. Presupuesto cerrado, sin sorpresas.</p>
+          <div class="cta-buttons">
+            <a href="https://wa.me/34678288284?text=Hola!%20Necesito%20presupuesto%20para%20team%20building" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+              WhatsApp: 678 288 284
+            </a>
+            <a href="/contacto/" class="btn btn-outline btn-lg">
+              Formulario de contacto
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-inner {
+    background: linear-gradient(135deg, #E8F4FD 0%, var(--color-bg) 100%);
+    padding: var(--space-3xl) 0;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0, 78, 137, 0.1);
+    color: var(--color-secondary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-secondary), #0066B3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-text {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .meta-item {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .benefit-card {
+    text-align: center;
+    padding: var(--space-xl);
+  }
+  
+  .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .benefit-card h3 {
+    margin-bottom: var(--space-md);
+    font-size: 1.125rem;
+  }
+  
+  .benefit-card p {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+  }
+  
+  .formats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .format-card {
+    background: var(--color-bg);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .format-card h3 {
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+  }
+  
+  .format-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .format-ideal {
+    background: var(--color-bg-alt);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+  }
+  
+  .process-timeline {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .timeline-item {
+    display: flex;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    position: relative;
+  }
+  
+  .timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 50px;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+  }
+  
+  .timeline-marker {
+    width: 50px;
+    height: 50px;
+    background: var(--color-secondary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .timeline-content h3 {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .timeline-content p {
+    color: var(--color-text-light);
+  }
+  
+  .occasions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .occasion {
+    background: var(--color-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+  }
+  
+  .occasion h4 {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .occasion p {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    margin: 0;
+  }
+  
+  .cta-section {
+    background: var(--color-bg-dark);
+  }
+  
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-secondary), #0066B3);
+    padding: var(--space-3xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  
+  .cta-box h2 {
+    color: white;
+    margin-bottom: var(--space-md);
+  }
+  
+  .cta-box p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  
+  .cta-box .btn-outline {
+    border-color: white;
+    color: white;
+  }
+  
+  .cta-box .btn-outline:hover {
+    background: white;
+    color: var(--color-secondary);
+  }
+  
+  @media (max-width: 1024px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .formats-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .occasions-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .occasions-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    
+    .timeline-item:not(:last-child)::after {
+      display: none;
+    }
+  }
+</style>

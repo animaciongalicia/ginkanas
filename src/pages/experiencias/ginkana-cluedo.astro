@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Ginkana Cluedo | Misterio por las Calles de Galicia';
+const description = 'La Ginkana Cluedo convierte la ciudad en un tablero de juego. Resuelve el misterio, descubre al culpable y recorre las calles buscando pistas. Desde 25€/persona.';
+
+const dinamica = [
+  'Se ha cometido un crimen en la ciudad',
+  'Hay varios sospechosos, cada uno con su coartada',
+  'Recorreréis diferentes puntos buscando pistas',
+  'Interrogaréis a "testigos" (actores o el monitor)',
+  'Descartaréis sospechosos con la lógica',
+  'El equipo que resuelva el caso, gana'
+];
+
+const faqs = [
+  { q: '¿Es difícil?', a: 'Está diseñada para que todos puedan participar. No hace falta ser Sherlock Holmes, solo prestar atención y trabajar en equipo.' },
+  { q: '¿Es competitiva?', a: 'Puede ser. Podemos dividir al grupo en equipos que compiten por resolver el caso primero, o hacerla colaborativa.' },
+  { q: '¿Hay que correr?', a: 'No. Es un paseo tranquilo por la ciudad resolviendo acertijos. Nada de prisas.' },
+  { q: '¿Vale para despedidas?', a: 'Sí, aunque es menos "loca". Es perfecta si el grupo prefiere algo más tranquilo o hay mezcla de edades.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Ginkana Cluedo",
+  "description": description,
+  "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-exp">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="exp-tag">🔍 Misterio y deduccción</span>
+        <h1>Ginkana Cluedo</h1>
+        <p>La ciudad se convierte en un tablero de Cluedo gigante. Un crimen, varios sospechosos, pistas ocultas y tu grupo como detectives. ¿Seréis capaces de resolver el misterio?</p>
+        <div class="meta-boxes">
+          <div class="meta-box"><span class="label">Precio</span><span class="value">Desde 25€/persona</span></div>
+          <div class="meta-box"><span class="label">Duración</span><span class="value">2 horas</span></div>
+          <div class="meta-box"><span class="label">Grupo mín.</span><span class="value">8 personas</span></div>
+        </div>
+        <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Cluedo" class="btn btn-whatsapp btn-lg">Reservar Ginkana Cluedo</a>
+      </div>
+      <div class="hero-image">
+        <img src="/images/mascota-escondida.png" alt="Monitora buscando pistas" loading="eager">
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container content-grid">
+      <div class="content-main">
+        <h2>¿En qué consiste?</h2>
+        <p>La Ginkana Cluedo es una experiencia de misterio donde el grupo tiene que resolver un crimen ficticio recorriendo la ciudad. Combina paseo, trabajo en equipo y pensamiento deductivo.</p>
+        <p>No es una carrera ni hay que correr. Es un paseo con propósito donde cada parada os da información nueva para ir descartando sospechosos.</p>
+        
+        <h3>Dinámica del juego</h3>
+        <ol class="dinamica-list">
+          {dinamica.map((d) => <li>{d}</li>)}
+        </ol>
+        
+        <h3>¿Dónde funciona mejor?</h3>
+        <p>Los cascos históricos son perfectos: Santiago (zona catedral), Pontevedra (casco peatonal), Coruña (ciudad vieja), Lugo (dentro de la muralla)... Lugares con encanto que potencian la atmósfera de misterio.</p>
+      </div>
+      
+      <div class="content-side">
+        <div class="info-box">
+          <h4>✅ Incluye</h4>
+          <ul>
+            <li>Monitor/Game Master</li>
+            <li>Dosier de investigación</li>
+            <li>Pistas y acertijos</li>
+            <li>Personajes sospechosos</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h4>👯 Ideal para</h4>
+          <ul>
+            <li>Cumpleaños originales</li>
+            <li>Grupos de amigos</li>
+            <li>Team building suave</li>
+            <li>Despedidas tranquilas</li>
+          </ul>
+        </div>
+        <div class="mascota-box">
+          <img src="/images/mascota-leyendo-mapa.png" alt="Monitora con mapa">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Preguntas frecuentes</h2>
+      <div class="faqs-grid">
+        {faqs.map((faq) => (
+          <div class="faq-card">
+            <h4>{faq.q}</h4>
+            <p>{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <h2>¿Os va el misterio?</h2>
+        <p>Cuéntanos cuántos sois y en qué ciudad. Preparamos un caso a vuestra medida.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+      </div>
+      <div class="cta-image">
+        <img src="/images/mascota-mapa-tesoro.png" alt="Monitora con mapa del tesoro">
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-exp { background: linear-gradient(135deg, #E8EAF6 0%, #fff 100%); padding: var(--space-3xl) 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .exp-tag { display: inline-block; background: #303F9F; color: white; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md); }
+  .hero-text h1 { margin-bottom: var(--space-lg); }
+  .hero-text p { font-size: 1.125rem; color: var(--color-text-light); margin-bottom: var(--space-xl); }
+  .meta-boxes { display: flex; gap: var(--space-md); margin-bottom: var(--space-xl); flex-wrap: wrap; }
+  .meta-box { background: white; padding: var(--space-md); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+  .meta-box .label { display: block; font-size: 0.75rem; color: var(--color-text-light); text-transform: uppercase; }
+  .meta-box .value { font-weight: 700; color: #303F9F; }
+  .hero-image img { max-width: 100%; border-radius: var(--radius-lg); }
+  
+  .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); }
+  .content-main h2 { margin-bottom: var(--space-lg); }
+  .content-main h3 { margin: var(--space-xl) 0 var(--space-md); }
+  .content-main p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .dinamica-list { padding-left: var(--space-xl); }
+  .dinamica-list li { padding: var(--space-sm) 0; color: var(--color-text-light); }
+  
+  .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
+  .info-box { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box ul { list-style: none; }
+  .info-box li { padding: var(--space-xs) 0; color: var(--color-text-light); }
+  .mascota-box img { max-width: 180px; margin: 0 auto; display: block; }
+  
+  .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+  .faq-card h4 { margin-bottom: var(--space-sm); color: #303F9F; }
+  .faq-card p { color: var(--color-text-light); margin: 0; }
+  
+  .cta-section { background: linear-gradient(135deg, #303F9F, #5C6BC0); }
+  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-text h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-image img { max-width: 220px; }
+  
+  @media (max-width: 1024px) {
+    .hero-grid, .content-grid, .cta-grid { grid-template-columns: 1fr; }
+    .hero-image, .cta-image { order: -1; text-align: center; }
+    .hero-image img, .cta-image img { max-width: 280px; }
+    .faqs-grid { grid-template-columns: 1fr; }
+  }
+</style>
