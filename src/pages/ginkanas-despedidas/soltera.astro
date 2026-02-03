@@ -1,0 +1,278 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Despedidas de Soltera en Galicia | Ginkanas.es';
+const description = 'Organiza la mejor despedida de soltera en Galicia. Ginkanas, pruebas divertidas y momentos inolvidables para la futura novia. 20 anos de experiencia.';
+
+const pruebas = [
+  'Conseguir que un desconocido le invite a algo',
+  'Besar una calva (con permiso)',
+  'Hacer un TikTok viral en plena calle',
+  'Vender condones a turistas',
+  'Conseguir firmas en partes del cuerpo',
+  'Serenata a un desconocido guapo',
+  'Foto con alguien uniformado',
+  'Disfrazarla con lo que encontreis'
+];
+
+const ciudades = [
+  { nombre: 'Vigo', href: '/ginkanas-vigo/', desc: 'Mejor vida nocturna de Galicia' },
+  { nombre: 'Santiago', href: '/ginkanas-santiago/', desc: 'Casco historico + rutas de vinos' },
+  { nombre: 'Sanxenxo', href: '/ginkanas-sanxenxo/', desc: 'Playa + fiesta en verano' },
+  { nombre: 'A Coruna', href: '/ginkanas-coruna/', desc: 'Paseo maritimo + zona Orzan' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Despedidas de Soltera en Galicia",
+  "provider": { "@type": "LocalBusiness", "name": "Ginkanas.es", "telephone": "+34678288284" },
+  "areaServed": { "@type": "Place", "name": "Galicia" },
+  "description": description
+};
+---
+
+<Layout title={title} description={description} schema={schema}>
+  
+  <section class="hero-soltera">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="hero-badge">Para futuras novias</span>
+        <h1>Despedidas de Soltera</h1>
+        <p>La novia tiene que sufrir. Con carino, eso si. Llevamos 20 anos organizando despedidas y sabemos como hacer que sea un dia inolvidable para todas.</p>
+        <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20organizar%20una%20despedida%20de%20soltera" class="btn btn-whatsapp btn-lg">Organizar despedida de soltera</a>
+      </div>
+      <div class="hero-image">
+        <img src="/images/mascota-grupo.png" alt="Grupo de despedida de soltera">
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Que hacemos en una despedida de soltera?</h2>
+      <p class="section-intro">La novia sera el centro de todas las pruebas. Vacile, risas y momentos que recordareis siempre.</p>
+      
+      <div class="pruebas-grid">
+        {pruebas.map((prueba) => (
+          <div class="prueba-card">
+            <span class="prueba-icon">🎯</span>
+            <p>{prueba}</p>
+          </div>
+        ))}
+      </div>
+      
+      <p class="nota">Adaptamos las pruebas al grupo. Si quereis algo mas suave o mas atrevido, solo teneis que decirlo.</p>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Donde celebrar la despedida?</h2>
+      <p class="section-intro">Galicia tiene ciudades perfectas para despedidas. Elige segun vuestro rollo.</p>
+      
+      <div class="ciudades-grid">
+        {ciudades.map((ciudad) => (
+          <a href={ciudad.href} class="ciudad-card">
+            <h3>{ciudad.nombre}</h3>
+            <p>{ciudad.desc}</p>
+            <span class="ciudad-link">Ver ginkanas</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container content-box">
+      <div class="content-text">
+        <h2>Por que una ginkana para la despedida?</h2>
+        <p>Las cenas estan bien. Pero una ginkana es otra cosa:</p>
+        <ul>
+          <li><strong>Todas participan:</strong> No hay gente en un rincon mirando el movil.</li>
+          <li><strong>La novia es protagonista:</strong> Todo gira en torno a ella.</li>
+          <li><strong>Genera recuerdos:</strong> Las fotos y anecdotas duran anos.</li>
+          <li><strong>Rompe el hielo:</strong> Si hay amigas que no se conocen, acaban siendo colegas.</li>
+        </ul>
+      </div>
+      <div class="content-image">
+        <img src="/images/mascota-saltando.png" alt="Celebracion despedida">
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Experiencias para despedidas de soltera</h2>
+      <div class="experiencias-grid">
+        <a href="/experiencias/ginkana-loca/" class="exp-card">
+          <h3>Ginkana Loca</h3>
+          <p>La clasica. Pruebas atrevidas, vacile y risas garantizadas.</p>
+          <span>Desde 25 euros/persona</span>
+        </a>
+        <a href="/experiencias/ginkana-cluedo/" class="exp-card">
+          <h3>Ginkana Cluedo</h3>
+          <p>Para grupos mas tranquilos. Misterio y trabajo en equipo.</p>
+          <span>Desde 25 euros/persona</span>
+        </a>
+        <a href="/experiencias/ginkana-escuela-magica/" class="exp-card">
+          <h3>Escuela Magica</h3>
+          <p>Si la novia es fan de Harry Potter, esta es la suya.</p>
+          <span>Desde 25 euros/persona</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section cta-section">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <h2>Organizando la despedida?</h2>
+        <p>Cuentanos cuantas sois, en que ciudad y que fecha. Nosotras nos encargamos del resto.</p>
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+      </div>
+      <div class="cta-image">
+        <img src="/images/mascota-pulgar-arriba.png" alt="Contactar">
+      </div>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-soltera {
+    background: linear-gradient(135deg, #FFE4EC 0%, #fff 100%);
+    padding: var(--space-3xl) 0;
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+  
+  .hero-badge {
+    display: inline-block;
+    background: #E91E63;
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+  
+  .hero-text h1 { margin-bottom: var(--space-lg); }
+  .hero-text p { font-size: 1.125rem; color: var(--color-text-light); margin-bottom: var(--space-xl); }
+  .hero-image img { max-width: 100%; }
+  
+  .section-heading { text-align: center; margin-bottom: var(--space-md); }
+  .section-intro { text-align: center; color: var(--color-text-light); max-width: 600px; margin: 0 auto var(--space-2xl); }
+  
+  .pruebas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+  }
+  
+  .prueba-card {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .prueba-icon { font-size: 1.5rem; display: block; margin-bottom: var(--space-sm); }
+  .prueba-card p { color: var(--color-text-light); margin: 0; font-size: 0.9375rem; }
+  
+  .nota {
+    text-align: center;
+    margin-top: var(--space-xl);
+    padding: var(--space-md);
+    background: #FFF8E1;
+    border-radius: var(--radius-md);
+    color: var(--color-text-light);
+  }
+  
+  .ciudades-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+  }
+  
+  .ciudad-card {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+  }
+  
+  .ciudad-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .ciudad-card h3 { margin-bottom: var(--space-sm); color: #E91E63; }
+  .ciudad-card p { color: var(--color-text-light); margin-bottom: var(--space-md); font-size: 0.9375rem; }
+  .ciudad-link { color: #E91E63; font-weight: 600; font-size: 0.875rem; }
+  
+  .content-box {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+  
+  .content-text h2 { margin-bottom: var(--space-lg); }
+  .content-text p { color: var(--color-text-light); margin-bottom: var(--space-lg); }
+  .content-text ul { list-style: none; }
+  .content-text li { padding: var(--space-sm) 0; color: var(--color-text-light); }
+  .content-image img { max-width: 250px; margin: 0 auto; display: block; }
+  
+  .experiencias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .exp-card {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+  }
+  
+  .exp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .exp-card h3 { margin-bottom: var(--space-sm); }
+  .exp-card p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .exp-card span { color: #E91E63; font-weight: 600; }
+  
+  .cta-section { background: linear-gradient(135deg, #E91E63, #FF5722); }
+  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-text h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-image img { max-width: 200px; }
+  
+  @media (max-width: 1024px) {
+    .hero-grid, .content-box, .cta-grid { grid-template-columns: 1fr; }
+    .hero-image, .content-image, .cta-image { text-align: center; }
+    .pruebas-grid, .ciudades-grid { grid-template-columns: repeat(2, 1fr); }
+    .experiencias-grid { grid-template-columns: 1fr; }
+  }
+  
+  @media (max-width: 640px) {
+    .pruebas-grid, .ciudades-grid { grid-template-columns: 1fr; }
+  }
+</style>
