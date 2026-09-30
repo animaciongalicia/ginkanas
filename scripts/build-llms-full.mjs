@@ -4,7 +4,7 @@ import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
-const SITE = 'https://ginkanas.es';
+const SITE = 'https://www.ginkanas.es';
 const SKIP = ['404', 'gracias', 'aviso-legal', 'privacidad', 'cookies'];
 
 function walk(dir) {

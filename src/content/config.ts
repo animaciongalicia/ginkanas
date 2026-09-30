@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 // Cada artículo del blog es un archivo .md en src/content/blog/. El nombre del archivo es la URL:
-// src/content/blog/mi-articulo.md  ->  https://ginkanas.es/blog/mi-articulo/
+// src/content/blog/mi-articulo.md  ->  https://www.ginkanas.es/blog/mi-articulo/
 // Los archivos que empiezan por _ (como _plantilla.md) no se publican.
 const blog = defineCollection({
   type: 'content',
