@@ -124,7 +124,7 @@ export function normalizeSchema(input: any, canonical: string, image: string) {
     }
   }
 
-  if (s['@type'] === 'Article') {
+  if (s['@type'] === 'Article' || s['@type'] === 'BlogPosting') {
     s['@type'] = 'BlogPosting';
     s.mainEntityOfPage = { '@type': 'WebPage', '@id': `${canonical}#webpage` };
     s.publisher = ORG_REF;
