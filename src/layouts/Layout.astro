@@ -40,7 +40,8 @@ const {
 } = Astro.props;
 
 const siteName = 'Ginkanas.es';
-const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const withBrand = `${title} | ${siteName}`;
+const fullTitle = title.includes(siteName) || withBrand.length > 62 ? title : withBrand;
 
 const pathname = Astro.url.pathname;
 const canonical = canonicalProp ?? new URL(pathname, SITE).href;

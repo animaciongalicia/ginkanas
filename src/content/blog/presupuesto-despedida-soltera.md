@@ -1,5 +1,5 @@
 ---
-titulo: "¿Cuánto Cuesta una Despedida de Soltera? Presupuesto Real"
+titulo: "¿Cuánto cuesta una despedida de soltera? Presupuesto real"
 descripcion: "Desglose real de costes para una despedida de soltera en Galicia. Alojamiento, actividades, comidas, transporte. Sin sorpresas."
 resumen: "Desglose real de costes. Alojamiento, actividades, comidas. Sin sorpresas."
 intro: "\"¿Cuánto tengo que poner?\" La pregunta que nadie se atreve a hacer en el grupo de WhatsApp. Te lo desglosamos con números reales."

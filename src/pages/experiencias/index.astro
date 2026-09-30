@@ -1,8 +1,73 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Prose from '../../components/Prose.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
-const title = 'Todas las Ginkanas y Experiencias | Ginkanas.es';
-const description = 'Catálogo completo de ginkanas en Galicia. Cluedo, Escuela Mágica, Lendas, Supervivientes y más. Encuentra la perfecta para tu grupo.';
+const title = 'Ginkanas y escape room en Galicia: todas las experiencias';
+const description = 'Cluedo, Loca, Escuela Mágica, Lendas, Supervivientes y escape room: qué experiencia elegir según la ocasión y el grupo. Desde 25 €/persona.';
+
+const ampliado = [
+  {
+    "h": "Para qué momentos sirve una ginkana",
+    "p": [
+      "Una ginkana funciona siempre que un grupo quiere hacer algo juntos que no sea sentarse a cenar. Estas son las ocasiones en las que más se contratan:"
+    ],
+    "ul": [
+      "<strong>Despedidas de soltera y de soltero.</strong> La ocasión estrella: el novi@ es el protagonista y todo el grupo participa. Encajan la <a href=\"/experiencias/ginkana-loca/\">Loca</a>, la <a href=\"/experiencias/ginkana-cluedo/\">Cluedo</a> o la <a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a>. <a href=\"/ginkanas-despedidas/\">Ver despedidas</a>.",
+      "<strong>Cumpleaños de adultos.</strong> Los 30, los 40 o los 50 sin repetir la cena de siempre. <a href=\"/ginkanas-adultos/\">Ver cumpleaños y grupos</a>.",
+      "<strong>Reencuentros y quedadas.</strong> La pandilla del instituto, los de la uni o ese grupo de amigos que nunca consigue quedar.",
+      "<strong>Equipos de empresa.</strong> Integrar a un equipo nuevo, celebrar un cierre de año o mejorar la comunicación. <a href=\"/ginkanas-empresas/\">Ver empresas</a>.",
+      "<strong>Familia y visitantes.</strong> Primos y cuñados que quieren jugar juntos, o gente de fuera que celebra algo en Galicia y quiere conocer la ciudad de otra forma."
+    ]
+  },
+  {
+    "h": "Qué experiencia elegir según cómo es tu grupo",
+    "ul": [
+      "<strong>Grupo tranquilo o con edades mezcladas:</strong> <a href=\"/experiencias/ginkana-cluedo/\">Cluedo</a>. Se piensa y se conversa; nadie tiene que hacer el ridículo.",
+      "<strong>Grupo extrovertido que quiere reírse:</strong> <a href=\"/experiencias/ginkana-loca/\">Loca</a>, con pruebas de cantar, bailar, saltar e interactuar con la gente.",
+      "<strong>Grupo competitivo:</strong> <a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a>, con ranking en vivo y pruebas de habilidad.",
+      "<strong>Grupo curioso o con visitantes de fuera:</strong> <a href=\"/experiencias/ginkana-lendas/\">Lendas</a>, que cuenta leyendas gallegas mientras se juega.",
+      "<strong>Aficionados a Harry Potter:</strong> <a href=\"/experiencias/ginkana-escuela-magica/\">Escuela Mágica</a>, con casas, hechizos y torneo.",
+      "<strong>Quien prefiere resolver acertijos:</strong> <a href=\"/escape-room/\">Escape room</a>, en local o móvil, de 60 a 90 minutos."
+    ]
+  },
+  {
+    "h": "Cómo funciona cualquier ginkana",
+    "p": [
+      "Todas las ginkanas comparten la misma base. Duran unas dos horas, se juegan por el centro de la ciudad y llevan monitor incluido. Quedáis en un punto céntrico, normalmente la plaza del Ayuntamiento o una calle popular; el monitor abre con un briefing de 10-15 minutos donde explica el juego y las reglas; después llegan las pruebas, que dependen del tipo de ginkana; y al final se cuentan los puntos y se hacen fotos.",
+      "El precio parte de 25 € por persona en despedidas, cumpleaños y grupos. Para empresas, el presupuesto es a medida. El mínimo habitual es de 6 personas; la Cluedo y la Supervivientes piden 8."
+    ]
+  },
+  {
+    "h": "Dónde se juega",
+    "p": [
+      "Trabajamos en toda Galicia, con especial dedicación a siete ciudades: <a href=\"/ginkanas-coruna/\">A Coruña</a>, <a href=\"/ginkanas-vigo/\">Vigo</a>, <a href=\"/ginkanas-santiago/\">Santiago de Compostela</a>, <a href=\"/ginkanas-sanxenxo/\">Sanxenxo</a>, <a href=\"/ginkanas-pontevedra/\">Pontevedra</a>, <a href=\"/ginkanas-ourense/\">Ourense</a> y <a href=\"/ginkanas-lugo/\">Lugo</a>. Cada página explica dónde se queda, qué zonas se usan y qué ginkana encaja mejor en esa ciudad."
+    ]
+  }
+];
+
+const faqs = [
+  {
+    "q": "¿Qué ginkana es mejor para una despedida?",
+    "a": "La Ginkana Loca es la más pedida en despedidas. Si el grupo es más tranquilo, la Cluedo; si es competitivo, la Supervivientes."
+  },
+  {
+    "q": "¿Qué ginkana recomendáis para una empresa?",
+    "a": "Cluedo para trabajar la comunicación, Supervivientes para equipos competitivos y escape room para liderazgo bajo presión. El presupuesto es a medida."
+  },
+  {
+    "q": "¿Cuánto duran las ginkanas?",
+    "a": "Unas dos horas: 10-15 minutos de briefing del monitor y el resto, pruebas. La Escuela Mágica y la Supervivientes pueden llegar a 2,5 horas. El escape room dura entre 60 y 90 minutos."
+  },
+  {
+    "q": "¿Hay que estar en forma?",
+    "a": "No. Las ginkanas de misterio y temáticas son paseos tranquilos. La Supervivientes tiene pruebas físicas, pero adaptables. Las de despedida son más de reír que de esfuerzo."
+  },
+  {
+    "q": "¿Cuántas personas hacen falta?",
+    "a": "Desde 6 personas en la mayoría de experiencias; la Cluedo y la Supervivientes piden 8. Para empresas, de 10 a 200."
+  }
+];
 
 const experiencias = [
   {
@@ -56,12 +121,12 @@ const experiencias = [
 ];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} faqs={faqs}>
   
   <section class="hero-inner">
     <div class="container">
       <h1>Nuestras Experiencias</h1>
-      <p class="hero-text">Cada ginkana es un mundo. Encuentra la perfecta para tu grupo.</p>
+      <p class="hero-text">Cinco ginkanas urbanas y un escape room para despedidas, cumpleaños, grupos y empresas en Galicia. Elige según la ocasión y cómo es tu grupo.</p>
     </div>
   </section>
   
@@ -90,7 +155,30 @@ const experiencias = [
       </div>
     </div>
   </section>
-  
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Comparativa rápida</h2>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead><tr><th>Experiencia</th><th>Ambiente</th><th>Duración</th><th>Mínimo</th><th>Ideal para</th></tr></thead>
+          <tbody>
+            <tr><td><a href="/experiencias/ginkana-loca/">Loca</a></td><td>Humor y retos en la calle</td><td>2 h</td><td>6</td><td>Despedidas</td></tr>
+            <tr><td><a href="/experiencias/ginkana-cluedo/">Cluedo</a></td><td>Misterio y deducción</td><td>2 h</td><td>8</td><td>Cumpleaños, grupos mixtos</td></tr>
+            <tr><td><a href="/experiencias/ginkana-escuela-magica/">Escuela Mágica</a></td><td>Fantasía temática</td><td>2-2,5 h</td><td>6</td><td>Fans de Harry Potter</td></tr>
+            <tr><td><a href="/experiencias/ginkana-lendas/">Lendas</a></td><td>Cultura gallega y misterio</td><td>2 h</td><td>6</td><td>Visitantes, curiosos</td></tr>
+            <tr><td><a href="/experiencias/ginkana-supervivientes/">Supervivientes</a></td><td>Competición y pruebas físicas</td><td>2-2,5 h</td><td>8</td><td>Equipos competitivos</td></tr>
+            <tr><td><a href="/escape-room/">Escape room</a></td><td>Acertijos en equipo</td><td>60-90 min</td><td>6</td><td>Empresas y grupos</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <Prose sections={ampliado} />
+
+  <FaqSection faqs={faqs} />
+
 </Layout>
 
 <style>
@@ -182,4 +270,10 @@ const experiencias = [
   @media (max-width: 640px) {
     .experiences-grid { grid-template-columns: 1fr; }
   }
+  .table-wrap { overflow-x: auto; }
+  .compare { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .compare th, .compare td { padding: var(--space-md); text-align: left; border-bottom: 1px solid var(--color-border); }
+  .compare th { background: var(--color-secondary); color: #fff; font-weight: 600; }
+  .compare td a { font-weight: 600; }
+  .section-heading { text-align: center; margin-bottom: var(--space-xl); }
 </style>
