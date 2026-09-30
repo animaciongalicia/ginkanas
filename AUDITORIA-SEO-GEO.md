@@ -168,3 +168,22 @@ Sobre cambiar **toda la arquitectura**: no. La arquitectura (páginas por públi
 
 ## Nota técnica: dominio canónico
 En Vercel el dominio principal es `www.ginkanas.es` (`ginkanas.es` redirige a él). Todos los canonical, el sitemap, `robots.txt`, `llms.txt` y los datos estructurados usan `https://www.ginkanas.es`. Si algún día se invirtiera la redirección, hay que cambiar `SITE` en `astro.config.mjs` y `src/lib/seo.ts`.
+
+---
+
+## Página del grupo (pendiente de crear, plan)
+Objetivo: dar credibilidad a Ginkanas.es explicando quién está detrás y cómo se relaciona con Animación Galicia y las webs hermanas. Es lo que más ayuda a que Google y las IA traten la marca como una entidad real (señales E-E-A-T).
+
+**Dónde:** enlace en el pie de página, columna "Nuestras webs" o "Sobre nosotros". Sugerencia de URL: `/sobre-nosotros/` (o `/grupo/`).
+
+**Contenido propuesto (~600-700 palabras, sin humo):**
+1. Quiénes somos: qué es Ginkanas.es y qué hace (una frase citable).
+2. El grupo: qué es Animación Galicia y cómo se relacionan las webs (despedidasgalicia.es, despedidascoruna.es, despedidasvigo.com, despedidas-sanxenxo.com). Aquí se aclara si Ginkanas.es forma parte del grupo o es una empresa separada.
+3. Trayectoria: desde cuándo se organizan ginkanas, en cuántas ciudades y qué tipo de eventos. Solo cifras que se puedan demostrar (los "20 años" y "5.000 grupos" necesitan respaldo).
+4. Cómo trabajamos: monitor incluido, briefing de 10-15 minutos, pruebas adaptadas al grupo, puntos de encuentro céntricos.
+5. Datos de empresa y contacto: titular, dirección, teléfono y correo (los datos legales están pendientes).
+6. Prueba social: reseñas de Google enlazadas, casos de empresas con permiso.
+
+**Datos estructurados:** `AboutPage` + `Organization` con `legalName`, `address`, `sameAs` (ficha de Google Business, redes) y `parentOrganization` cuando se confirme.
+
+**Necesito de ti antes de escribirla:** la relación real entre Ginkanas.es y Animación Galicia, la razón social y los datos legales, y qué cifras se pueden demostrar.

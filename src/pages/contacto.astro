@@ -1,9 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Prose from '../components/Prose.astro';
 import Icon from '../components/Icon.astro';
 
-const title = 'Contacto | Ginkanas.es';
+const title = 'Contacto y reservas de ginkanas en Galicia';
 const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Galicia. WhatsApp, teléfono o formulario. Te respondemos lo antes posible.';
+const ampliado = [
+  {
+    "h": "Cómo reservar una ginkana en cuatro pasos",
+    "ol": [
+      "<strong>Contacta.</strong> Por WhatsApp, teléfono o formulario. Cuéntanos cuántos sois, qué celebráis y cuándo queréis hacerlo.",
+      "<strong>Elige.</strong> Te recomendamos la ginkana que mejor encaja con el grupo. Si dudas, mira antes la <a href=\"/experiencias/\">comparativa de experiencias</a>.",
+      "<strong>Reserva.</strong> Confirmamos fecha, ciudad y punto de encuentro, y se cierra con una pequeña señal.",
+      "<strong>Juega.</strong> El día de la ginkana, el monitor os recibe, explica el juego en un briefing de 10-15 minutos y empieza la partida."
+    ]
+  },
+  {
+    "h": "Qué necesitamos para proponerte una ginkana",
+    "ul": [
+      "<strong>Número de personas.</strong> El mínimo habitual es de 6 (la Cluedo y la Supervivientes piden 8; empresas, desde 10).",
+      "<strong>Ciudad.</strong> Trabajamos en toda Galicia, sobre todo en A Coruña, Vigo, Santiago, Sanxenxo, Pontevedra, Ourense y Lugo.",
+      "<strong>Ocasión.</strong> Despedida, cumpleaños, quedada o evento de empresa: cambia el tono de las pruebas.",
+      "<strong>Fecha aproximada.</strong> Con ella confirmamos disponibilidad."
+    ],
+    "after": [
+      "El precio parte de 25 € por persona en despedidas, cumpleaños y grupos, y es a medida para empresas."
+    ]
+  }
+];
 ---
 
 <Layout title={title} description={description}>
@@ -127,7 +151,9 @@ const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Ga
     </div>
   </section>
   
-</Layout>
+<Prose sections={ampliado} />
+
+  </Layout>
 
 <style>
   .hero-inner {
