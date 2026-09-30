@@ -1,8 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Ginkanas para Adultos y Grupos en Galicia';
 const description = 'Ginkanas para cumpleaños, quedadas y grupos de amigos en Galicia. La forma más divertida de celebrar cualquier excusa. Desde 25€/persona.';
+
+const ampliado = [
+  {
+    "h": "Cómo funciona una ginkana para adultos",
+    "p": [
+      "Una ginkana dura unas dos horas y se juega por el centro de la ciudad. Empieza con un briefing de 10-15 minutos en el punto de encuentro, normalmente la plaza del Ayuntamiento o una calle céntrica; allí el monitor explica el desarrollo, forma los equipos y reparte el material.",
+      "Después llegan las pruebas, que dependen del tipo de ginkana: en la Cluedo se investiga un crimen y se descubre al asesino; en la Loca hay pruebas de cantar, bailar y saltar; en la Supervivientes se compite en pruebas de habilidad. Todo el recorrido transcurre por el centro, así que el plan de después queda a pocas calles."
+    ]
+  },
+  {
+    "h": "Qué ginkana elegir según el grupo",
+    "ul": [
+      "<strong>Grupo mixto o de edades variadas:</strong> <a href=\"/experiencias/ginkana-cluedo/\">Cluedo</a>. Se piensa, se habla y no hace falta hacer el ridículo.",
+      "<strong>Cumpleaños con ganas de risa:</strong> <a href=\"/experiencias/ginkana-loca/\">Loca</a>, con el homenajeado como protagonista.",
+      "<strong>Amigos con espíritu competitivo:</strong> <a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a>, con ranking en vivo.",
+      "<strong>Aficionados a Harry Potter:</strong> <a href=\"/experiencias/ginkana-escuela-magica/\">Escuela Mágica</a>.",
+      "<strong>Curiosos de Galicia o visitantes de fuera:</strong> <a href=\"/experiencias/ginkana-lendas/\">Lendas</a>."
+    ]
+  },
+  {
+    "h": "Tamaño del grupo y precio",
+    "p": [
+      "El mínimo habitual es de 6 personas (la Cluedo y la Supervivientes piden 8) y el precio parte de 25 € por persona. A partir de ahí, la propuesta se ajusta al tamaño del grupo, la ciudad y la experiencia. Si sois muchos, se forman equipos que compiten entre sí; si preferís jugar juntos, se puede plantear de forma colaborativa.",
+      "Para organizarlo solo hace falta decirnos cuántos sois, en qué ciudad y qué fecha tenéis pensada. Con eso os proponemos la ginkana que mejor encaja y los detalles de la quedada. Si el grupo es de fuera de Galicia o hay gente que no conoce la ciudad, mejor: las ginkanas se juegan por el centro y sirven para descubrirlo. Y si alguien no quiere hacer una prueba, no pasa nada: el monitor tiene alternativas y el resto del equipo sigue sumando."
+    ]
+  }
+];
 
 const schema = {
   "@context": "https://schema.org",
@@ -104,6 +132,8 @@ const schema = {
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <section class="section cta-section">
     <div class="container">
       <div class="cta-content">

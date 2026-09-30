@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
+import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkana Lendas | Leyendas y Misterios de Galicia';
 const description = 'Descubre las leyendas más fascinantes de Galicia jugando. Meigas, trasnos, la Santa Compaña y tesoros ocultos. Una experiencia única para conocer la cultura gallega. Desde 25€/persona.';
@@ -12,6 +13,47 @@ const leyendas = [
   { nombre: 'A Moura', desc: 'Seres encantados que custodian tesoros bajo castros y fuentes' },
   { nombre: 'El Urco', desc: 'El perro fantasma de las tormentas' },
   { nombre: 'Tesoros templarios', desc: 'Oro oculto por los caballeros de la Orden del Temple' }
+];
+
+const ampliado = [
+  {
+    "h": "Cómo transcurre la Ginkana Lendas",
+    "p": [
+      "Dura unas dos horas y se juega por el centro histórico de la ciudad, con el monitor haciendo de narrador."
+    ],
+    "ol": [
+      "<strong>Quedada.</strong> En la plaza del Ayuntamiento o una calle popular del centro; se confirma al reservar.",
+      "<strong>Briefing (10-15 minutos).</strong> El monitor presenta la historia, explica cómo se consiguen las pistas y cómo se puntúa.",
+      "<strong>Ruta con pruebas (en torno a una hora y media).</strong> Cada parada cuenta una leyenda gallega y se acompaña de una prueba relacionada. Las pistas os llevan a la siguiente parada.",
+      "<strong>Desenlace.</strong> Se resuelve el misterio final y, si el grupo quiere, se cierra con una queimada con conjuro (consultar precio)."
+    ]
+  },
+  {
+    "h": "Aprender sin que parezca una visita guiada",
+    "p": [
+      "La idea es que las leyendas se descubran jugando. En lugar de escuchar una explicación, el grupo resuelve un acertijo o supera una prueba y así llega a la historia de la Santa Compaña, las meigas, los trasnos o la Moura.",
+      "Adaptamos las leyendas a cada lugar: cada ciudad y cada villa gallega tiene las suyas, y al reservar os contamos cuáles entrarían en vuestro recorrido."
+    ]
+  },
+  {
+    "h": "¿Quién la disfruta más?",
+    "ul": [
+      "Grupos que quieren conocer Galicia de forma distinta a un tour convencional.",
+      "Visitantes de fuera de Galicia que celebran algo aquí.",
+      "Equipos de empresa que buscan una actividad con contenido.",
+      "Cumpleaños y quedadas con gente a la que le gusta la historia."
+    ],
+    "after": [
+      "No es una experiencia de miedo: tiene ambiente misterioso, pero es apta para todos los públicos. Puede hacerse de día o de noche; de noche gana atmósfera."
+    ]
+  },
+  {
+    "h": "Antes de reservar",
+    "ul": [
+      "<strong>Mejor en cascos históricos:</strong> Santiago, Lugo (dentro de la muralla), Pontevedra u Ourense dan más juego que una zona moderna.",
+      "<strong>Queimada:</strong> es un extra opcional que se pide al reservar."
+    ]
+  }
 ];
 
 const faqs = [
@@ -98,6 +140,8 @@ const schema = {
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <section class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Preguntas frecuentes</h2>

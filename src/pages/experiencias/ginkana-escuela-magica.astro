@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
+import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkana Escuela Mágica | Para Fans de Harry Potter';
 const description = 'Conviértete en mago o bruja por un día. Hechizos, pociones, clasificación en casas y torneo de Quidditch. La ginkana perfecta para fans de Harry Potter. Desde 25€/persona.';
@@ -12,6 +13,43 @@ const actividades = [
   { nombre: 'Búsqueda de Horrocruxes', desc: 'Encontrad los objetos ocultos por la ciudad' },
   { nombre: 'Torneo de Quidditch', desc: 'Versión terrestre del deporte mágico' },
   { nombre: 'Prueba final', desc: 'Solo los verdaderos magos la superarán' }
+];
+
+const ampliado = [
+  {
+    "h": "Vuestra primera clase de magia, paso a paso",
+    "p": [
+      "La Escuela Mágica dura entre dos horas y dos horas y media y se juega por el centro de la ciudad."
+    ],
+    "ol": [
+      "<strong>Quedada.</strong> En la plaza del Ayuntamiento o una calle céntrica; se confirma al reservar.",
+      "<strong>Briefing y ceremonia de selección (10-15 minutos).</strong> El monitor, en su papel de profesor, explica las normas de la escuela y el Sombrero Seleccionador reparte a cada participante en una de las cuatro casas.",
+      "<strong>Clases y pruebas (entre una hora y media y dos horas).</strong> Hechizos con pruebas de puntería y habilidad, pociones con ingredientes sorpresa, la búsqueda de objetos ocultos por la ciudad y el torneo de Quidditch en su versión terrestre.",
+      "<strong>Copa de las Casas.</strong> Se suman los puntos de todas las pruebas, gana la casa con más puntuación y se entregan los diplomas."
+    ]
+  },
+  {
+    "h": "Cómo se organiza la competición",
+    "p": [
+      "El grupo se reparte en las cuatro casas de siempre (Gryffindor, Slytherin, Ravenclaw y Hufflepuff). Cada prueba suma o resta puntos a la casa, así que da igual quién sea el mejor mago: gana el conjunto.",
+      "Como la puntuación se acumula, hay opciones hasta el final. La prueba final es la que decide la Copa y suele cambiar la clasificación."
+    ]
+  },
+  {
+    "h": "¿Hay que saber de Harry Potter?",
+    "p": [
+      "Conocer las películas ayuda a disfrutar de las referencias, pero no es imprescindible: las pruebas se explican en el briefing y se resuelven jugando, no recitando. Para grupos con adultos y niños hay una versión adaptada; la de adultos incluye pruebas más elaboradas."
+    ]
+  },
+  {
+    "h": "Antes de reservar",
+    "ul": [
+      "<strong>Ambiente:</strong> los cascos históricos (Santiago, Pontevedra, Lugo dentro de la muralla) potencian el juego.",
+      "<strong>Disfraces:</strong> son opcionales. Podemos aportar capas y varitas; si el grupo viene disfrazado, mejor.",
+      "<strong>Tamaño:</strong> mínimo de 6 personas. Cuantas más casas rellenas, más competitiva se pone.",
+      "<strong>Ocasión:</strong> funciona muy bien para cumpleaños temáticos y despedidas originales."
+    ]
+  }
 ];
 
 const faqs = [
@@ -93,6 +131,8 @@ const schema = {
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <section class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Preguntas frecuentes</h2>

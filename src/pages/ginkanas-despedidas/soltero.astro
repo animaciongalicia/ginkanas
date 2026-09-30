@@ -1,26 +1,57 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Prose from '../../components/Prose.astro';
 import Icon from '../../components/Icon.astro';
 
 const title = 'Despedidas de Soltero en Galicia | Ginkanas.es';
-const description = 'Organiza la mejor despedida de soltero en Galicia. Ginkanas, pruebas epicas y risas aseguradas para el futuro novio. 20 anos de experiencia.';
+const description = 'Organiza la mejor despedida de soltero en Galicia. Ginkanas, pruebas épicas y risas aseguradas para el futuro novio. 20 años de experiencia.';
 
 const pruebas = [
   'Besar una calva (encontrar un calvo primero)',
   'Vender condones a desconocidas',
   'Conseguir un sujetador firmado',
-  'Cantar una serenata ridicula en publico',
+  'Cantar una serenata ridícula en público',
   'Hacer 10 flexiones cada vez que pase una rubia',
-  'Disfrazarlo con lo peor que encontreis',
+  'Disfrazarlo con lo peor que encontréis',
   'Pedir matrimonio a una desconocida',
   'Conseguir que le inviten a un chupito'
 ];
 
 const ciudades = [
-  { nombre: 'Vigo', href: '/ginkanas-vigo/', desc: 'Churruca + Berbes = plan perfecto' },
-  { nombre: 'Santiago', href: '/ginkanas-santiago/', desc: 'Rutas de vinos epicas' },
+  { nombre: 'Vigo', href: '/ginkanas-vigo/', desc: 'Churruca + Berbés = plan perfecto' },
+  { nombre: 'Santiago', href: '/ginkanas-santiago/', desc: 'Rutas de vinos épicas' },
   { nombre: 'Sanxenxo', href: '/ginkanas-sanxenxo/', desc: 'Playa + fiesta en verano' },
-  { nombre: 'A Coruna', href: '/ginkanas-coruna/', desc: 'Orzan + marisco' }
+  { nombre: 'A Coruña', href: '/ginkanas-coruna/', desc: 'Orzán + marisco' }
+];
+
+const ampliado = [
+  {
+    "h": "Cómo es una ginkana de despedida de soltero",
+    "p": [
+      "Dura unas dos horas y se juega por el centro de la ciudad."
+    ],
+    "ol": [
+      "<strong>Quedada.</strong> En un punto céntrico, normalmente la plaza del Ayuntamiento o una calle popular. Se confirma al reservar.",
+      "<strong>Briefing (10-15 minutos).</strong> El monitor explica las pruebas, cómo se puntúa y qué le espera al novio. Se fija el nivel: más suave o más bestia.",
+      "<strong>Pruebas (algo más de una hora y media).</strong> Cantar, bailar, saltar, interactuar con la gente de la calle o competir en pruebas de habilidad, según la ginkana elegida.",
+      "<strong>Cierre.</strong> Recuento de puntos, fotos y, como todo ocurre en el centro, el plan de después (cena o copas) queda a pocas calles."
+    ]
+  },
+  {
+    "h": "Consejos para el organizador",
+    "ul": [
+      "<strong>Decidid el nivel antes de reservar.</strong> El monitor puede subir o bajar el tono; nadie hace una prueba que no quiera.",
+      "<strong>Escoged la hora con el plan.</strong> Muchos grupos la hacen por la tarde, antes de la cena, y llegan a las copas ya entonados.",
+      "<strong>Elegid la experiencia según el grupo.</strong> Loca si queréis bromas; Supervivientes si queréis competir; Cluedo si el grupo es más tranquilo.",
+      "<strong>Elegid ciudad según el plan.</strong> Vigo, para fiesta y Berbés; Santiago, para vinos; Coruña, para el Orzán; Sanxenxo, para verano."
+    ]
+  },
+  {
+    "h": "Cómo se reserva",
+    "p": [
+      "Basta con decirnos cuántos sois, en qué ciudad y qué fecha tenéis pensada. Con eso os proponemos la ginkana (desde 25 € por persona), confirmamos el punto de encuentro y cerramos los detalles. El mínimo habitual es de 6 personas; la Supervivientes pide 8."
+    ]
+  }
 ];
 
 const schema = {
@@ -40,7 +71,7 @@ const schema = {
       <div class="hero-text">
         <span class="hero-badge">Para futuros novios</span>
         <h1>Despedidas de Soltero</h1>
-        <p>El novio tiene que pasarlo mal. Es ley. Llevamos 20 anos organizando despedidas y sabemos como hacer que sea un dia epico para todos.</p>
+        <p>El novio tiene que pasarlo mal. Es ley. Llevamos 20 años organizando despedidas y sabemos cómo hacer que sea un día épico para todos.</p>
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20organizar%20una%20despedida%20de%20soltero" class="btn btn-whatsapp btn-lg">Organizar despedida de soltero</a>
       </div>
       <div class="hero-image">
@@ -51,8 +82,8 @@ const schema = {
   
   <section class="section">
     <div class="container">
-      <h2 class="section-heading">Que hacemos en una despedida de soltero?</h2>
-      <p class="section-intro">El novio sera el blanco de todas las bromas. Vacile epico y risas aseguradas.</p>
+      <h2 class="section-heading">¿Qué hacemos en una despedida de soltero?</h2>
+      <p class="section-intro">El novio será el blanco de todas las bromas. Vacile épico y risas aseguradas.</p>
       
       <div class="pruebas-grid">
         {pruebas.map((prueba) => (
@@ -63,14 +94,14 @@ const schema = {
         ))}
       </div>
       
-      <p class="nota">Adaptamos las pruebas al grupo. Si quereis algo mas bestia o mas suave, solo teneis que decirlo.</p>
+      <p class="nota">Adaptamos las pruebas al grupo. Si queréis algo más bestia o más suave, solo tenéis que decirlo.</p>
     </div>
   </section>
   
   <section class="section section-alt">
     <div class="container">
-      <h2 class="section-heading">Donde montar la despedida?</h2>
-      <p class="section-intro">Galicia tiene ciudades perfectas para despedidas de soltero. Elige segun vuestro rollo.</p>
+      <h2 class="section-heading">¿Dónde montar la despedida?</h2>
+      <p class="section-intro">Galicia tiene ciudades perfectas para despedidas de soltero. Elige según vuestro rollo.</p>
       
       <div class="ciudades-grid">
         {ciudades.map((ciudad) => (
@@ -87,13 +118,13 @@ const schema = {
   <section class="section">
     <div class="container content-box">
       <div class="content-text">
-        <h2>Por que una ginkana para la despedida?</h2>
-        <p>Ir directamente de canas esta bien. Pero una ginkana antes lo cambia todo:</p>
+        <h2>¿Por qué una ginkana para la despedida?</h2>
+        <p>Ir directamente de cañas está bien. Pero una ginkana antes lo cambia todo:</p>
         <ul>
           <li><strong>Todos participan:</strong> Nadie se queda mirando.</li>
-          <li><strong>El novio sufre:</strong> Y eso es lo que quereis, no?</li>
-          <li><strong>Anecdotas para siempre:</strong> Te acuerdas cuando tuvo que...?</li>
-          <li><strong>Calentamiento perfecto:</strong> Llegais a la cena/copas ya entonados.</li>
+          <li><strong>El novio sufre:</strong> Y eso es lo que queréis, no?</li>
+          <li><strong>Anécdotas para siempre:</strong> ¿Te acuerdas cuando tuvo que...?</li>
+          <li><strong>Calentamiento perfecto:</strong> Llegáis a la cena/copas ya entonados.</li>
         </ul>
       </div>
     </div>
@@ -105,28 +136,30 @@ const schema = {
       <div class="experiencias-grid">
         <a href="/experiencias/ginkana-loca/" class="exp-card">
           <h3>Ginkana Loca</h3>
-          <p>La clasica. Pruebas comprometidas, vacile maximo.</p>
+          <p>La clásica. Pruebas comprometidas, vacile maximo.</p>
           <span>Desde 25 euros/persona</span>
         </a>
         <a href="/experiencias/ginkana-supervivientes/" class="exp-card">
           <h3>Supervivientes</h3>
-          <p>Pruebas fisicas y competicion. Para grupos competitivos.</p>
+          <p>Pruebas físicas y competicion. Para grupos competitivos.</p>
           <span>Desde 25 euros/persona</span>
         </a>
         <a href="/experiencias/ginkana-cluedo/" class="exp-card">
           <h3>Ginkana Cluedo</h3>
-          <p>Misterio y estrategia. Para grupos mas tranquilos.</p>
+          <p>Misterio y estrategia. Para grupos más tranquilos.</p>
           <span>Desde 25 euros/persona</span>
         </a>
       </div>
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <section class="section cta-section">
     <div class="container cta-grid">
       <div class="cta-text">
-        <h2>Organizando la despedida?</h2>
-        <p>Cuentanos cuantos sois, en que ciudad y que fecha. Nosotros nos encargamos del resto.</p>
+        <h2>¿Organizando la despedida?</h2>
+        <p>Cuéntanos cuántos sois, en qué ciudad y qué fecha. Nosotros nos encargamos del resto.</p>
         <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
       </div>
     </div>

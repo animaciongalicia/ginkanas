@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkanas para Despedidas de Soltera y Soltero en Galicia';
 const description = 'Las mejores ginkanas para despedidas en Galicia. Pruebas divertidas, vacile al novi@ y momentos inolvidables. Desde 25€/persona. Vigo, Coruña, Santiago, Sanxenxo.';
@@ -37,6 +38,31 @@ const ginkanas = [
     minGroup: '6 personas',
     href: '/experiencias/ginkana-supervivientes/'
   },
+];
+
+const ampliado = [
+  {
+    "h": "Cómo funciona una ginkana de despedida",
+    "p": [
+      "Una ginkana de despedida dura unas dos horas y se juega por el centro de la ciudad. Quedáis en un punto céntrico, normalmente la plaza del Ayuntamiento o una calle popular, y el monitor abre con un briefing de 10-15 minutos: explica las pruebas, cómo se puntúa y cuál es el papel del novi@.",
+      "Luego llegan las pruebas. Según la ginkana, hay que cantar, bailar, saltar, interactuar con la gente de la calle, resolver un misterio o competir en pruebas de habilidad. Al final se cuentan puntos, hay fotos y el plan de después queda a un par de calles."
+    ]
+  },
+  {
+    "h": "Qué experiencia elegir para la despedida",
+    "ul": [
+      "<strong><a href=\"/experiencias/ginkana-loca/\">Ginkana Loca</a>:</strong> pruebas atrevidas con el novi@ como protagonista. La más pedida.",
+      "<strong><a href=\"/experiencias/ginkana-cluedo/\">Ginkana Cluedo</a>:</strong> misterio y deducción, para grupos más tranquilos.",
+      "<strong><a href=\"/experiencias/ginkana-escuela-magica/\">Escuela Mágica</a>:</strong> para fans de Harry Potter.",
+      "<strong><a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a>:</strong> competición pura, para grupos con carácter."
+    ]
+  },
+  {
+    "h": "Cómo se organiza",
+    "p": [
+      "Solo necesitamos saber cuántos sois, en qué ciudad y qué fecha tenéis pensada. Con eso os proponemos la ginkana, confirmamos el punto de encuentro y ajustamos el nivel de las pruebas. Si queréis un tono suave o más atrevido, decídnoslo al reservar: el monitor adapta el juego al grupo. Desde 25 € por persona."
+    ]
+  }
 ];
 
 const schema = {
@@ -217,6 +243,8 @@ competitiva, supervivientes...</p>
   </section>
   
   <!-- CTA -->
+  <Prose sections={ampliado} />
+
   <section class="section cta-section">
     <div class="container">
       <div class="cta-content">

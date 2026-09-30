@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
+import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkana Supervivientes | Pruebas Físicas y Competición';
 const description = 'La ginkana más competitiva. Pruebas físicas, de habilidad y resistencia. Equipos enfrentados, ranking y solo los más fuertes sobreviven. Desde 25€/persona.';
@@ -12,6 +13,48 @@ const pruebas = [
   { nombre: 'Pruebas de ingenio', desc: 'Acertijos rápidos, memoria, estrategia bajo presión' },
   { nombre: 'Pruebas sorpresa', desc: 'Retos inesperados que pondrán a prueba vuestra adaptación' },
   { nombre: 'Prueba final', desc: 'El desafío definitivo para coronar al equipo ganador' }
+];
+
+const ampliado = [
+  {
+    "h": "Cómo se juega la Ginkana Supervivientes",
+    "p": [
+      "Dura entre dos horas y dos horas y media. Es la más competitiva y necesita espacio, así que el grupo se mueve a un parque, paseo marítimo o explanada cercana al punto de quedada."
+    ],
+    "ol": [
+      "<strong>Quedada.</strong> Punto céntrico, normalmente la plaza del Ayuntamiento o una calle popular; desde allí nos movemos al espacio de juego. Se confirma al reservar.",
+      "<strong>Briefing (10-15 minutos).</strong> El monitor explica las pruebas, cómo se puntúa y cómo se forman los equipos: podéis venir con ellos hechos o los repartimos de forma equilibrada.",
+      "<strong>Pruebas (entre una hora y media y dos horas).</strong> Fuerza, habilidad, velocidad, ingenio y alguna prueba sorpresa. El marcador se actualiza en vivo.",
+      "<strong>Prueba final y podio.</strong> El desafío definitivo decide el ranking. Los ganadores reciben medalla o diploma."
+    ]
+  },
+  {
+    "h": "Qué hace que sea distinta a las demás",
+    "p": [
+      "El ranking se actualiza en vivo tras cada prueba. Un equipo puede ir primero por fuerza y hundirse en las de ingenio, o remontar con la prueba sorpresa. Por eso el reparto de equipos importa: se procura equilibrarlos para que la competición sea real.",
+      "No hace falta ser deportista. Las pruebas son exigentes pero adaptables y están controladas por los monitores, que actúan también de árbitros."
+    ]
+  },
+  {
+    "h": "¿Para qué grupos funciona?",
+    "ul": [
+      "Equipos de ventas y de empresa que compiten a diario.",
+      "Grupos deportivos o de amigos con espíritu competitivo.",
+      "Despedidas que prefieren competir a hacer el ridículo."
+    ],
+    "after": [
+      "Aviso honesto: si en tu grupo hay rivalidades, van a aflorar. Con cariño, pero van a aflorar."
+    ]
+  },
+  {
+    "h": "Antes de reservar",
+    "ul": [
+      "<strong>Mínimo de 8 personas</strong> para que haya equipos que compitan.",
+      "<strong>Ropa y calzado deportivos.</strong>",
+      "<strong>Espacio:</strong> se necesita una zona amplia; lo definimos según la ciudad (por ejemplo, el paseo marítimo o un parque).",
+      "<strong>Premio:</strong> gloria eterna y derecho a vacilar al resto; si queréis un premio físico, podemos organizarlo."
+    ]
+  }
 ];
 
 const faqs = [
@@ -103,6 +146,8 @@ cariño, eso sí.</p>
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <section class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Preguntas frecuentes</h2>

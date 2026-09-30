@@ -84,3 +84,5 @@ Pasa. Y es incómodo. Opciones:
 -   Quitar extras prescindibles.
 
 Lo importante es hablarlo. Los dramas vienen del silencio.
+
+Si vais a incluir una ginkana en el plan, contad desde 25 € por persona y decidid pronto el día y la ciudad: la actividad se reserva por WhatsApp con fecha y número de personas, y conviene cerrarla antes de pagar el alojamiento.

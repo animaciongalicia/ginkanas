@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FaqSection from '../components/FaqSection.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Ginkanas en Santiago de Compostela | Despedidas y Grupos';
 const description = 'Ginkanas en Santiago de Compostela para despedidas, empresas y grupos. Casco histórico Patrimonio de la Humanidad, ambiente universitario. Desde 25€/persona.';
@@ -40,13 +41,48 @@ const schema = {
   "description": description,
   "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
 };
+const ampliado = [
+  {
+    "h": "Cómo se juega una ginkana en Santiago",
+    "p": [
+      "El punto de encuentro habitual es la <strong>Praza do Obradoiro</strong>, frente a la Catedral y junto al Pazo de Raxoi, sede del Ayuntamiento, o una calle céntrica de la Zona Vieja; se confirma al reservar. Después del briefing de 10-15 minutos, el juego de unas dos horas recorre las rúas del casco histórico.",
+      "La Zona Vieja es Patrimonio de la Humanidad y ofrece el ambiente ideal para misterio y leyendas, con calles empedradas y plazas como Quintana o Praterías. Para pruebas más físicas se utiliza la zona de la Alameda, y la ginkana suele terminar en las calles de vinos y tapas, como Franco o Raíña."
+    ]
+  },
+  {
+    "h": "Qué ginkana elegir según el plan",
+    "ul": [
+      "<strong>Cumpleaños o quedada:</strong> <a href=\"/experiencias/ginkana-lendas/\">Ginkana Lendas</a> entre la Catedral y San Martiño Pinario.",
+      "<strong>Despedida:</strong> <a href=\"/experiencias/ginkana-loca/\">Ginkana Loca</a> por la Zona Vieja y final en la zona de vinos.",
+      "<strong>Fans de Harry Potter:</strong> <a href=\"/experiencias/ginkana-escuela-magica/\">Escuela Mágica</a>: las calles empedradas son un decorado natural."
+    ],
+    "after": [
+      "Santiago es una de las ciudades más lluviosas de Galicia. Si llueve fuerte se pospone sin coste; con lluvia fina se juega, que es lo habitual aquí."
+    ]
+  }
+];
+
 const faqs = [
-  { q: '¿Cuánto cuesta una ginkana en Santiago de Compostela?', a: 'Desde 25 € por persona en despedidas, cumpleaños y grupos de amigos. Para empresas el presupuesto es a medida. El precio final depende del tamaño del grupo y de la experiencia que elijáis.' },
-  { q: '¿Cuánto dura una ginkana en Santiago de Compostela?', a: 'Unas 2 horas de juego. Algunas experiencias, como Supervivientes o Escuela Mágica, pueden alargarse hasta 2,5 horas.' },
-  { q: '¿Cuántas personas hacen falta para jugar?', a: 'Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas trabajamos con grupos de 10 hasta 200 personas.' },
-  { q: '¿Por qué zonas de Santiago de Compostela se juega?', a: 'Por ejemplo: ' + zonas.map((z) => z.name).join(', ') + '. Adaptamos el recorrido al tipo de grupo y a la experiencia que elijáis.' },
-  { q: '¿Qué pasa si llueve?', a: 'Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega.' },
-  { q: '¿Cómo reservo una ginkana en Santiago de Compostela?', a: 'Escríbenos por WhatsApp (678 288 284) o usa el formulario de contacto con fecha aproximada, número de personas y tipo de celebración. Te proponemos la experiencia que mejor encaja.' },
+  {
+    "q": "¿Dónde quedamos en Santiago?",
+    "a": "Habitualmente en la Praza do Obradoiro o en una calle céntrica de la Zona Vieja. Se confirma al reservar."
+  },
+  {
+    "q": "¿Se puede hacer la ginkana con peregrinos y turistas alrededor?",
+    "a": "Sí. Forma parte del ambiente de la Zona Vieja y las pruebas de interacción y las leyendas lo aprovechan."
+  },
+  {
+    "q": "¿Qué ginkana es mejor para un grupo de fuera de Galicia?",
+    "a": "La Ginkana Lendas, porque combina juego con historias locales y da a conocer la ciudad de otra forma."
+  },
+  {
+    "q": "¿Cuánto cuesta una ginkana en Santiago?",
+    "a": "Desde 25 € por persona en despedidas, cumpleaños y grupos. Para empresas, presupuesto a medida."
+  },
+  {
+    "q": "¿Y si llueve en Santiago?",
+    "a": "Con lluvia fuerte se pospone sin coste. Con lluvia fina decide el grupo; en Santiago es lo normal y no quita ambiente."
+  }
 ];
 ---
 
@@ -118,6 +154,8 @@ const faqs = [
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <FaqSection faqs={faqs} />
 
   <section class="section cta-section">

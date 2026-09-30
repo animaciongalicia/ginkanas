@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
+import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkana Cluedo | Misterio por las Calles de Galicia';
 const description = 'La Ginkana Cluedo convierte la ciudad en un tablero de juego. Resuelve el misterio, descubre al culpable y recorre las calles buscando pistas. Desde 25€/persona.';
@@ -12,6 +13,51 @@ const dinamica = [
   'Interrogaréis a "testigos" (actores o el monitor)',
   'Descartaréis sospechosos con la lógica',
   'El equipo que resuelva el caso, gana'
+];
+
+const ampliado = [
+  {
+    "h": "Una tarde, un crimen y el centro de la ciudad como escenario",
+    "p": [
+      "La Ginkana Cluedo dura unas dos horas y funciona como una partida de detectives a tamaño real. Así transcurre:"
+    ],
+    "ol": [
+      "<strong>Quedada.</strong> Nos vemos en un punto céntrico, normalmente la plaza del Ayuntamiento o una calle popular del centro. Lo confirmamos al reservar para que nadie se pierda.",
+      "<strong>Briefing (10-15 minutos).</strong> El monitor presenta el caso: quién ha aparecido muerto, dónde y quiénes son los sospechosos. Explica cómo se consiguen pistas, cómo se puntúa y cómo se reparten los equipos.",
+      "<strong>Investigación (algo más de una hora y media).</strong> Los equipos recorren el centro superando pruebas. Cada una entrega una pieza de información: una coartada que no cuadra, un objeto, un testimonio. Con eso se van descartando sospechosos.",
+      "<strong>Veredicto.</strong> Cada equipo señala quién es el asesino, con qué y por qué. El monitor revela la solución y se cuentan los puntos."
+    ]
+  },
+  {
+    "h": "Cómo se gana: observar, deducir y discutir poco",
+    "p": [
+      "Aquí no se corre ni hay pruebas físicas. Las pruebas mezclan observación, lógica y trabajo en equipo: fijarse en detalles de la calle, ordenar información contradictoria y decidir a quién se descarta y a quién se interroga.",
+      "Lo habitual es que, a mitad de partida, cada equipo defienda un culpable distinto. Ese momento, con las teorías cruzadas, es donde más se nota si un grupo se comunica bien."
+    ]
+  },
+  {
+    "h": "¿Es esta la ginkana que necesitáis?",
+    "p": [
+      "Elegid Cluedo si:"
+    ],
+    "ul": [
+      "El grupo mezcla edades o hay gente a la que no le apetece hacer el ridículo en la calle.",
+      "Queréis hablar, pensar y reíros sin prisas.",
+      "Buscáis algo para un cumpleaños o una quedada de amigos con ganas de un plan distinto a la cena de siempre."
+    ],
+    "after": [
+      "Si lo que queréis son retos atrevidos y bromas al protagonista, os encaja mejor la <a href=\"/experiencias/ginkana-loca/\">Ginkana Loca</a>. Si preferís competir con pruebas físicas, la <a href=\"/experiencias/ginkana-supervivientes/\">Ginkana Supervivientes</a>."
+    ]
+  },
+  {
+    "h": "Antes de reservar",
+    "ul": [
+      "<strong>Puntualidad:</strong> el briefing marca el ritmo de todo el juego; conviene que el grupo esté completo al empezar.",
+      "<strong>Calzado cómodo:</strong> el recorrido es un paseo por el centro de la ciudad durante unas dos horas.",
+      "<strong>Grupos grandes:</strong> se dividen en equipos que compiten entre sí, o se puede jugar de forma colaborativa. Se decide al reservar.",
+      "<strong>Ciudad:</strong> funciona mejor en cascos históricos: Santiago, Pontevedra, la Ciudad Vieja de Coruña o Lugo, dentro de la muralla."
+    ]
+  }
 ];
 
 const faqs = [
@@ -90,6 +136,8 @@ const schema = {
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <section class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Preguntas frecuentes</h2>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FaqSection from '../components/FaqSection.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Ginkanas en Ourense | Despedidas y Grupos';
 const description = 'Ginkanas en Ourense para despedidas, empresas y grupos. Ciudad termal, casco histórico y buen vino. La joya del interior de Galicia. Desde 25€/persona.';
@@ -40,13 +41,48 @@ const schema = {
   "description": description,
   "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
 };
+const ampliado = [
+  {
+    "h": "Cómo se juega una ginkana en Ourense",
+    "p": [
+      "El punto de encuentro habitual es la <strong>Praza Maior</strong>, donde está el Ayuntamiento, o una calle céntrica del casco histórico; se confirma al reservar. Tras el briefing de 10-15 minutos, la ginkana de unas dos horas recorre el casco, con la Catedral y sus calles medievales como decorado.",
+      "Las Burgas, con sus fuentes termales en pleno casco, son una parada muy característica de la ciudad. Para pruebas más físicas se usa la ribera del Miño, un espacio amplio con puentes históricos."
+    ]
+  },
+  {
+    "h": "Qué esperar de una ginkana en Ourense",
+    "ul": [
+      "<strong>Ambiente local:</strong> menos turismo masivo que en otras ciudades gallegas.",
+      "<strong>Plan de después:</strong> ruta de vinos en la zona del Vite, con vino en cunca, o termas al aire libre.",
+      "<strong>Ginkana recomendada:</strong> <a href=\"/experiencias/ginkana-cluedo/\">Cluedo</a> o <a href=\"/experiencias/ginkana-lendas/\">Lendas</a> por el casco; Supervivientes en la ribera."
+    ],
+    "after": [
+      "Ourense tiene inviernos fríos y veranos calurosos. En pleno verano, mejor jugar a última hora de la tarde."
+    ]
+  }
+];
+
 const faqs = [
-  { q: '¿Cuánto cuesta una ginkana en Ourense?', a: 'Desde 25 € por persona en despedidas, cumpleaños y grupos de amigos. Para empresas el presupuesto es a medida. El precio final depende del tamaño del grupo y de la experiencia que elijáis.' },
-  { q: '¿Cuánto dura una ginkana en Ourense?', a: 'Unas 2 horas de juego. Algunas experiencias, como Supervivientes o Escuela Mágica, pueden alargarse hasta 2,5 horas.' },
-  { q: '¿Cuántas personas hacen falta para jugar?', a: 'Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas trabajamos con grupos de 10 hasta 200 personas.' },
-  { q: '¿Por qué zonas de Ourense se juega?', a: 'Por ejemplo: ' + zonas.map((z) => z.name).join(', ') + '. Adaptamos el recorrido al tipo de grupo y a la experiencia que elijáis.' },
-  { q: '¿Qué pasa si llueve?', a: 'Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega.' },
-  { q: '¿Cómo reservo una ginkana en Ourense?', a: 'Escríbenos por WhatsApp (678 288 284) o usa el formulario de contacto con fecha aproximada, número de personas y tipo de celebración. Te proponemos la experiencia que mejor encaja.' },
+  {
+    "q": "¿Dónde quedamos en Ourense?",
+    "a": "Normalmente en la Praza Maior, donde está el Ayuntamiento, o en una calle céntrica del casco. Se confirma al reservar."
+  },
+  {
+    "q": "¿Se puede combinar con las termas?",
+    "a": "Sí, es un plan muy habitual: ginkana por el casco y después termas al aire libre en la ciudad."
+  },
+  {
+    "q": "¿Cuál es la mejor época para jugar en Ourense?",
+    "a": "Primavera y otoño son las más cómodas. En verano hace mucho calor, así que recomendamos horarios de tarde."
+  },
+  {
+    "q": "¿Cuánto cuesta una ginkana en Ourense?",
+    "a": "Desde 25 € por persona en despedidas, cumpleaños y grupos. Para empresas, presupuesto a medida."
+  },
+  {
+    "q": "¿Qué pasa si llueve en Ourense?",
+    "a": "Con lluvia fuerte se pospone sin coste. Con lluvia fina decide el grupo."
+  }
 ];
 ---
 
@@ -125,6 +161,8 @@ const faqs = [
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <FaqSection faqs={faqs} />
 
   <section class="section cta-section">
