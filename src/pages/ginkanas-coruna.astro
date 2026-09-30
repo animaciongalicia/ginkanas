@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FaqSection from '../components/FaqSection.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Ginkanas en A Coruña | Despedidas, Empresas y Grupos';
 const description = 'Ginkanas en A Coruña para despedidas de soltera, team building y grupos. Recorre el casco histórico, la Torre de Hércules y el Orzán jugando. Desde 25€/persona.';
@@ -49,13 +50,48 @@ const schema = {
   "description": description,
   "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
 };
+const ampliado = [
+  {
+    "h": "Cómo se juega una ginkana en A Coruña",
+    "p": [
+      "El punto de encuentro habitual es la <strong>Plaza de María Pita</strong>, donde está el Ayuntamiento, o una calle céntrica cercana; lo confirmamos al reservar. Allí el monitor da el briefing de 10-15 minutos y el juego, de unas dos horas, arranca por la Ciudad Vieja.",
+      "La Ciudad Vieja concentra lo mejor para misterio y leyendas: calles estrechas, plazas pequeñas y rincones con historia a pocos minutos a pie. Para una Ginkana Loca de despedida se aprovecha la zona céntrica y de ocio, donde hay más gente con la que interactuar, y el recorrido termina cerca del Orzán."
+    ]
+  },
+  {
+    "h": "Qué ginkana elegir según el plan",
+    "ul": [
+      "<strong>Despedida:</strong> <a href=\"/experiencias/ginkana-loca/\">Ginkana Loca</a>, con salida desde María Pita y final por la zona de ocio.",
+      "<strong>Cumpleaños o quedada:</strong> <a href=\"/experiencias/ginkana-cluedo/\">Ginkana Cluedo</a> por la Ciudad Vieja, para pensar y conversar en el camino.",
+      "<strong>Equipos grandes:</strong> <a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a>, que necesita espacio y se plantea en el Paseo Marítimo u otra explanada."
+    ],
+    "after": [
+      "Coruña tiene clima atlántico y cambia rápido: conviene llevar una capa ligera aunque salga sol. Si llueve fuerte se pospone sin coste; con lluvia fina, decide el grupo."
+    ]
+  }
+];
+
 const faqs = [
-  { q: '¿Cuánto cuesta una ginkana en A Coruña?', a: 'Desde 25 € por persona en despedidas, cumpleaños y grupos de amigos. Para empresas el presupuesto es a medida. El precio final depende del tamaño del grupo y de la experiencia que elijáis.' },
-  { q: '¿Cuánto dura una ginkana en A Coruña?', a: 'Unas 2 horas de juego. Algunas experiencias, como Supervivientes o Escuela Mágica, pueden alargarse hasta 2,5 horas.' },
-  { q: '¿Cuántas personas hacen falta para jugar?', a: 'Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas trabajamos con grupos de 10 hasta 200 personas.' },
-  { q: '¿Por qué zonas de A Coruña se juega?', a: 'Por ejemplo: ' + zonas.map((z) => z.name).join(', ') + '. Adaptamos el recorrido al tipo de grupo y a la experiencia que elijáis.' },
-  { q: '¿Qué pasa si llueve?', a: 'Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega.' },
-  { q: '¿Cómo reservo una ginkana en A Coruña?', a: 'Escríbenos por WhatsApp (678 288 284) o usa el formulario de contacto con fecha aproximada, número de personas y tipo de celebración. Te proponemos la experiencia que mejor encaja.' },
+  {
+    "q": "¿Dónde quedamos en A Coruña?",
+    "a": "Normalmente en la Plaza de María Pita, donde está el Ayuntamiento, o en una calle céntrica de la Ciudad Vieja. Lo cerramos con vosotros al reservar."
+  },
+  {
+    "q": "¿Qué zonas de Coruña se usan?",
+    "a": "La Ciudad Vieja para misterio y leyendas, el Paseo Marítimo cuando la ginkana necesita espacio y la zona del Orzán para cerrar una despedida. La Torre de Hércules se plantea en recorridos concretos."
+  },
+  {
+    "q": "¿Se puede empezar por la tarde y seguir de fiesta?",
+    "a": "Sí. Como todo ocurre en el centro, el final del juego queda cerca de bares y terrazas. Es el plan habitual en despedidas."
+  },
+  {
+    "q": "¿Cuánto cuesta una ginkana en Coruña?",
+    "a": "Desde 25 € por persona en despedidas, cumpleaños y grupos. Para empresas el presupuesto es a medida."
+  },
+  {
+    "q": "¿Qué pasa si llueve en Coruña?",
+    "a": "Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega."
+  }
 ];
 ---
 
@@ -148,6 +184,8 @@ const faqs = [
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <FaqSection faqs={faqs} />
 
   <section class="section cta-section">

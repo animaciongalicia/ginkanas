@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
+import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkana Loca | La Clásica para Despedidas';
 const description = 'La Ginkana Loca es la más solicitada para despedidas de soltera y soltero. Pruebas desternillantes, vacile al novi@ y risas garantizadas. Desde 25€/persona.';
@@ -14,6 +15,47 @@ const pruebas = [
   'Conseguir firmas en partes del cuerpo',
   'Foto con alguien uniformado',
   'Cantar una serenata a un desconocido'
+];
+
+const ampliado = [
+  {
+    "h": "Cómo es una Ginkana Loca de principio a fin",
+    "p": [
+      "Dura unas dos horas y todo ocurre por el centro de la ciudad, donde hay gente con la que interactuar y espacio para hacer el loco."
+    ],
+    "ol": [
+      "<strong>Quedada.</strong> Punto céntrico, normalmente la plaza del Ayuntamiento o una calle popular. Se confirma al reservar.",
+      "<strong>Briefing (10-15 minutos).</strong> El monitor explica las reglas, cómo se puntúa cada prueba y el papel del novi@ como protagonista. Es el momento de decirle si el grupo quiere un nivel suave o atrevido.",
+      "<strong>Pruebas (algo más de una hora y media).</strong> El grupo va superando retos por las calles del centro. Cada prueba tiene su pequeño giro que la hace distinta de la anterior.",
+      "<strong>Cierre.</strong> Recuento de puntos, fotos y, como todo ocurre en el centro, el plan de después queda a un par de calles."
+    ]
+  },
+  {
+    "h": "Qué tipo de pruebas os van a tocar",
+    "p": [
+      "Hay tres familias de pruebas, y una ginkana equilibrada mezcla las tres:"
+    ],
+    "ul": [
+      "<strong>De actuación:</strong> cantar, bailar, saltar o montar una coreografía en plena calle.",
+      "<strong>De interacción:</strong> conseguir algo de la gente que pasa, hacerse una foto con quien no os espera o convencer a un desconocido de entrar en el juego.",
+      "<strong>De creatividad:</strong> disfrazar al novi@ con lo que encontréis o improvisar una escena con el material que os demos."
+    ],
+    "after": [
+      "El monitor hace de juez: decide si la prueba está superada y reparte los puntos. Su trabajo es que la ginkana avance sin parones y que nadie se pase de la raya."
+    ]
+  },
+  {
+    "h": "Quién marca el límite",
+    "p": [
+      "El nivel lo marcáis vosotros. Si el grupo quiere un tono suave, se recortan las pruebas más comprometidas; si quiere algo más bestia, se sube. Nadie está obligado a hacer una prueba que no le apetezca: el monitor tiene alternativas para esa persona y el grupo sigue sumando."
+    ]
+  },
+  {
+    "h": "¿Loca o Cluedo?",
+    "p": [
+      "La Loca es para grupos que quieren moverse, reírse y ver al novi@ en apuros. Si el grupo es más tranquilo o hay gente con vergüenza, la <a href=\"/experiencias/ginkana-cluedo/\">Ginkana Cluedo</a> funciona mejor para una despedida. Y si la competición es lo vuestro, mirad la <a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a>."
+    ]
+  }
 ];
 
 const faqs = [
@@ -92,6 +134,8 @@ const schema = {
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <section class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Preguntas frecuentes</h2>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FaqSection from '../components/FaqSection.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Ginkanas en Lugo | Despedidas y Grupos';
 const description = 'Ginkanas en Lugo para despedidas, empresas y grupos. Muralla romana Patrimonio de la Humanidad, tapas gratis y ambiente auténtico. Desde 25€/persona.';
@@ -40,13 +41,48 @@ const schema = {
   "description": description,
   "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
 };
+const ampliado = [
+  {
+    "h": "Cómo se juega una ginkana en Lugo",
+    "p": [
+      "El punto de encuentro suele ser la <strong>Praza Maior</strong>, donde está el Ayuntamiento, o una calle céntrica dentro de la muralla; se confirma al reservar. Tras el briefing de 10-15 minutos, la ginkana de unas dos horas se desarrolla en el casco histórico, muy compacto: todo está a pocos minutos a pie.",
+      "La muralla romana, Patrimonio de la Humanidad, se puede caminar en unos 2 km y es un escenario único para misterio y leyendas. La zona de la Rúa da Raíña y la Rúa Nova es la de las tapas, ideal para cerrar. Para pruebas físicas se usa el Parque Rosalía de Castro."
+    ]
+  },
+  {
+    "h": "Qué esperar de una ginkana en Lugo",
+    "ul": [
+      "<strong>Escenario:</strong> la muralla y el casco histórico dan un ambiente especial para <a href=\"/experiencias/ginkana-cluedo/\">Cluedo</a>, <a href=\"/experiencias/ginkana-lendas/\">Lendas</a> y <a href=\"/experiencias/ginkana-escuela-magica/\">Escuela Mágica</a>.",
+      "<strong>Plan de después:</strong> en Lugo las tapas acompañan cada consumición, así que cerrar la ginkana tapeando es casi obligado.",
+      "<strong>Presupuesto:</strong> Lugo es una de las ciudades más económicas de Galicia para comer y tapear."
+    ],
+    "after": [
+      "Si sois un grupo grande, decidimos con vosotros si conviene dividir el juego entre la muralla y el parque."
+    ]
+  }
+];
+
 const faqs = [
-  { q: '¿Cuánto cuesta una ginkana en Lugo?', a: 'Desde 25 € por persona en despedidas, cumpleaños y grupos de amigos. Para empresas el presupuesto es a medida. El precio final depende del tamaño del grupo y de la experiencia que elijáis.' },
-  { q: '¿Cuánto dura una ginkana en Lugo?', a: 'Unas 2 horas de juego. Algunas experiencias, como Supervivientes o Escuela Mágica, pueden alargarse hasta 2,5 horas.' },
-  { q: '¿Cuántas personas hacen falta para jugar?', a: 'Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas trabajamos con grupos de 10 hasta 200 personas.' },
-  { q: '¿Por qué zonas de Lugo se juega?', a: 'Por ejemplo: ' + zonas.map((z) => z.name).join(', ') + '. Adaptamos el recorrido al tipo de grupo y a la experiencia que elijáis.' },
-  { q: '¿Qué pasa si llueve?', a: 'Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega.' },
-  { q: '¿Cómo reservo una ginkana en Lugo?', a: 'Escríbenos por WhatsApp (678 288 284) o usa el formulario de contacto con fecha aproximada, número de personas y tipo de celebración. Te proponemos la experiencia que mejor encaja.' },
+  {
+    "q": "¿Dónde quedamos en Lugo?",
+    "a": "Normalmente en la Praza Maior, donde está el Ayuntamiento, o en una calle céntrica dentro de la muralla. Se confirma al reservar."
+  },
+  {
+    "q": "¿Se puede jugar sobre la muralla?",
+    "a": "El recorrido incluye la muralla cuando el tipo de ginkana lo permite. Lo definimos al preparar la propuesta."
+  },
+  {
+    "q": "¿Qué ginkana recomendáis para Lugo?",
+    "a": "Cluedo, Lendas o Escuela Mágica aprovechan al máximo el casco histórico y la muralla."
+  },
+  {
+    "q": "¿Cuánto cuesta una ginkana en Lugo?",
+    "a": "Desde 25 € por persona en despedidas, cumpleaños y grupos. Para empresas, presupuesto a medida."
+  },
+  {
+    "q": "¿Qué pasa si llueve en Lugo?",
+    "a": "Con lluvia fuerte se pospone sin coste. Con lluvia fina decide el grupo."
+  }
 ];
 ---
 
@@ -125,6 +161,8 @@ const faqs = [
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <FaqSection faqs={faqs} />
 
   <section class="section cta-section">

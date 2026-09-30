@@ -1,8 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Escape Room para Grupos en Galicia | En Local o Donde Quieras';
 const description = 'Escape Room para empresas y grupos en Galicia. En nuestros locales o lo llevamos donde quieras. Acertijos, enigmas y trabajo en equipo. Experiencia premium.';
+
+const ampliado = [
+  {
+    "h": "Cómo transcurre un escape room",
+    "p": [
+      "El escape room dura entre 60 y 90 minutos. Antes de empezar, el game master explica la historia, las normas y cómo pedir ayuda si el equipo se atasca. Después, el grupo entra en la sala o en el espacio montado y el reloj empieza a correr."
+    ],
+    "ol": [
+      "<strong>Introducción.</strong> El game master presenta la historia y el objetivo: salir, encontrar algo o resolver un caso antes de que se acabe el tiempo.",
+      "<strong>Juego.</strong> Los acertijos se resuelven en cadena: cada solución abre el siguiente. Se reparten tareas, se comparte información y se descubre pronto quién observa, quién lidera y quién conecta las ideas.",
+      "<strong>Final.</strong> Salís o no, pero el game master repasa el juego, cuenta lo que os habéis perdido y suele haber tiempo para comentarlo entre risas."
+    ]
+  },
+  {
+    "h": "En local o móvil: cómo elegir",
+    "ul": [
+      "<strong>Grupos de 6 a 20 personas que buscan la máxima inmersión:</strong> nuestros locales, con salas ambientadas y tecnología integrada.",
+      "<strong>Empresas y eventos con muchas personas:</strong> escape room móvil, que llevamos a una oficina, un hotel, una finca o un salón de eventos y admite hasta 100 personas repartidas en equipos.",
+      "<strong>Grupos que quieren jugar al aire libre por la ciudad:</strong> mirad nuestras <a href=\"/experiencias/ginkana-cluedo/\">ginkanas de misterio</a>, que usan el centro como escenario."
+    ]
+  },
+  {
+    "h": "Qué se lleva un equipo de trabajo",
+    "p": [
+      "El escape room concentra en una hora lo que las reuniones tardan semanas en mostrar: quién comunica bien, quién bloquea la información y quién asume el liderazgo cuando hay presión. Si buscáis una actividad de equipo, avisadnos al pedir información y la enfocamos a ese objetivo.",
+      "Para preparar la propuesta necesitamos saber cuántas personas sois, dónde lo queréis hacer y qué fecha tenéis en mente. Con eso os decimos formato, duración y precio."
+    ]
+  }
+];
 
 const schema = {
   "@context": "https://schema.org",
@@ -103,6 +133,8 @@ const schema = {
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <section class="section cta-section">
     <div class="container">
       <div class="cta-content">

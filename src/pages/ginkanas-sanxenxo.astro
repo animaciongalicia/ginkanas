@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FaqSection from '../components/FaqSection.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Ginkanas en Sanxenxo | Despedidas de Verano en la Playa';
 const description = 'Ginkanas en Sanxenxo para despedidas de soltera y grupos. La capital del verano en Galicia. Playa, fiesta y diversión. Desde 25€/persona.';
@@ -40,13 +41,49 @@ const schema = {
   "description": description,
   "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
 };
+const ampliado = [
+  {
+    "h": "Cómo se juega una ginkana en Sanxenxo",
+    "p": [
+      "Sanxenxo es una villa turística sin casco histórico monumental, así que el punto de encuentro suele ser una calle céntrica o el paseo marítimo; se confirma al reservar. Tras el briefing de 10-15 minutos, el juego de unas dos horas recorre el casco urbano y el paseo junto a la playa de Silgar.",
+      "El puerto deportivo aporta un escenario más tranquilo para grupos de empresa, y las playas cercanas (Areas, Montalvo, A Lanzada) sirven para pruebas más abiertas. En verano, el ambiente de calles y terrazas ayuda mucho a las pruebas de interacción."
+    ]
+  },
+  {
+    "h": "Cuándo y para quién funciona mejor",
+    "ul": [
+      "<strong>Verano (junio a septiembre):</strong> máxima animación; es la época de las despedidas.",
+      "<strong>Primavera y otoño:</strong> menos gente, más tranquilidad; mejor para empresas y grupos que prefieren jugar sin aglomeraciones.",
+      "<strong>Despedida clásica:</strong> <a href=\"/experiencias/ginkana-loca/\">Ginkana Loca</a> por el paseo, tardeo en terraza y noche.",
+      "<strong>Grupos grandes:</strong> <a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a> en zonas amplias de playa o paseo."
+    ],
+    "after": [
+      "Sanxenxo es muy estacional: fuera de temporada hay menos ambiente, pero también menos gente. Cuéntanos la fecha y te decimos qué esperar."
+    ]
+  }
+];
+
 const faqs = [
-  { q: '¿Cuánto cuesta una ginkana en Sanxenxo?', a: 'Desde 25 € por persona en despedidas, cumpleaños y grupos de amigos. Para empresas el presupuesto es a medida. El precio final depende del tamaño del grupo y de la experiencia que elijáis.' },
-  { q: '¿Cuánto dura una ginkana en Sanxenxo?', a: 'Unas 2 horas de juego. Algunas experiencias, como Supervivientes o Escuela Mágica, pueden alargarse hasta 2,5 horas.' },
-  { q: '¿Cuántas personas hacen falta para jugar?', a: 'Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas trabajamos con grupos de 10 hasta 200 personas.' },
-  { q: '¿Por qué zonas de Sanxenxo se juega?', a: 'Por ejemplo: ' + zonas.map((z) => z.name).join(', ') + '. Adaptamos el recorrido al tipo de grupo y a la experiencia que elijáis.' },
-  { q: '¿Qué pasa si llueve?', a: 'Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega.' },
-  { q: '¿Cómo reservo una ginkana en Sanxenxo?', a: 'Escríbenos por WhatsApp (678 288 284) o usa el formulario de contacto con fecha aproximada, número de personas y tipo de celebración. Te proponemos la experiencia que mejor encaja.' },
+  {
+    "q": "¿Dónde quedamos en Sanxenxo?",
+    "a": "En una calle céntrica del casco urbano o en el paseo marítimo de Silgar. Se confirma al reservar."
+  },
+  {
+    "q": "¿Se puede hacer una ginkana en la playa?",
+    "a": "Sí, con pruebas adaptadas al espacio abierto. Se plantea sobre todo en verano y se decide con el grupo."
+  },
+  {
+    "q": "¿Cuándo es mejor época para una despedida?",
+    "a": "De junio a septiembre hay más ambiente. Fuera de temporada, más tranquilidad. Depende de lo que busquéis."
+  },
+  {
+    "q": "¿Cuánto cuesta una ginkana en Sanxenxo?",
+    "a": "Desde 25 € por persona en despedidas, cumpleaños y grupos. Para empresas, presupuesto a medida."
+  },
+  {
+    "q": "¿Qué pasa si llueve en Sanxenxo?",
+    "a": "Con lluvia fuerte se pospone sin coste. Con lluvia fina decide el grupo."
+  }
 ];
 ---
 
@@ -125,6 +162,8 @@ const faqs = [
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <FaqSection faqs={faqs} />
 
   <section class="section cta-section">

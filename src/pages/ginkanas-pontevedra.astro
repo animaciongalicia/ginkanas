@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FaqSection from '../components/FaqSection.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Ginkanas en Pontevedra | Despedidas y Grupos';
 const description = 'Ginkanas en Pontevedra para despedidas, empresas y grupos. Casco histórico peatonal, ambiente tranquilo y encanto gallego. Desde 25€/persona.';
@@ -40,13 +41,48 @@ const schema = {
   "description": description,
   "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
 };
+const ampliado = [
+  {
+    "h": "Cómo se juega una ginkana en Pontevedra",
+    "p": [
+      "El punto de encuentro natural es la <strong>Praza da Ferrería</strong>, en pleno casco histórico, o la plaza del Ayuntamiento; se confirma al reservar. Tras el briefing de 10-15 minutos, la ginkana de unas dos horas recorre el casco antiguo, que es peatonal: se juega sin coches y sin prisas.",
+      "El casco histórico, con plazas como la de la Peregrina o la de la Leña, sus soportales y sus iglesias, da mucho juego a misterio y leyendas. Para pruebas más físicas se usa la Illa das Esculturas o el entorno del río Lérez."
+    ]
+  },
+  {
+    "h": "Qué ginkana elegir según el plan",
+    "ul": [
+      "<strong>Cumpleaños o quedada:</strong> <a href=\"/experiencias/ginkana-cluedo/\">Ginkana Cluedo</a> por el casco peatonal.",
+      "<strong>Cultura y leyendas:</strong> <a href=\"/experiencias/ginkana-lendas/\">Lendas</a>, con la leyenda del puente del Burgo entre las posibles paradas.",
+      "<strong>Despedida tranquila:</strong> Loca o Cluedo, con tapeo y albariño al final."
+    ],
+    "after": [
+      "Pontevedra es de escala pequeña: casi todo queda a pie a pocos minutos, por eso las ginkanas fluyen sin desplazamientos."
+    ]
+  }
+];
+
 const faqs = [
-  { q: '¿Cuánto cuesta una ginkana en Pontevedra?', a: 'Desde 25 € por persona en despedidas, cumpleaños y grupos de amigos. Para empresas el presupuesto es a medida. El precio final depende del tamaño del grupo y de la experiencia que elijáis.' },
-  { q: '¿Cuánto dura una ginkana en Pontevedra?', a: 'Unas 2 horas de juego. Algunas experiencias, como Supervivientes o Escuela Mágica, pueden alargarse hasta 2,5 horas.' },
-  { q: '¿Cuántas personas hacen falta para jugar?', a: 'Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas trabajamos con grupos de 10 hasta 200 personas.' },
-  { q: '¿Por qué zonas de Pontevedra se juega?', a: 'Por ejemplo: ' + zonas.map((z) => z.name).join(', ') + '. Adaptamos el recorrido al tipo de grupo y a la experiencia que elijáis.' },
-  { q: '¿Qué pasa si llueve?', a: 'Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega.' },
-  { q: '¿Cómo reservo una ginkana en Pontevedra?', a: 'Escríbenos por WhatsApp (678 288 284) o usa el formulario de contacto con fecha aproximada, número de personas y tipo de celebración. Te proponemos la experiencia que mejor encaja.' },
+  {
+    "q": "¿Dónde quedamos en Pontevedra?",
+    "a": "Normalmente en la Praza da Ferrería o en la plaza del Ayuntamiento. Se confirma al reservar."
+  },
+  {
+    "q": "¿Se juega sin coches?",
+    "a": "Sí. El casco histórico es peatonal, así que el recorrido es cómodo y seguro."
+  },
+  {
+    "q": "¿Qué ginkana recomendáis para una despedida en Pontevedra?",
+    "a": "La Ginkana Loca funciona bien si el grupo quiere animación; para grupos más tranquilos, la Ginkana Cluedo. Ambas terminan cerca de zonas de tapeo."
+  },
+  {
+    "q": "¿Cuánto cuesta una ginkana en Pontevedra?",
+    "a": "Desde 25 € por persona en despedidas, cumpleaños y grupos. Para empresas, presupuesto a medida."
+  },
+  {
+    "q": "¿Qué pasa si llueve en Pontevedra?",
+    "a": "Con lluvia fuerte se pospone sin coste. Los soportales del casco antiguo ayudan a resguardarse en una lluvia ligera."
+  }
 ];
 ---
 
@@ -118,6 +154,8 @@ const faqs = [
     </div>
   </section>
   
+  <Prose sections={ampliado} />
+
   <FaqSection faqs={faqs} />
 
   <section class="section cta-section">

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Prose from '../components/Prose.astro';
 
 const title = 'Ginkanas para Empresas y Team Building en Galicia';
 const description = 'Team building que funciona de verdad. Ginkanas para empresas en Galicia que mejoran la comunicación, crean equipo y generan recuerdos. Vigo, Coruña, Santiago.';
@@ -42,6 +43,32 @@ const formatos = [
     title: 'Escape Room urbano',
     description: 'La ciudad es vuestra sala de escape. Acertijos, enigmas y tiempo en contra. Premium y diferente.',
     ideal: 'Directivos, equipos de innovación, eventos especiales'
+  }
+];
+
+const ampliado = [
+  {
+    "h": "Cómo se prepara una ginkana de empresa",
+    "p": [
+      "A diferencia de una despedida, una actividad de empresa se prepara a medida. Con el número de personas, la ciudad y el objetivo (integrar a un equipo nuevo, celebrar un cierre de año, mejorar la comunicación), proponemos formato, duración y presupuesto.",
+      "El día de la actividad, el punto de encuentro suele ser la plaza del Ayuntamiento o una calle céntrica. El monitor abre con un briefing de 10-15 minutos, divide al grupo en equipos y explica el juego."
+    ]
+  },
+  {
+    "h": "Formatos para un equipo de trabajo",
+    "ul": [
+      "<strong><a href=\"/experiencias/ginkana-cluedo/\">Cluedo</a>:</strong> investigar un caso obliga a compartir información y a decidir en común.",
+      "<strong><a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a>:</strong> competición por equipos con ranking en vivo; funciona bien con equipos comerciales.",
+      "<strong><a href=\"/escape-room/\">Escape room</a>:</strong> comunicación y liderazgo bajo presión, en local o móvil.",
+      "<strong><a href=\"/experiencias/ginkana-lendas/\">Lendas</a>:</strong> una actividad con contenido cultural, útil con equipos que vienen de fuera de Galicia."
+    ]
+  },
+  {
+    "h": "Qué cambia en un equipo después",
+    "p": [
+      "No prometemos milagros de una tarde, pero sí algo que se nota al día siguiente: gente que no se hablaba, hablando; compañeros que descubren cómo piensa otro; y una anécdota compartida para arrancar reuniones. Todo lo demás depende de cómo se use ese impulso después.",
+      "Para pedir presupuesto solo hace falta decirnos cuántas personas sois, en qué ciudad y qué fecha tenéis pensada."
+    ]
   }
 ];
 
@@ -205,6 +232,8 @@ const schema = {
   </section>
   
   <!-- CTA -->
+  <Prose sections={ampliado} />
+
   <section class="section cta-section">
     <div class="container">
       <div class="cta-box">
