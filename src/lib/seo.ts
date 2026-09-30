@@ -16,7 +16,7 @@ export const organizationSchema = {
   url: `${SITE}/`,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Ronda de Montealto 4, 5A',
+    streetAddress: 'Ronda de Monte Alto 4, 5A',
     postalCode: '15002',
     addressLocality: 'A Coruña',
     addressRegion: 'Galicia',
