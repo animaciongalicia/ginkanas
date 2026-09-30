@@ -58,7 +58,7 @@ Estructura actual (correcta para SEO local):
 - Canonical absoluto por página, `og:image` absoluta (antes apuntaba a un archivo que no existía), imagen 1200×630 real, `apple-touch-icon`, favicon nuevo, `theme-color`, `max-image-preview:large`.
 - Grafo JSON-LD único por página: `Organization` (una vez, referenciada por `@id`), `WebSite`, `WebPage`, `BreadcrumbList`, `Service` con `Offer` (antes `Product` sin imagen ni reseñas, que Google marca como error), `BlogPosting` con `dateModified`, `FAQPage`. Se eliminó el `LocalBusiness` con horario 9-21 h y sin dirección, que no aportaba y podía dar avisos.
 - Fuentes propias (self-host, `@fontsource`): fuera Google Fonts (bloqueaba el render y envía la IP del visitante a Google sin consentimiento, riesgo RGPD).
-- Peso: de ~22 MB de PNG a 0 imágenes pesadas. El HTML de la home ronda los 30 KB.
+- Peso: de ~22 MB de PNG a 0 imágenes pesadas. El HTML de la home pesa unos 45 KB (sin comprimir).
 - Accesibilidad básica: enlace "saltar al contenido", foco visible, contraste AA (el naranja `#FF6B35` y el verde WhatsApp `#25D366` con texto blanco no pasaban), `prefers-reduced-motion`.
 - Página 404 útil y `/gracias/` con `noindex`.
 - Corregido: enlaces rotos, texto partido en la home, "deduccción".
@@ -138,7 +138,7 @@ Cómo deciden estas IA: (a) leen el índice de un buscador (Bing para ChatGPT, G
 - Fuera las 17 mascotas (22 MB), los 200 emojis decorativos y los degradados de texto.
 - Paleta sobria: azul marino + naranja quemado (acento) + verde azulado, contraste AA. Tipografías Inter y Poppins propias.
 - Iconos de línea SVG (componente `Icon`) y paneles de color en lugar de fotos; logo nuevo, favicon, imagen de compartir.
-- Peso total de la home: unos 30 KB de HTML y una hoja de estilos; cero imágenes de contenido.
+- Cero imágenes de contenido; todo el sitio construido pesa 2,2 MB, incluidas las fuentes propias.
 
 **Límite honesto:** sin fotografías, la web comunica bien pero no emociona. Para empresas es aceptable; para despedidas, una galería real de 6-8 fotos (aunque sean de móvil, con permiso) subiría la conversión más que cualquier ajuste. Si en el futuro quieres imágenes generadas, deben ir claramente como ilustración de concepto y nunca como si fueran clientes reales.
 
