@@ -82,9 +82,7 @@ La web no usa fotos: los visuales son iconos SVG y paneles CSS (`src/components/
 La imagen para compartir en redes es `public/images/og-default.png` (1200x630).
 
 ### Formulario de contacto
-Envía cada solicitud por email a animaciongalicia@gmail.com mediante FormSubmit
-(`src/pages/contacto.astro`). **La primera vez que alguien lo envíe, FormSubmit manda un email
-de activación a esa cuenta: hay que pulsar el enlace una vez.** Después funciona solo.
+No usa ningún servicio externo. El formulario de `src/pages/contacto.astro` prepara el mensaje y lo envía **por WhatsApp** (678 288 284) o abre el **programa de correo del propio usuario** con el texto ya escrito (para animaciongalicia@gmail.com), así el usuario conserva copia. También hay botón de llamada. Para cambiar el correo de destino, edita `EMAIL` en el script de esa página.
 
 ### WhatsApp
 El número de WhatsApp está configurado como 678288284.

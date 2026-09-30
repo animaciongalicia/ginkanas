@@ -1,15 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Prose from '../components/Prose.astro';
+import FaqSection from '../components/FaqSection.astro';
 
-const title = 'Ginkanas para empresas y team building en Galicia';
-const description = 'Team building que funciona de verdad. Ginkanas para empresas en Galicia que mejoran la comunicación, crean equipo y generan recuerdos. Vigo, Coruña, Santiago.';
+const title = 'Team building y juegos para empresas en Galicia';
+const description = 'Team building y juegos a medida para empresas en Galicia: ginkanas, escape room y competiciones para grupos de 10 a 200 personas. Presupuesto a medida.';
 
 const beneficios = [
   {
     icon: '',
     title: 'Mejora la comunicación',
-    text: 'Cuando juegas, las barreras caen. El jefe, el becario y el de contabilidad son iguales en una ginkana.'
+    text: 'Cuando juegas, las barreras caen. El jefe, el becario y el de contabilidad son iguales en un juego por equipos.'
   },
   {
     icon: '',
@@ -19,7 +20,7 @@ const beneficios = [
   {
     icon: '',
     title: 'Crea recuerdos compartidos',
-    text: 'Las anécdotas de la ginkana aparecerán en cada cena de empresa durante años. Garantizado.'
+    text: 'Las anécdotas del juego aparecerán en cada cena de empresa durante años. Garantizado.'
   },
   {
     icon: '',
@@ -29,6 +30,11 @@ const beneficios = [
 ];
 
 const formatos = [
+  {
+    title: 'Juego a medida',
+    description: 'Un juego diseñado para vuestro evento y vuestro objetivo, con el formato y el tamaño de grupo que necesitéis.',
+    ideal: 'Jornadas anuales, convenciones, eventos de empresa'
+  },
   {
     title: 'Ginkana competitiva',
     description: 'Equipos enfrentados. Puntos, ranking y premio al ganador. Ideal si tu equipo tiene espíritu competitivo.',
@@ -47,6 +53,24 @@ const formatos = [
 ];
 
 const ampliado = [
+  {
+    "h": "Team building a medida: juegos, no solo ginkanas",
+    "p": [
+      "La ginkana es nuestro formato más conocido, pero para empresas no nos limitamos a ella. Diseñamos <strong>juegos y actividades de team building a medida</strong>, divertidos y adaptados al objetivo, al perfil del equipo y al espacio disponible. Puede ser una ginkana por la ciudad, un juego de investigación, una competición por equipos, un escape room o un juego pensado para vuestro evento.",
+      "Todos tienen en común lo esencial: reglas claras, equipos, pruebas y un monitor que dinamiza la actividad. Sin dinámicas forzadas y sin sentarse a escuchar."
+    ]
+  },
+  {
+    "h": "Para equipos de todos los tamaños",
+    "p": [
+      "Trabajamos con grupos de <strong>10 hasta 200 personas</strong> y proponemos el formato según el tamaño y el tiempo disponible (entre 2 y 4 horas):"
+    ],
+    "ul": [
+      "<strong>Equipos pequeños (desde 10 personas):</strong> una ginkana, un juego de investigación o un escape room en local, pensado para grupos de 6 a 20 personas.",
+      "<strong>Grupos medianos:</strong> varios equipos que compiten entre sí, con puntuación y ranking en vivo.",
+      "<strong>Grupos grandes (hasta 200 personas):</strong> juegos con muchos equipos en paralelo. El escape room móvil admite hasta 100 personas repartidas en equipos y lo llevamos a la oficina, un hotel, una finca o un salón de eventos."
+    ]
+  },
   {
     "h": "Cómo se prepara una ginkana de empresa",
     "p": [
@@ -72,10 +96,33 @@ const ampliado = [
   }
 ];
 
+const faqs = [
+  {
+    "q": "¿Solo hacéis ginkanas para empresas?",
+    "a": "No. Además de ginkanas, diseñamos juegos y actividades de team building a medida: juegos de investigación, competiciones por equipos y escape room, en local o móvil."
+  },
+  {
+    "q": "¿Para cuántas personas se puede organizar?",
+    "a": "Para grupos de 10 hasta 200 personas. El escape room móvil admite hasta 100 personas repartidas en equipos."
+  },
+  {
+    "q": "¿Cuánto dura una actividad de team building?",
+    "a": "Entre 2 y 4 horas, según el formato y el objetivo."
+  },
+  {
+    "q": "¿Dónde se puede hacer?",
+    "a": "En toda Galicia: por el centro de la ciudad (ginkanas y juegos), en vuestras instalaciones, un hotel, una finca o un salón de eventos (escape room móvil)."
+  },
+  {
+    "q": "¿Cuánto cuesta?",
+    "a": "El presupuesto es a medida, según el número de personas, la ciudad y el formato. Pídelo por WhatsApp o desde la página de contacto."
+  }
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Ginkanas para Empresas y Team Building",
+  "name": "Team building y juegos para empresas",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Ginkanas.es"
@@ -85,17 +132,17 @@ const schema = {
 };
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={schema} faqs={faqs}>
   
   <!-- HERO -->
   <section class="hero-inner">
     <div class="container">
       <div class="hero-content">
         <span class="hero-badge">Team building que no aburre</span>
-        <h1>Ginkanas para <span class="text-gradient">Empresas</span></h1>
+        <h1>Team building y <span class="text-gradient">juegos</span> para empresas</h1>
         <p class="hero-text">
           El team building típico es un coñazo. Dinámicas forzadas, silencios incómodos y ganas de volver al curro. 
-          Esto es otra cosa. Aquí se juega, se ríe y se crea equipo de verdad.
+          Esto es otra cosa: juegos divertidos y team building a medida, para equipos de cualquier tamaño. Aquí se juega, se ríe y se crea equipo de verdad.
         </p>
         <div class="hero-meta">
           <span class="meta-item">En toda Galicia</span>
@@ -115,7 +162,7 @@ const schema = {
   <section class="section">
     <div class="container">
       <div class="section-title">
-        <h2>¿Por qué una ginkana para tu equipo?</h2>
+        <h2>¿Por qué un team building con juegos?</h2>
         <p>Porque las cenas de empresa están bien, pero no crean equipo. Esto sí.</p>
       </div>
       
@@ -199,7 +246,7 @@ const schema = {
     <div class="container">
       <div class="section-title">
         <h2>¿Para qué ocasión?</h2>
-        <p>Hay mil excusas para organizar una ginkana de empresa. Estas son las más frecuentes.</p>
+        <p>Hay mil excusas para organizar una actividad de empresa. Estas son las más frecuentes.</p>
       </div>
       
       <div class="occasions-grid">
@@ -233,6 +280,8 @@ const schema = {
   
   <!-- CTA -->
   <Prose sections={ampliado} />
+
+  <FaqSection faqs={faqs} />
 
   <section class="section cta-section">
     <div class="container">
@@ -278,6 +327,7 @@ const schema = {
   
   .text-gradient { color: var(--color-primary); }
   
+  .hero-content h1 { margin-bottom: var(--space-md); }
   .hero-text {
     font-size: 1.25rem;
     color: var(--color-text-light);
@@ -324,7 +374,7 @@ const schema = {
   
   .formats-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-xl);
   }
   

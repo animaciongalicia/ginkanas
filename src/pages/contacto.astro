@@ -64,6 +64,16 @@ const ampliado = [
             <span class="contact-number">678 288 284</span>
           </div>
           
+          <div class="contact-card mail">
+            <div class="contact-icon"><Icon name="mail" size={36} stroke={1.5} /></div>
+            <h3>Correo</h3>
+            <p>Si prefieres escribirnos con calma.</p>
+            <a href="mailto:animaciongalicia@gmail.com?subject=Consulta%20sobre%20ginkanas" class="btn btn-secondary">
+              Escribir un correo
+            </a>
+            <span class="contact-number">animaciongalicia@gmail.com</span>
+          </div>
+
           <div class="contact-card hours">
             <div class="contact-icon"><Icon name="clock" size={36} stroke={1.5} /></div>
             <h3>Horario</h3>
@@ -72,39 +82,32 @@ const ampliado = [
         </div>
         
         <div class="contact-form-wrapper">
-          <h2>O déjanos un mensaje</h2>
-          <p>Rellena el formulario y te contactamos nosotros.</p>
+          <h2>O escríbenos desde aquí</h2>
+          <p>Rellena los datos y elige cómo enviarlos: por WhatsApp o desde tu correo.</p>
           
-          <form class="contact-form" action="https://formsubmit.co/animaciongalicia@gmail.com" method="POST">
-            <!-- FormSubmit: envía cada solicitud como email a animaciongalicia@gmail.com -->
-            <input type="hidden" name="_subject" value="Nueva solicitud de ginkana desde ginkanas.es">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://www.ginkanas.es/gracias/">
-            <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-
+          <form class="contact-form" id="contact-form" novalidate>
             <div class="form-group">
               <label for="name">Nombre *</label>
-              <input type="text" id="name" name="name" autocomplete="name" required>
+              <input type="text" id="name" name="nombre" autocomplete="name" required>
             </div>
 
             <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
+              <label for="email">Tu email (opcional)</label>
+              <input type="email" id="email" name="email" autocomplete="email">
             </div>
 
             <div class="form-group">
-              <label for="phone">Teléfono</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel">
+              <label for="phone">Tu teléfono (opcional)</label>
+              <input type="tel" id="phone" name="telefono" autocomplete="tel">
             </div>
 
             <div class="form-group">
               <label for="type">¿Qué celebras?</label>
-              <select id="type" name="tipo_evento">
+              <select id="type" name="ocasion">
                 <option value="">Selecciona una opción</option>
                 <option value="Despedida de soltera">Despedida de soltera</option>
                 <option value="Despedida de soltero">Despedida de soltero</option>
-                <option value="Evento de empresa">Evento de empresa</option>
+                <option value="Evento de empresa o team building">Evento de empresa o team building</option>
                 <option value="Cumpleaños">Cumpleaños</option>
                 <option value="Quedada de grupo">Quedada de grupo</option>
                 <option value="Otro">Otro</option>
@@ -136,14 +139,15 @@ const ampliado = [
               <textarea id="message" name="mensaje" rows="4" required placeholder="Fecha aproximada, qué tipo de ginkana os interesa, cualquier detalle que nos ayude..."></textarea>
             </div>
 
-            <div class="form-group full-width consent">
-              <label class="consent-label">
-                <input type="checkbox" name="acepta_privacidad" value="Sí" required>
-                <span>He leído y acepto la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>. Usaréis mis datos solo para responder a esta solicitud. *</span>
-              </label>
+            <div class="form-actions full-width">
+              <button type="button" class="btn btn-whatsapp btn-lg" data-send="whatsapp">Enviar por WhatsApp</button>
+              <button type="button" class="btn btn-primary btn-lg" data-send="email">Enviar por correo</button>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
+            <p class="form-note full-width">
+              Al pulsar, se abre tu WhatsApp o tu programa de correo con el mensaje ya escrito. Lo envías tú desde tu cuenta, así te queda copia de lo que nos has mandado.
+              Si prefieres, <a href="tel:+34678288284">llámanos al 678 288 284</a>.
+            </p>
           </form>
         </div>
         
@@ -154,6 +158,42 @@ const ampliado = [
 <Prose sections={ampliado} />
 
   </Layout>
+
+<script>
+  const EMAIL = 'animaciongalicia@gmail.com';
+  const WHATSAPP = '34678288284';
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+
+  function mensaje(): { asunto: string; texto: string } {
+    const d = new FormData(form!);
+    const v = (k: string) => String(d.get(k) ?? '').trim();
+    const lineas = ['Hola, me gustaría información sobre una ginkana.', ''];
+    const campos: [string, string][] = [
+      ['Nombre', v('nombre')],
+      ['Email', v('email')],
+      ['Teléfono', v('telefono')],
+      ['Ocasión', v('ocasion')],
+      ['Personas', v('personas')],
+      ['Ciudad', v('ciudad')],
+    ];
+    campos.forEach(([k, val]) => { if (val) lineas.push(`${k}: ${val}`); });
+    lineas.push('', v('mensaje'));
+    const asunto = ['Consulta sobre ginkanas', v('ocasion'), v('ciudad')].filter(Boolean).join(' - ');
+    return { asunto, texto: lineas.join('\n') };
+  }
+
+  form?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-send]');
+    if (!btn || !form) return;
+    if (!form.reportValidity()) return;
+    const { asunto, texto } = mensaje();
+    if (btn.dataset.send === 'whatsapp') {
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+    } else {
+      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(texto.replace(/\n/g, '\r\n'))}`;
+    }
+  });
+</script>
 
 <style>
   .hero-inner {
@@ -244,10 +284,6 @@ const ampliado = [
     border-color: var(--color-primary);
   }
   
-  .contact-form button {
-    grid-column: 1 / -1;
-    justify-self: start;
-  }
   
   @media (max-width: 1024px) {
     .contact-grid {
@@ -277,7 +313,6 @@ const ampliado = [
       grid-template-columns: 1fr;
     }
   }
-  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-  .consent-label { display: flex; gap: var(--space-sm); align-items: flex-start; font-weight: 400; font-size: 0.9375rem; }
-  .consent-label input { margin-top: 0.3rem; width: auto; }
+  .form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--space-md); }
+  .form-note { grid-column: 1 / -1; color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
 </style>
