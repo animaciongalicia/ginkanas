@@ -1,58 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getPosts, TEMAS, formatDate, isoDate } from '../../lib/blog';
 
-const title = 'Blog | Ideas y Consejos para Despedidas y Eventos';
-const description = 'Ideas para organizar despedidas de soltera, team building, cumpleaños y eventos en Galicia. Consejos prácticos, planes originales y todo lo que necesitas saber.';
+const title = 'Blog y novedades | Ideas y Consejos para Ginkanas y Eventos';
+const description = 'Guías y novedades sobre ginkanas para despedidas, cumpleaños, grupos y empresas en Galicia. Consejos prácticos, planes originales y todo lo que necesitas saber.';
 
-const posts = [
-  {
-    slug: 'presupuesto-despedida-soltera',
-    title: '¿Cuánto Cuesta una Despedida de Soltera? Presupuesto Real',
-    excerpt: 'Desglose real de costes. Alojamiento, actividades, comidas. Sin sorpresas.',
-    date: '2025-01-20',
-    category: 'Despedidas',
-    color: '#FF6B35'
-  },
-  {
-    slug: 'ideas-despedida-soltera-galicia',
-    title: '15 Ideas para una Despedida de Soltera en Galicia',
-    excerpt: 'Las mejores ideas para organizar una despedida memorable en tierras gallegas.',
-    date: '2025-01-15',
-    category: 'Despedidas',
-    color: '#FF6B35'
-  },
-  {
-    slug: 'mejores-ciudades-despedida-galicia',
-    title: '¿Qué Ciudad Elegir para tu Despedida en Galicia?',
-    excerpt: 'Vigo, Coruña, Santiago, Sanxenxo... Te ayudamos a elegir según tu plan.',
-    date: '2025-01-10',
-    category: 'Despedidas',
-    color: '#FF6B35'
-  },
-  {
-    slug: 'team-building-diferente-empresas',
-    title: 'Team Building que No Aburre: Ideas que Funcionan',
-    excerpt: 'Olvídate de las dinámicas forzadas. Actividades que de verdad crean equipo.',
-    date: '2025-01-05',
-    category: 'Empresas',
-    color: '#004E89'
-  },
-  {
-    slug: 'organizar-cumpleanos-adultos-original',
-    title: 'Cómo Organizar un Cumpleaños de Adultos Original',
-    excerpt: 'Cuando las cenas ya no sorprenden. Ideas para celebrar los 30, 40, 50...',
-    date: '2024-12-20',
-    category: 'Cumpleaños',
-    color: '#E91E63'
-  },
-  {
-    slug: 'que-es-una-ginkana-urbana',
-    title: '¿Qué es una Ginkana Urbana y Por Qué Mola Tanto?',
-    excerpt: 'Todo lo que necesitas saber: qué son, cómo funcionan, tipos que existen.',
-    date: '2024-12-15',
-    category: 'General',
-    color: '#FF9800'
-  }
+const posts = await getPosts();
+
+// Filtros de la lista (solo en esta página, sin URLs propias para no competir con las páginas principales)
+const filtros = [
+  { id: 'todo', label: 'Todo' },
+  { id: 'despedidas', label: 'Despedidas' },
+  { id: 'cumpleanos', label: 'Cumpleaños y grupos' },
+  { id: 'empresas', label: 'Empresas' },
+  { id: 'novedad', label: 'Novedades' },
 ];
 ---
 
@@ -60,26 +21,34 @@ const posts = [
   
   <section class="hero-blog">
     <div class="container">
-      <h1>Blog</h1>
+      <h1>Blog y novedades</h1>
       <p class="hero-text">Ideas, consejos y todo lo que necesitas para organizar algo memorable.</p>
+      <p class="hero-rss"><a href="/rss.xml">Suscribirse por RSS</a></p>
     </div>
   </section>
   
   <section class="section">
     <div class="container">
-      <div class="posts-grid">
+      <div class="blog-filters" id="blog-filters" role="group" aria-label="Filtrar artículos" hidden>
+        {filtros.map((f) => (
+          <button type="button" class="chip" data-filtro={f.id} aria-pressed={f.id === 'todo' ? 'true' : 'false'}>{f.label}</button>
+        ))}
+      </div>
+
+      <div class="posts-grid" id="posts-grid">
         {posts.map((post) => (
-          <article class="post-card" style={`--post-color: ${post.color}`}>
-            <span class="post-category">{post.category}</span>
-            <h2><a href={`/blog/${post.slug}/`}>{post.title}</a></h2>
-            <p>{post.excerpt}</p>
+          <article class="post-card" data-tema={post.data.tema} data-tipo={post.data.tipo} style={`--post-color: ${TEMAS[post.data.tema].accent}`}>
+            <span class="post-category">{post.data.etiqueta ?? (post.data.tipo === 'novedad' ? 'Novedad' : TEMAS[post.data.tema].label)}</span>
+            <h2><a href={`/blog/${post.slug}/`}>{post.data.titulo}</a></h2>
+            <p>{post.data.resumen ?? post.data.descripcion}</p>
             <div class="post-meta">
-              <time datetime={post.date}>{new Date(post.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+              <time datetime={isoDate(post.data.fecha)}>{formatDate(post.data.fecha)}</time>
               <a href={`/blog/${post.slug}/`} class="read-more">Leer más →</a>
             </div>
           </article>
         ))}
       </div>
+      <p class="no-results" id="no-results" hidden>Todavía no hay artículos en esta selección.</p>
     </div>
   </section>
   
@@ -95,6 +64,28 @@ const posts = [
   
 </Layout>
 
+<script>
+  const bar = document.getElementById('blog-filters');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.post-card'));
+  const none = document.getElementById('no-results');
+  if (bar) {
+    bar.hidden = false;
+    bar.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-filtro]');
+      if (!btn) return;
+      const f = btn.dataset.filtro;
+      bar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      let visibles = 0;
+      cards.forEach((c) => {
+        const ok = f === 'todo' || (f === 'novedad' ? c.dataset.tipo === 'novedad' : c.dataset.tema === f);
+        c.hidden = !ok;
+        if (ok) visibles++;
+      });
+      if (none) none.hidden = visibles > 0;
+    });
+  }
+</script>
+
 <style>
   .hero-blog {
     background: var(--color-bg-alt);
@@ -108,6 +99,13 @@ const posts = [
     margin-top: var(--space-md);
   }
   
+  .hero-rss { margin: var(--space-sm) 0 0; font-size: 0.875rem; }
+  .blog-filters { display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center; margin-bottom: var(--space-xl); }
+  .blog-filters[hidden], .post-card[hidden], .no-results[hidden] { display: none; }
+  .chip { border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-full); font: inherit; font-weight: 500; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--color-secondary); border-color: var(--color-secondary); color: #fff; }
+  .no-results { text-align: center; color: var(--color-text-light); margin-top: var(--space-xl); }
+
   .posts-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

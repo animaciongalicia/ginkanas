@@ -1,0 +1,65 @@
+---
+import { GA4_ID } from '../config/tracking';
+---
+
+{GA4_ID && (
+  <>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" hidden>
+      <p id="cookie-title">
+        Usamos cookies de analítica (Google Analytics) para saber qué páginas funcionan y mejorar la web. Solo se activan si aceptas.
+        <a href="/cookies/">Más información</a>
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline" data-cookie="rechazar">Rechazar</button>
+        <button type="button" class="btn btn-primary" data-cookie="aceptar">Aceptar</button>
+      </div>
+    </div>
+
+    <script is:inline define:vars={{ GA4_ID }}>
+      (function () {
+        var KEY = 'ginkanas-cookies';
+        var banner = document.getElementById('cookie-banner');
+        function load() {
+          if (window.__gaLoaded) return;
+          window.__gaLoaded = true;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', GA4_ID, { anonymize_ip: true });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+          document.head.appendChild(s);
+        }
+        function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+        function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+        var choice = get();
+        if (choice === 'aceptar') load();
+        else if (!choice && banner) banner.hidden = false;
+        if (banner) banner.addEventListener('click', function (e) {
+          var b = e.target.closest && e.target.closest('button[data-cookie]');
+          if (!b) return;
+          set(b.dataset.cookie);
+          banner.hidden = true;
+          if (b.dataset.cookie === 'aceptar') load();
+        });
+        // Enlace "Configurar cookies" (opcional) para cambiar la decisión
+        document.addEventListener('click', function (e) {
+          var l = e.target.closest && e.target.closest('[data-cookie-settings]');
+          if (l && banner) { e.preventDefault(); banner.hidden = false; }
+        });
+      })();
+    </script>
+
+    <style>
+      .cookie-banner { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 1500; max-width: 760px; margin: 0 auto; background: var(--color-bg-dark); color: #fff; padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); display: flex; gap: var(--space-lg); align-items: center; flex-wrap: wrap; }
+      .cookie-banner[hidden] { display: none; }
+      .cookie-banner p { margin: 0; flex: 1 1 320px; font-size: 0.9375rem; }
+      .cookie-banner a { color: #FDBA74; text-decoration: underline; }
+      .cookie-actions { display: flex; gap: var(--space-sm); }
+      .cookie-actions .btn { padding: var(--space-sm) var(--space-lg); }
+      .cookie-actions .btn-outline { border-color: #fff; color: #fff; }
+      .cookie-actions .btn-outline:hover { background: #fff; color: var(--color-bg-dark); }
+    </style>
+  </>
+)}

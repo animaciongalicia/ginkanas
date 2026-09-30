@@ -44,7 +44,7 @@ Estructura actual (correcta para SEO local):
 **Recomendaciones:**
 - **[HECHO]** Migas de pan (BreadcrumbList) automáticas y `trailingSlash: 'always'` para que solo exista una URL por página.
 - **[HECHO]** Sitemap automático sin páginas de gracias/404.
-- **Falta la matriz ciudad × público.** El tráfico de dinero está en búsquedas como "despedida de soltera Vigo", "team building A Coruña", "cumpleaños original Santiago". Hoy la ciudad y el público viven en páginas separadas. Fase 2 (semanas 3-8): páginas `/ginkanas-despedidas/vigo/`, `/ginkanas-empresas/coruna/`… empezando por Vigo, A Coruña, Santiago y Sanxenxo, con contenido propio (recorridos reales, precios, dudas locales). No las generaría en bloque con texto duplicado: Google las penaliza; mejor 6-8 bien hechas.
+- **Ciudades sin multiplicar páginas (decisión del equipo).** Una página por ciudad, y dentro de cada una un bloque que cubre los tres públicos (despedida, cumpleaños/grupos, empresas) con enlace a su página general. No se crean páginas ciudad × público: no escalan y se duplicarían. Las 7 ciudades ya tienen ese bloque.
 - **Enlazado interno.** Los posts del blog deberían enlazar a la ciudad y al público que corresponde con anchor descriptivo. Se quitaron dos enlaces rotos **[HECHO]**; los dos artículos que enlazaban ("Escape room para team building" y "10 actividades de empresa en Galicia") son buenas ideas de post nuevo.
 - **Datos de experiencias inconsistentes.** Cluedo y Supervivientes dicen "grupo mín. 8", el resto y la FAQ de la home dicen 6. Una IA que lee ambas se contradice y desconfía. **[TÚ: confirma mínimos reales]** y unifico.
 
@@ -74,11 +74,13 @@ Estructura actual (correcta para SEO local):
 
 ## 5. Contenido y on-page
 
+**Blog en Markdown [HECHO].** Cada artículo es un archivo en `src/content/blog/`; hay `_plantilla.md` con la lista de comprobación. Sin categorías con URL propia (evita competir con las páginas principales): filtros por botones en `/blog/`, RSS en `/rss.xml`, `lastmod` en el sitemap y lista de artículos en `llms.txt` generadas solas.
+
 - **Bien:** una idea por página, tono propio, FAQs en las experiencias.
 - **[HECHO]** Bloque "¿Qué es Ginkanas.es?" en la home: definición de dos frases, citable tal cual por una IA.
 - **[HECHO]** FAQ visible + `FAQPage` en las 7 ciudades (precio, duración, mínimo, zonas, lluvia, cómo reservar) y en las 5 experiencias y la home.
 - **[HECHO]** H1 de la home con la keyword ("Ginkanas en Galicia: …").
-- **Falta:** contenido que responda búsquedas reales con fecha y autor, y páginas de dinero por ciudad × público (ver §3).
+- **Falta:** contenido que responda búsquedas reales con fecha y autor, y refuerzo de las páginas de ciudad y de público existentes.
 - **Calendario editorial (1 post/semana, 12 posts)**, priorizando intención de compra:
   1. Despedida de soltera en Vigo/Coruña/Santiago: plan de un día con ginkana.
   2. Precio de una ginkana para despedida en Galicia (tabla real, no orientativa).
@@ -156,8 +158,8 @@ Sobre cambiar **toda la arquitectura**: no. La arquitectura (páginas por públi
 ## 10. Plan a 90 días
 
 **Semana 0-1 (hoy):** revisar y publicar esta rama; probar el formulario; alta en Search Console y Bing; ficha de Google Business; decidir analítica; confirmar mínimos de personas y tono de empresas.
-**Semanas 2-4:** reseñas (primer objetivo: 10); enlaces desde las 5 webs hermanas; datos legales y reescritura con tildes; 4 posts; páginas Vigo × despedidas y Coruña × empresas.
-**Semanas 5-8:** 4 posts más; 4 páginas ciudad × público; primera nota de prensa local; vídeo corto; 25 reseñas.
+**Semanas 2-4:** reseñas (primer objetivo: 10); enlaces desde las 5 webs hermanas; datos legales y reescritura con tildes; 4 posts.
+**Semanas 5-8:** 4 posts más; primera nota de prensa local; vídeo corto; 25 reseñas.
 **Semanas 9-12:** medir (Search Console: impresiones/clics por página; consultas a las IA cada 2 semanas); reforzar lo que ya entra; podar lo que no; ampliar ciudades.
 
 **KPIs realistas a 90 días:** indexadas 100 % de las páginas; top 10 en "ginkanas {ciudad}" en 3-4 ciudades de tráfico medio; aparición de la marca en respuestas de IA en al menos 2 de las 10 consultas objetivo; 20-30 leads/mes por WhatsApp y formulario. Dependen de reseñas y enlaces, no solo del código.

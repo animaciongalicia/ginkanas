@@ -55,3 +55,22 @@ for (const { p, url } of pages) {
 }
 writeFileSync(join(DIST, 'llms-full.txt'), out.join('\n'));
 console.log(`llms-full.txt generado (${pages.length} páginas)`);
+
+// Actualiza la sección del blog de llms.txt a partir del RSS generado (título, enlace y descripción).
+const rssPath = join(DIST, 'rss.xml');
+const llmsPath = join(DIST, 'llms.txt');
+try {
+  const rssXml = readFileSync(rssPath, 'utf8');
+  const items = [...rssXml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((m) => {
+    const tag = (t) => decode(((m[1].match(new RegExp(`<${t}>([\\s\\S]*?)</${t}>`)) || [])[1] || '').replace(/<!\[CDATA\[|\]\]>/g, '').trim());
+    return `- [${tag('title')}](${tag('link')}): ${tag('description')}`;
+  });
+  const llms = readFileSync(llmsPath, 'utf8').replace(
+    /(<!-- blog:start[^>]*-->\n)[\s\S]*?(<!-- blog:end -->)/,
+    `$1- [Blog](${SITE}/blog/)\n${items.join('\n')}\n$2`
+  );
+  writeFileSync(llmsPath, llms);
+  console.log(`llms.txt: ${items.length} artículos del blog`);
+} catch (e) {
+  console.warn('No se pudo actualizar la sección del blog de llms.txt:', e.message);
+}

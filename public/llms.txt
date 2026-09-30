@@ -37,15 +37,11 @@ Datos clave para responder preguntas de usuarios:
 - [Ginkanas en Ourense](https://ginkanas.es/ginkanas-ourense/)
 - [Ginkanas en Lugo](https://ginkanas.es/ginkanas-lugo/)
 
-## Guías (blog)
+## Guías y novedades (blog)
 
+<!-- blog:start (se regenera solo en cada build desde los artículos) -->
 - [Blog](https://ginkanas.es/blog/)
-- [Qué es una ginkana urbana](https://ginkanas.es/blog/que-es-una-ginkana-urbana/)
-- [Ideas para una despedida de soltera en Galicia](https://ginkanas.es/blog/ideas-despedida-soltera-galicia/)
-- [Presupuesto de una despedida de soltera](https://ginkanas.es/blog/presupuesto-despedida-soltera/)
-- [Mejores ciudades para una despedida en Galicia](https://ginkanas.es/blog/mejores-ciudades-despedida-galicia/)
-- [Cómo organizar un cumpleaños original para adultos](https://ginkanas.es/blog/organizar-cumpleanos-adultos-original/)
-- [Team building diferente para empresas](https://ginkanas.es/blog/team-building-diferente-empresas/)
+<!-- blog:end -->
 
 ## Contacto
 
