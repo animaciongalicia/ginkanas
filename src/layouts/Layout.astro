@@ -3,6 +3,8 @@ import '@fontsource-variable/inter';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 import '@fontsource/poppins/800.css';
+import interFontUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import poppinsFontUrl from '@fontsource/poppins/files/poppins-latin-700-normal.woff2?url';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -94,6 +96,10 @@ const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': grap
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0B3A6F">
   {GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION}>}
+
+  <!-- Fuentes críticas precargadas (evita saltos de diseño) -->
+  <link rel="preload" href={interFontUrl} as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href={poppinsFontUrl} as="font" type="font/woff2" crossorigin>
 
   <!-- SEO básico -->
   <title>{fullTitle}</title>
