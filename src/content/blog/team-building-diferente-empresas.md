@@ -4,7 +4,7 @@ descripcion: "Olvídate de las dinámicas forzadas y los silencios incómodos. I
 resumen: "Olvídate de las dinámicas forzadas. Actividades que de verdad crean equipo."
 intro: "Seamos honestos: la mayoría de actividades de team building son un coñazo. Dinámicas forzadas, silencios incómodos y ganas de volver al curro. Pero no tiene por qué ser así."
 fecha: 2025-01-05
-actualizado: 2025-01-05
+actualizado: 2026-09-30
 tipo: guia
 tema: empresas
 etiqueta: "Empresas"
@@ -14,6 +14,13 @@ cta:
 relacionados:
   - titulo: "Ginkanas para empresas"
     enlace: "/ginkanas-empresas/"
+faqs:
+  - pregunta: "¿Para cuántas personas se puede organizar?"
+    respuesta: "Para grupos de 10 hasta 200 personas. El escape room móvil admite hasta 100 repartidas en equipos."
+  - pregunta: "¿Cuánto dura una actividad de empresa?"
+    respuesta: "Entre 2 y 4 horas según el formato y el objetivo."
+  - pregunta: "¿Cuánto cuesta un team building?"
+    respuesta: "El presupuesto es a medida, según el número de personas, la ciudad y el formato. Pide propuesta por WhatsApp o formulario."
 ---
 
 ## El problema del team building tradicional
@@ -106,3 +113,9 @@ Antes de contratar nada, hazte estas preguntas:
 El mejor team building es el que **genera historias**. Si al lunes siguiente la gente está comentando lo que pasó, funcionó. Si nadie lo menciona, fue otro evento más.
 
 Las anécdotas compartidas crean cultura de equipo. "¿Te acuerdas de aquella vez que...?" es el indicador de éxito.
+
+## Cómo montamos una ginkana de empresa
+
+Una actividad de empresa se prepara a medida. Nos hace falta saber cuántas personas sois (trabajamos con grupos de 10 hasta 200), en qué ciudad, qué queréis conseguir y cuánto tiempo tenéis (entre 2 y 4 horas). Con eso os proponemos formato, duración y presupuesto.
+
+El día de la actividad, el punto de encuentro suele ser la plaza del Ayuntamiento o una calle céntrica. El monitor abre con un briefing de 10-15 minutos, divide al grupo en equipos y explica el juego. Después llegan las pruebas por el centro de la ciudad y, al final, el recuento de puntos. Formatos habituales: [Cluedo](/experiencias/ginkana-cluedo/) para trabajar la comunicación, [Supervivientes](/experiencias/ginkana-supervivientes/) para equipos competitivos y [escape room](/escape-room/) en local o móvil.
