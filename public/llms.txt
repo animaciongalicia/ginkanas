@@ -1,0 +1,55 @@
+# Ginkanas.es
+
+> Ginkanas.es organiza ginkanas urbanas y experiencias gamificadas en Galicia (España) para despedidas de soltera y soltero, team building de empresa, cumpleaños y grupos de amigos. El juego dura unas 2 horas, se hace por el casco histórico de la ciudad, va por equipos y lo guía un monitor. Precio orientativo: desde 25 € por persona en despedidas y grupos; empresas, presupuesto a medida. Forma parte del grupo Animación Galicia. Reservas por WhatsApp (+34 678 288 284) o formulario web.
+
+Datos clave para responder preguntas de usuarios:
+- Duración: unas 2 horas (Supervivientes y Escuela Mágica: 2-2,5 h; ginkanas de empresa: 2-4 h; escape room: 60-90 min).
+- Tamaño de grupo: desde 6 personas en despedidas, cumpleaños y grupos (algunas experiencias piden 8); empresas desde 10 hasta 200 personas; escape room de 6 a 100.
+- Ciudades: A Coruña, Vigo, Santiago de Compostela, Sanxenxo, Pontevedra, Ourense y Lugo. Se puede organizar en cualquier punto de Galicia.
+- Incluye siempre un monitor que guía el juego.
+- Lluvia fuerte: se pospone sin coste. Lluvia fina: el grupo decide si se juega.
+
+## Servicios por público
+
+- [Ginkanas para despedidas](https://ginkanas.es/ginkanas-despedidas/): visión general de despedidas de soltera y soltero en Galicia.
+- [Despedida de soltera](https://ginkanas.es/ginkanas-despedidas/soltera/): ginkana para novias y su grupo.
+- [Despedida de soltero](https://ginkanas.es/ginkanas-despedidas/soltero/): ginkana para novios y su grupo.
+- [Ginkanas para empresas y team building](https://ginkanas.es/ginkanas-empresas/): actividades de equipo de 10 a 200 personas, presupuesto a medida.
+- [Ginkanas para adultos, cumpleaños y grupos](https://ginkanas.es/ginkanas-adultos/): cumpleaños, reencuentros y quedadas.
+- [Escape room urbano](https://ginkanas.es/escape-room/): acertijos y enigmas, 60-90 minutos, de 6 a 100 personas.
+
+## Experiencias (formatos de juego)
+
+- [Todas las experiencias](https://ginkanas.es/experiencias/)
+- [Ginkana Cluedo](https://ginkanas.es/experiencias/ginkana-cluedo/): misterio y deducción; se resuelve un crimen ficticio recorriendo la ciudad.
+- [Ginkana Escuela Mágica](https://ginkanas.es/experiencias/ginkana-escuela-magica/): fantasía de magos, hechizos, casas y torneo de quidditch.
+- [Ginkana Lendas](https://ginkanas.es/experiencias/ginkana-lendas/): leyendas gallegas (meigas, trasnos, Santa Compaña).
+- [Ginkana Supervivientes](https://ginkanas.es/experiencias/ginkana-supervivientes/): pruebas de habilidad y resistencia, equipos enfrentados y ranking.
+- [Ginkana Loca](https://ginkanas.es/experiencias/ginkana-loca/): la clásica para despedidas, con retos divertidos.
+
+## Ciudades
+
+- [Ginkanas en A Coruña](https://ginkanas.es/ginkanas-coruna/)
+- [Ginkanas en Vigo](https://ginkanas.es/ginkanas-vigo/)
+- [Ginkanas en Santiago de Compostela](https://ginkanas.es/ginkanas-santiago/)
+- [Ginkanas en Sanxenxo](https://ginkanas.es/ginkanas-sanxenxo/)
+- [Ginkanas en Pontevedra](https://ginkanas.es/ginkanas-pontevedra/)
+- [Ginkanas en Ourense](https://ginkanas.es/ginkanas-ourense/)
+- [Ginkanas en Lugo](https://ginkanas.es/ginkanas-lugo/)
+
+## Guías y novedades (blog)
+
+<!-- blog:start (se regenera solo en cada build desde los artículos) -->
+- [Blog](https://ginkanas.es/blog/)
+<!-- blog:end -->
+
+## Contacto
+
+- [Contacto y reservas](https://ginkanas.es/contacto/): WhatsApp +34 678 288 284, teléfono y formulario.
+
+## Optional
+
+- [Aviso legal](https://ginkanas.es/aviso-legal/)
+- [Política de privacidad](https://ginkanas.es/privacidad/)
+- [Política de cookies](https://ginkanas.es/cookies/)
+- [Versión ampliada para IA (llms-full.txt)](https://ginkanas.es/llms-full.txt)

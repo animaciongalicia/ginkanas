@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
 
 const title = 'Ginkana Lendas | Leyendas y Misterios de Galicia';
 const description = 'Descubre las leyendas más fascinantes de Galicia jugando. Meigas, trasnos, la Santa Compaña y tesoros ocultos. Una experiencia única para conocer la cultura gallega. Desde 25€/persona.';
@@ -29,12 +30,12 @@ const schema = {
 };
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={schema} faqs={faqs}>
   
   <section class="hero-exp">
     <div class="container hero-grid">
       <div class="hero-text">
-        <span class="exp-tag">👻 Cultura y misterio</span>
+        <span class="exp-tag">Cultura y misterio</span>
         <h1>Ginkana Lendas</h1>
         <p>Galicia tiene las leyendas más fascinantes de España. Meigas, trasnos, la Santa Compaña, tesoros ocultos... Descúbrelas jugando por las calles de nuestras ciudades.</p>
         <div class="meta-boxes">
@@ -45,7 +46,7 @@ const schema = {
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Lendas" class="btn btn-whatsapp btn-lg">Reservar Ginkana Lendas</a>
       </div>
       <div class="hero-image">
-        <img src="/images/mascota-escondida.png" alt="Monitora entre misterios" loading="eager">
+        <div class="glyph-panel" aria-hidden="true"><Icon name="moon" size={128} stroke={1.1} /></div>
       </div>
     </div>
   </section>
@@ -72,7 +73,7 @@ const schema = {
       
       <div class="content-side">
         <div class="info-box">
-          <h4>✅ Incluye</h4>
+          <h4>Incluye</h4>
           <ul>
             <li>Monitor/Narrador</li>
             <li>Guía de leyendas</li>
@@ -81,7 +82,7 @@ const schema = {
           </ul>
         </div>
         <div class="info-box">
-          <h4>👯 Ideal para</h4>
+          <h4>Ideal para</h4>
           <ul>
             <li>Amantes de Galicia</li>
             <li>Turistas curiosos</li>
@@ -90,7 +91,7 @@ const schema = {
           </ul>
         </div>
         <div class="queimada-box">
-          <h4>🔥 Extra: Queimada</h4>
+          <h4>Extra: Queimada</h4>
           <p>Podemos terminar con una queimada tradicional, con conjuro incluido. Consultar precio.</p>
         </div>
       </div>
@@ -117,9 +118,6 @@ const schema = {
         <h2>¿Quieres conocer la Galicia mágica?</h2>
         <p>Cuéntanos en qué ciudad y cuántos sois. Preparamos una experiencia única.</p>
         <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
-      </div>
-      <div class="cta-image">
-        <img src="/images/mascota-portapapeles.png" alt="Monitora con siguiente pista">
       </div>
     </div>
   </section>
@@ -164,7 +162,7 @@ const schema = {
   .faq-card p { color: var(--color-text-light); margin: 0; }
   
   .cta-section { background: linear-gradient(135deg, #1A1A2E, #2D2D44); }
-  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-3xl); align-items: center; }
   .cta-text h2 { color: white; margin-bottom: var(--space-md); }
   .cta-text p { color: rgba(255,255,255,0.85); font-size: 1.25rem; margin-bottom: var(--space-xl); }
   .cta-image img { max-width: 280px; }

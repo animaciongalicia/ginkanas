@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
 const title = 'Contacto | Ginkanas.es';
-const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Galicia. WhatsApp, teléfono o formulario. Respuesta rápida garantizada.';
+const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Galicia. WhatsApp, teléfono o formulario. Te respondemos lo antes posible.';
 ---
 
 <Layout title={title} description={description}>
@@ -20,7 +21,7 @@ const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Ga
         
         <div class="contact-options">
           <div class="contact-card whatsapp">
-            <div class="contact-icon">📱</div>
+            <div class="contact-icon"><Icon name="chat" size={36} stroke={1.5} /></div>
             <h3>WhatsApp</h3>
             <p>La forma más rápida. Respuesta casi instantánea.</p>
             <a href="https://wa.me/34678288284" class="btn btn-whatsapp" target="_blank" rel="noopener">
@@ -30,7 +31,7 @@ const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Ga
           </div>
           
           <div class="contact-card phone">
-            <div class="contact-icon">📞</div>
+            <div class="contact-icon"><Icon name="phone" size={36} stroke={1.5} /></div>
             <h3>Teléfono</h3>
             <p>Si prefieres llamar directamente.</p>
             <a href="tel:+34678288284" class="btn btn-secondary">
@@ -40,7 +41,7 @@ const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Ga
           </div>
           
           <div class="contact-card hours">
-            <div class="contact-icon">🕐</div>
+            <div class="contact-icon"><Icon name="clock" size={36} stroke={1.5} /></div>
             <h3>Horario</h3>
             <p>Atendemos todos los días de 9:00 a 21:00. Fuera de horario, déjanos WhatsApp y te respondemos en cuanto podamos.</p>
           </div>
@@ -50,60 +51,74 @@ const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Ga
           <h2>O déjanos un mensaje</h2>
           <p>Rellena el formulario y te contactamos nosotros.</p>
           
-          <form class="contact-form" action="https://formspree.io/f/TUFORMID" method="POST">
+          <form class="contact-form" action="https://formsubmit.co/animaciongalicia@gmail.com" method="POST">
+            <!-- FormSubmit: envía cada solicitud como email a animaciongalicia@gmail.com -->
+            <input type="hidden" name="_subject" value="Nueva solicitud de ginkana desde ginkanas.es">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://ginkanas.es/gracias/">
+            <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
             <div class="form-group">
               <label for="name">Nombre *</label>
-              <input type="text" id="name" name="name" required>
+              <input type="text" id="name" name="name" autocomplete="name" required>
             </div>
-            
+
             <div class="form-group">
               <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
+              <input type="email" id="email" name="email" autocomplete="email" required>
             </div>
-            
+
             <div class="form-group">
               <label for="phone">Teléfono</label>
-              <input type="tel" id="phone" name="phone">
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
             </div>
-            
+
             <div class="form-group">
               <label for="type">¿Qué celebras?</label>
-              <select id="type" name="type">
+              <select id="type" name="tipo_evento">
                 <option value="">Selecciona una opción</option>
-                <option value="despedida-soltera">Despedida de soltera</option>
-                <option value="despedida-soltero">Despedida de soltero</option>
-                <option value="empresa">Evento de empresa</option>
-                <option value="cumpleanos">Cumpleaños</option>
-                <option value="grupo">Quedada de grupo</option>
-                <option value="otro">Otro</option>
+                <option value="Despedida de soltera">Despedida de soltera</option>
+                <option value="Despedida de soltero">Despedida de soltero</option>
+                <option value="Evento de empresa">Evento de empresa</option>
+                <option value="Cumpleaños">Cumpleaños</option>
+                <option value="Quedada de grupo">Quedada de grupo</option>
+                <option value="Otro">Otro</option>
               </select>
             </div>
-            
+
             <div class="form-group">
               <label for="people">¿Cuántas personas?</label>
-              <input type="number" id="people" name="people" min="1">
+              <input type="number" id="people" name="personas" min="1">
             </div>
-            
+
             <div class="form-group">
               <label for="city">¿En qué ciudad?</label>
-              <select id="city" name="city">
+              <select id="city" name="ciudad">
                 <option value="">Selecciona una ciudad</option>
-                <option value="coruna">A Coruña</option>
-                <option value="vigo">Vigo</option>
-                <option value="santiago">Santiago</option>
-                <option value="sanxenxo">Sanxenxo</option>
-                <option value="pontevedra">Pontevedra</option>
-                <option value="ourense">Ourense</option>
-                <option value="lugo">Lugo</option>
-                <option value="otra">Otra</option>
+                <option value="A Coruña">A Coruña</option>
+                <option value="Vigo">Vigo</option>
+                <option value="Santiago">Santiago</option>
+                <option value="Sanxenxo">Sanxenxo</option>
+                <option value="Pontevedra">Pontevedra</option>
+                <option value="Ourense">Ourense</option>
+                <option value="Lugo">Lugo</option>
+                <option value="Otra">Otra</option>
               </select>
             </div>
-            
+
             <div class="form-group full-width">
               <label for="message">Cuéntanos más *</label>
-              <textarea id="message" name="message" rows="4" required placeholder="Fecha aproximada, qué tipo de ginkana os interesa, cualquier detalle que nos ayude..."></textarea>
+              <textarea id="message" name="mensaje" rows="4" required placeholder="Fecha aproximada, qué tipo de ginkana os interesa, cualquier detalle que nos ayude..."></textarea>
             </div>
-            
+
+            <div class="form-group full-width consent">
+              <label class="consent-label">
+                <input type="checkbox" name="acepta_privacidad" value="Sí" required>
+                <span>He leído y acepto la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>. Usaréis mis datos solo para responder a esta solicitud. *</span>
+              </label>
+            </div>
+
             <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
           </form>
         </div>
@@ -236,4 +251,7 @@ const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Ga
       grid-template-columns: 1fr;
     }
   }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .consent-label { display: flex; gap: var(--space-sm); align-items: flex-start; font-weight: 400; font-size: 0.9375rem; }
+  .consent-label input { margin-top: 0.3rem; width: auto; }
 </style>

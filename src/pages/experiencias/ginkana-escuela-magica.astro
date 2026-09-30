@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
 
 const title = 'Ginkana Escuela Mágica | Para Fans de Harry Potter';
 const description = 'Conviértete en mago o bruja por un día. Hechizos, pociones, clasificación en casas y torneo de Quidditch. La ginkana perfecta para fans de Harry Potter. Desde 25€/persona.';
@@ -29,12 +30,12 @@ const schema = {
 };
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={schema} faqs={faqs}>
   
   <section class="hero-exp">
     <div class="container hero-grid">
       <div class="hero-text">
-        <span class="exp-tag">🧙 Magia y diversión</span>
+        <span class="exp-tag">Magia y diversión</span>
         <h1>Ginkana Escuela Mágica</h1>
         <p>Tu carta de Hogwarts llegó tarde, pero nunca es tarde para ser mago. Clasificación en casas, clases de hechizos, pociones y un torneo de Quidditch. La experiencia más mágica de Galicia.</p>
         <div class="meta-boxes">
@@ -45,7 +46,7 @@ const schema = {
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Escuela%20Mágica" class="btn btn-whatsapp btn-lg">Reservar Escuela Mágica</a>
       </div>
       <div class="hero-image">
-        <img src="/images/mascota-mapa-tesoro.png" alt="Monitora con mapa mágico" loading="eager">
+        <div class="glyph-panel" aria-hidden="true"><Icon name="sparkles" size={128} stroke={1.1} /></div>
       </div>
     </div>
   </section>
@@ -71,7 +72,7 @@ const schema = {
       
       <div class="content-side">
         <div class="info-box gryffindor">
-          <h4>✅ Incluye</h4>
+          <h4>Incluye</h4>
           <ul>
             <li>Monitor/Profesor de magia</li>
             <li>Material mágico (varitas, pergaminos)</li>
@@ -80,7 +81,7 @@ const schema = {
           </ul>
         </div>
         <div class="info-box slytherin">
-          <h4>👯 Ideal para</h4>
+          <h4>Ideal para</h4>
           <ul>
             <li>Fans de Harry Potter</li>
             <li>Cumpleaños temáticos</li>
@@ -112,9 +113,6 @@ const schema = {
         <h2>¿Preparados para la magia?</h2>
         <p>Cuéntanos cuántos sois y preparamos vuestra experiencia mágica.</p>
         <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
-      </div>
-      <div class="cta-image">
-        <img src="/images/mascota-saltando.png" alt="Monitora celebrando">
       </div>
     </div>
   </section>
@@ -157,7 +155,7 @@ const schema = {
   .faq-card p { color: var(--color-text-light); margin: 0; }
   
   .cta-section { background: linear-gradient(135deg, #4A148C, #7B1FA2); }
-  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-3xl); align-items: center; }
   .cta-text h2 { color: white; margin-bottom: var(--space-md); }
   .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
   .cta-image img { max-width: 220px; }

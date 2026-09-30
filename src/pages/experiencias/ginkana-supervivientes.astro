@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
 
 const title = 'Ginkana Supervivientes | Pruebas Físicas y Competición';
 const description = 'La ginkana más competitiva. Pruebas físicas, de habilidad y resistencia. Equipos enfrentados, ranking y solo los más fuertes sobreviven. Desde 25€/persona.';
@@ -29,16 +30,14 @@ const schema = {
 };
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={schema} faqs={faqs}>
   
   <section class="hero-exp">
     <div class="container hero-grid">
       <div class="hero-text">
-        <span class="exp-tag">🏆 Competición total</span>
+        <span class="exp-tag">Competición total</span>
         <h1>Ginkana Supervivientes</h1>
         <p>Aquí no hay sitio para
-
- 
 
 blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en vivo y solo los mejores sobreviven. ¿Tu grupo tiene lo que hay que tener?</p>
         <div class="meta-boxes">
@@ -49,7 +48,7 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Supervivientes" class="btn btn-whatsapp btn-lg">Reservar Supervivientes</a>
       </div>
       <div class="hero-image">
-        <img src="/images/mascota-saltando.png" alt="Monitora celebrando victoria" loading="eager">
+        <div class="glyph-panel" aria-hidden="true"><Icon name="flame" size={128} stroke={1.1} /></div>
       </div>
     </div>
   </section>
@@ -75,7 +74,7 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
       
       <div class="content-side">
         <div class="info-box">
-          <h4>✅ Incluye</h4>
+          <h4>Incluye</h4>
           <ul>
             <li>Monitores/árbitros</li>
             <li>Todo el material de pruebas</li>
@@ -84,7 +83,7 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
           </ul>
         </div>
         <div class="info-box">
-          <h4>👯 Ideal para</h4>
+          <h4>Ideal para</h4>
           <ul>
             <li>Equipos de ventas</li>
             <li>Grupos deportivos</li>
@@ -93,14 +92,10 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
           </ul>
         </div>
         <div class="warning-box">
-          <h4>⚡ Aviso</h4>
+          <h4>Aviso</h4>
           <p>Esta ginkana saca el
 
- 
-
 espíritu competitivo. Si tu grupo tiene rivalidades, prepárate para que afloren. Con
-
- 
 
 cariño, eso sí.</p>
         </div>
@@ -128,9 +123,6 @@ cariño, eso sí.</p>
         <h2>¿Tu grupo tiene lo que hay que tener?</h2>
         <p>Demuéstralo. Cuéntanos cuántos sois y os preparamos el desafío.</p>
         <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
-      </div>
-      <div class="cta-image">
-        <img src="/images/mascota-mapa-tesoro.png" alt="Monitora con mapa">
       </div>
     </div>
   </section>
@@ -175,7 +167,7 @@ cariño, eso sí.</p>
   .faq-card p { color: var(--color-text-light); margin: 0; }
   
   .cta-section { background: linear-gradient(135deg, #1B5E20, #2E7D32); }
-  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-3xl); align-items: center; }
   .cta-text h2 { color: white; margin-bottom: var(--space-md); }
   .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
   .cta-image img { max-width: 220px; }

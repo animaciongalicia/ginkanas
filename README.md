@@ -78,11 +78,13 @@ ginkanas-web/
 ## Personalización
 
 ### Imágenes
-Reemplaza los placeholders en `public/images/` con imágenes reales.
-Ver `public/images/README.md` para la lista completa.
+La web no usa fotos: los visuales son iconos SVG y paneles CSS (`src/components/Icon.astro`).
+La imagen para compartir en redes es `public/images/og-default.png` (1200x630).
 
 ### Formulario de contacto
-El formulario usa Formspree. Cambia `TUFORMID` en `/src/pages/contacto.astro` por tu ID de Formspree.
+Envía cada solicitud por email a animaciongalicia@gmail.com mediante FormSubmit
+(`src/pages/contacto.astro`). **La primera vez que alguien lo envíe, FormSubmit manda un email
+de activación a esa cuenta: hay que pulsar el enlace una vez.** Después funciona solo.
 
 ### WhatsApp
 El número de WhatsApp está configurado como 678288284.
@@ -91,10 +93,24 @@ Búscalo en los archivos si necesitas cambiarlo.
 ### Colores y estilos
 Edita las variables CSS en `src/styles/global.css`.
 
+## Blog y novedades
+
+Cada artículo es un archivo Markdown en `src/content/blog/`. Para publicar:
+1. Copia `src/content/blog/_plantilla.md`, renómbralo (`mi-articulo.md` → `ginkanas.es/blog/mi-articulo/`) y quita el `_`.
+2. Rellena los campos del principio y escribe el texto. Sigue la lista de comprobación de la plantilla.
+3. Sube el archivo a GitHub y haz el build. Aparece solo en `/blog/`, en `/rss.xml`, en el sitemap y en `llms.txt`.
+
+`tipo: novedad` lo marca como novedad (filtro "Novedades"). `borrador: true` lo guarda sin publicar.
+
+## Google Analytics y Search Console
+
+Pon los códigos en `src/config/tracking.ts`. Con `GA4_ID` vacío no se carga nada; al rellenarlo aparece el aviso de cookies (Aceptar/Rechazar) y Analytics solo se carga si se acepta.
+
 ## SEO
 
 - Cada página tiene title y description únicos
-- Schema.org JSON-LD incluido (LocalBusiness, Service, FAQPage)
+- Schema.org JSON-LD en grafo (Organization, WebSite, WebPage, BreadcrumbList, Service, BlogPosting, FAQPage)
+- `robots.txt`, sitemap automático (`/sitemap-index.xml`), `llms.txt` y `llms-full.txt` (este último se genera en el build)
 - URLs limpias y semánticas
 - Meta tags Open Graph y Twitter Cards
 

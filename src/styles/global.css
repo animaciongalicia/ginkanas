@@ -3,22 +3,22 @@
    =========================================== */
 
 :root {
-  /* Colores principales - vibrantes y divertidos */
-  --color-primary: #FF6B35;      /* Naranja energético */
-  --color-primary-dark: #E55A2B;
-  --color-secondary: #004E89;    /* Azul confianza */
-  --color-secondary-dark: #003D6B;
-  --color-accent: #7ED321;       /* Verde acción */
-  --color-accent-dark: #6BC11A;
+  /* Colores principales - sobrios y profesionales */
+  --color-primary: #C2410C;      /* Naranja quemado (contraste AA sobre blanco) */
+  --color-primary-dark: #9A3412;
+  --color-secondary: #0B3A6F;    /* Azul marino */
+  --color-secondary-dark: #082B54;
+  --color-accent: #0F766E;       /* Verde azulado sobrio */
+  --color-accent-dark: #0B5A54;
   
   /* Fondos */
   --color-bg: #FFFFFF;
-  --color-bg-alt: #F8F9FA;
-  --color-bg-dark: #1A1A2E;
+  --color-bg-alt: #F4F6F9;
+  --color-bg-dark: #0B1F3A;
   
   /* Textos */
-  --color-text: #2D3748;
-  --color-text-light: #718096;
+  --color-text: #1F2937;
+  --color-text-light: #4B5563;
   --color-text-inverse: #FFFFFF;
   
   /* Otros */
@@ -27,7 +27,7 @@
   --color-warning: #ECC94B;
   
   /* Tipografía */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-primary: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Poppins', var(--font-primary);
   
   /* Espaciado */
@@ -163,12 +163,12 @@ img {
 }
 
 .btn-whatsapp {
-  background: #25D366;
+  background: #157347;
   color: var(--color-text-inverse);
 }
 
 .btn-whatsapp:hover {
-  background: #20BD5A;
+  background: #0F5C39;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -280,7 +280,7 @@ img {
   right: 20px;
   width: 60px;
   height: 60px;
-  background: #25D366;
+  background: #157347;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -331,3 +331,42 @@ img {
     font-size: 1rem;
   }
 }
+
+
+/* Iconos y paneles visuales (sustituyen a fotos/mascotas) */
+.icon { flex-shrink: 0; vertical-align: -0.2em; }
+[class$="icon"]:empty { display: none; }
+
+.glyph-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.18), transparent 55%),
+    linear-gradient(135deg, var(--color-secondary), var(--color-bg-dark));
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-grid .cta-text { max-width: 720px; margin: 0 auto; text-align: center; }
+
+@media (max-width: 1024px) {
+  .glyph-panel { aspect-ratio: 16 / 7; }
+  .glyph-panel svg { width: 88px; height: 88px; }
+}
+
+:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 2px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+.sr-only:focus { position: fixed; top: 8px; left: 8px; width: auto; height: auto; margin: 0; padding: 12px 16px; clip: auto; background: #fff; color: var(--color-secondary); z-index: 2000; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); }
