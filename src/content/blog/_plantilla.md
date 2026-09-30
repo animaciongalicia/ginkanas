@@ -1,5 +1,5 @@
 ---
-# COPIA ESTE ARCHIVO, cámbiale el nombre (será la URL: mi-articulo.md -> ginkanas.es/blog/mi-articulo/)
+# COPIA ESTE ARCHIVO, cámbiale el nombre (será la URL: mi-articulo.md -> www.ginkanas.es/blog/mi-articulo/)
 # y quita el _ del principio. Los archivos que empiezan por _ no se publican.
 titulo: "Título con la palabra clave (máx. 60 caracteres aprox.)"
 descripcion: "Lo que verá la gente en Google: 120-155 caracteres, con beneficio claro y sin repetir el título."

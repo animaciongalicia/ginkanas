@@ -1,7 +1,7 @@
 // Utilidades SEO / datos estructurados compartidas por el Layout.
 // Toda la entidad (Organization) se declara UNA vez y el resto de páginas la referencian por @id.
 
-export const SITE = 'https://ginkanas.es';
+export const SITE = 'https://www.ginkanas.es';
 export const ORG_ID = `${SITE}/#organization`;
 export const WEBSITE_ID = `${SITE}/#website`;
 

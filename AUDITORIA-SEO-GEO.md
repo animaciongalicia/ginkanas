@@ -64,7 +64,7 @@ Estructura actual (correcta para SEO local):
 - Corregido: enlaces rotos, texto partido en la home, "deduccción".
 
 **Pendiente**
-- **[TÚ] Alta en Google Search Console y Bing Webmaster Tools** y enviar `https://ginkanas.es/sitemap-index.xml`. Sin esto, el sitemap es decoración. Bing importa: ChatGPT Search se apoya en su índice.
+- **[TÚ] Alta en Google Search Console y Bing Webmaster Tools** y enviar `https://www.ginkanas.es/sitemap-index.xml`. Sin esto, el sitemap es decoración. Bing importa: ChatGPT Search se apoya en su índice.
 - **[TÚ] Cabeceras del servidor:** redirección `http→https`, `www→sin www` (o al revés) con 301, compresión gzip/brotli, caché larga en `/_astro/`, HSTS. Depende del hosting; dime cuál es y lo dejo escrito (`.htaccess` o `_headers`).
 - **Analítica.** La política de cookies menciona Google Analytics pero no hay analítica ni banner. Sin medir no hay optimización. Recomiendo Plausible o Umami (sin cookies, sin banner) o GA4 con banner de consentimiento. **[TÚ eliges]**.
 - Metadatos: comprobar longitud de títulos (≤ 60) y descriptions (≤ 155) página a página; varios contienen "Desde 25€/persona" repetido. Se hace en la fase 2 junto con el contenido.
@@ -163,3 +163,8 @@ Sobre cambiar **toda la arquitectura**: no. La arquitectura (páginas por públi
 **Semanas 9-12:** medir (Search Console: impresiones/clics por página; consultas a las IA cada 2 semanas); reforzar lo que ya entra; podar lo que no; ampliar ciudades.
 
 **KPIs realistas a 90 días:** indexadas 100 % de las páginas; top 10 en "ginkanas {ciudad}" en 3-4 ciudades de tráfico medio; aparición de la marca en respuestas de IA en al menos 2 de las 10 consultas objetivo; 20-30 leads/mes por WhatsApp y formulario. Dependen de reseñas y enlaces, no solo del código.
+
+---
+
+## Nota técnica: dominio canónico
+En Vercel el dominio principal es `www.ginkanas.es` (`ginkanas.es` redirige a él). Todos los canonical, el sitemap, `robots.txt`, `llms.txt` y los datos estructurados usan `https://www.ginkanas.es`. Si algún día se invirtiera la redirección, hay que cambiar `SITE` en `astro.config.mjs` y `src/lib/seo.ts`.

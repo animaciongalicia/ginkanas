@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import fs from 'node:fs';
 
 // Fecha de última modificación de cada artículo del blog para el sitemap (Google la usa para recrawlear).
-const SITE = 'https://ginkanas.es';
+const SITE = 'https://www.ginkanas.es';
 const lastmod = {};
 const blogDir = new URL('./src/content/blog/', import.meta.url);
 for (const file of fs.readdirSync(blogDir)) {
