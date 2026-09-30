@@ -4,7 +4,7 @@ descripcion: "Todo lo que necesitas saber sobre las ginkanas urbanas: qué son, 
 resumen: "Todo lo que necesitas saber: qué son, cómo funcionan, tipos que existen."
 intro: "Si estás leyendo esto, probablemente alguien te ha propuesto hacer una ginkana y no tienes muy claro qué es. O igual estás buscando algo para un grupo y has oído que las ginkanas molan. Te cuento."
 fecha: 2024-12-15
-actualizado: 2024-12-15
+actualizado: 2026-09-30
 tipo: guia
 tema: general
 etiqueta: "General"
@@ -18,6 +18,15 @@ relacionados:
     enlace: "/blog/team-building-diferente-empresas/"
   - titulo: "Ver todas las ginkanas"
     enlace: "/experiencias/"
+faqs:
+  - pregunta: "¿Cuánto dura una ginkana urbana?"
+    respuesta: "Las nuestras duran unas dos horas: 10-15 minutos de briefing del monitor y el resto, pruebas por el centro de la ciudad. En general, una ginkana puede durar entre 1,5 y 3 horas según el tipo."
+  - pregunta: "¿Cuántas personas hacen falta?"
+    respuesta: "Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas, de 10 a 200."
+  - pregunta: "¿Cuánto cuesta una ginkana?"
+    respuesta: "Desde 25 € por persona en despedidas, cumpleaños y grupos. Para empresas, el presupuesto es a medida."
+  - pregunta: "¿Se puede hacer si llueve?"
+    respuesta: "Con lluvia fuerte se pospone sin coste; con lluvia fina, el grupo decide si se juega."
 ---
 
 ## ¿Qué es una ginkana urbana?
@@ -120,4 +129,15 @@ En general, si puedes caminar durante 2 horas por una ciudad, puedes hacer una g
 
 ## ¿Qué tiempo hace falta?
 
-Se hacen con cualquier tiempo. Si llueve, las pruebas se adaptan y se buscan zonas cubiertas. Esto es Galicia, si paráramos por lluvia no haríamos nada nunca.
+Galicia es lluviosa y se juega igualmente: con lluvia fina, el grupo decide si sigue (lo habitual es que sí); con lluvia fuerte, la ginkana se pospone sin coste. Esto es Galicia: si paráramos por cada chubasco, no haríamos nada nunca.
+
+## Cómo es una ginkana con Ginkanas.es, minuto a minuto
+
+Para que se entienda con un ejemplo real, así funciona una de nuestras ginkanas, que dura unas dos horas:
+
+1.  **Quedada.** En un punto céntrico, normalmente la plaza del Ayuntamiento o una calle popular del centro.
+2.  **Briefing (10-15 minutos).** El monitor explica el desarrollo del juego, las reglas, cómo se puntúa y cómo se forman los equipos.
+3.  **Pruebas (algo más de una hora y media).** Dependen del tipo de ginkana: en la Cluedo se descubre a un asesino; en la Loca hay que cantar, saltar, bailar o interactuar con la gente de la calle; en la Supervivientes se compite en pruebas de habilidad. Cada prueba tiene su pequeño giro.
+4.  **Cierre.** Recuento de puntos, fotos y el plan de después, que queda a pocas calles porque todo ocurre por el centro.
+
+El monitor está incluido, y el mínimo para jugar suele ser de 6 personas (algunas experiencias piden 8). El precio parte de 25 € por persona.

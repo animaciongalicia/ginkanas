@@ -4,7 +4,7 @@ descripcion: "Las mejores ideas para organizar una despedida de soltera memorabl
 resumen: "Las mejores ideas para organizar una despedida memorable en tierras gallegas."
 intro: "Organizar una despedida de soltera puede ser un coñazo. El grupo de WhatsApp que no se pone de acuerdo, ideas que no terminan de cuajar, presupuestos que no encajan... Te lo ponemos fácil: 15 ideas que funcionan en Galicia."
 fecha: 2025-01-15
-actualizado: 2025-01-15
+actualizado: 2026-09-30
 tipo: guia
 tema: despedidas
 etiqueta: "Despedidas"
@@ -18,6 +18,13 @@ relacionados:
     enlace: "/ginkanas-despedidas/"
   - titulo: "Ginkanas en Sanxenxo"
     enlace: "/ginkanas-sanxenxo/"
+faqs:
+  - pregunta: "¿Ginkana antes o después de cenar?"
+    respuesta: "Antes: muchos grupos la hacen por la tarde, con cena y copas después. Se juega mejor con energía y sin haber bebido."
+  - pregunta: "¿Cuánto cuesta una ginkana para una despedida?"
+    respuesta: "Desde 25 € por persona, con monitor incluido. El mínimo habitual es de 6 personas."
+  - pregunta: "¿Cuántas de estas ideas conviene combinar?"
+    respuesta: "Dos o tres como máximo: una actividad principal (por ejemplo, la ginkana), una comida o cena y, si el grupo quiere, una salida."
 ---
 
 ## Actividades de día
@@ -99,3 +106,13 @@ Termas gratis + vino + precios bajos. Si buscáis algo diferente y económico, O
 -   **Reserva con tiempo:** Especialmente en verano y fines de semana.
 -   **Ten plan B:** Por si llueve (esto es Galicia).
 -   **Delega:** No tienes que hacerlo todo tú. Reparte tareas.
+
+## Cómo encajar la ginkana en un día de despedida
+
+Si os quedáis con una idea de las 15, que la ginkana sea el eje del día y el resto se ordene alrededor. Un plan que funciona bien:
+
+1.  **Mediodía o primera hora de la tarde:** comida tranquila para que el grupo llegue completo.
+2.  **Tarde:** ginkana de unas dos horas por el centro de la ciudad, con quedada en la plaza del Ayuntamiento o una calle céntrica. Muchos grupos la hacen antes de cenar.
+3.  **Noche:** cena en grupo y copas. Como la ginkana termina en el centro, el plan continúa sin desplazamientos.
+
+Así el día tiene un momento activo, uno para comer y otro para salir, sin que ninguno se pise. Para elegir la ginkana, la [Ginkana Loca](/experiencias/ginkana-loca/) es la más pedida en despedidas; la [Cluedo](/experiencias/ginkana-cluedo/) va mejor con grupos tranquilos.

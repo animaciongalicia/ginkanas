@@ -4,7 +4,7 @@ descripcion: "Cuando las cenas ya no sorprenden. Ideas para celebrar los 30, 40,
 resumen: "Cuando las cenas ya no sorprenden. Ideas para celebrar los 30, 40, 50..."
 intro: "Cumples 40. Tus amigos quieren celebrarlo. Alguien propone \"una cenita\". Otro dice \"unas cañas\". Y tú piensas: \"¿Otra vez lo mismo?\". Hay vida más allá de la cena-copas."
 fecha: 2024-12-20
-actualizado: 2024-12-20
+actualizado: 2026-09-30
 tipo: guia
 tema: cumpleanos
 etiqueta: "Cumpleaños"
@@ -18,6 +18,13 @@ relacionados:
     enlace: "/blog/que-es-una-ginkana-urbana/"
   - titulo: "Ver todas las experiencias"
     enlace: "/experiencias/"
+faqs:
+  - pregunta: "¿Qué ginkana es mejor para un cumpleaños de adultos?"
+    respuesta: "La Cluedo si el grupo es tranquilo o mezcla edades; la Loca si queréis bromas al homenajeado; la Lendas si os gusta la cultura gallega."
+  - pregunta: "¿Cuántas personas se necesitan?"
+    respuesta: "Desde 6 personas (algunas experiencias piden 8)."
+  - pregunta: "¿Cuánto cuesta?"
+    respuesta: "Desde 25 € por persona, con monitor incluido."
 ---
 
 ## El problema de los cumpleaños de adultos
@@ -118,3 +125,9 @@ Para un grupo de 10 personas:
 -   **Cena:** Desde 30€/persona = 300€ total
 
 Un cumple completo (actividad + cena) puede salir por 50-60€/persona. Dividido entre 10 amigos, el cumpleañero no paga y cada uno pone unos 55-65€.
+
+## Cómo es una ginkana de cumpleaños
+
+Si te decides por una ginkana, así es el plan: unas dos horas por el centro de la ciudad, con quedada en la plaza del Ayuntamiento o una calle céntrica. El monitor abre con un briefing de 10-15 minutos, explica las pruebas y forma equipos. Después llegan las pruebas (en la Cluedo se resuelve un crimen; en la Loca, cantar, bailar y saltar), y al final se cuentan los puntos y se hacen fotos. Como todo ocurre en el centro, la cena o las copas quedan a pocas calles.
+
+El mínimo habitual es de 6 personas y el precio parte de 25 € por persona. Para elegir, la [Cluedo](/experiencias/ginkana-cluedo/) funciona con grupos de edades mezcladas y la [Loca](/experiencias/ginkana-loca/) con grupos que quieren reírse.
