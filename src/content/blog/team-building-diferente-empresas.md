@@ -36,7 +36,7 @@ Todos lo hemos vivido. Llega el email de RRHH: "El viernes haremos una actividad
 
 ## Lo que funciona de verdad
 
-Después de organizar cientos de eventos de empresa, esto es lo que hemos aprendido:
+Después de más de 15 años organizando eventos y ginkanas para grupos y empresas, esto es lo que hemos aprendido:
 
 ### 1\. Que haya un objetivo común
 

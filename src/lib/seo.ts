@@ -7,16 +7,26 @@ export const WEBSITE_ID = `${SITE}/#website`;
 
 const CIUDADES = ['A Coruña', 'Vigo', 'Santiago de Compostela', 'Sanxenxo', 'Pontevedra', 'Ourense', 'Lugo'];
 
-// TODO(legal): cuando lleguen los datos legales definitivos, añadir legalName, taxID y address.
 export const organizationSchema = {
   '@type': 'Organization',
   '@id': ORG_ID,
   name: 'Ginkanas.es',
+  legalName: 'INVERSIONES SHISO SL',
+  vatID: 'ESB70319223',
   url: `${SITE}/`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Ronda de Montealto 4, 5A',
+    postalCode: '15002',
+    addressLocality: 'A Coruña',
+    addressRegion: 'Galicia',
+    addressCountry: 'ES',
+  },
+  email: 'info@ginkanas.es',
   logo: { '@type': 'ImageObject', url: `${SITE}/logo-512.png`, width: 512, height: 512 },
   image: `${SITE}/images/og-default.png`,
   description:
-    'Ginkanas urbanas y experiencias gamificadas para despedidas, empresas y grupos en Galicia. Un monitor guía el juego durante unas 2 horas.',
+    'Ginkanas urbanas y experiencias gamificadas para despedidas, empresas y grupos en Galicia, del grupo Animación Galicia. Un monitor guía el juego durante unas 2 horas.',
   telephone: '+34678288284',
   parentOrganization: { '@type': 'Organization', name: 'Animación Galicia', url: 'https://www.animaciongalicia.com' },
   contactPoint: [
@@ -53,6 +63,7 @@ const SEGMENT_NAMES: Record<string, string> = {
   'ginkanas-ourense': 'Ginkanas en Ourense',
   'ginkanas-lugo': 'Ginkanas en Lugo',
   contacto: 'Contacto',
+  'sobre-nosotros': 'Quiénes somos',
 };
 
 export function breadcrumbSchema(pathname: string, canonical: string, lastName: string) {

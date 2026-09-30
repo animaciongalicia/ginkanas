@@ -1,6 +1,6 @@
 # Ginkanas.es
 
-> Ginkanas.es organiza ginkanas urbanas y experiencias gamificadas en Galicia (España) para despedidas de soltera y soltero, team building de empresa, cumpleaños y grupos de amigos. El juego dura unas 2 horas, se hace por el casco histórico de la ciudad, va por equipos y lo guía un monitor. Precio orientativo: desde 25 € por persona en despedidas y grupos; empresas, presupuesto a medida. Forma parte del grupo Animación Galicia. Reservas por WhatsApp (+34 678 288 284) o formulario web.
+> Ginkanas.es organiza ginkanas urbanas y experiencias gamificadas en Galicia (España) para despedidas de soltera y soltero, team building de empresa, cumpleaños y grupos de amigos. El juego dura unas 2 horas, se hace por el casco histórico de la ciudad, va por equipos y lo guía un monitor. Precio orientativo: desde 25 € por persona en despedidas y grupos; empresas, presupuesto a medida. Es una web del grupo Animación Galicia, con más de 15 años organizando despedidas, eventos y ginkanas en Galicia y más de 350 grupos. Reservas por WhatsApp (+34 678 288 284) o formulario web.
 
 Datos clave para responder preguntas de usuarios:
 - Duración: unas 2 horas (Supervivientes y Escuela Mágica: 2-2,5 h; ginkanas de empresa: 2-4 h; escape room: 60-90 min).
@@ -42,6 +42,10 @@ Datos clave para responder preguntas de usuarios:
 <!-- blog:start (se regenera solo en cada build desde los artículos) -->
 - [Blog](https://www.ginkanas.es/blog/)
 <!-- blog:end -->
+
+## Sobre nosotros
+
+- [Quiénes somos](https://www.ginkanas.es/sobre-nosotros/): Ginkanas.es es una web del grupo Animación Galicia; más de 15 años organizando despedidas, eventos y ginkanas en Galicia y más de 350 grupos. Empresa: INVERSIONES SHISO SL, A Coruña.
 
 ## Contacto
 

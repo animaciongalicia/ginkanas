@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Prose from '../components/Prose.astro';
+import FaqSection from '../components/FaqSection.astro';
+import { ORG_ID } from '../lib/seo';
+
+const title = 'Quiénes somos: Ginkanas.es y el grupo Animación Galicia';
+const description = 'Ginkanas.es es una web del grupo Animación Galicia: más de 15 años organizando despedidas, eventos y ginkanas en Galicia, con más de 350 grupos.';
+
+const ampliado = [
+  {
+    h: 'Ginkanas.es en una frase',
+    p: ['Ginkanas.es es la web de ginkanas urbanas y escape rooms del <strong>grupo Animación Galicia</strong>. Organizamos ginkanas para despedidas, cumpleaños, grupos de amigos y empresas en toda Galicia, con un monitor que guía el juego durante unas dos horas.'],
+  },
+  {
+    h: 'El grupo Animación Galicia',
+    p: [
+      'Animación Galicia es donde empezamos. Desde allí llevamos <strong>más de 15 años</strong> organizando despedidas, eventos y ginkanas en Galicia. Con el tiempo hemos creado varias webs propias del grupo, cada una con su enfoque:',
+    ],
+    ul: [
+      '<a href="https://www.animaciongalicia.com" target="_blank" rel="noopener">Animación Galicia</a>: el origen del grupo y sus eventos.',
+      '<a href="https://www.despedidasgalicia.es" target="_blank" rel="noopener">Despedidas Galicia</a>, <a href="https://www.despedidascoruna.es" target="_blank" rel="noopener">Despedidas Coruña</a>, <a href="https://www.despedidasvigo.com" target="_blank" rel="noopener">Despedidas Vigo</a> y <a href="https://www.despedidas-sanxenxo.com" target="_blank" rel="noopener">Despedidas Sanxenxo</a>: nuestras webs de despedidas.',
+      '<strong>Ginkanas.es</strong>: todas nuestras ginkanas y experiencias gamificadas, para cualquier público (despedidas, cumpleaños, grupos y empresas) en un solo sitio.',
+    ],
+  },
+  {
+    h: 'Nuestra trayectoria en cifras',
+    ul: [
+      '<strong>Más de 15 años</strong> organizando despedidas, eventos y ginkanas en Galicia.',
+      '<strong>Más de 350 grupos</strong> han jugado con nosotros.',
+      '<strong>Entre 50 y 100 grupos cada año</strong>.',
+      '<strong>7 ciudades principales</strong>: A Coruña, Vigo, Santiago de Compostela, Sanxenxo, Pontevedra, Ourense y Lugo.',
+    ],
+  },
+  {
+    h: 'Cómo trabajamos',
+    p: [
+      'Todas nuestras ginkanas siguen la misma base. Duran <strong>unas dos horas</strong> y se juegan por el centro de la ciudad. Quedáis en un punto céntrico, normalmente la plaza del Ayuntamiento o una calle popular. El <strong>monitor, incluido en el precio</strong>, abre con un briefing de 10-15 minutos en el que explica el desarrollo del juego. Después llegan las pruebas, que cambian según la ginkana: en la Cluedo se descubre a un asesino; en la Loca hay que cantar, saltar, bailar e interactuar con la gente; en la Supervivientes se compite por equipos.',
+      'El precio parte de <strong>25 € por persona</strong> en despedidas, cumpleaños y grupos, con un mínimo habitual de 6 personas. Para empresas, el presupuesto es a medida. Puedes ver todas las opciones en la <a href="/experiencias/">comparativa de experiencias</a>.',
+    ],
+  },
+  {
+    h: 'Dónde trabajamos',
+    p: ['Organizamos ginkanas en toda Galicia. Estas son las páginas de nuestras siete ciudades principales: <a href="/ginkanas-coruna/">A Coruña</a>, <a href="/ginkanas-vigo/">Vigo</a>, <a href="/ginkanas-santiago/">Santiago de Compostela</a>, <a href="/ginkanas-sanxenxo/">Sanxenxo</a>, <a href="/ginkanas-pontevedra/">Pontevedra</a>, <a href="/ginkanas-ourense/">Ourense</a> y <a href="/ginkanas-lugo/">Lugo</a>.'],
+  },
+];
+
+const faqs = [
+  { q: '¿Quién está detrás de Ginkanas.es?', a: 'Ginkanas.es es una web del grupo Animación Galicia. La empresa titular es INVERSIONES SHISO SL, con sede en A Coruña.' },
+  { q: '¿Ginkanas.es y Animación Galicia son lo mismo?', a: 'Animación Galicia es donde empezamos y el grupo al que pertenece Ginkanas.es. Ginkanas.es reúne en una sola web las ginkanas y experiencias del grupo.' },
+  { q: '¿Cuánta experiencia tenéis?', a: 'Más de 15 años organizando despedidas, eventos y ginkanas en Galicia.' },
+  { q: '¿Cuántos grupos habéis organizado?', a: 'Más de 350 grupos, con entre 50 y 100 cada año.' },
+  { q: '¿Cómo puedo contactar con vosotros?', a: 'Por WhatsApp o teléfono en el 678 288 284, por correo en info@ginkanas.es o con el formulario de la página de contacto.' },
+];
+
+const schema = {
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  mainEntity: { '@id': ORG_ID },
+};
+---
+
+<Layout title={title} description={description} schema={schema} faqs={faqs}>
+  <section class="hero-inner">
+    <div class="container">
+      <h1>Quiénes somos</h1>
+      <p class="hero-text">Ginkanas.es es una web del grupo Animación Galicia. Más de 15 años organizando despedidas, eventos y ginkanas en Galicia.</p>
+    </div>
+  </section>
+
+  <Prose sections={ampliado} />
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="company-box">
+        <h2>Datos de la empresa</h2>
+        <dl>
+          <div><dt>Titular</dt><dd>INVERSIONES SHISO SL</dd></div>
+          <div><dt>CIF</dt><dd>B70319223</dd></div>
+          <div><dt>Domicilio</dt><dd>Ronda de Montealto 4, 5A · 15002 A Coruña</dd></div>
+          <div><dt>Teléfono y WhatsApp</dt><dd><a href="tel:+34678288284">678 288 284</a></dd></div>
+          <div><dt>Correo</dt><dd><a href="mailto:info@ginkanas.es">info@ginkanas.es</a></dd></div>
+        </dl>
+        <p class="company-links"><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Política de privacidad</a> · <a href="/cookies/">Política de cookies</a></p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} />
+
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>¿Hablamos?</h2>
+      <p>Cuéntanos cuántos sois, en qué ciudad y qué celebráis, y te proponemos la ginkana que mejor encaja.</p>
+      <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">WhatsApp: 678 288 284</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-inner { background: var(--color-bg-alt); padding: var(--space-3xl) 0 var(--space-2xl); text-align: center; }
+  .hero-text { font-size: 1.25rem; color: var(--color-text-light); max-width: 640px; margin: var(--space-md) auto 0; }
+  .company-box { max-width: 820px; margin: 0 auto; }
+  .company-box h2 { margin-bottom: var(--space-lg); }
+  .company-box dl { display: grid; gap: var(--space-sm); }
+  .company-box dl div { display: grid; grid-template-columns: 180px 1fr; gap: var(--space-md); padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
+  .company-box dt { font-weight: 600; }
+  .company-box dd { margin: 0; color: var(--color-text-light); }
+  .company-links { margin-top: var(--space-lg); }
+  .cta-section { background: linear-gradient(135deg, var(--color-secondary), var(--color-bg-dark)); color: #fff; }
+  .cta-section h2 { color: #fff; margin-bottom: var(--space-md); }
+  .cta-section p { opacity: 0.92; font-size: 1.125rem; max-width: 640px; margin: 0 auto var(--space-xl); }
+  @media (max-width: 640px) { .company-box dl div { grid-template-columns: 1fr; gap: 0; } }
+</style>

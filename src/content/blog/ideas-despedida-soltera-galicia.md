@@ -10,7 +10,7 @@ tema: despedidas
 etiqueta: "Despedidas"
 cta:
   titulo: "¿Quieres que te ayudemos?"
-  texto: "Llevamos 20 años organizando despedidas en Galicia. Cuéntanos qué tenéis en mente y os echamos un cable."
+  texto: "Llevamos más de 15 años organizando despedidas en Galicia. Cuéntanos qué tenéis en mente y os echamos un cable."
 relacionados:
   - titulo: "¿Qué ciudad elegir?"
     enlace: "/blog/mejores-ciudades-despedida-galicia/"
