@@ -1,0 +1,51 @@
+# ginkanas.es
+# Política: el sitio es público y queremos aparecer en Google, Bing y asistentes de IA
+# (ChatGPT, Claude, Perplexity, Gemini, Copilot...). Todo el contenido está permitido.
+
+User-agent: *
+Allow: /
+
+# --- Buscadores y asistentes de IA (permitidos de forma explícita) ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://ginkanas.es/sitemap-index.xml

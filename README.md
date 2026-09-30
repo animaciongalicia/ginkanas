@@ -78,11 +78,13 @@ ginkanas-web/
 ## Personalización
 
 ### Imágenes
-Reemplaza los placeholders en `public/images/` con imágenes reales.
-Ver `public/images/README.md` para la lista completa.
+La web no usa fotos: los visuales son iconos SVG y paneles CSS (`src/components/Icon.astro`).
+La imagen para compartir en redes es `public/images/og-default.png` (1200x630).
 
 ### Formulario de contacto
-El formulario usa Formspree. Cambia `TUFORMID` en `/src/pages/contacto.astro` por tu ID de Formspree.
+Envía cada solicitud por email a animaciongalicia@gmail.com mediante FormSubmit
+(`src/pages/contacto.astro`). **La primera vez que alguien lo envíe, FormSubmit manda un email
+de activación a esa cuenta: hay que pulsar el enlace una vez.** Después funciona solo.
 
 ### WhatsApp
 El número de WhatsApp está configurado como 678288284.
@@ -94,7 +96,8 @@ Edita las variables CSS en `src/styles/global.css`.
 ## SEO
 
 - Cada página tiene title y description únicos
-- Schema.org JSON-LD incluido (LocalBusiness, Service, FAQPage)
+- Schema.org JSON-LD en grafo (Organization, WebSite, WebPage, BreadcrumbList, Service, BlogPosting, FAQPage)
+- `robots.txt`, sitemap automático (`/sitemap-index.xml`), `llms.txt` y `llms-full.txt` (este último se genera en el build)
 - URLs limpias y semánticas
 - Meta tags Open Graph y Twitter Cards
 

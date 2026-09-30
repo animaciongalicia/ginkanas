@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
 
 const title = 'Ginkana Cluedo | Misterio por las Calles de Galicia';
 const description = 'La Ginkana Cluedo convierte la ciudad en un tablero de juego. Resuelve el misterio, descubre al culpable y recorre las calles buscando pistas. Desde 25€/persona.';
@@ -29,12 +30,12 @@ const schema = {
 };
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={schema} faqs={faqs}>
   
   <section class="hero-exp">
     <div class="container hero-grid">
       <div class="hero-text">
-        <span class="exp-tag">🔍 Misterio y deduccción</span>
+        <span class="exp-tag">Misterio y deducción</span>
         <h1>Ginkana Cluedo</h1>
         <p>La ciudad se convierte en un tablero de Cluedo gigante. Un crimen, varios sospechosos, pistas ocultas y tu grupo como detectives. ¿Seréis capaces de resolver el misterio?</p>
         <div class="meta-boxes">
@@ -45,7 +46,7 @@ const schema = {
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Cluedo" class="btn btn-whatsapp btn-lg">Reservar Ginkana Cluedo</a>
       </div>
       <div class="hero-image">
-        <img src="/images/mascota-escondida.png" alt="Monitora buscando pistas" loading="eager">
+        <div class="glyph-panel" aria-hidden="true"><Icon name="search" size={128} stroke={1.1} /></div>
       </div>
     </div>
   </section>
@@ -68,7 +69,7 @@ const schema = {
       
       <div class="content-side">
         <div class="info-box">
-          <h4>✅ Incluye</h4>
+          <h4>Incluye</h4>
           <ul>
             <li>Monitor/Game Master</li>
             <li>Dosier de investigación</li>
@@ -77,16 +78,13 @@ const schema = {
           </ul>
         </div>
         <div class="info-box">
-          <h4>👯 Ideal para</h4>
+          <h4>Ideal para</h4>
           <ul>
             <li>Cumpleaños originales</li>
             <li>Grupos de amigos</li>
             <li>Team building suave</li>
             <li>Despedidas tranquilas</li>
           </ul>
-        </div>
-        <div class="mascota-box">
-          <img src="/images/mascota-leyendo-mapa.png" alt="Monitora con mapa">
         </div>
       </div>
     </div>
@@ -112,9 +110,6 @@ const schema = {
         <h2>¿Os va el misterio?</h2>
         <p>Cuéntanos cuántos sois y en qué ciudad. Preparamos un caso a vuestra medida.</p>
         <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
-      </div>
-      <div class="cta-image">
-        <img src="/images/mascota-mapa-tesoro.png" alt="Monitora con mapa del tesoro">
       </div>
     </div>
   </section>
@@ -145,7 +140,6 @@ const schema = {
   .info-box h4 { margin-bottom: var(--space-md); }
   .info-box ul { list-style: none; }
   .info-box li { padding: var(--space-xs) 0; color: var(--color-text-light); }
-  .mascota-box img { max-width: 180px; margin: 0 auto; display: block; }
   
   .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
   .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
@@ -153,7 +147,7 @@ const schema = {
   .faq-card p { color: var(--color-text-light); margin: 0; }
   
   .cta-section { background: linear-gradient(135deg, #303F9F, #5C6BC0); }
-  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-3xl); align-items: center; }
   .cta-text h2 { color: white; margin-bottom: var(--space-md); }
   .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
   .cta-image img { max-width: 220px; }

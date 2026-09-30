@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
 
 const title = 'Despedidas de Soltero en Galicia | Ginkanas.es';
 const description = 'Organiza la mejor despedida de soltero en Galicia. Ginkanas, pruebas epicas y risas aseguradas para el futuro novio. 20 anos de experiencia.';
@@ -43,7 +44,7 @@ const schema = {
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20organizar%20una%20despedida%20de%20soltero" class="btn btn-whatsapp btn-lg">Organizar despedida de soltero</a>
       </div>
       <div class="hero-image">
-        <img src="/images/mascota-grupo.png" alt="Grupo de despedida de soltero">
+        <div class="glyph-panel" aria-hidden="true"><Icon name="trophy" size={128} stroke={1.1} /></div>
       </div>
     </div>
   </section>
@@ -56,7 +57,7 @@ const schema = {
       <div class="pruebas-grid">
         {pruebas.map((prueba) => (
           <div class="prueba-card">
-            <span class="prueba-icon">🎯</span>
+            <span class="prueba-icon"></span>
             <p>{prueba}</p>
           </div>
         ))}
@@ -95,9 +96,6 @@ const schema = {
           <li><strong>Calentamiento perfecto:</strong> Llegais a la cena/copas ya entonados.</li>
         </ul>
       </div>
-      <div class="content-image">
-        <img src="/images/mascota-saltando.png" alt="Celebracion despedida">
-      </div>
     </div>
   </section>
   
@@ -130,9 +128,6 @@ const schema = {
         <h2>Organizando la despedida?</h2>
         <p>Cuentanos cuantos sois, en que ciudad y que fecha. Nosotros nos encargamos del resto.</p>
         <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
-      </div>
-      <div class="cta-image">
-        <img src="/images/mascota-pulgar-arriba.png" alt="Contactar">
       </div>
     </div>
   </section>
@@ -260,7 +255,7 @@ const schema = {
   .exp-card span { color: #1565C0; font-weight: 600; }
   
   .cta-section { background: linear-gradient(135deg, #1565C0, #1976D2); }
-  .cta-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: center; }
+  .cta-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-3xl); align-items: center; }
   .cta-text h2 { color: white; margin-bottom: var(--space-md); }
   .cta-text p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: var(--space-xl); }
   .cta-image img { max-width: 200px; }

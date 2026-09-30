@@ -1,62 +1,63 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
 const title = 'Ginkanas en Galicia | Despedidas, Empresas y Grupos';
-const description = 'Ginkanas en Galicia para despedidas de soltera, team building y grupos. 20 años de experiencia. Vigo, Coruña, Santiago, Sanxenxo. Desde 25€/persona. ¡Reserva ahora!';
+const description = 'Ginkanas urbanas en Galicia para despedidas, empresas y grupos. Monitor incluido, 2 horas de juego, desde 6 personas. Vigo, Coruña, Santiago, Sanxenxo. Desde 25 €/persona.';
 
 const experiencias = [
   {
     title: 'Ginkana Cluedo',
     description: 'Resuelve el misterio mientras recorres la ciudad. Pistas, sospechosos y mucha adrenalina.',
-    image: '/images/placeholder-cluedo.jpg',
+    icon: 'search',
     href: '/experiencias/ginkana-cluedo/',
     tag: 'Misterio'
   },
   {
     title: 'Ginkana Escuela Mágica',
     description: 'Conviértete en mago o bruja. Hechizos, pruebas y un torneo de Quidditch te esperan.',
-    image: '/images/placeholder-magica.jpg',
+    icon: 'sparkles',
     href: '/experiencias/ginkana-escuela-magica/',
     tag: 'Fantasía'
   },
   {
     title: 'Ginkana Lendas',
     description: 'Descubre las leyendas y misterios de Galicia. Meigas, trasnos y la Santa Compaña.',
-    image: '/images/placeholder-lendas.jpg',
+    icon: 'moon',
     href: '/experiencias/ginkana-lendas/',
     tag: 'Galicia'
   },
   {
     title: 'Ginkana Supervivientes',
     description: 'Pruebas de resistencia, habilidad y estrategia. Solo los más fuertes sobreviven.',
-    image: '/images/placeholder-supervivientes.jpg',
+    icon: 'flame',
     href: '/experiencias/ginkana-supervivientes/',
     tag: 'Aventura'
   },
   {
     title: 'Ginkana Loca',
     description: 'La clásica. Pruebas desternillantes, retos comprometidos y mucho vacile al novi@.',
-    image: '/images/placeholder-loca.jpg',
+    icon: 'flag',
     href: '/experiencias/ginkana-loca/',
     tag: 'Despedidas'
   },
   {
     title: 'Escape Room Urbano',
     description: 'La ciudad es tu sala de escape. Acertijos, enigmas y tiempo en tu contra.',
-    image: '/images/placeholder-escape.jpg',
+    icon: 'key',
     href: '/escape-room/',
     tag: 'Premium'
   },
 ];
 
 const ciudades = [
-  { name: 'A Coruña', href: '/ginkanas-coruna/', icon: '🏰' },
-  { name: 'Vigo', href: '/ginkanas-vigo/', icon: '⚓' },
-  { name: 'Santiago', href: '/ginkanas-santiago/', icon: '🐚' },
-  { name: 'Sanxenxo', href: '/ginkanas-sanxenxo/', icon: '🏖️' },
-  { name: 'Pontevedra', href: '/ginkanas-pontevedra/', icon: '🌉' },
-  { name: 'Ourense', href: '/ginkanas-ourense/', icon: '♨️' },
-  { name: 'Lugo', href: '/ginkanas-lugo/', icon: '🏛️' },
+  { name: 'A Coruña', href: '/ginkanas-coruna/' },
+  { name: 'Vigo', href: '/ginkanas-vigo/' },
+  { name: 'Santiago', href: '/ginkanas-santiago/' },
+  { name: 'Sanxenxo', href: '/ginkanas-sanxenxo/' },
+  { name: 'Pontevedra', href: '/ginkanas-pontevedra/' },
+  { name: 'Ourense', href: '/ginkanas-ourense/' },
+  { name: 'Lugo', href: '/ginkanas-lugo/' },
 ];
 
 const testimonios = [
@@ -103,28 +104,16 @@ const faqs = [
   },
 ];
 
-const schemaFAQ = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
 ---
 
-<Layout title={title} description={description} schema={schemaFAQ}>
+<Layout title={title} description={description} faqs={faqs}>
   
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-container">
       <div class="hero-content">
-        <span class="hero-badge">🎯 20 años creando experiencias en Galicia</span>
-        <h1>La forma más <span class="text-gradient">divertida</span> de jugar en grupo</h1>
+        <span class="hero-badge">20 años organizando experiencias en Galicia</span>
+        <h1>Ginkanas en Galicia: la forma más <span class="text-gradient">divertida</span> de jugar en grupo</h1>
         <p class="hero-text">
           Ginkanas para despedidas, empresas y grupos que quieren algo más que lo de siempre. 
           Pruebas, risas, vacile sano y recuerdos que duran.
@@ -157,9 +146,9 @@ const schemaFAQ = {
       </div>
       <div class="hero-image">
         <div class="hero-image-wrapper">
-          <img src="/images/placeholder-hero.jpg" alt="Grupo disfrutando de una ginkana en Galicia" width="600" height="500" loading="eager">
+          <div class="glyph-panel hero-glyph" aria-hidden="true"><Icon name="route" size={132} stroke={1.05} /></div>
           <div class="hero-price-badge">
-            <span class="price-from">Desde</span>
+            <span class="price-from">Despedidas y grupos desde</span>
             <span class="price-amount">25€</span>
             <span class="price-unit">/persona</span>
           </div>
@@ -168,6 +157,16 @@ const schemaFAQ = {
     </div>
   </section>
   
+  <!-- RESUMEN (respuesta directa) -->
+  <section class="section summary-section" aria-labelledby="resumen-h">
+    <div class="container">
+      <h2 id="resumen-h">¿Qué es Ginkanas.es?</h2>
+      <p class="summary-lead">
+        Ginkanas.es organiza <strong>ginkanas urbanas en Galicia</strong>: un juego por equipos de unas 2 horas por el casco histórico de tu ciudad, con pruebas, pistas y un monitor que guía a todo el grupo. Sirve para <strong>despedidas de soltera y soltero</strong>, <strong>team building de empresa</strong>, cumpleaños y grupos de amigos. Forma parte del grupo Animación Galicia.
+      </p>
+    </div>
+  </section>
+
   <!-- PARA QUIÉN -->
   <section class="section section-alt">
     <div class="container">
@@ -178,7 +177,7 @@ const schemaFAQ = {
       
       <div class="audience-grid">
         <a href="/ginkanas-despedidas/" class="audience-card">
-          <div class="audience-icon">🎉</div>
+          <div class="audience-icon"><Icon name="glass" size={40} stroke={1.5} /></div>
           <h3>Despedidas</h3>
           <p>La novia o el novio van a flipar. Pruebas, vacile sano y momentos que recordaréis siempre.</p>
           <span class="audience-price">Desde 25€/persona</span>
@@ -186,15 +185,15 @@ const schemaFAQ = {
         </a>
         
         <a href="/ginkanas-empresas/" class="audience-card">
-          <div class="audience-icon">🏢</div>
+          <div class="audience-icon"><Icon name="building" size={40} stroke={1.5} /></div>
           <h3>Empresas</h3>
           <p>Team building que funciona de verdad. Tu equipo se conocerá, reirá y trabajará mejor después.</p>
-          <span class="audience-price">Precio a consultar</span>
+          <span class="audience-price">Presupuesto a medida</span>
           <span class="audience-link">Ver ginkanas empresas →</span>
         </a>
         
         <a href="/ginkanas-adultos/" class="audience-card">
-          <div class="audience-icon">🎂</div>
+          <div class="audience-icon"><Icon name="cake" size={40} stroke={1.5} /></div>
           <h3>Grupos y cumpleaños</h3>
           <p>Cumples, reencuentros, quedadas. Cualquier excusa es buena para organizar algo diferente.</p>
           <span class="audience-price">Desde 25€/persona</span>
@@ -216,7 +215,7 @@ const schemaFAQ = {
         {experiencias.map((exp) => (
           <a href={exp.href} class="experience-card">
             <div class="experience-image">
-              <img src={exp.image} alt={exp.title} width="400" height="250" loading="lazy">
+              <Icon name={exp.icon} size={56} stroke={1.25} />
               <span class="experience-tag">{exp.tag}</span>
             </div>
             <div class="experience-content">
@@ -245,7 +244,6 @@ const schemaFAQ = {
       <div class="cities-grid">
         {ciudades.map((ciudad) => (
           <a href={ciudad.href} class="city-card">
-            <span class="city-icon">{ciudad.icon}</span>
             <span class="city-name">{ciudad.name}</span>
           </a>
         ))}
@@ -317,11 +315,7 @@ const schemaFAQ = {
       <div class="why-us-grid">
         <div class="why-us-content">
           <h2>20 años haciendo esto. Y se nota.</h2>
-          <p>No somos unos
-
- 
-
-recién llegados. Llevamos organizando despedidas y eventos en Galicia desde antes de que existieran los smartphones. Hemos visto de todo. Y eso nos da una ventaja que no se compra: sabemos lo que funciona y lo que no.</p>
+          <p>No somos unos recién llegados. Llevamos organizando despedidas y eventos en Galicia desde antes de que existieran los smartphones. Hemos visto de todo. Y eso nos da una ventaja que no se compra: sabemos lo que funciona y lo que no.</p>
           
           <ul class="why-us-list">
             <li>
@@ -347,7 +341,14 @@ recién llegados. Llevamos organizando despedidas y eventos en Galicia desde ant
           </a>
         </div>
         <div class="why-us-image">
-          <img src="/images/placeholder-team.jpg" alt="Equipo de Ginkanas.es" width="500" height="400" loading="lazy">
+          <dl class="fact-sheet">
+            <div><dt>Duración</dt><dd>Unas 2 horas de juego</dd></div>
+            <div><dt>Grupo</dt><dd>Desde 6 personas (empresas: desde 10)</dd></div>
+            <div><dt>Incluye</dt><dd>Monitor que guía todo el juego</dd></div>
+            <div><dt>Dónde</dt><dd>Toda Galicia, con foco en 7 ciudades</dd></div>
+            <div><dt>Precio</dt><dd>Desde 25 € por persona en despedidas y grupos; empresas, a medida</dd></div>
+            <div><dt>Reserva</dt><dd>WhatsApp 678 288 284 o formulario</dd></div>
+          </dl>
         </div>
       </div>
     </div>
@@ -417,7 +418,7 @@ recién llegados. Llevamos organizando despedidas y eventos en Galicia desde ant
   
   .hero-badge {
     display: inline-block;
-    background: rgba(255, 107, 53, 0.1);
+    background: rgba(194, 65, 12, 0.1);
     color: var(--color-primary);
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-full);
@@ -430,12 +431,7 @@ recién llegados. Llevamos organizando despedidas y eventos en Galicia desde ant
     margin-bottom: var(--space-lg);
   }
   
-  .text-gradient {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  .text-gradient { color: var(--color-primary); }
   
   .hero-text {
     font-size: 1.25rem;
@@ -513,6 +509,20 @@ recién llegados. Llevamos organizando despedidas y eventos en Galicia desde ant
     opacity: 0.9;
   }
   
+  .hero-glyph { aspect-ratio: 6 / 5; }
+  .summary-section { padding-bottom: 0; }
+  .summary-section h2 { margin-bottom: var(--space-md); }
+  .summary-lead { font-size: 1.1875rem; max-width: 860px; color: var(--color-text); }
+
+  .experience-image { display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.92);
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-bg-dark)); }
+
+  .fact-sheet { background: var(--color-bg-dark); color: white; border-radius: var(--radius-lg); padding: var(--space-xl); display: grid; gap: var(--space-md); }
+  .fact-sheet div { display: grid; grid-template-columns: 110px 1fr; gap: var(--space-md); padding-bottom: var(--space-md); border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+  .fact-sheet div:last-child { border-bottom: 0; padding-bottom: 0; }
+  .fact-sheet dt { font-weight: 600; opacity: 0.75; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .fact-sheet dd { margin: 0; }
+
   /* AUDIENCE CARDS */
   .audience-grid {
     display: grid;
@@ -537,7 +547,7 @@ recién llegados. Llevamos organizando despedidas y eventos en Galicia desde ant
   }
   
   .audience-icon {
-    font-size: 3rem;
+    color: var(--color-primary);
     margin-bottom: var(--space-md);
   }
   
@@ -773,10 +783,7 @@ recién llegados. Llevamos organizando despedidas y eventos en Galicia desde ant
     font-size: 1.25rem;
   }
   
-  .why-us-image img {
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-  }
+  .why-us-image { min-width: 0; }
   
   /* FAQS */
   .faqs-container {

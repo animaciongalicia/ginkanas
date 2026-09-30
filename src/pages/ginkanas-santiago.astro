@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FaqSection from '../components/FaqSection.astro';
 
 const title = 'Ginkanas en Santiago de Compostela | Despedidas y Grupos';
 const description = 'Ginkanas en Santiago de Compostela para despedidas, empresas y grupos. Casco histórico Patrimonio de la Humanidad, ambiente universitario. Desde 25€/persona.';
@@ -24,10 +25,10 @@ const zonas = [
 ];
 
 const porque = [
-  { icon: '🐚', titulo: 'Ciudad Patrimonio', texto: 'El casco histórico más bonito de España. Cada calle es un decorado.' },
-  { icon: '🎓', titulo: 'Ambiente universitario', texto: 'Ciudad joven, con vida todo el año. No depende del verano.' },
-  { icon: '🍷', titulo: 'Rutas de vinos épicas', texto: 'Franco, Raíña, Caldeirería... Después de la ginkana, el plan sigue.' },
-  { icon: '✈️', titulo: 'Aeropuerto propio', texto: 'Lavacolla a 15 minutos. Grupos de fuera llegan fácil.' }
+  { icon: '', titulo: 'Ciudad Patrimonio', texto: 'El casco histórico más bonito de España. Cada calle es un decorado.' },
+  { icon: '', titulo: 'Ambiente universitario', texto: 'Ciudad joven, con vida todo el año. No depende del verano.' },
+  { icon: '', titulo: 'Rutas de vinos épicas', texto: 'Franco, Raíña, Caldeirería... Después de la ginkana, el plan sigue.' },
+  { icon: '', titulo: 'Aeropuerto propio', texto: 'Lavacolla a 15 minutos. Grupos de fuera llegan fácil.' }
 ];
 
 const schema = {
@@ -39,19 +40,27 @@ const schema = {
   "description": description,
   "offers": { "@type": "Offer", "price": "25", "priceCurrency": "EUR" }
 };
+const faqs = [
+  { q: '¿Cuánto cuesta una ginkana en Santiago de Compostela?', a: 'Desde 25 € por persona en despedidas, cumpleaños y grupos de amigos. Para empresas el presupuesto es a medida. El precio final depende del tamaño del grupo y de la experiencia que elijáis.' },
+  { q: '¿Cuánto dura una ginkana en Santiago de Compostela?', a: 'Unas 2 horas de juego. Algunas experiencias, como Supervivientes o Escuela Mágica, pueden alargarse hasta 2,5 horas.' },
+  { q: '¿Cuántas personas hacen falta para jugar?', a: 'Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas trabajamos con grupos de 10 hasta 200 personas.' },
+  { q: '¿Por qué zonas de Santiago de Compostela se juega?', a: 'Por ejemplo: ' + zonas.map((z) => z.name).join(', ') + '. Adaptamos el recorrido al tipo de grupo y a la experiencia que elijáis.' },
+  { q: '¿Qué pasa si llueve?', a: 'Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega.' },
+  { q: '¿Cómo reservo una ginkana en Santiago de Compostela?', a: 'Escríbenos por WhatsApp (678 288 284) o usa el formulario de contacto con fecha aproximada, número de personas y tipo de celebración. Te proponemos la experiencia que mejor encaja.' },
+];
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={schema} faqs={faqs}>
   
   <section class="hero-city">
     <div class="container">
-      <span class="hero-badge">🐚 Ciudad Patrimonio de la Humanidad</span>
+      <span class="hero-badge">Ciudad Patrimonio de la Humanidad</span>
       <h1>Ginkanas en <span class="text-gradient">Santiago</span></h1>
       <p class="hero-text">El casco histórico más impresionante de Galicia como escenario de juego. Calles medievales, misterio y una zona de vinos que no tiene fin.</p>
       <div class="hero-meta">
-        <span>💰 Desde 25€/persona</span>
-        <span>⏱️ 2 horas</span>
-        <span>👥 Desde 6 personas</span>
+        <span>Desde 25€/persona</span>
+        <span>2 horas</span>
+        <span>Desde 6 personas</span>
       </div>
       <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Santiago" class="btn btn-whatsapp btn-lg">Reservar en Santiago</a>
     </div>
@@ -91,17 +100,17 @@ const schema = {
       <h2 class="section-heading">Te recomendamos según tu plan</h2>
       <div class="reco-grid">
         <div class="reco-card">
-          <h3>🎉 Despedida</h3>
+          <h3>Despedida</h3>
           <p>Ginkana Loca por la zona vieja, pulpo en el Mercado y ruta de vinos por Franco. Día completo.</p>
           <a href="/ginkanas-despedidas/">Ver ginkanas despedidas →</a>
         </div>
         <div class="reco-card">
-          <h3>🏢 Empresa</h3>
+          <h3>Empresa</h3>
           <p>Alameda o campus para grupos grandes. Después, cena de empresa en cualquier restaurante del centro.</p>
           <a href="/ginkanas-empresas/">Ver ginkanas empresas →</a>
         </div>
         <div class="reco-card">
-          <h3>🎂 Cumpleaños</h3>
+          <h3>Cumpleaños</h3>
           <p>Ginkana Lendas entre la Catedral y San Martiño. Misterio, leyendas y vinos para cerrar.</p>
           <a href="/ginkanas-adultos/">Ver ginkanas adultos →</a>
         </div>
@@ -109,6 +118,8 @@ const schema = {
     </div>
   </section>
   
+  <FaqSection faqs={faqs} />
+
   <section class="section cta-section">
     <div class="container text-center">
       <h2>¿Organizando algo en Santiago?</h2>
@@ -122,7 +133,7 @@ const schema = {
 <style>
   .hero-city { background: linear-gradient(135deg, #FDF6E3 0%, #fff 100%); padding: var(--space-3xl) 0; }
   .hero-badge { display: inline-block; background: rgba(139,90,43,0.1); color: #8B5A2B; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
-  .text-gradient { background: linear-gradient(135deg, #8B5A2B, #D4A574); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .text-gradient { color: var(--color-primary); }
   .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
   .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
   .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
