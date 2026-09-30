@@ -39,7 +39,7 @@ Spoiler: sí toca.
 
 ## Lo que hace especial un cumpleaños
 
-Después de organizar cientos de celebraciones, esto es lo que marca la diferencia:
+Después de más de 15 años organizando celebraciones, esto es lo que marca la diferencia:
 
 -   **Que sea diferente:** Algo que no hagas normalmente. Romper la rutina.
 -   **Que el protagonista sea protagonista:** No solo paga menos. Que el plan gire en torno a él/ella.

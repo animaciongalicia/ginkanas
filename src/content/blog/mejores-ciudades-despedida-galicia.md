@@ -27,7 +27,7 @@ faqs:
     respuesta: "Sí, en cualquier ciudad gallega. Las más habituales son Vigo, A Coruña, Santiago, Sanxenxo, Pontevedra, Ourense y Lugo."
 ---
 
-Después de 20 años organizando despedidas en Galicia, te puedo decir que **no hay una ciudad perfecta**. Hay una ciudad perfecta *para tu grupo*. Vamos a verlas una a una.
+Después de más de 15 años organizando despedidas en Galicia, te puedo decir que **no hay una ciudad perfecta**. Hay una ciudad perfecta *para tu grupo*. Vamos a verlas una a una.
 
 ## Sanxenxo: Si vais en verano y queréis playa
 
