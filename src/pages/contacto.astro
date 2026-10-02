@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Prose from '../components/Prose.astro';
 import Icon from '../components/Icon.astro';
 
-const title = 'Contacto y reservas de ginkanas en Galicia';
-const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Galicia. WhatsApp, teléfono o formulario. Te respondemos lo antes posible.';
+const title = 'Contacto: pide propuesta de ginkana o juegos';
+const description = 'Contacta con Ginkanas.es para reservar tu experiencia en Galicia. WhatsApp, teléfono o formulario. Pide propuesta para tu empresa, despedida o grupo.';
 const ampliado = [
   {
     "h": "Cómo reservar una ginkana en cuatro pasos",
@@ -18,7 +18,7 @@ const ampliado = [
   {
     "h": "Qué necesitamos para proponerte una ginkana",
     "ul": [
-      "<strong>Número de personas.</strong> El mínimo habitual es de 6 (la Cluedo y la Supervivientes piden 8; empresas, desde 10).",
+      "<strong>Número de personas.</strong> El mínimo habitual es de 6 (la Cluedo y la Supervivientes piden 8; empresas, de 6 a 200).",
       "<strong>Ciudad.</strong> Trabajamos en toda Galicia, sobre todo en A Coruña, Vigo, Santiago, Sanxenxo, Pontevedra, Ourense y Lugo.",
       "<strong>Ocasión.</strong> Despedida, cumpleaños, quedada o evento de empresa: cambia el tono de las pruebas.",
       "<strong>Fecha aproximada.</strong> Con ella confirmamos disponibilidad."
@@ -31,92 +31,42 @@ const ampliado = [
 ---
 
 <Layout title={title} description={description}>
-  
+
   <section class="hero-inner">
     <div class="container">
-      <h1>¿Hablamos?</h1>
-      <p class="hero-text">Cuéntanos qué tenéis en mente y os ayudamos a montarlo.</p>
+      <h1>Cuéntanos qué necesitas</h1>
+      <p class="hero-text">Pide propuesta para tu empresa, despedida o grupo. Elige el canal que prefieras.</p>
+      <div class="quick-actions">
+        <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><Icon name="chat" size={20} /> WhatsApp</a>
+        <a href="tel:+34678288284" class="btn btn-secondary btn-lg"><Icon name="phone" size={20} /> 678 288 284</a>
+        <a href="mailto:animaciongalicia@gmail.com?subject=Consulta%20sobre%20ginkanas" class="btn btn-outline btn-lg"><Icon name="mail" size={20} /> Correo</a>
+      </div>
     </div>
   </section>
-  
+
   <section class="section">
     <div class="container">
       <div class="contact-grid">
-        
-        <div class="contact-options">
-          <div class="contact-card whatsapp">
-            <div class="contact-icon"><Icon name="chat" size={36} stroke={1.5} /></div>
-            <h3>WhatsApp</h3>
-            <p>La forma más rápida. Respuesta casi instantánea.</p>
-            <a href="https://wa.me/34678288284" class="btn btn-whatsapp" target="_blank" rel="noopener">
-              Abrir WhatsApp
-            </a>
-            <span class="contact-number">678 288 284</span>
-          </div>
-          
-          <div class="contact-card phone">
-            <div class="contact-icon"><Icon name="phone" size={36} stroke={1.5} /></div>
-            <h3>Teléfono</h3>
-            <p>Si prefieres llamar directamente.</p>
-            <a href="tel:+34678288284" class="btn btn-secondary">
-              Llamar ahora
-            </a>
-            <span class="contact-number">678 288 284</span>
-          </div>
-          
-          <div class="contact-card mail">
-            <div class="contact-icon"><Icon name="mail" size={36} stroke={1.5} /></div>
-            <h3>Correo</h3>
-            <p>Si prefieres escribirnos con calma.</p>
-            <a href="mailto:animaciongalicia@gmail.com?subject=Consulta%20sobre%20ginkanas" class="btn btn-secondary">
-              Escribir un correo
-            </a>
-            <span class="contact-number">animaciongalicia@gmail.com</span>
-          </div>
 
-          <div class="contact-card hours">
-            <div class="contact-icon"><Icon name="clock" size={36} stroke={1.5} /></div>
-            <h3>Horario</h3>
-            <p>Atendemos todos los días de 9:00 a 21:00. Fuera de horario, déjanos WhatsApp y te respondemos en cuanto podamos.</p>
-          </div>
-        </div>
-        
         <div class="contact-form-wrapper">
-          <h2>O escríbenos desde aquí</h2>
-          <p>Rellena los datos y elige cómo enviarlos: por WhatsApp o desde tu correo.</p>
-          
+          <h2>O rellena esto y lo enviamos por ti</h2>
+          <p class="form-lead">Cuatro datos bastan para darte una propuesta. Al final eliges si enviarlo por WhatsApp o por correo.</p>
+
           <form class="contact-form" id="contact-form" novalidate>
-            <div class="form-group">
-              <label for="name">Nombre *</label>
-              <input type="text" id="name" name="nombre" autocomplete="name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Tu email (opcional)</label>
-              <input type="email" id="email" name="email" autocomplete="email">
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Tu teléfono (opcional)</label>
-              <input type="tel" id="phone" name="telefono" autocomplete="tel">
-            </div>
-
-            <div class="form-group">
-              <label for="type">¿Qué celebras?</label>
-              <select id="type" name="ocasion">
-                <option value="">Selecciona una opción</option>
-                <option value="Evento de empresa o team building">Evento de empresa o team building</option>
-                <option value="Despedida de soltera">Despedida de soltera</option>
-                <option value="Despedida de soltero">Despedida de soltero</option>
-                <option value="Cumpleaños">Cumpleaños</option>
-                <option value="Quedada de grupo">Quedada de grupo</option>
-                <option value="Otro">Otro</option>
-              </select>
-            </div>
+            <fieldset class="form-group full-width occasion">
+              <legend>¿Qué necesitas?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="ocasion" value="Evento de empresa o team building"><span>Empresa / team building</span></label>
+                <label class="chip"><input type="radio" name="ocasion" value="Despedida de soltera"><span>Despedida de soltera</span></label>
+                <label class="chip"><input type="radio" name="ocasion" value="Despedida de soltero"><span>Despedida de soltero</span></label>
+                <label class="chip"><input type="radio" name="ocasion" value="Cumpleaños o quedada de grupo"><span>Cumpleaños / grupo</span></label>
+                <label class="chip"><input type="radio" name="ocasion" value="Otro"><span>Otro</span></label>
+              </div>
+            </fieldset>
 
             <div class="form-group">
               <label for="people">¿Cuántas personas?</label>
-              <input type="number" id="people" name="personas" min="1">
+              <input type="number" id="people" name="personas" min="1" inputmode="numeric" placeholder="Ej.: 25">
             </div>
 
             <div class="form-group">
@@ -134,9 +84,29 @@ const ampliado = [
               </select>
             </div>
 
+            <div class="form-group">
+              <label for="date">Fecha aproximada</label>
+              <input type="text" id="date" name="fecha" placeholder="Ej.: finales de noviembre">
+            </div>
+
+            <div class="form-group">
+              <label for="name">Tu nombre *</label>
+              <input type="text" id="name" name="nombre" autocomplete="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="telefono" autocomplete="tel" inputmode="tel">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email">
+            </div>
+
             <div class="form-group full-width">
-              <label for="message">Cuéntanos más *</label>
-              <textarea id="message" name="mensaje" rows="4" required placeholder="Fecha aproximada, qué tipo de ginkana os interesa, cualquier detalle que nos ayude..."></textarea>
+              <label for="message">¿Algo más que debamos saber?</label>
+              <textarea id="message" name="mensaje" rows="4" placeholder="Objetivo de la actividad, tipo de juego que os interesa, lugar o cualquier detalle."></textarea>
             </div>
 
             <div class="form-actions full-width">
@@ -145,44 +115,73 @@ const ampliado = [
             </div>
 
             <p class="form-note full-width">
-              Al pulsar, se abre tu WhatsApp o tu programa de correo con el mensaje ya escrito. Lo envías tú desde tu cuenta, así te queda copia de lo que nos has mandado.
-              Si prefieres, <a href="tel:+34678288284">llámanos al 678 288 284</a>.
+              Se abre tu WhatsApp o tu programa de correo con el mensaje ya escrito, y lo envías tú desde tu cuenta: así te queda copia. No guardamos nada en esta web.
             </p>
           </form>
         </div>
-        
+
+        <aside class="contact-aside">
+          <div class="aside-card">
+            <h3>Qué pasa después</h3>
+            <ol class="aside-steps">
+              <li><strong>Te respondemos</strong> y te hacemos las preguntas que falten.</li>
+              <li><strong>Te mandamos una propuesta</strong> con formato, duración y precio.</li>
+              <li><strong>Ajustamos</strong> lo que quieras y cerramos fecha.</li>
+            </ol>
+          </div>
+          <div class="aside-card">
+            <h3>Horario</h3>
+            <p>Todos los días de 9:00 a 21:00. Fuera de horario, déjanos un WhatsApp y te respondemos en cuanto podamos.</p>
+          </div>
+          <div class="aside-card">
+            <h3>Datos</h3>
+            <p class="aside-data">
+              <a href="tel:+34678288284">678 288 284</a><br>
+              <a href="mailto:animaciongalicia@gmail.com">animaciongalicia@gmail.com</a><br>
+              <span>Ginkanas.es · Inversiones Shiso, S.L.<br>Ronda de Monte Alto 4, 5A · 15002 A Coruña</span>
+            </p>
+          </div>
+          <div class="aside-card aside-alt">
+            <h3>¿Evento grande o jornada completa?</h3>
+            <p>Para eventos de empresa de día completo, outdoor o gastronomía, mira <a href="https://www.mileventosgalicia.com" rel="noopener">Mil Eventos Galicia</a>.</p>
+          </div>
+        </aside>
+
       </div>
     </div>
   </section>
-  
-<Prose sections={ampliado} />
 
-  </Layout>
+  <Prose sections={ampliado} />
+
+</Layout>
 
 <script>
   const EMAIL = 'animaciongalicia@gmail.com';
   const WHATSAPP = '34678288284';
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
+
   if (new URLSearchParams(location.search).get('tipo') === 'empresa') {
-    const sel = document.getElementById('type') as HTMLSelectElement | null;
-    if (sel) sel.value = 'Evento de empresa o team building';
+    const r = form?.querySelector<HTMLInputElement>('input[name="ocasion"][value^="Evento de empresa"]');
+    if (r) r.checked = true;
   }
 
   function mensaje(): { asunto: string; texto: string } {
     const d = new FormData(form!);
     const v = (k: string) => String(d.get(k) ?? '').trim();
-    const lineas = ['Hola, me gustaría información sobre una ginkana.', ''];
+    const empresa = v('ocasion').startsWith('Evento de empresa');
+    const lineas = [empresa ? 'Hola, me gustaría recibir una propuesta de juegos para mi empresa.' : 'Hola, me gustaría información sobre una ginkana.', ''];
     const campos: [string, string][] = [
       ['Nombre', v('nombre')],
       ['Email', v('email')],
       ['Teléfono', v('telefono')],
-      ['Ocasión', v('ocasion')],
+      ['Necesito', v('ocasion')],
       ['Personas', v('personas')],
       ['Ciudad', v('ciudad')],
+      ['Fecha aproximada', v('fecha')],
     ];
     campos.forEach(([k, val]) => { if (val) lineas.push(`${k}: ${val}`); });
-    lineas.push('', v('mensaje'));
-    const asunto = ['Consulta sobre ginkanas', v('ocasion'), v('ciudad')].filter(Boolean).join(' - ');
+    if (v('mensaje')) lineas.push('', v('mensaje'));
+    const asunto = [empresa ? 'Propuesta para empresa' : 'Consulta sobre ginkanas', v('ciudad')].filter(Boolean).join(' - ');
     return { asunto, texto: lineas.join('\n') };
   }
 
@@ -200,123 +199,55 @@ const ampliado = [
 </script>
 
 <style>
-  .hero-inner {
-    background: var(--color-bg-alt);
-    padding: var(--space-3xl) 0 var(--space-2xl);
-    text-align: center;
+  .hero-inner { background: var(--color-bg-alt); padding: var(--space-2xl) 0; text-align: center; }
+  .hero-text { font-size: 1.1875rem; color: var(--color-text-light); max-width: 560px; margin: var(--space-md) auto var(--space-xl); }
+  .quick-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
+  .quick-actions .btn { display: inline-flex; align-items: center; gap: var(--space-sm); }
+
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: var(--space-2xl); align-items: start; }
+  .contact-form-wrapper { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-2xl); box-shadow: var(--shadow-sm); }
+  .contact-form-wrapper h2 { margin-bottom: var(--space-sm); font-size: 1.5rem; }
+  .form-lead { color: var(--color-text-light); margin-bottom: var(--space-xl); }
+
+  .contact-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
+  .form-group { display: flex; flex-direction: column; min-width: 0; border: 0; padding: 0; margin: 0; }
+  .form-group.full-width { grid-column: 1 / -1; }
+  .form-group label, .occasion legend { font-weight: 600; margin-bottom: var(--space-sm); padding: 0; }
+  .form-group input:not([type="radio"]), .form-group select, .form-group textarea {
+    padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md);
+    font-family: var(--font-primary); font-size: 1rem; width: 100%; background: #fff; transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   }
-  
-  .hero-text {
-    font-size: 1.25rem;
-    color: var(--color-text-light);
-    max-width: 500px;
-    margin: var(--space-md) auto 0;
+  .form-group input:focus-visible, .form-group select:focus-visible, .form-group textarea:focus-visible {
+    outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.18);
   }
-  
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: var(--space-3xl);
-  }
-  
-  .contact-options {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-  }
-  
-  .contact-card {
-    background: var(--color-bg-alt);
-    padding: var(--space-xl);
-    border-radius: var(--radius-lg);
-    text-align: center;
-  }
-  
-  .contact-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-md);
-  }
-  
-  .contact-card h3 { margin-bottom: var(--space-sm); }
-  .contact-card p { color: var(--color-text-light); margin-bottom: var(--space-lg); }
-  
-  .contact-number {
-    display: block;
-    margin-top: var(--space-md);
-    font-size: 0.875rem;
-    color: var(--color-text-light);
-  }
-  
-  .contact-form-wrapper h2 { margin-bottom: var(--space-sm); }
-  .contact-form-wrapper > p { color: var(--color-text-light); margin-bottom: var(--space-xl); }
-  
-  .contact-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group.full-width {
-    grid-column: 1 / -1;
-  }
-  
-  .form-group label {
-    font-weight: 500;
-    margin-bottom: var(--space-sm);
-  }
-  
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: var(--space-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-family: var(--font-primary);
-    font-size: 1rem;
-    transition: border-color var(--transition-fast);
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
-  }
-  
-  
+
+  .chips { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+  .chip { position: relative; margin: 0 !important; font-weight: 500 !important; }
+  .chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .chip span { display: inline-block; padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-full); background: #fff; transition: all var(--transition-fast); }
+  .chip:hover span { border-color: var(--color-primary); }
+  .chip input:checked + span { background: var(--color-bg-dark); border-color: var(--color-bg-dark); color: #fff; }
+  .chip input:focus-visible + span { box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.3); }
+
+  .form-actions { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+  .form-note { color: var(--color-text-light); font-size: 0.875rem; margin: 0; }
+
+  .contact-aside { display: flex; flex-direction: column; gap: var(--space-md); position: sticky; top: 90px; }
+  .aside-card { background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-lg); }
+  .aside-card h3 { font-size: 1.0625rem; margin-bottom: var(--space-sm); }
+  .aside-card p { color: var(--color-text-light); margin: 0; font-size: 0.9375rem; }
+  .aside-steps { padding-left: 1.2em; margin: 0; color: var(--color-text-light); font-size: 0.9375rem; display: grid; gap: var(--space-sm); }
+  .aside-data { line-height: 1.7; overflow-wrap: anywhere; }
+  .aside-data span { display: block; margin-top: var(--space-sm); }
+  .aside-alt { border: 1px dashed var(--color-border); background: transparent; }
+
   @media (max-width: 1024px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .contact-options {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    
-    .contact-card {
-      flex: 1 1 calc(50% - var(--space-md));
-    }
+    .contact-grid { grid-template-columns: minmax(0, 1fr); }
+    .contact-aside { position: static; }
   }
-  
   @media (max-width: 640px) {
-    .contact-options {
-      flex-direction: column;
-    }
-    
-    .contact-card {
-      flex: 1 1 100%;
-    }
-    
-    .contact-form {
-      grid-template-columns: 1fr;
-    }
+    .contact-form { grid-template-columns: minmax(0, 1fr); }
+    .contact-form-wrapper { padding: var(--space-lg); }
+    .quick-actions .btn, .form-actions .btn { width: 100%; justify-content: center; }
   }
-  .form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--space-md); }
-  .form-note { grid-column: 1 / -1; color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
 </style>

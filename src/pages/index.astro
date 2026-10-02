@@ -11,6 +11,7 @@ const experiencias = [
     description: 'Resuelve el misterio mientras recorres la ciudad. Pistas, sospechosos y mucha adrenalina.',
     icon: 'search',
     href: '/experiencias/ginkana-cluedo/',
+    img: '/images/fotos/ginkana-cluedo.webp',
     tag: 'Misterio'
   },
   {
@@ -25,6 +26,7 @@ const experiencias = [
     description: 'Descubre las leyendas y misterios de Galicia. Meigas, trasnos y la Santa Compaña.',
     icon: 'moon',
     href: '/experiencias/ginkana-lendas/',
+    img: '/images/fotos/ginkana-lendas.webp',
     tag: 'Galicia'
   },
   {
@@ -32,6 +34,7 @@ const experiencias = [
     description: 'Pruebas de resistencia, habilidad y estrategia. Solo los más fuertes sobreviven.',
     icon: 'flame',
     href: '/experiencias/ginkana-supervivientes/',
+    img: '/images/fotos/ginkana-supervivientes.webp',
     tag: 'Aventura'
   },
   {
@@ -39,6 +42,7 @@ const experiencias = [
     description: 'La clásica. Pruebas desternillantes, retos comprometidos y mucho vacile al novi@.',
     icon: 'flag',
     href: '/experiencias/ginkana-loca/',
+    img: '/images/fotos/ginkana-loca.webp',
     tag: 'Despedidas'
   },
   {
@@ -172,15 +176,17 @@ const faqs = [
   <section class="section">
     <div class="container">
       <div class="section-title">
-        <h2>Nuestras experiencias</h2>
-        <p>Cada ginkana es un mundo. Elige la que más encaje con tu grupo.</p>
+        <h2>Ginkanas, juegos de equipo y escape room</h2>
+        <p>Elige el formato según tu grupo. Y si quieres, los combinamos en una jornada a medida.</p>
       </div>
       
       <div class="experiences-grid">
         {experiencias.map((exp) => (
           <a href={exp.href} class="experience-card">
             <div class="experience-image">
-              <Icon name={exp.icon} size={56} stroke={1.25} />
+              {exp.img
+                ? <img src={exp.img} alt={exp.title} width="640" height="480" loading="lazy" decoding="async" class="exp-photo">
+                : <Icon name={exp.icon} size={56} stroke={1.25} />}
               <span class="experience-tag">{exp.tag}</span>
             </div>
             <div class="experience-content">
@@ -193,7 +199,7 @@ const faqs = [
       </div>
       
       <div class="text-center mt-2">
-        <a href="/experiencias/" class="btn btn-primary btn-lg">Ver todas las experiencias</a>
+        <a href="/experiencias/" class="btn btn-primary btn-lg">Ver ginkanas y juegos de equipo</a>
       </div>
     </div>
   </section>
@@ -458,6 +464,7 @@ const faqs = [
   .experience-image { display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.92);
     background: linear-gradient(135deg, var(--color-secondary), var(--color-bg-dark)); }
 
+  .exp-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
   .fact-sheet { background: var(--color-bg-dark); color: white; border-radius: var(--radius-lg); padding: var(--space-xl); display: grid; gap: var(--space-md); }
   .fact-sheet div { display: grid; grid-template-columns: 110px 1fr; gap: var(--space-md); padding-bottom: var(--space-md); border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
   .fact-sheet div:last-child { border-bottom: 0; padding-bottom: 0; }

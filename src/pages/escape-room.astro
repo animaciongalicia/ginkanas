@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Prose from '../components/Prose.astro';
 
 const title = 'Escape room para grupos y empresas en Galicia';
-const description = 'Escape Room para empresas y grupos en Galicia. En nuestros locales o lo llevamos donde quieras. Acertijos, enigmas y trabajo en equipo. Experiencia premium.';
+const description = 'Escape Room para empresas y grupos en Galicia. En los escape rooms temáticos de cada ciudad o en versión móvil donde quieras. Acertijos, enigmas y trabajo en equipo.';
 
 const ampliado = [
   {
@@ -20,7 +20,7 @@ const ampliado = [
   {
     "h": "En local o móvil: cómo elegir",
     "ul": [
-      "<strong>Grupos de 6 a 20 personas que buscan la máxima inmersión:</strong> nuestros locales, con salas ambientadas y tecnología integrada.",
+      "<strong>Grupos pequeños que buscan la máxima inmersión:</strong> escape rooms temáticos de la ciudad que elijáis, a partir de 6 personas (algunas salas piden 8).",
       "<strong>Empresas y eventos con muchas personas:</strong> escape room móvil, que llevamos a una oficina, un hotel, una finca o un salón de eventos y admite hasta 100 personas repartidas en equipos.",
       "<strong>Grupos que quieren jugar al aire libre por la ciudad:</strong> mirad nuestras <a href=\"/experiencias/ginkana-cluedo/\">ginkanas de misterio</a>, que usan el centro como escenario."
     ]
@@ -48,6 +48,7 @@ const schema = {
   
   <section class="hero-inner">
     <div class="container">
+      <div class="hero-split">
       <div class="hero-content">
         <span class="hero-badge">La experiencia más inmersiva</span>
         <h1>Escape Room para <span class="text-gradient">Grupos</span></h1>
@@ -56,13 +57,15 @@ const schema = {
           el compañero callado tiene ideas brillantes y crear una historia que recordaréis.
         </p>
         <div class="hero-meta">
-          <span class="meta-item">En nuestros locales o donde quieras</span>
+          <span class="meta-item">En escape rooms de cada ciudad o donde quieras</span>
           <span class="meta-item">Grupos desde 6 hasta 100 personas</span>
           <span class="meta-item">60-90 minutos de juego</span>
         </div>
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20escape%20room%20para%20grupos" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
           Solicitar información
         </a>
+      </div>
+      <img src="/images/fotos/escape-room.webp" width="800" height="600" alt="Grupo disfrazado resolviendo una investigación en equipo" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -76,21 +79,19 @@ const schema = {
       
       <div class="options-grid">
         <div class="option-card">
-          <div class="option-icon"></div>
-          <h3>En nuestros locales</h3>
-          <p>Salas diseñadas específicamente para escape rooms. Ambientación, atrezzo, tecnología... Todo pensado para la inmersión total.</p>
+          <h3>En escape rooms de tu ciudad</h3>
+          <p>Reservamos por vosotros en los escape rooms de toda la vida que hay en cada ciudad: salas temáticas con su ambientación y su game master. Vosotros solo jugáis.</p>
           <ul class="option-features">
-            <li>Salas temáticas decoradas al detalle</li>
-            <li>Tecnología integrada (sensores, cerraduras electrónicas...)</li>
+            <li>Salas temáticas de los escape rooms de cada ciudad</li>
             <li>Game master en directo</li>
-            <li>Grupos de 6 a 20 personas</li>
+            <li>Mínimo de 6 personas (algunas salas piden 8)</li>
+            <li>Os ayudamos a elegir sala según el grupo</li>
           </ul>
           <span class="option-ideal">Ideal para: grupos pequeños que buscan máxima inmersión</span>
         </div>
         
         <div class="option-card featured">
           <div class="option-badge">Más solicitado</div>
-          <div class="option-icon"></div>
           <h3>Escape Room móvil</h3>
           <p>Llevamos la experiencia donde quieras. Tu oficina, un hotel, una finca, un salón de eventos... Montamos, jugáis, desmontamos.</p>
           <ul class="option-features">
