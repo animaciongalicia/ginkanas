@@ -1,26 +1,28 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Prose from '../../components/Prose.astro';
-import { getPosts, TEMAS, formatDate, isoDate } from '../../lib/blog';
+import Icon from '../../components/Icon.astro';
+import { getPosts, TEMAS, formatDate, isoDate, readingTime } from '../../lib/blog';
 
 const title = 'Blog y novedades sobre ginkanas y eventos';
 const description = 'Guías y novedades sobre ginkanas para despedidas, cumpleaños, grupos y empresas en Galicia. Consejos prácticos, planes originales y todo lo que necesitas saber.';
 
 const posts = await getPosts();
 
-// Filtros de la lista (solo en esta página, sin URLs propias para no competir con las páginas principales)
-const filtros = [
-  { id: 'todo', label: 'Todo' },
-  { id: 'despedidas', label: 'Despedidas' },
-  { id: 'cumpleanos', label: 'Cumpleaños y grupos' },
-  { id: 'empresas', label: 'Empresas' },
-  { id: 'novedad', label: 'Novedades' },
+// Filtros por pilar (solo en esta página, sin URLs propias para no competir con las páginas principales)
+const pilares = [
+  { id: 'todo', label: 'Todo', icon: 'compass' },
+  { id: 'empresas', label: 'Empresas', icon: 'building' },
+  { id: 'juegos', label: 'Juegos', icon: 'trophy' },
+  { id: 'despedidas', label: 'Despedidas', icon: 'glass' },
+  { id: 'cumpleanos', label: 'Cumpleaños y grupos', icon: 'cake' },
 ];
+const [destacado, ...resto] = posts;
 const ampliado = [
   {
     "h": "Qué encontrarás en el blog",
     "p": [
-      "Aquí publicamos dos tipos de contenido. Las <strong>guías</strong> responden dudas prácticas de quien organiza algo: cuánto cuesta una despedida, qué ciudad elegir, cómo montar un cumpleaños original o qué hace que un team building funcione. Las <strong>novedades</strong> cuentan lo nuevo de Ginkanas.es: experiencias, ciudades y fechas.",
+      "Aquí publicamos dos tipos de contenido. Las <strong>guías</strong> responden dudas prácticas de quien organiza algo: juegos de team building para empresas, ideas de juegos para adultos, cuánto cuesta una despedida, qué ciudad elegir o cómo montar un cumpleaños original. Las <strong>novedades</strong> cuentan lo nuevo de Ginkanas.es: experiencias, ciudades y fechas.",
       "Todo está escrito con lo que vemos en cada ginkana: unas dos horas de juego por el centro de la ciudad, con monitor y un briefing inicial de 10-15 minutos. Si buscas una experiencia concreta, mira la <a href=\"/experiencias/\">comparativa de experiencias</a>; si ya sabes dónde, elige tu ciudad en el menú."
     ]
   }
@@ -28,32 +30,52 @@ const ampliado = [
 ---
 
 <Layout title={title} description={description}>
-  
+
   <section class="hero-blog">
     <div class="container">
       <h1>Blog y novedades</h1>
-      <p class="hero-text">Ideas, consejos y todo lo que necesitas para organizar algo memorable.</p>
+      <p class="hero-text">Ideas, juegos y ejemplos para equipos, grupos y celebraciones. Sin humo.</p>
+      <div class="pillars" id="blog-filters" role="group" aria-label="Filtrar artículos por tema" hidden>
+        {pilares.map((f) => (
+          <button type="button" class="pillar" data-filtro={f.id} aria-pressed={f.id === 'todo' ? 'true' : 'false'}>
+            <Icon name={f.icon} size={22} />
+            <span>{f.label}</span>
+            <small>{f.id === 'todo' ? posts.length : posts.filter((p) => (f.id === 'novedad' ? p.data.tipo === 'novedad' : p.data.tema === f.id)).length}</small>
+          </button>
+        ))}
+      </div>
       <p class="hero-rss"><a href="/rss.xml">Suscribirse por RSS</a></p>
     </div>
   </section>
-  
+
   <section class="section">
     <div class="container">
-      <div class="blog-filters" id="blog-filters" role="group" aria-label="Filtrar artículos" hidden>
-        {filtros.map((f) => (
-          <button type="button" class="chip" data-filtro={f.id} aria-pressed={f.id === 'todo' ? 'true' : 'false'}>{f.label}</button>
-        ))}
-      </div>
+      {destacado && (
+        <article class="featured" data-tema={destacado.data.tema} data-tipo={destacado.data.tipo} style={`--post-color: ${TEMAS[destacado.data.tema].accent}; --post-bg: ${TEMAS[destacado.data.tema].bg}`} id="featured">
+          <div class="featured-art"><Icon name={TEMAS[destacado.data.tema].icon} size={72} stroke={1.2} /></div>
+          <div class="featured-body">
+            <span class="post-category">{destacado.data.etiqueta ?? TEMAS[destacado.data.tema].label} · Lo último</span>
+            <h2><a href={`/blog/${destacado.slug}/`}>{destacado.data.titulo}</a></h2>
+            <p>{destacado.data.intro}</p>
+            <div class="post-meta">
+              <span><time datetime={isoDate(destacado.data.fecha)}>{formatDate(destacado.data.fecha)}</time> · {readingTime(destacado.body)} min</span>
+              <a href={`/blog/${destacado.slug}/`} class="read-more">Leer artículo →</a>
+            </div>
+          </div>
+        </article>
+      )}
 
       <div class="posts-grid" id="posts-grid">
-        {posts.map((post) => (
-          <article class="post-card" data-tema={post.data.tema} data-tipo={post.data.tipo} style={`--post-color: ${TEMAS[post.data.tema].accent}`}>
-            <span class="post-category">{post.data.etiqueta ?? (post.data.tipo === 'novedad' ? 'Novedad' : TEMAS[post.data.tema].label)}</span>
-            <h2><a href={`/blog/${post.slug}/`}>{post.data.titulo}</a></h2>
-            <p>{post.data.resumen ?? post.data.descripcion}</p>
-            <div class="post-meta">
-              <time datetime={isoDate(post.data.fecha)}>{formatDate(post.data.fecha)}</time>
-              <a href={`/blog/${post.slug}/`} class="read-more">Leer más →</a>
+        {resto.map((post) => (
+          <article class="post-card" data-tema={post.data.tema} data-tipo={post.data.tipo} style={`--post-color: ${TEMAS[post.data.tema].accent}; --post-bg: ${TEMAS[post.data.tema].bg}`}>
+            <div class="post-art"><Icon name={TEMAS[post.data.tema].icon} size={34} stroke={1.4} /><span class="post-category">{post.data.etiqueta ?? (post.data.tipo === 'novedad' ? 'Novedad' : TEMAS[post.data.tema].label)}</span></div>
+            <div class="post-body">
+              <h2><a href={`/blog/${post.slug}/`}>{post.data.titulo}</a></h2>
+              <p>{post.data.resumen ?? post.data.descripcion}</p>
+              <div class="post-meta">
+                <span><time datetime={isoDate(post.data.fecha)}>{formatDate(post.data.fecha)}</time> · {readingTime(post.body)} min</span>
+                <a href={`/blog/${post.slug}/`} class="read-more" aria-label={`Leer: ${post.data.titulo}`}>Leer →</a>
+              </div>
             </div>
           </article>
         ))}
@@ -61,7 +83,7 @@ const ampliado = [
       <p class="no-results" id="no-results" hidden>Todavía no hay artículos en esta selección.</p>
     </div>
   </section>
-  
+
   <Prose sections={ampliado} />
 
   <section class="section section-alt">
@@ -69,16 +91,17 @@ const ampliado = [
       <div class="cta-content">
         <h2>¿Tienes algo que organizar?</h2>
         <p>Deja de leer y cuéntanos qué necesitas. Te ayudamos a montarlo.</p>
+        <a href="/contacto/" class="btn btn-primary btn-lg">Pedir propuesta</a>
         <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
       </div>
     </div>
   </section>
-  
+
 </Layout>
 
 <script>
   const bar = document.getElementById('blog-filters');
-  const cards = Array.from(document.querySelectorAll<HTMLElement>('.post-card'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.post-card, .featured'));
   const none = document.getElementById('no-results');
   if (bar) {
     bar.hidden = false;
@@ -99,125 +122,53 @@ const ampliado = [
 </script>
 
 <style>
-  .hero-blog {
-    background: var(--color-bg-alt);
-    padding: var(--space-3xl) 0 var(--space-2xl);
-    text-align: center;
-  }
-  
-  .hero-text {
-    font-size: 1.25rem;
-    color: var(--color-text-light);
-    margin-top: var(--space-md);
-  }
-  
-  .hero-rss { margin: var(--space-sm) 0 0; font-size: 0.875rem; }
-  .blog-filters { display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center; margin-bottom: var(--space-xl); }
-  .blog-filters[hidden], .post-card[hidden], .no-results[hidden] { display: none; }
-  .chip { border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-full); font: inherit; font-weight: 500; cursor: pointer; }
-  .chip[aria-pressed="true"] { background: var(--color-secondary); border-color: var(--color-secondary); color: #fff; }
+  .hero-blog { background: var(--color-bg-alt); padding: var(--space-3xl) 0 var(--space-2xl); text-align: center; }
+  .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-md) auto var(--space-xl); max-width: 620px; }
+  .hero-rss { margin: var(--space-lg) 0 0; font-size: 0.875rem; }
+
+  .pillars { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); }
+  .pillars[hidden], .post-card[hidden], .featured[hidden], .no-results[hidden] { display: none; }
+  .pillar { display: inline-flex; align-items: center; gap: var(--space-sm); border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-full); font: inherit; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); }
+  .pillar:hover { border-color: var(--color-secondary); }
+  .pillar small { background: rgba(0,0,0,0.08); border-radius: var(--radius-full); padding: 0 8px; font-size: 0.75rem; font-weight: 700; }
+  .pillar[aria-pressed="true"] { background: var(--color-secondary); border-color: var(--color-secondary); color: #fff; }
+  .pillar[aria-pressed="true"] small { background: rgba(255,255,255,0.25); }
   .no-results { text-align: center; color: var(--color-text-light); margin-top: var(--space-xl); }
 
-  .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
+  .featured { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--space-xl); box-shadow: var(--shadow-sm); }
+  .featured-art { display: flex; align-items: center; justify-content: center; background: var(--post-bg); color: var(--post-color); min-height: 220px; }
+  .featured-body { padding: var(--space-2xl); display: flex; flex-direction: column; gap: var(--space-md); }
+  .featured-body h2 { font-size: 1.75rem; margin: 0; }
+  .featured-body h2 a { color: var(--color-text); text-decoration: none; }
+  .featured-body h2 a:hover { color: var(--post-color); }
+  .featured-body p { color: var(--color-text-light); margin: 0; }
+
+  .posts-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xl); }
+  .post-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: all var(--transition-normal); }
+  .post-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--post-color); }
+  .post-art { display: flex; align-items: center; justify-content: space-between; padding: var(--space-lg); background: var(--post-bg); color: var(--post-color); }
+  .post-category { display: inline-block; background: var(--post-color); color: #fff; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; }
+  .post-body { padding: var(--space-lg); display: flex; flex-direction: column; flex-grow: 1; }
+  .post-card h2 { font-size: 1.125rem; margin-bottom: var(--space-sm); }
+  .post-card h2 a { color: var(--color-text); text-decoration: none; }
+  .post-card h2 a:hover { color: var(--post-color); }
+  .post-card p { color: var(--color-text-light); font-size: 0.9375rem; margin-bottom: var(--space-lg); flex-grow: 1; }
+  .post-meta { display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); font-size: 0.8125rem; color: var(--color-text-light); margin-top: auto; }
+  .read-more { color: var(--post-color); font-weight: 700; font-size: 0.875rem; white-space: nowrap; }
+
+  .cta-box { display: grid; grid-template-columns: 1fr; text-align: center; gap: var(--space-2xl); align-items: center; background: white; padding: var(--space-2xl); border-radius: var(--radius-lg); }
+  .cta-content h2 { margin-bottom: var(--space-md); }
+  .cta-content p { color: var(--color-text-light); margin-bottom: var(--space-xl); }
+  .cta-content .btn { margin: var(--space-xs); }
+
+  @media (max-width: 1024px) {
+    .posts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
-  
-  .post-card {
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-xl);
-    transition: all var(--transition-normal);
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .post-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
-    border-color: var(--post-color);
-  }
-  
-  .post-category {
-    display: inline-block;
-    background: var(--post-color);
-    color: white;
-    padding: var(--space-xs) var(--space-md);
-    border-radius: var(--radius-full);
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: var(--space-md);
-    align-self: flex-start;
-  }
-  
-  .post-card h2 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-md);
-  }
-  
-  .post-card h2 a {
-    color: var(--color-text);
-    text-decoration: none;
-  }
-  
-  .post-card h2 a:hover {
-    color: var(--post-color);
-  }
-  
-  .post-card p {
-    color: var(--color-text-light);
-    margin-bottom: var(--space-lg);
-    flex-grow: 1;
-  }
-  
-  .post-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .post-meta time {
-    font-size: 0.875rem;
-    color: var(--color-text-light);
-  }
-  
-  .read-more {
-    color: var(--post-color);
-    font-weight: 600;
-    font-size: 0.875rem;
-  }
-  
-  .cta-box {
-    display: grid;
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: var(--space-2xl);
-    align-items: center;
-    background: white;
-    padding: var(--space-2xl);
-    border-radius: var(--radius-lg);
-  }
-  
-  .cta-content h2 {
-    margin-bottom: var(--space-md);
-  }
-  
-  .cta-content p {
-    color: var(--color-text-light);
-    margin-bottom: var(--space-xl);
-  }
-  
-  @media (max-width: 768px) {
-    .posts-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .cta-box {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    
+  @media (max-width: 720px) {
+    .posts-grid { grid-template-columns: minmax(0, 1fr); }
+    .featured { grid-template-columns: minmax(0, 1fr); }
+    .featured-art { min-height: 120px; }
+    .featured-body { padding: var(--space-lg); }
+    .featured-body h2 { font-size: 1.375rem; }
   }
 </style>

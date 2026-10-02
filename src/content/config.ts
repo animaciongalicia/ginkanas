@@ -13,7 +13,7 @@ const blog = defineCollection({
     fecha: z.coerce.date(),
     actualizado: z.coerce.date().optional(),
     tipo: z.enum(['guia', 'novedad']).default('guia'),
-    tema: z.enum(['general', 'despedidas', 'cumpleanos', 'empresas']).default('general'), // solo cambia el color; no crea páginas
+    tema: z.enum(['general', 'despedidas', 'cumpleanos', 'empresas', 'juegos']).default('general'), // solo cambia el color; no crea páginas
     etiqueta: z.string().optional(),
     autor: z.string().optional(), // si se omite, firma Ginkanas.es
     cta: z.object({ titulo: z.string(), texto: z.string() }).optional(),
