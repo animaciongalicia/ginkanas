@@ -21,6 +21,13 @@ const manifiesto = [
   ['disfraces-cine-investigacion.jpg', 'galeria-investigacion', 720, 480, 'attention'],
   ['pistolas-agua-playa.jpg', 'galeria-playa', 696, 464, 'attention'],
   ['tirar-cuerda-playa.jpg', 'galeria-cuerda', 535, 357, 'attention'],
+  // Juegos de equipo (experiencias)
+  ['cubos-cabeza-equipos.jpg', 'juego-cubos', 640, 480, 'attention'],
+  ['juegos-hinchables-equipos.jpg', 'juego-esquis', 640, 480, 'attention'],
+  ['pistolas-agua-playa.jpg', 'juego-agua', 640, 480, 'attention'],
+  ['tirar-cuerda-playa.jpg', 'juego-cuerda', 640, 480, 'attention'],
+  ['cuerda-equipo-pradera.jpg', 'juego-cuerda-empresa', 640, 480, 'attention'],
+  ['tablas-equilibrio-playa.jpg', 'juego-equilibrio', 640, 480, 'attention'],
   // Imagen para compartir en redes (1200 x 630)
   ['tablas-equilibrio-playa.jpg', 'og-empresas', 1200, 630, 'centre'],
 ];

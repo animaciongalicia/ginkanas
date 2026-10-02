@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Prose from '../../components/Prose.astro';
 import FaqSection from '../../components/FaqSection.astro';
 
-const title = 'Ginkanas y escape room en Galicia: todas las experiencias';
-const description = 'Cluedo, Loca, Escuela Mágica, Lendas, Supervivientes y escape room: qué experiencia elegir según la ocasión y el grupo. Desde 25 €/persona.';
+const title = 'Ginkanas, juegos de equipo y escape room en Galicia';
+const description = 'Ginkanas, juegos de equipo y escape room para empresas, despedidas y grupos en Galicia: qué experiencia elegir según el grupo. De 6 a 200 personas.';
 
 const ampliado = [
   {
@@ -72,6 +72,7 @@ const faqs = [
 const experiencias = [
   {
     title: 'Ginkana Loca',
+    img: '/images/fotos/ginkana-loca.webp',
     description: 'La clásica para despedidas. Pruebas desternillantes y vacile al novi@.',
     price: 'Desde 25€',
     tag: 'Despedidas',
@@ -80,6 +81,7 @@ const experiencias = [
   },
   {
     title: 'Ginkana Cluedo',
+    img: '/images/fotos/ginkana-cluedo.webp',
     description: 'Resuelve el misterio mientras recorres la ciudad.',
     price: 'Desde 25€',
     tag: 'Misterio',
@@ -96,6 +98,7 @@ const experiencias = [
   },
   {
     title: 'Ginkana Lendas',
+    img: '/images/fotos/ginkana-lendas.webp',
     description: 'Descubre las leyendas de Galicia. Meigas y trasnos.',
     price: 'Desde 25€',
     tag: 'Galicia',
@@ -104,6 +107,7 @@ const experiencias = [
   },
   {
     title: 'Ginkana Supervivientes',
+    img: '/images/fotos/ginkana-supervivientes.webp',
     description: 'Pruebas físicas y resistencia. Solo los fuertes sobreviven.',
     price: 'Desde 25€',
     tag: 'Aventura',
@@ -119,6 +123,14 @@ const experiencias = [
     color: '#1A1A2E'
   },
 ];
+const juegos = [
+  { title: 'Tiro de cuerda', text: 'El clásico por equipos. Fuerza, coordinación y mucho grito de ánimo.', img: '/images/fotos/juego-cuerda.webp', alt: 'Equipos tirando de una cuerda en la playa' },
+  { title: 'Esquís de equipo', text: 'Todos sobre las mismas tablas, avanzando a la vez. Si no hay ritmo común, no hay avance.', img: '/images/fotos/juego-esquis.webp', alt: 'Equipo avanzando coordinado sobre tablas largas con cuerdas' },
+  { title: 'Reto de los cubos', text: 'Equilibrio y comunicación: cada uno con su cubo en la cabeza y el equipo entero en marcha.', img: '/images/fotos/juego-cubos.webp', alt: 'Equipo con cubos en la cabeza durante un juego' },
+  { title: 'Batalla de agua', text: 'Puntería, estrategia y retos con pistolas de agua para romper el hielo sin dejar a nadie seco.', img: '/images/fotos/juego-agua.webp', alt: 'Participantes con pistolas de agua en la playa' },
+  { title: 'Tracción en grupo', text: 'Una versión cooperativa de la cuerda: el objetivo se logra solo si tiráis todos a la vez.', img: '/images/fotos/juego-cuerda-empresa.webp', alt: 'Compañeros de empresa tirando juntos de una cuerda' },
+  { title: 'Equilibrio por equipos', text: 'Tablas inestables, relevos y concentración. Gana quien mejor se coordina, no quien más corre.', img: '/images/fotos/juego-equilibrio.webp', alt: 'Equipo manteniendo el equilibrio sobre una tabla en la playa' },
+];
 ---
 
 <Layout title={title} description={description} faqs={faqs}>
@@ -126,7 +138,7 @@ const experiencias = [
   <section class="hero-inner">
     <div class="container">
       <h1>Nuestras Experiencias</h1>
-      <p class="hero-text">Cinco ginkanas urbanas y un escape room para despedidas, cumpleaños, grupos y empresas en Galicia. Elige según la ocasión y cómo es tu grupo.</p>
+      <p class="hero-text">Ginkanas urbanas, juegos de equipo y escape room para empresas, despedidas, cumpleaños y grupos en Galicia. Elige según el objetivo y cómo es tu grupo.</p>
     </div>
   </section>
   
@@ -135,6 +147,7 @@ const experiencias = [
       <div class="experiences-grid">
         {experiencias.map((exp) => (
           <a href={exp.href} class="experience-card" style={`--card-color: ${exp.color}`}>
+            {exp.img && <img src={exp.img} alt={exp.title} width="640" height="480" loading="lazy" decoding="async" class="card-photo">}
             <span class="exp-tag">{exp.tag}</span>
             <h3>{exp.title}</h3>
             <p>{exp.description}</p>
@@ -153,6 +166,26 @@ const experiencias = [
           Pregúntanos por WhatsApp
         </a>
       </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Juegos de equipo para empresas y grupos</h2>
+      <p class="section-intro">Además de las ginkanas por la ciudad, montamos juegos de equipo donde se compite, se coopera y se acaba riendo. Se combinan entre sí para armar una jornada a medida, de 6 a 200 personas.</p>
+      <div class="games-grid">
+        {juegos.map((j) => (
+          <div class="game-card">
+            <img src={j.img} alt={j.alt} width="640" height="480" loading="lazy" decoding="async">
+            <div>
+              <h3>{j.title}</h3>
+              <p>{j.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="section-intro" style="margin-top: var(--space-xl)">¿Quieres un programa completo para tu equipo? <a href="/ginkanas-empresas/">Mira la página de empresas</a> o <a href="/contacto/?tipo=empresa">pide una propuesta</a>.</p>
     </div>
   </section>
 
@@ -230,6 +263,14 @@ const experiencias = [
     align-self: flex-start;
   }
   
+  .card-photo { width: calc(100% + 2 * var(--space-xl)); max-width: none; margin: calc(-1 * var(--space-xl)) calc(-1 * var(--space-xl)) var(--space-md); height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+  .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+  .game-card { background: var(--color-bg); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+  .game-card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+  .game-card div { padding: var(--space-lg); }
+  .game-card h3 { margin-bottom: var(--space-sm); }
+  .game-card p { color: var(--color-text-light); margin: 0; }
+  .section-intro { max-width: 720px; margin: 0 auto var(--space-xl); text-align: center; color: var(--color-text-light); }
   .experience-card h3 { margin-bottom: var(--space-sm); }
   .experience-card p { color: var(--color-text-light); margin-bottom: var(--space-lg); flex-grow: 1; }
   
@@ -264,6 +305,7 @@ const experiencias = [
   .help-box p { margin-bottom: var(--space-xl); color: var(--color-text-light); }
   
   @media (max-width: 1024px) {
+    .games-grid { grid-template-columns: repeat(2, 1fr); }
     .experiences-grid { grid-template-columns: repeat(2, 1fr); }
   }
   
