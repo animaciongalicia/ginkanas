@@ -2,9 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Prose from '../components/Prose.astro';
 import FaqSection from '../components/FaqSection.astro';
+import Icon from '../components/Icon.astro';
+import { ACTIVIDADES } from '../data/actividades';
 
 const title = 'Team building y juegos para empresas en Galicia';
-const description = 'Team building y juegos a medida para empresas en Galicia: ginkanas, escape room y competiciones para grupos de 6 a 200 personas. Propuesta a medida.';
+const description = 'Team building y juegos para empresas en Galicia: ginkanas, retos, construcción en equipo, indoor, outdoor y aventura. De 6 a 200 personas.';
 
 const beneficios = [
   {
@@ -29,39 +31,6 @@ const beneficios = [
   }
 ];
 
-const formatos = [
-  {
-    title: 'Ginkana de empresa',
-    description: 'Pruebas, retos y pistas por equipos recorriendo la ciudad, con puntuación y premio. El formato más completo y el que mejor funciona de primeras.',
-    ideal: 'Equipos mixtos, jornadas de empresa, celebraciones',
-    href: '/experiencias/ginkana-loca/'
-  },
-  {
-    title: 'Juego de investigación',
-    description: 'Un caso, varios sospechosos y pistas repartidas. Obliga a compartir información y a decidir en común, sin correr.',
-    ideal: 'Equipos que buscan comunicación y pensar juntos',
-    href: '/experiencias/ginkana-cluedo/'
-  },
-  {
-    title: 'Competición por equipos',
-    description: 'Pruebas físicas y de estrategia con ranking en vivo. Aquí se compite de verdad, con buen rollo.',
-    ideal: 'Equipos comerciales y perfiles competitivos',
-    href: '/experiencias/ginkana-supervivientes/'
-  },
-  {
-    title: 'Escape room',
-    description: 'Acertijos y tiempo en contra, en local o móvil. El móvil lo llevamos a vuestra oficina, un hotel o una finca.',
-    ideal: 'Liderazgo y comunicación bajo presión',
-    href: '/escape-room/'
-  },
-  {
-    title: 'Juego a medida',
-    description: 'Si nada de lo anterior encaja, diseñamos un juego para vuestro objetivo, vuestro espacio y vuestro tamaño de grupo.',
-    ideal: 'Convenciones, aniversarios, eventos especiales',
-    href: '/contacto/?tipo=empresa'
-  }
-];
-
 const galeria = [
   { src: '/images/fotos/galeria-playa.webp', w: 696, h: 464, alt: 'Equipos de empresa en una prueba de equilibrio en la playa' },
   { src: '/images/fotos/galeria-mapa.webp', w: 720, h: 480, alt: 'Equipo consultando un mapa durante una ginkana' },
@@ -71,49 +40,37 @@ const galeria = [
 
 const ampliado = [
   {
-    "h": "Team building a medida: juegos, no solo ginkanas",
+    "h": "Team building para empresas: elige el formato que encaja con tu equipo",
     "p": [
-      "La ginkana es nuestro formato más conocido, pero para empresas no nos limitamos a ella. Diseñamos <strong>juegos y actividades de team building a medida</strong>, divertidos y adaptados al objetivo, al perfil del equipo y al espacio disponible. Puede ser una ginkana por la ciudad, un juego de investigación, una competición por equipos, un escape room o un juego pensado para vuestro evento.",
-      "Todos tienen en común lo esencial: reglas claras, equipos, pruebas y un monitor que dinamiza la actividad. Sin dinámicas forzadas y sin sentarse a escuchar."
+      "Un buen team building no es una dinámica forzada: es una actividad con reglas claras, equipos, retos y un monitor que la dinamiza. Organizamos <strong>jornadas de team building y juegos para empresas en toda Galicia</strong>, de 6 a 200 personas, y las adaptamos al objetivo, al perfil del equipo y al espacio disponible.",
+      "Puede ser una <a href=\"/team-building-ginkanas-y-retos/\">ginkana o un juego de retos</a>, un reto de <a href=\"/team-building-construccion/\">construcción en equipo</a>, una <a href=\"/team-building-indoor/\">jornada indoor</a>, actividades <a href=\"/team-building-outdoor/\">outdoor</a>, juegos tipo <a href=\"/team-building-humor-amarillo/\">Humor Amarillo</a> o una jornada de <a href=\"/team-building-aventura/\">aventura</a> con paintball, rafting, karts o barcos. Y se pueden combinar."
     ]
   },
   {
     "h": "Para equipos de todos los tamaños",
-    "p": [
-      "Trabajamos con grupos de <strong>6 hasta 200 personas</strong> y proponemos el formato según el tamaño y el tiempo disponible (entre 2 y 4 horas):"
-    ],
     "ul": [
-      "<strong>Equipos pequeños (desde 6 personas):</strong> una ginkana, un juego de investigación o un escape room en local, pensado para grupos reducidos.",
-      "<strong>Grupos medianos:</strong> varios equipos que compiten entre sí, con puntuación y ranking en vivo.",
-      "<strong>Grupos grandes (hasta 200 personas):</strong> juegos con muchos equipos en paralelo. El escape room móvil admite hasta 100 personas repartidas en equipos y lo llevamos a la oficina, un hotel, una finca o un salón de eventos."
+      "<strong>Equipos pequeños (desde 6 personas):</strong> escape room, juego de investigación o un reto de construcción.",
+      "<strong>Grupos medianos:</strong> ginkanas y juegos de equipo con varios equipos que compiten entre sí.",
+      "<strong>Grupos grandes (hasta 200 personas):</strong> varios juegos en paralelo con rotación, marcador común y entrega de premios. El <a href=\"/escape-room/\">escape room móvil</a> admite hasta 100 personas."
     ]
   },
   {
-    "h": "Cómo se prepara una ginkana de empresa",
+    "h": "Cómo se prepara una actividad de empresa",
     "p": [
-      "A diferencia de una despedida, una actividad de empresa se prepara a medida. Con el número de personas, la ciudad y el objetivo (integrar a un equipo nuevo, celebrar un cierre de año, mejorar la comunicación), proponemos formato, duración y presupuesto.",
-      "El día de la actividad, el punto de encuentro suele ser la plaza del Ayuntamiento o una calle céntrica. El monitor abre con un briefing de 10-15 minutos, divide al grupo en equipos y explica el juego."
-    ]
-  },
-  {
-    "h": "Formatos para un equipo de trabajo",
-    "ul": [
-      "<strong><a href=\"/experiencias/ginkana-cluedo/\">Cluedo</a>:</strong> investigar un caso obliga a compartir información y a decidir en común.",
-      "<strong><a href=\"/experiencias/ginkana-supervivientes/\">Supervivientes</a>:</strong> competición por equipos con ranking en vivo; funciona bien con equipos comerciales.",
-      "<strong><a href=\"/escape-room/\">Escape room</a>:</strong> comunicación y liderazgo bajo presión, en local o móvil.",
-      "<strong><a href=\"/experiencias/ginkana-lendas/\">Lendas</a>:</strong> una actividad con contenido cultural, útil con equipos que vienen de fuera de Galicia."
+      "Con el número de personas, la ciudad y el objetivo (integrar a un equipo nuevo, celebrar un cierre, mejorar la comunicación), proponemos formato, duración y presupuesto. Una actividad suele durar entre 2 y 4 horas, y se puede ampliar a una jornada completa.",
+      "El día de la actividad, el monitor abre con un briefing, divide al grupo en equipos y explica el juego. Tú solo tienes que disfrutar con tu equipo."
     ]
   },
   {
     "h": "¿Buscas una jornada completa, una regata o un evento de más de 200 personas?",
     "p": [
-      "Ginkanas.es se centra en juegos de equipo de unas horas. Para jornadas de empresa completas, actividades outdoor, experiencias gastronómicas o eventos muy grandes, trabajamos con <a href=\"https://www.mileventosgalicia.com\" rel=\"noopener\">Mil Eventos Galicia</a>, nuestra otra web especializada en eventos de empresa."
+      "Para jornadas de empresa completas, regatas, experiencias gastronómicas o eventos muy grandes, trabajamos con <a href=\"https://www.mileventosgalicia.com\" rel=\"noopener\">Mil Eventos Galicia</a>, nuestra otra web especializada en eventos de empresa."
     ]
   },
   {
     "h": "Qué cambia en un equipo después",
     "p": [
-      "No prometemos milagros de una tarde, pero sí algo que se nota al día siguiente: gente que no se hablaba, hablando; compañeros que descubren cómo piensa otro; y una anécdota compartida para arrancar reuniones. Todo lo demás depende de cómo se use ese impulso después.",
+      "No prometemos milagros de una tarde, pero sí algo que se nota al día siguiente: gente que no se hablaba, hablando; compañeros que descubren cómo piensa otro; y una anécdota compartida para arrancar reuniones.",
       "Para pedir presupuesto solo hace falta decirnos cuántas personas sois, en qué ciudad y qué fecha tenéis pensada."
     ]
   }
@@ -121,12 +78,12 @@ const ampliado = [
 
 const faqs = [
   {
-    "q": "¿Solo hacéis ginkanas para empresas?",
-    "a": "No. Además de ginkanas, diseñamos juegos y actividades de team building a medida: juegos de investigación, competiciones por equipos y escape room, en local o móvil."
+    "q": "¿Qué actividades de team building ofrecéis?",
+    "a": "Ginkanas y juegos de retos, construcción en equipo, jornadas indoor, actividades outdoor, juegos tipo Humor Amarillo y aventura (paintball, rafting, karts, barcos). Se combinan y se adaptan al grupo."
   },
   {
     "q": "¿Para cuántas personas se puede organizar?",
-    "a": "Para grupos de 6 hasta 200 personas. El escape room móvil admite hasta 100 personas repartidas en equipos."
+    "a": "Para grupos de 6 a 200 personas. El escape room móvil admite hasta 100 personas repartidas en equipos."
   },
   {
     "q": "¿Cuánto dura una actividad de team building?",
@@ -134,7 +91,7 @@ const faqs = [
   },
   {
     "q": "¿Dónde se puede hacer?",
-    "a": "En toda Galicia: por el centro de la ciudad (ginkanas y juegos), en vuestras instalaciones, un hotel, una finca o un salón de eventos (escape room móvil)."
+    "a": "En toda Galicia: por el centro de la ciudad, en playas y parques, en vuestras instalaciones, un hotel, una finca o un salón de eventos."
   },
   {
     "q": "¿Cuánto cuesta?",
@@ -145,7 +102,7 @@ const faqs = [
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Team building y juegos para empresas",
+  "name": "Team building y juegos para empresas en Galicia",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Ginkanas.es"
@@ -162,9 +119,9 @@ const schema = {
     <div class="container">
       <div class="hero-split">
       <div class="hero-content">
-        <span class="hero-badge">Juegos y team building para empresas</span>
-        <h1>Team building y <span class="text-gradient">juegos de equipo</span> para empresas</h1>
-        <p class="hero-text">Ginkanas, juegos de investigación, competiciones por equipos y escape room con monitor, diseñados para integrar equipos, reforzar la comunicación y celebrar con sentido. En toda Galicia, de 6 a 200 personas.</p>
+        <span class="hero-badge">Team building y juegos para empresas</span>
+        <h1>Team building y <span class="text-gradient">juegos para empresas</span> en Galicia</h1>
+        <p class="hero-text">Ginkanas, retos, construcción en equipo, jornadas indoor, actividades outdoor y aventura. Un monitor guía cada actividad y la adaptamos a tu objetivo, a tu equipo y a tu espacio. De 6 a 200 personas, en toda Galicia.</p>
         <div class="hero-meta">
           <span class="meta-item">En toda Galicia</span>
           <span class="meta-item">De 6 a 200 personas</span>
@@ -200,26 +157,33 @@ const schema = {
     </div>
   </section>
   
-  <!-- FORMATOS -->
-  <section class="section section-alt">
+  <!-- ACTIVIDADES -->
+  <section class="section section-alt" id="actividades">
     <div class="container">
       <div class="section-title">
-        <h2>Formatos que funcionan</h2>
-        <p>Cada equipo es diferente. Adaptamos la experiencia a lo que necesitáis.</p>
+        <h2>Actividades de team building</h2>
+        <p>Seis familias de actividades. Se combinan entre sí para montar la jornada que tu equipo necesita.</p>
       </div>
-      
-      <div class="formats-grid">
-        {formatos.map((f) => (
-          <div class="format-card">
-            <h3>{f.title}</h3>
-            <p>{f.description}</p>
-            <div class="format-ideal">
-              <strong>Ideal para:</strong> {f.ideal}
+
+      <div class="act-grid">
+        {ACTIVIDADES.map((a) => (
+          <a href={`/team-building-${a.slug}/`} class="act-card">
+            <div class="act-media">
+              {a.img
+                ? <img src={a.img.src} alt={a.img.alt} width={a.img.w} height={a.img.h} loading="lazy" decoding="async">
+                : a.mascota
+                  ? <img src={`/images/mascota/${a.mascota}.webp`} alt="" width="240" height="280" loading="lazy" decoding="async" class="act-mascot">
+                  : <Icon name={a.icono} size={48} stroke={1.2} />}
             </div>
-            <a href={f.href} class="format-link">Ver más →</a>
-          </div>
+            <div class="act-body">
+              <h3>{a.nombre}</h3>
+              <p>{a.resumen}</p>
+              <span class="act-link">Ver ejemplos →</span>
+            </div>
+          </a>
         ))}
       </div>
+      <p class="act-note">¿Algo que no ves aquí? <a href="/contacto/?tipo=empresa">Cuéntanos qué buscas</a> y diseñamos un juego a medida.</p>
     </div>
   </section>
   
@@ -354,6 +318,17 @@ const schema = {
   .gallery-grid img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius-md); }
   .format-card { grid-column: span 2; }
   .format-card:nth-child(n+4) { grid-column: span 3; }
+  .act-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); }
+  .act-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; color: var(--color-text); text-decoration: none; transition: box-shadow var(--transition-normal), border-color var(--transition-normal); }
+  .act-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-secondary); color: var(--color-text); }
+  .act-media { height: 180px; display: flex; align-items: center; justify-content: center; background: var(--color-bg-alt); color: var(--color-secondary); overflow: hidden; }
+  .act-media img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+  .act-media img.act-mascot { flex: 0 0 auto; width: auto; height: 160px; object-fit: contain; }
+  .act-body { padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-sm); flex-grow: 1; }
+  .act-body h3 { margin: 0; }
+  .act-body p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; flex-grow: 1; }
+  .act-link { color: var(--color-primary); font-weight: 600; font-size: 0.875rem; }
+  .act-note { text-align: center; margin: var(--space-xl) 0 0; color: var(--color-text-light); }
   .format-link { display: inline-block; margin-top: var(--space-md); font-weight: 600; }
   .hero-content {
     max-width: 800px;
@@ -417,11 +392,6 @@ const schema = {
     font-size: 0.9375rem;
   }
   
-  .formats-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--space-xl);
-  }
   
   .format-card {
     background: var(--color-bg);
@@ -557,7 +527,7 @@ const schema = {
   
   @media (max-width: 1024px) {
     .hero-split { grid-template-columns: 1fr; }
-    .format-card, .format-card:nth-child(n+4) { grid-column: auto; }
+    .act-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .benefits-grid {
       grid-template-columns: repeat(2, 1fr);

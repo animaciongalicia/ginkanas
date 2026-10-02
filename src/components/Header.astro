@@ -1,4 +1,6 @@
 ---
+import { ACTIVIDADES } from '../data/actividades';
+
 const currentPath = Astro.url.pathname;
 
 const navItems = [
@@ -6,8 +8,9 @@ const navItems = [
     label: 'Empresas',
     href: '/ginkanas-empresas/',
     children: [
-      { label: 'Ginkanas y juegos de equipo', href: '/ginkanas-empresas/' },
-      { label: 'Escape Room', href: '/escape-room/' },
+      { label: 'Todas las actividades', href: '/ginkanas-empresas/' },
+      ...ACTIVIDADES.map((a) => ({ label: a.nombre, href: `/team-building-${a.slug}/` })),
+      { label: 'Escape room', href: '/escape-room/' },
     ]
   },
   {
@@ -26,6 +29,7 @@ const navItems = [
 
 function isActive(href: string): boolean {
   if (href === '/') return currentPath === '/';
+  if (href === '/ginkanas-empresas/') return currentPath.startsWith(href) || currentPath.startsWith('/team-building-');
   return currentPath.startsWith(href);
 }
 ---

@@ -5,7 +5,7 @@ export const SITE = 'https://www.ginkanas.es';
 export const ORG_ID = `${SITE}/#organization`;
 export const WEBSITE_ID = `${SITE}/#website`;
 
-const CIUDADES = ['A Coruña', 'Vigo', 'Santiago de Compostela', 'Sanxenxo', 'Pontevedra', 'Ourense', 'Lugo'];
+const CIUDADES = ['A Coruña', 'Vigo', 'Santiago de Compostela', 'Sanxenxo', 'Pontevedra', 'Ourense', 'Lugo', 'Ferrol'];
 
 export const organizationSchema = {
   '@type': 'Organization',
@@ -26,7 +26,7 @@ export const organizationSchema = {
   logo: { '@type': 'ImageObject', url: `${SITE}/logo-512.png`, width: 512, height: 512 },
   image: `${SITE}/images/og-default.png`,
   description:
-    'Ginkanas urbanas y experiencias gamificadas para despedidas, empresas y grupos en Galicia, del grupo Animación Galicia. Un monitor guía el juego durante unas 2 horas.',
+    'Team building, juegos y actividades para empresas en Galicia (ginkanas, retos, construcción, indoor, outdoor y aventura), y ginkanas para despedidas y grupos. Del grupo Animación Galicia.',
   telephone: '+34678288284',
   parentOrganization: { '@type': 'Organization', name: 'Animación Galicia', url: 'https://www.animaciongalicia.com' },
   contactPoint: [
@@ -62,6 +62,7 @@ const SEGMENT_NAMES: Record<string, string> = {
   'ginkanas-pontevedra': 'Ginkanas en Pontevedra',
   'ginkanas-ourense': 'Ginkanas en Ourense',
   'ginkanas-lugo': 'Ginkanas en Lugo',
+  'ginkanas-ferrol': 'Ginkanas en Ferrol',
   contacto: 'Contacto',
   'sobre-nosotros': 'Quiénes somos',
 };

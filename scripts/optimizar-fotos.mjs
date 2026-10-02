@@ -46,14 +46,20 @@ const manifiesto = [
   ['ciudades/santiago-compostela-catedral.jpg', 'ciudad-santiago-card', 600, 400, 'attention'],
   ['ciudades/sanxenxo-gincanas-empresas-despedidas-playa-silgar.webp', 'ciudad-sanxenxo', 800, 600, 'attention'],
   ['ciudades/sanxenxo-gincanas-empresas-despedidas-playa-silgar.webp', 'ciudad-sanxenxo-card', 600, 400, 'attention'],
+  ['ciudades/ferrol-gincanas-juegos-empresas.jpg', 'ciudad-ferrol', 800, 600, 'attention'],
+  ['ciudades/ferrol-gincanas-juegos-empresas.jpg', 'ciudad-ferrol-card', 600, 400, 'attention'],
+  ['gincana-magica-harry-potter.jpeg', 'ginkana-escuela-magica', 700, 525, 'attention'],
+  ['scape-room-urbano.jpg', 'escape-room-urbano', 800, 600, 'attention'],
+  ['scape-room-urbano.jpg', 'escape-room-urbano-card', 640, 480, 'attention'],
   // Imagen para compartir en redes (1200 x 630)
   ['tablas-equilibrio-playa.jpg', 'og-empresas', 1200, 630, 'centre'],
 ];
 
 for (const [src, nombre, w, h, pos] of manifiesto) {
   const og = nombre.startsWith('og-'); // las imágenes para redes van en JPG (compatibilidad)
-  const base = sharp('fotos-originales/' + src)
-    .rotate()
+  const aRecortar = ['juego-cuerda-empresa', 'galeria-cuerda']; // originales con borde blanco
+  const origen = sharp('fotos-originales/' + src).rotate();
+  const base = (aRecortar.includes(nombre) ? origen.trim({ threshold: 20 }) : origen)
     .resize(w, h, { fit: 'cover', position: pos === 'attention' ? sharp.strategy.attention : 'centre' });
   const ext = og ? 'jpg' : 'webp';
   const info = await (og ? base.jpeg({ quality: 80, mozjpeg: true }) : base.webp({ quality: 72 })).toFile(OUT + nombre + '.' + ext);

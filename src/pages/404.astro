@@ -8,6 +8,7 @@ const description = 'Esta página no existe o ha cambiado de sitio. Vuelve al in
 <Layout title={title} description={description} noindex={true}>
   <section class="section">
     <div class="container notfound">
+      <img src="/images/mascota/duda.webp" alt="" width="140" height="230" class="mono" decoding="async">
       <p class="code">404</p>
       <h1>Aquí no hay pista que seguir</h1>
       <p>La página que buscas no existe o ha cambiado de sitio. Prueba con estos enlaces:</p>
@@ -15,7 +16,7 @@ const description = 'Esta página no existe o ha cambiado de sitio. Vuelve al in
         <li><a href="/">Inicio</a></li>
         <li><a href="/experiencias/">Todas las experiencias</a></li>
         <li><a href="/ginkanas-despedidas/">Ginkanas para despedidas</a></li>
-        <li><a href="/ginkanas-empresas/">Ginkanas para empresas</a></li>
+        <li><a href="/ginkanas-empresas/">Team building para empresas</a></li>
         <li><a href="/contacto/">Contacto</a></li>
       </ul>
     </div>
@@ -25,5 +26,6 @@ const description = 'Esta página no existe o ha cambiado de sitio. Vuelve al in
 <style>
   .notfound { text-align: center; max-width: 640px; padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
   .code { font-family: var(--font-display); font-size: 4rem; font-weight: 800; color: var(--color-primary); margin: 0; }
+  .mono { display: block; margin: 0 auto var(--space-sm); height: 200px; width: auto; }
   .notfound ul { list-style: none; margin-top: var(--space-lg); display: grid; gap: var(--space-sm); }
 </style>
