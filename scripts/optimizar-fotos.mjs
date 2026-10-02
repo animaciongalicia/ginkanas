@@ -28,6 +28,9 @@ const manifiesto = [
   ['tirar-cuerda-playa.jpg', 'juego-cuerda', 640, 480, 'attention'],
   ['cuerda-equipo-pradera.jpg', 'juego-cuerda-empresa', 640, 480, 'attention'],
   ['tablas-equilibrio-playa.jpg', 'juego-equilibrio', 640, 480, 'attention'],
+  // Portadas de despedidas y escape room
+  ['despedida-pelucas-dunas.jpg', 'despedidas-hub', 800, 600, 'attention'],
+  ['disfraces-cine-investigacion.jpg', 'escape-room', 800, 600, 'attention'],
   // Imagen para compartir en redes (1200 x 630)
   ['tablas-equilibrio-playa.jpg', 'og-empresas', 1200, 630, 'centre'],
 ];

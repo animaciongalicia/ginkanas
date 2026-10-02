@@ -34,8 +34,8 @@ const ginkanas = [
     title: 'Ginkana Supervivientes',
     description: 'Pruebas físicas, de habilidad y resistencia. Solo los más fuertes sobreviven. Ideal si el grupo tiene espíritu competitivo.',
     price: 'Desde 25€/persona',
-    duration: '2 horas',
-    minGroup: '6 personas',
+    duration: '2-2,5 horas',
+    minGroup: '8 personas',
     href: '/experiencias/ginkana-supervivientes/'
   },
 ];
@@ -94,6 +94,7 @@ const schema = {
   <!-- HERO -->
   <section class="hero-inner">
     <div class="container">
+      <div class="hero-split">
       <div class="hero-content">
         <span class="hero-badge">La mejor forma de empezar la despedida</span>
         <h1>Ginkanas para <span class="text-gradient">Despedidas</span></h1>
@@ -111,6 +112,8 @@ const schema = {
             Reservar despedida
           </a>
         </div>
+      </div>
+      <img src="/images/fotos/despedidas-hub.webp" width="800" height="600" alt="Grupo de despedida con pelucas durante una ginkana" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -144,14 +147,12 @@ const schema = {
       
       <div class="types-grid">
         <a href="/ginkanas-despedidas/soltera/" class="type-card">
-          <div class="type-icon"></div>
           <h3>Despedida de Soltera</h3>
           <p>Las chicas saben montar fiestas. Pruebas, risas, complicidad y mucho vacile a la novia.</p>
           <span class="type-link">Ver ginkanas soltera →</span>
         </a>
         
         <a href="/ginkanas-despedidas/soltero/" class="type-card">
-          <div class="type-icon"></div>
           <h3>Despedida de Soltero</h3>
           <p>Menos frecuentes pero igual de divertidas. Competición, pruebas absurdas y el novio en el centro.</p>
           <span class="type-link">Ver ginkanas soltero →</span>
@@ -165,7 +166,7 @@ const schema = {
     <div class="container">
       <div class="section-title">
         <h2>Ginkanas para despedidas</h2>
-        <p>Estas son las que mejor funcionan. Probadas con miles de grupos.</p>
+        <p>Estas son las que mejor funcionan. Las más elegidas por los grupos.</p>
       </div>
       
       <div class="ginkanas-grid">
