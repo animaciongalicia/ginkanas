@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FaqSection from '../components/FaqSection.astro';
+import Prose from '../components/Prose.astro';
+
+const title = 'Ginkanas y juegos de equipo en Ferrol para empresas';
+const description = 'Ginkanas y juegos de equipo en Ferrol para empresas y grupos: Ferrol Vello, A Magdalena y la ría como escenario. De 6 a 200 personas, monitor incluido.';
+
+const zonas = [
+  {
+    name: 'Ferrol Vello',
+    description: 'El casco antiguo, de calles estrechas y origen marinero. Escenario muy bueno para ginkanas de misterio y leyendas.'
+  },
+  {
+    name: 'A Magdalena',
+    description: 'El barrio de trazado en cuadrícula del siglo XVIII, con la Praza de Amboage como centro. Recorridos claros y fáciles de organizar por equipos.'
+  },
+  {
+    name: 'Paseo de Herrerías y puerto',
+    description: 'El frente marítimo de Ferrol, con espacio abierto y vistas a la ría. Ideal para juegos de equipo y grupos grandes.'
+  },
+  {
+    name: 'Ría de Ferrol y castillos',
+    description: 'La ría y sus fortalezas históricas, como el Castillo de San Felipe, dan un marco excepcional para jornadas de empresa con actividad y visita.'
+  }
+];
+
+const porque = [
+  { titulo: 'Ciudad de trazado ordenado', texto: 'A Magdalena permite recorridos claros por equipos, sin perderse.' },
+  { titulo: 'Patrimonio naval e histórico', texto: 'Ría, arsenal y fortalezas: mucho tema para ginkanas con historia.' },
+  { titulo: 'Espacio para grupos grandes', texto: 'El frente marítimo da sitio para juegos de equipo con muchas personas.' },
+  { titulo: 'Fácil de combinar', texto: 'Una ginkana por la ciudad y una comida o actividad en la ría en la misma jornada.' }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ginkanas y juegos de equipo en Ferrol",
+  "provider": { "@type": "LocalBusiness", "name": "Ginkanas.es", "telephone": "+34678288284" },
+  "areaServed": { "@type": "City", "name": "Ferrol" },
+  "description": description
+};
+const ampliado = [
+  {
+    "h": "Cómo se juega una ginkana en Ferrol",
+    "p": [
+      "El punto de encuentro suele ser una plaza céntrica de <strong>A Magdalena</strong> o Ferrol Vello; se confirma al reservar. Tras el briefing de 10-15 minutos, el juego de unas dos horas recorre el barrio con pruebas, pistas y puntos por equipos.",
+      "Ferrol Vello da mucho juego a misterio y leyendas por sus calles estrechas; A Magdalena permite recorridos claros por equipos; y el Paseo de Herrerías ofrece espacio abierto para juegos más físicos."
+    ]
+  },
+  {
+    "h": "Qué formato elegir según el objetivo",
+    "ul": [
+      "<strong>Integrar un equipo:</strong> <a href=\"/experiencias/ginkana-cluedo/\">Ginkana Cluedo</a> por A Magdalena y Ferrol Vello.",
+      "<strong>Celebrar un cierre:</strong> juegos de equipo en el Paseo de Herrerías con ranking en vivo.",
+      "<strong>Jornada completa:</strong> ginkana por la mañana y actividad en la ría por la tarde. Mira las <a href=\"/ginkanas-empresas/\">actividades para empresas</a>."
+    ],
+    "after": [
+      "Ferrol está muy bien conectada con A Coruña y las Rías Altas, lo que facilita reunir equipos de varias sedes."
+    ]
+  }
+];
+
+const faqs = [
+  {
+    "q": "¿Dónde quedamos en Ferrol?",
+    "a": "Normalmente en una plaza céntrica de A Magdalena o de Ferrol Vello. Se confirma al reservar."
+  },
+  {
+    "q": "¿Se pueden hacer juegos de equipo con muchas personas en Ferrol?",
+    "a": "Sí. El frente marítimo y los espacios abiertos permiten juegos de equipo para grupos grandes, de 6 a 200 personas."
+  },
+  {
+    "q": "¿Cuánto cuesta una actividad de empresa en Ferrol?",
+    "a": "El presupuesto es a medida, según el número de personas y el formato. Pídelo por WhatsApp o desde la página de contacto."
+  },
+  {
+    "q": "¿Qué pasa si llueve en Ferrol?",
+    "a": "Con lluvia fuerte se pospone sin coste. Con lluvia fina, el grupo decide si se juega."
+  }
+];
+---
+
+<Layout title={title} description={description} schema={schema} faqs={faqs}>
+  
+  <section class="hero-city">
+    <div class="container">
+      <div class="hero-split">
+        <div class="hero-content">
+      <span class="hero-badge">Ría y ciudad naval</span>
+      <h1>Ginkanas en <span class="text-gradient">Ferrol</span></h1>
+      <p class="hero-text">La ría, Ferrol Vello y el trazado ordenado de A Magdalena hacen de Ferrol un escenario muy práctico para ginkanas y juegos de equipo de empresa y de grupo.</p>
+      <div class="hero-meta">
+        <span>De 6 a 200 personas</span>
+        <span>2 horas</span>
+        <span>Empresas y grupos</span>
+      </div>
+      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Ferrol" class="btn btn-whatsapp btn-lg">Pedir propuesta</a>
+        </div>
+        <img src="/images/fotos/ciudad-ferrol.webp" width="800" height="600" alt="Castillo de San Felipe y la ría de Ferrol" class="hero-photo" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">¿Dónde jugamos en Ferrol?</h2>
+      <div class="zones-grid">
+        {zonas.map((z) => (
+          <div class="zone-card">
+            <h3>{z.name}</h3>
+            <p>{z.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">¿Por qué Ferrol para tu ginkana?</h2>
+      <div class="why-grid">
+        {porque.map((p) => (
+          <div class="why-card">
+            <h4>{p.titulo}</h4>
+            <p>{p.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">Te recomendamos según tu plan</h2>
+      <div class="reco-grid">
+        <div class="reco-card">
+          <h3>Despedida</h3>
+          <p>Ginkana por el casco histórico, tapeo por las plazas y si queréis fiesta, Sanxenxo está a 20 minutos.</p>
+          <a href="/ginkanas-despedidas/">Ver ginkanas despedidas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>Empresa</h3>
+          <p>Illa das Esculturas para grupos grandes o casco histórico para algo más íntimo. Cena en cualquier restaurante del centro.</p>
+          <a href="/ginkanas-empresas/">Ver ginkanas empresas →</a>
+        </div>
+        <div class="reco-card">
+          <h3>Cumpleaños</h3>
+          <p>Ginkana Cluedo o Lendas por la zona vieja. Misterio entre plazas y soportales, vinos para cerrar.</p>
+          <a href="/ginkanas-adultos/">Ver ginkanas adultos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Prose sections={ampliado} />
+
+  <FaqSection faqs={faqs} />
+
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>¿Organizando algo en Ferrol?</h2>
+      <p>Cuéntanos qué celebráis y os ayudamos a elegir la mejor opción.</p>
+      <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg">WhatsApp: 678 288 284</a>
+    </div>
+  </section>
+  
+</Layout>
+
+<style>
+  .hero-city { background: linear-gradient(135deg, #F3E5F5 0%, #fff 100%); padding: var(--space-3xl) 0; }
+  .hero-badge { display: inline-block; background: rgba(106,27,154,0.1); color: #6A1B9A; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
+  .text-gradient { color: var(--color-primary); }
+  .hero-text { font-size: 1.0625rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
+  .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
+  .zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .zone-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .zone-card h3 { color: #6A1B9A; margin-bottom: var(--space-sm); }
+  .zone-card p { color: var(--color-text-light); margin: 0; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
+  .why-card { text-align: center; padding: var(--space-lg); }
+  .why-icon { font-size: 2.5rem; display: block; margin-bottom: var(--space-md); }
+  .why-card h4 { margin-bottom: var(--space-sm); }
+  .why-card p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
+  .reco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+  .reco-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
+  .reco-card h3 { margin-bottom: var(--space-md); }
+  .reco-card p { color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .reco-card a { color: var(--color-primary); font-weight: 600; }
+  .cta-section { background: linear-gradient(135deg, #6A1B9A, #AB47BC); color: white; }
+  .cta-section h2 { color: white; margin-bottom: var(--space-md); }
+  .cta-section p { opacity: 0.9; font-size: 1.0625rem; margin-bottom: var(--space-xl); }
+  @media (max-width: 1024px) { .zones-grid, .reco-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+</style>

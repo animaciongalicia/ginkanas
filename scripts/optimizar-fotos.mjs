@@ -46,6 +46,8 @@ const manifiesto = [
   ['ciudades/santiago-compostela-catedral.jpg', 'ciudad-santiago-card', 600, 400, 'attention'],
   ['ciudades/sanxenxo-gincanas-empresas-despedidas-playa-silgar.webp', 'ciudad-sanxenxo', 800, 600, 'attention'],
   ['ciudades/sanxenxo-gincanas-empresas-despedidas-playa-silgar.webp', 'ciudad-sanxenxo-card', 600, 400, 'attention'],
+  ['ciudades/ferrol-gincanas-juegos-empresas.jpg', 'ciudad-ferrol', 800, 600, 'attention'],
+  ['ciudades/ferrol-gincanas-juegos-empresas.jpg', 'ciudad-ferrol-card', 600, 400, 'attention'],
   // Imagen para compartir en redes (1200 x 630)
   ['tablas-equilibrio-playa.jpg', 'og-empresas', 1200, 630, 'centre'],
 ];

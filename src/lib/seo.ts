@@ -5,7 +5,7 @@ export const SITE = 'https://www.ginkanas.es';
 export const ORG_ID = `${SITE}/#organization`;
 export const WEBSITE_ID = `${SITE}/#website`;
 
-const CIUDADES = ['A Coruña', 'Vigo', 'Santiago de Compostela', 'Sanxenxo', 'Pontevedra', 'Ourense', 'Lugo'];
+const CIUDADES = ['A Coruña', 'Vigo', 'Santiago de Compostela', 'Sanxenxo', 'Pontevedra', 'Ourense', 'Lugo', 'Ferrol'];
 
 export const organizationSchema = {
   '@type': 'Organization',
@@ -62,6 +62,7 @@ const SEGMENT_NAMES: Record<string, string> = {
   'ginkanas-pontevedra': 'Ginkanas en Pontevedra',
   'ginkanas-ourense': 'Ginkanas en Ourense',
   'ginkanas-lugo': 'Ginkanas en Lugo',
+  'ginkanas-ferrol': 'Ginkanas en Ferrol',
   contacto: 'Contacto',
   'sobre-nosotros': 'Quiénes somos',
 };

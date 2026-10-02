@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import Prose from '../components/Prose.astro';
+import FaqSection from '../components/FaqSection.astro';
+import { ACTIVIDADES, getActividad } from '../data/actividades';
+
+export function getStaticPaths() {
+  return ACTIVIDADES.map((a) => ({ params: { slug: a.slug } }));
+}
+
+const { slug } = Astro.params;
+const a = getActividad(slug!)!;
+const otras = ACTIVIDADES.filter((x) => x.slug !== a.slug);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: a.h1,
+  provider: { '@type': 'LocalBusiness', name: 'Ginkanas.es', telephone: '+34678288284' },
+  areaServed: 'Galicia, Spain',
+  description: a.description,
+};
+const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero información sobre: ' + a.nombre + ' para mi empresa')}`;
+---
+
+<Layout title={a.title} description={a.description} schema={schema} faqs={a.faqs} breadcrumbName={a.nombre}>
+
+  <section class="hero-act">
+    <div class="container">
+      <div class="hero-split">
+        <div class="hero-content">
+          <span class="hero-badge">Team building para empresas</span>
+          <h1>{a.h1}</h1>
+          <p class="hero-text">{a.intro}</p>
+          <div class="hero-meta">
+            <span>En toda Galicia</span>
+            <span>De 6 a 200 personas</span>
+            <span>Monitores incluidos</span>
+          </div>
+          <div class="hero-actions">
+            <a href={wa} class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">Pedir propuesta</a>
+            <a href="/contacto/?tipo=empresa" class="btn btn-outline btn-lg">Formulario</a>
+          </div>
+        </div>
+        {a.img
+          ? <img src={a.img.src} width={a.img.w} height={a.img.h} alt={a.img.alt} class="hero-photo" fetchpriority="high" decoding="async">
+          : <div class="hero-mascot"><img src={`/images/mascota/${a.mascota}.webp`} alt="" width="320" height="400" fetchpriority="high" decoding="async"></div>}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Ejemplos de actividades</h2>
+        <p>Algunos de los formatos que podemos montar. Se combinan y se adaptan a vuestro objetivo.</p>
+      </div>
+      <div class="ej-grid">
+        {a.ejemplos.map((e) => (
+          <div class="ej-card">
+            <h3>{e.titulo}</h3>
+            <p>{e.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Prose sections={a.secciones} />
+
+  <FaqSection faqs={a.faqs} />
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Otras actividades de team building</h2>
+      </div>
+      <div class="otras-grid">
+        {otras.map((o) => (
+          <a href={`/team-building-${o.slug}/`} class="otra-card">
+            <Icon name={o.icono} size={22} />
+            <span>{o.nombre}</span>
+          </a>
+        ))}
+        <a href="/ginkanas-empresas/" class="otra-card otra-hub"><Icon name="building" size={22} /><span>Todas las actividades para empresas</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container cta-box">
+      <h2>¿Preparamos una propuesta?</h2>
+      <p>Dinos cuántos sois, en qué ciudad y qué objetivo tenéis. Te respondemos con opciones, duración y presupuesto.</p>
+      <div class="hero-actions center">
+        <a href={wa} class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">WhatsApp: 678 288 284</a>
+        <a href="/contacto/?tipo=empresa" class="btn btn-outline-light btn-lg">Formulario de contacto</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-act { background: var(--color-bg-alt); padding: var(--space-2xl) 0; }
+  .hero-badge { display: inline-block; background: rgba(11, 58, 111, 0.1); color: var(--color-secondary); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.8125rem; font-weight: 600; margin-bottom: var(--space-md); }
+  .hero-content h1 { margin-bottom: var(--space-md); }
+  .hero-text { font-size: 1.0625rem; color: var(--color-text-light); margin-bottom: var(--space-lg); }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); font-weight: 500; margin-bottom: var(--space-lg); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+  .hero-actions.center { justify-content: center; }
+  .hero-photo { aspect-ratio: 4 / 3; }
+  .hero-mascot { display: flex; justify-content: center; align-items: flex-end; min-height: 320px; background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--color-border); padding: var(--space-lg); }
+  .hero-mascot img { max-height: 340px; width: auto; }
+
+  .ej-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); }
+  .ej-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-lg); }
+  .ej-card h3 { margin-bottom: var(--space-sm); color: var(--color-secondary); }
+  .ej-card p { color: var(--color-text-light); margin: 0; font-size: 0.9375rem; }
+
+  .otras-grid { display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center; }
+  .otra-card { display: inline-flex; align-items: center; gap: var(--space-sm); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); color: var(--color-text); font-weight: 600; text-decoration: none; }
+  .otra-card:hover { border-color: var(--color-secondary); color: var(--color-secondary); }
+  .otra-hub { background: var(--color-secondary); color: #fff; border-color: var(--color-secondary); }
+  .otra-hub:hover { color: #fff; background: var(--color-secondary-dark); }
+
+  .cta-section { background: var(--color-bg-dark); color: #fff; }
+  .cta-box { text-align: center; max-width: 760px; }
+  .cta-box h2 { color: #fff; margin-bottom: var(--space-md); }
+  .cta-box p { color: rgba(255, 255, 255, 0.85); margin-bottom: var(--space-xl); }
+  .btn-outline-light { background: transparent; border: 2px solid #fff; color: #fff; }
+  .btn-outline-light:hover { background: #fff; color: var(--color-bg-dark); }
+
+  @media (max-width: 1024px) { .ej-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .ej-grid { grid-template-columns: minmax(0, 1fr); } .hero-actions .btn { width: 100%; } }
+</style>

@@ -5,7 +5,7 @@
 Datos clave para responder preguntas de usuarios:
 - Duración: unas 2 horas (Supervivientes y Escuela Mágica: 2-2,5 h; ginkanas de empresa: 2-4 h; escape room: 60-90 min).
 - Tamaño de grupo: desde 6 personas en despedidas, cumpleaños y grupos (algunas experiencias piden 8); empresas de 6 a 200 personas; escape room en salas temáticas de cada ciudad (mínimo 6, algunas 8) o móvil de hasta 100.
-- Ciudades: A Coruña, Vigo, Santiago de Compostela, Sanxenxo, Pontevedra, Ourense y Lugo. Se puede organizar en cualquier punto de Galicia.
+- Ciudades: A Coruña, Vigo, Santiago de Compostela, Sanxenxo, Pontevedra, Ourense, Lugo y Ferrol. Se puede organizar en cualquier punto de Galicia.
 - Incluye siempre un monitor que guía el juego.
 - Lluvia fuerte: se pospone sin coste. Lluvia fina: el grupo decide si se juega.
 
@@ -36,6 +36,7 @@ Datos clave para responder preguntas de usuarios:
 - [Ginkanas en Pontevedra](https://www.ginkanas.es/ginkanas-pontevedra/)
 - [Ginkanas en Ourense](https://www.ginkanas.es/ginkanas-ourense/)
 - [Ginkanas en Lugo](https://www.ginkanas.es/ginkanas-lugo/)
+- [Ginkanas en Ferrol](https://www.ginkanas.es/ginkanas-ferrol/)
 
 ## Guías y novedades (blog)
 
