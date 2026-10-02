@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Icon from '../../components/Icon.astro';
 import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkana Loca: la clásica para despedidas';
@@ -90,7 +89,7 @@ const schema = {
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Loca" class="btn btn-whatsapp btn-lg">Reservar Ginkana Loca</a>
       </div>
       <div class="hero-image">
-        <div class="glyph-panel" aria-hidden="true"><Icon name="flag" size={128} stroke={1.1} /></div>
+        <img src="/images/fotos/ginkana-loca.webp" width="569" height="427" alt="Participantes con los ojos vendados en una prueba en el parque" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -163,6 +162,7 @@ const schema = {
 </Layout>
 
 <style>
+  .hero-photo { display: block; width: 100%; height: auto; aspect-ratio: 569 / 427; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
   .hero-exp { background: linear-gradient(135deg, #FFF3E0 0%, #fff 100%); padding: var(--space-3xl) 0; }
   .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: center; }
   .exp-tag { display: inline-block; background: var(--color-primary); color: white; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md); }

@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Icon from '../../components/Icon.astro';
 import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkana Supervivientes: pruebas y competición';
@@ -91,7 +90,7 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Supervivientes" class="btn btn-whatsapp btn-lg">Reservar Supervivientes</a>
       </div>
       <div class="hero-image">
-        <div class="glyph-panel" aria-hidden="true"><Icon name="flame" size={128} stroke={1.1} /></div>
+        <img src="/images/fotos/ginkana-supervivientes.webp" width="880" height="660" alt="Equipos compitiendo en una carrera de sacos en la playa" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -175,6 +174,7 @@ cariño, eso sí.</p>
 </Layout>
 
 <style>
+  .hero-photo { display: block; width: 100%; height: auto; aspect-ratio: 880 / 660; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
   .hero-exp { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); padding: var(--space-3xl) 0; color: white; }
   .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: center; }
   .exp-tag { display: inline-block; background: #FFC107; color: #1B5E20; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md); }

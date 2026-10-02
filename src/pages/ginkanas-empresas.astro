@@ -4,7 +4,7 @@ import Prose from '../components/Prose.astro';
 import FaqSection from '../components/FaqSection.astro';
 
 const title = 'Team building y juegos para empresas en Galicia';
-const description = 'Team building y juegos a medida para empresas en Galicia: ginkanas, escape room y competiciones para grupos de 10 a 200 personas. Presupuesto a medida.';
+const description = 'Team building y juegos a medida para empresas en Galicia: ginkanas, escape room y competiciones para grupos de 6 a 200 personas. Propuesta a medida.';
 
 const beneficios = [
   {
@@ -31,25 +31,42 @@ const beneficios = [
 
 const formatos = [
   {
+    title: 'Ginkana de empresa',
+    description: 'Pruebas, retos y pistas por equipos recorriendo la ciudad, con puntuación y premio. El formato más completo y el que mejor funciona de primeras.',
+    ideal: 'Equipos mixtos, jornadas de empresa, celebraciones',
+    href: '/experiencias/ginkana-loca/'
+  },
+  {
+    title: 'Juego de investigación',
+    description: 'Un caso, varios sospechosos y pistas repartidas. Obliga a compartir información y a decidir en común, sin correr.',
+    ideal: 'Equipos que buscan comunicación y pensar juntos',
+    href: '/experiencias/ginkana-cluedo/'
+  },
+  {
+    title: 'Competición por equipos',
+    description: 'Pruebas físicas y de estrategia con ranking en vivo. Aquí se compite de verdad, con buen rollo.',
+    ideal: 'Equipos comerciales y perfiles competitivos',
+    href: '/experiencias/ginkana-supervivientes/'
+  },
+  {
+    title: 'Escape room',
+    description: 'Acertijos y tiempo en contra, en local o móvil. El móvil lo llevamos a vuestra oficina, un hotel o una finca.',
+    ideal: 'Liderazgo y comunicación bajo presión',
+    href: '/escape-room/'
+  },
+  {
     title: 'Juego a medida',
-    description: 'Un juego diseñado para vuestro evento y vuestro objetivo, con el formato y el tamaño de grupo que necesitéis.',
-    ideal: 'Jornadas anuales, convenciones, eventos de empresa'
-  },
-  {
-    title: 'Ginkana competitiva',
-    description: 'Equipos enfrentados. Puntos, ranking y premio al ganador. Ideal si tu equipo tiene espíritu competitivo.',
-    ideal: 'Equipos de ventas, startups, perfiles comerciales'
-  },
-  {
-    title: 'Ginkana colaborativa',
-    description: 'Todos juntos contra el reloj. Si no colaboráis, no ganáis. Perfecta para mejorar comunicación.',
-    ideal: 'Departamentos nuevos, equipos con roces, integraciones post-fusión'
-  },
-  {
-    title: 'Escape Room urbano',
-    description: 'La ciudad es vuestra sala de escape. Acertijos, enigmas y tiempo en contra. Premium y diferente.',
-    ideal: 'Directivos, equipos de innovación, eventos especiales'
+    description: 'Si nada de lo anterior encaja, diseñamos un juego para vuestro objetivo, vuestro espacio y vuestro tamaño de grupo.',
+    ideal: 'Convenciones, aniversarios, eventos especiales',
+    href: '/contacto/?tipo=empresa'
   }
+];
+
+const galeria = [
+  { src: '/images/fotos/galeria-playa.webp', w: 696, h: 464, alt: 'Equipos de empresa en una prueba de equilibrio en la playa' },
+  { src: '/images/fotos/galeria-mapa.webp', w: 720, h: 480, alt: 'Equipo consultando un mapa durante una ginkana' },
+  { src: '/images/fotos/galeria-investigacion.webp', w: 720, h: 480, alt: 'Grupo investigando pistas en un juego de misterio' },
+  { src: '/images/fotos/galeria-cuerda.webp', w: 535, h: 357, alt: 'Equipo tirando de una cuerda en una prueba por equipos' },
 ];
 
 const ampliado = [
@@ -63,10 +80,10 @@ const ampliado = [
   {
     "h": "Para equipos de todos los tamaños",
     "p": [
-      "Trabajamos con grupos de <strong>10 hasta 200 personas</strong> y proponemos el formato según el tamaño y el tiempo disponible (entre 2 y 4 horas):"
+      "Trabajamos con grupos de <strong>6 hasta 200 personas</strong> y proponemos el formato según el tamaño y el tiempo disponible (entre 2 y 4 horas):"
     ],
     "ul": [
-      "<strong>Equipos pequeños (desde 10 personas):</strong> una ginkana, un juego de investigación o un escape room en local, pensado para grupos de 6 a 20 personas.",
+      "<strong>Equipos pequeños (desde 6 personas):</strong> una ginkana, un juego de investigación o un escape room en local, pensado para grupos reducidos.",
       "<strong>Grupos medianos:</strong> varios equipos que compiten entre sí, con puntuación y ranking en vivo.",
       "<strong>Grupos grandes (hasta 200 personas):</strong> juegos con muchos equipos en paralelo. El escape room móvil admite hasta 100 personas repartidas en equipos y lo llevamos a la oficina, un hotel, una finca o un salón de eventos."
     ]
@@ -88,6 +105,12 @@ const ampliado = [
     ]
   },
   {
+    "h": "¿Buscas una jornada completa, una regata o un evento de más de 200 personas?",
+    "p": [
+      "Ginkanas.es se centra en juegos de equipo de unas horas. Para jornadas de empresa completas, actividades outdoor, experiencias gastronómicas o eventos muy grandes, trabajamos con <a href=\"https://www.mileventosgalicia.com\" rel=\"noopener\">Mil Eventos Galicia</a>, nuestra otra web especializada en eventos de empresa."
+    ]
+  },
+  {
     "h": "Qué cambia en un equipo después",
     "p": [
       "No prometemos milagros de una tarde, pero sí algo que se nota al día siguiente: gente que no se hablaba, hablando; compañeros que descubren cómo piensa otro; y una anécdota compartida para arrancar reuniones. Todo lo demás depende de cómo se use ese impulso después.",
@@ -103,7 +126,7 @@ const faqs = [
   },
   {
     "q": "¿Para cuántas personas se puede organizar?",
-    "a": "Para grupos de 10 hasta 200 personas. El escape room móvil admite hasta 100 personas repartidas en equipos."
+    "a": "Para grupos de 6 hasta 200 personas. El escape room móvil admite hasta 100 personas repartidas en equipos."
   },
   {
     "q": "¿Cuánto dura una actividad de team building?",
@@ -132,11 +155,12 @@ const schema = {
 };
 ---
 
-<Layout title={title} description={description} schema={schema} faqs={faqs}>
+<Layout title={title} description={description} schema={schema} faqs={faqs} ogImage="/images/fotos/og-empresas.jpg">
   
   <!-- HERO -->
   <section class="hero-inner">
     <div class="container">
+      <div class="hero-split">
       <div class="hero-content">
         <span class="hero-badge">Team building que no aburre</span>
         <h1>Team building y <span class="text-gradient">juegos</span> para empresas</h1>
@@ -146,7 +170,7 @@ const schema = {
         </p>
         <div class="hero-meta">
           <span class="meta-item">En toda Galicia</span>
-          <span class="meta-item">Desde 10 hasta 200 personas</span>
+          <span class="meta-item">De 6 a 200 personas</span>
           <span class="meta-item">2-4 horas de actividad</span>
         </div>
         <div class="hero-cta">
@@ -154,6 +178,8 @@ const schema = {
             Solicitar presupuesto
           </a>
         </div>
+      </div>
+      <img src="/images/fotos/hero-empresas.webp" width="1000" height="833" alt="Equipo de empresa jugando una ginkana en la playa" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -169,7 +195,6 @@ const schema = {
       <div class="benefits-grid">
         {beneficios.map((b) => (
           <div class="benefit-card">
-            <div class="benefit-icon">{b.icon}</div>
             <h3>{b.title}</h3>
             <p>{b.text}</p>
           </div>
@@ -194,12 +219,28 @@ const schema = {
             <div class="format-ideal">
               <strong>Ideal para:</strong> {f.ideal}
             </div>
+            <a href={f.href} class="format-link">Ver más →</a>
           </div>
         ))}
       </div>
     </div>
   </section>
   
+  <!-- GALERÍA -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Así se juega</h2>
+        <p>Fotos reales de grupos que han jugado con nosotros.</p>
+      </div>
+      <div class="gallery-grid">
+        {galeria.map((g) => (
+          <img src={g.src} width={g.w} height={g.h} alt={g.alt} loading="lazy" decoding="async">
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- PROCESO -->
   <section class="section">
     <div class="container">
@@ -310,6 +351,13 @@ const schema = {
     padding: var(--space-3xl) 0;
   }
   
+  .hero-split { display: grid; grid-template-columns: 1.15fr 1fr; gap: var(--space-2xl); align-items: center; }
+  .hero-photo { display: block; width: 100%; height: auto; aspect-ratio: 1000 / 833; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
+  .gallery-grid img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius-md); }
+  .format-card { grid-column: span 2; }
+  .format-card:nth-child(n+4) { grid-column: span 3; }
+  .format-link { display: inline-block; margin-top: var(--space-md); font-weight: 600; }
   .hero-content {
     max-width: 800px;
   }
@@ -374,7 +422,7 @@ const schema = {
   
   .formats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: var(--space-xl);
   }
   
@@ -511,6 +559,9 @@ const schema = {
   }
   
   @media (max-width: 1024px) {
+    .hero-split { grid-template-columns: 1fr; }
+    .format-card, .format-card:nth-child(n+4) { grid-column: auto; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .benefits-grid {
       grid-template-columns: repeat(2, 1fr);
     }

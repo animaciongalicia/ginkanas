@@ -16,7 +16,7 @@ relacionados:
     enlace: "/ginkanas-empresas/"
 faqs:
   - pregunta: "¿Para cuántas personas se puede organizar?"
-    respuesta: "Para grupos de 10 hasta 200 personas. El escape room móvil admite hasta 100 repartidas en equipos."
+    respuesta: "Para grupos de 6 hasta 200 personas. El escape room móvil admite hasta 100 repartidas en equipos."
   - pregunta: "¿Cuánto dura una actividad de empresa?"
     respuesta: "Entre 2 y 4 horas según el formato y el objetivo."
   - pregunta: "¿Cuánto cuesta un team building?"
@@ -116,6 +116,6 @@ Las anécdotas compartidas crean cultura de equipo. "¿Te acuerdas de aquella ve
 
 ## Cómo montamos una ginkana de empresa
 
-Una actividad de empresa se prepara a medida. Nos hace falta saber cuántas personas sois (trabajamos con grupos de 10 hasta 200), en qué ciudad, qué queréis conseguir y cuánto tiempo tenéis (entre 2 y 4 horas). Con eso os proponemos formato, duración y presupuesto.
+Una actividad de empresa se prepara a medida. Nos hace falta saber cuántas personas sois (trabajamos con grupos de 6 hasta 200), en qué ciudad, qué queréis conseguir y cuánto tiempo tenéis (entre 2 y 4 horas). Con eso os proponemos formato, duración y presupuesto.
 
 El día de la actividad, el punto de encuentro suele ser la plaza del Ayuntamiento o una calle céntrica. El monitor abre con un briefing de 10-15 minutos, divide al grupo en equipos y explica el juego. Después llegan las pruebas por el centro de la ciudad y, al final, el recuento de puntos. Formatos habituales: [Cluedo](/experiencias/ginkana-cluedo/) para trabajar la comunicación, [Supervivientes](/experiencias/ginkana-supervivientes/) para equipos competitivos y [escape room](/escape-room/) en local o móvil.
