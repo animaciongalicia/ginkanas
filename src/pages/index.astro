@@ -55,13 +55,13 @@ const experiencias = [
 ];
 
 const ciudades = [
-  { name: 'A Coruña', href: '/ginkanas-coruna/' },
-  { name: 'Vigo', href: '/ginkanas-vigo/' },
-  { name: 'Santiago', href: '/ginkanas-santiago/' },
-  { name: 'Sanxenxo', href: '/ginkanas-sanxenxo/' },
-  { name: 'Pontevedra', href: '/ginkanas-pontevedra/' },
-  { name: 'Ourense', href: '/ginkanas-ourense/' },
-  { name: 'Lugo', href: '/ginkanas-lugo/' },
+  { name: 'A Coruña', href: '/ginkanas-coruna/', img: 'coruna' },
+  { name: 'Vigo', href: '/ginkanas-vigo/', img: 'vigo' },
+  { name: 'Santiago', href: '/ginkanas-santiago/', img: 'santiago' },
+  { name: 'Sanxenxo', href: '/ginkanas-sanxenxo/', img: 'sanxenxo' },
+  { name: 'Pontevedra', href: '/ginkanas-pontevedra/', img: 'pontevedra' },
+  { name: 'Ourense', href: '/ginkanas-ourense/', img: 'ourense' },
+  { name: 'Lugo', href: '/ginkanas-lugo/', img: 'lugo' },
 ];
 
 const faqs = [
@@ -205,16 +205,17 @@ const faqs = [
   </section>
   
   <!-- CIUDADES -->
-  <section class="section section-dark">
+  <section class="section">
     <div class="container">
       <div class="section-title">
-        <h2>¿Dónde quieres jugar?</h2>
-        <p>Organizamos ginkanas en toda Galicia. Estas son las ciudades top.</p>
+        <h2>Galicia entera, siete ciudades de referencia</h2>
+        <p>Juegos de equipo y ginkanas en toda Galicia. Estas son las ciudades donde más trabajamos.</p>
       </div>
       
       <div class="cities-grid">
         {ciudades.map((ciudad) => (
           <a href={ciudad.href} class="city-card">
+            <img src={`/images/fotos/ciudad-${ciudad.img}-card.webp`} alt={`Ginkanas y juegos de equipo en ${ciudad.name}`} width="600" height="400" loading="lazy" decoding="async">
             <span class="city-name">{ciudad.name}</span>
           </a>
         ))}
@@ -381,7 +382,7 @@ const faqs = [
   .text-gradient { color: var(--color-primary); }
   
   .hero-text {
-    font-size: 1.25rem;
+    font-size: 1.0625rem;
     color: var(--color-text-light);
     margin-bottom: var(--space-xl);
     max-width: 500px;
@@ -461,8 +462,7 @@ const faqs = [
   .summary-section h2 { margin-bottom: var(--space-md); }
   .summary-lead { font-size: 1.1875rem; max-width: 860px; color: var(--color-text); }
 
-  .experience-image { display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.92);
-    background: linear-gradient(135deg, var(--color-secondary), var(--color-bg-dark)); }
+  .experience-image { display: flex; align-items: center; justify-content: center; color: var(--color-secondary); background: var(--color-bg-alt); }
 
   .exp-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
   .fact-sheet { background: var(--color-bg-dark); color: white; border-radius: var(--radius-lg); padding: var(--space-xl); display: grid; gap: var(--space-md); }
@@ -490,7 +490,6 @@ const faqs = [
   }
   
   .audience-card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
   }
   
@@ -543,13 +542,12 @@ const faqs = [
   }
   
   .experience-card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
   }
   
   .experience-image {
     position: relative;
-    height: 200px;
+    height: 170px;
     overflow: hidden;
   }
   
@@ -596,30 +594,12 @@ const faqs = [
   }
   
   /* CITIES GRID */
-  .cities-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-lg);
-  }
-  
-  .city-card {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    background: rgba(255, 255, 255, 0.1);
-    padding: var(--space-md) var(--space-xl);
-    border-radius: var(--radius-full);
-    color: var(--color-text-inverse);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all var(--transition-normal);
-  }
-  
-  .city-card:hover {
-    background: var(--color-primary);
-    transform: translateY(-2px);
-  }
+  .cities-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-md); }
+  .city-card { position: relative; display: block; overflow: hidden; border-radius: var(--radius-lg); aspect-ratio: 3 / 2; color: #fff; text-decoration: none; background: var(--color-bg-dark); }
+  .city-card img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+  .city-card:hover img { transform: scale(1.04); }
+  .city-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(11, 31, 58, 0.78), rgba(11, 31, 58, 0) 55%); }
+  .city-name { position: absolute; left: var(--space-md); bottom: var(--space-md); z-index: 1; font-weight: 600; font-size: 1.0625rem; }
   
   .city-icon {
     font-size: 1.5rem;
@@ -863,9 +843,6 @@ const faqs = [
       grid-template-columns: 1fr;
     }
     
-    .city-card {
-      flex: 1 1 calc(50% - var(--space-md));
-      justify-content: center;
-    }
+    .cities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 </style>

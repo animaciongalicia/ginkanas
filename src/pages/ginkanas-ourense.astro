@@ -90,15 +90,20 @@ const faqs = [
   
   <section class="hero-city">
     <div class="container">
-      <span class="hero-badge">La ciudad termal</span>
+      <div class="hero-split">
+        <div class="hero-content">
+      <span class="hero-badge">Ciudad termal junto al Miño</span>
       <h1>Ginkanas en <span class="text-gradient">Ourense</span></h1>
-      <p class="hero-text">Termas al aire libre, vino en cunca y un casco histórico que sorprende. Ourense es el secreto mejor guardado de Galicia.</p>
+      <p class="hero-text">Casco histórico, puentes sobre el Miño y espacios abiertos: Ourense ofrece un escenario original para ginkanas de empresa, juegos de equipo y encuentros de grupo.</p>
       <div class="hero-meta">
-        <span>Desde 25€/persona</span>
+        <span>De 6 a 200 personas</span>
         <span>2 horas</span>
-        <span>Desde 6 personas</span>
+        <span>Empresas y grupos</span>
       </div>
-      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Ourense" class="btn btn-whatsapp btn-lg">Reservar en Ourense</a>
+      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Ourense" class="btn btn-whatsapp btn-lg">Pedir propuesta</a>
+        </div>
+        <img src="/images/fotos/ciudad-ourense.webp" width="800" height="600" alt="Puente sobre el río Miño en Ourense" class="hero-photo" fetchpriority="high" decoding="async">
+      </div>
     </div>
   </section>
   
@@ -179,7 +184,7 @@ const faqs = [
   .hero-city { background: linear-gradient(135deg, #FFEBEE 0%, #fff 100%); padding: var(--space-3xl) 0; }
   .hero-badge { display: inline-block; background: rgba(198,40,40,0.1); color: #C62828; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
   .text-gradient { color: var(--color-primary); }
-  .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
+  .hero-text { font-size: 1.0625rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
   .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
   .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
   .zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
@@ -201,7 +206,7 @@ const faqs = [
   .termas-tip p { color: var(--color-text); max-width: 700px; margin: 0 auto; }
   .cta-section { background: linear-gradient(135deg, #C62828, #EF5350); color: white; }
   .cta-section h2 { color: white; margin-bottom: var(--space-md); }
-  .cta-section p { opacity: 0.9; font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-section p { opacity: 0.9; font-size: 1.0625rem; margin-bottom: var(--space-xl); }
   @media (max-width: 1024px) { .zones-grid, .reco-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
 </style>
