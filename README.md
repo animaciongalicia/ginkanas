@@ -122,3 +122,9 @@ Con Astro y contenido estático:
 ## Soporte
 
 WhatsApp: 678 288 284
+
+## Actividades de team building y personaje
+
+- **Actividades de empresa:** se definen en `src/data/actividades.ts`. Cada entrada genera su página `/team-building-<slug>/`, sale en el menú, el pie, la home y `/ginkanas-empresas/`. Para añadir una, añade un objeto y compila.
+- **Personaje (arlequín):** originales en `mascota-originales/`; `node scripts/optimizar-mascota.mjs` genera `public/images/mascota/*.webp` con fondo transparente. Uso: `<img src="/images/mascota/<pose>.webp" alt="">`.
+- **Ciudades:** cada una tiene su página `ginkanas-<ciudad>.astro`. Para añadir una, copia una existente, añade la foto en `scripts/optimizar-fotos.mjs` y añádela a las listas de `Footer.astro`, `index.astro`, `seo.ts` y `llms.txt`.

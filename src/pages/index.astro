@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
+import { ACTIVIDADES } from '../data/actividades';
 
-const title = 'Ginkanas y juegos de equipo para empresas y grupos en Galicia';
-const description = 'Ginkanas, escape room y juegos de equipo para empresas en Galicia, de 6 a 200 personas. También despedidas y grupos desde 25 €/persona. Monitor incluido.';
+const title = 'Team building, juegos y actividades para empresas en Galicia';
+const description = 'Team building para empresas en Galicia: ginkanas, retos, construcción, indoor, outdoor y aventura. De 6 a 200 personas. También despedidas y grupos.';
 
 const experiencias = [
   {
@@ -19,6 +20,7 @@ const experiencias = [
     description: 'Conviértete en mago o bruja. Hechizos, pruebas y un torneo de Quidditch te esperan.',
     icon: 'sparkles',
     href: '/experiencias/ginkana-escuela-magica/',
+    img: '/images/fotos/ginkana-escuela-magica.webp',
     tag: 'Fantasía'
   },
   {
@@ -50,6 +52,7 @@ const experiencias = [
     description: 'La ciudad es tu sala de escape. Acertijos, enigmas y tiempo en tu contra.',
     icon: 'key',
     href: '/escape-room/',
+    img: '/images/fotos/escape-room-urbano-card.webp',
     tag: 'Premium'
   },
 ];
@@ -97,9 +100,9 @@ const faqs = [
     <div class="container hero-container">
       <div class="hero-content">
         <span class="hero-badge">Más de 15 años organizando experiencias en Galicia</span>
-        <h1>Ginkanas y juegos de equipo para <span class="text-gradient">empresas</span> y grupos en Galicia</h1>
+        <h1>Team building, juegos y actividades para <span class="text-gradient">empresas</span> en Galicia</h1>
         <p class="hero-text">
-          Tu equipo no necesita otra cena: necesita jugar junto. Ginkanas, juegos de investigación, competiciones y escape room con monitor, para grupos de 6 a 200 personas. Y si lo tuyo es una despedida o una quedada de amigos, también tenemos tu puerta.
+          Ginkanas, retos de equipo, construcción, jornadas indoor, actividades outdoor y aventura. Las organizamos de principio a fin, con monitores, para equipos de 6 a 200 personas. Y si buscas una despedida o una quedada de amigos, también tenemos tu puerta.
         </p>
         <div class="hero-cta">
           <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20una%20propuesta%20de%20juegos%20para%20mi%20empresa" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
@@ -140,7 +143,7 @@ const faqs = [
     <div class="container">
       <h2 id="resumen-h">¿Qué es Ginkanas.es?</h2>
       <p class="summary-lead">
-        Ginkanas.es organiza <strong>ginkanas urbanas en Galicia</strong>: un juego por equipos de unas 2 horas por el casco histórico de tu ciudad, con pruebas, pistas y un monitor que guía a todo el grupo. Sirve para <strong>despedidas de soltera y soltero</strong>, <strong>team building de empresa</strong> (de 6 a 200 personas), cumpleaños y grupos de amigos. Forma parte del grupo Animación Galicia.
+        Ginkanas.es organiza <strong>team building y juegos para empresas en Galicia</strong>: ginkanas y juegos de retos, construcción en equipo, jornadas indoor, actividades outdoor, juegos tipo Humor Amarillo y aventura (paintball, rafting, karts, barcos), de 6 a 200 personas y con monitor. También organiza <strong>despedidas, cumpleaños y grupos</strong>. Forma parte del grupo Animación Galicia.
       </p>
     </div>
   </section>
@@ -173,12 +176,43 @@ const faqs = [
     </div>
   </section>
   
-  <!-- EXPERIENCIAS -->
+  <!-- ACTIVIDADES TEAM BUILDING -->
   <section class="section">
     <div class="container">
       <div class="section-title">
-        <h2>Ginkanas, juegos de equipo y escape room</h2>
-        <p>Elige el formato según tu grupo. Y si quieres, los combinamos en una jornada a medida.</p>
+        <h2>Actividades de team building para empresas</h2>
+        <p>Seis familias de actividades que se combinan entre sí. Cuéntanos tu objetivo y diseñamos la jornada.</p>
+      </div>
+      <div class="act-grid">
+        {ACTIVIDADES.map((a) => (
+          <a href={`/team-building-${a.slug}/`} class="act-card">
+            <div class="act-media">
+              {a.img
+                ? <img src={a.img.src} alt={a.img.alt} width={a.img.w} height={a.img.h} loading="lazy" decoding="async">
+                : a.mascota
+                  ? <img src={`/images/mascota/${a.mascota}.webp`} alt="" width="240" height="280" loading="lazy" decoding="async" class="act-mascot">
+                  : <Icon name={a.icono} size={48} stroke={1.2} />}
+            </div>
+            <div class="act-body">
+              <h3>{a.nombre}</h3>
+              <p>{a.resumen}</p>
+              <span class="act-link">Ver ejemplos →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-2">
+        <a href="/ginkanas-empresas/" class="btn btn-primary btn-lg">Ver todas las actividades para empresas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIAS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nuestras ginkanas y experiencias</h2>
+        <p>Las ginkanas y el escape room, con su propia página. Sirven para empresas, despedidas y grupos.</p>
       </div>
       
       <div class="experiences-grid">
@@ -331,8 +365,9 @@ const faqs = [
   <section class="section cta-section">
     <div class="container">
       <div class="cta-content">
-        <h2>¿Listos para pasarlo bien?</h2>
-        <p>Cuéntanos qué celebráis y os ayudamos a montar algo memorable. Sin compromiso.</p>
+        <img src="/images/mascota/senala.webp" alt="" width="145" height="190" class="cta-mascot" loading="lazy" decoding="async">
+        <h2>¿Preparamos una propuesta para tu equipo?</h2>
+        <p>Cuéntanos cuántos sois, en qué ciudad y qué objetivo tenéis. Te respondemos con opciones y presupuesto, sin compromiso.</p>
         <div class="cta-buttons">
           <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -465,6 +500,17 @@ const faqs = [
 
   .experience-image { display: flex; align-items: center; justify-content: center; color: var(--color-secondary); background: var(--color-bg-alt); }
 
+  .act-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); margin-bottom: var(--space-lg); }
+  .act-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; color: var(--color-text); text-decoration: none; transition: box-shadow var(--transition-normal), border-color var(--transition-normal); }
+  .act-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-secondary); color: var(--color-text); }
+  .act-media { height: 170px; display: flex; align-items: center; justify-content: center; background: var(--color-bg-alt); color: var(--color-secondary); overflow: hidden; }
+  .act-media img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+  .act-media img.act-mascot { flex: 0 0 auto; width: auto; height: 150px; object-fit: contain; }
+  .act-body { padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-sm); flex-grow: 1; }
+  .act-body h3 { margin: 0; }
+  .act-body p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; flex-grow: 1; }
+  .act-link { color: var(--color-primary); font-weight: 600; font-size: 0.875rem; }
+  .cta-mascot { display: block; margin: 0 auto var(--space-md); height: 190px; width: auto; }
   .exp-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
   .fact-sheet { background: var(--color-bg-dark); color: white; border-radius: var(--radius-lg); padding: var(--space-xl); display: grid; gap: var(--space-md); }
   .fact-sheet div { display: grid; grid-template-columns: 110px 1fr; gap: var(--space-md); padding-bottom: var(--space-md); border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
@@ -812,6 +858,7 @@ const faqs = [
     .experiences-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    .act-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     
     .steps-grid {
       grid-template-columns: repeat(2, 1fr);

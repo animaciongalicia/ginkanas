@@ -26,7 +26,7 @@ export const organizationSchema = {
   logo: { '@type': 'ImageObject', url: `${SITE}/logo-512.png`, width: 512, height: 512 },
   image: `${SITE}/images/og-default.png`,
   description:
-    'Ginkanas urbanas y experiencias gamificadas para despedidas, empresas y grupos en Galicia, del grupo Animación Galicia. Un monitor guía el juego durante unas 2 horas.',
+    'Team building, juegos y actividades para empresas en Galicia (ginkanas, retos, construcción, indoor, outdoor y aventura), y ginkanas para despedidas y grupos. Del grupo Animación Galicia.',
   telephone: '+34678288284',
   parentOrganization: { '@type': 'Organization', name: 'Animación Galicia', url: 'https://www.animaciongalicia.com' },
   contactPoint: [

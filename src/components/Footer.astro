@@ -1,4 +1,6 @@
 ---
+import { ACTIVIDADES } from '../data/actividades';
+
 const currentYear = new Date().getFullYear();
 
 const ciudades = [
@@ -13,7 +15,8 @@ const ciudades = [
 ];
 
 const servicios = [
-  { label: 'Juegos para Empresas', href: '/ginkanas-empresas/' },
+  { label: 'Team building para empresas', href: '/ginkanas-empresas/' },
+  ...ACTIVIDADES.map((a) => ({ label: a.nombre, href: `/team-building-${a.slug}/` })),
   { label: 'Despedidas y grupos', href: '/ginkanas-despedidas/' },
   { label: 'Ginkanas Adultos', href: '/ginkanas-adultos/' },
   { label: 'Escape Room', href: '/escape-room/' },
