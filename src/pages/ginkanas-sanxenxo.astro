@@ -91,15 +91,20 @@ const faqs = [
   
   <section class="hero-city">
     <div class="container">
-      <span class="hero-badge">La capital del verano gallego</span>
+      <div class="hero-split">
+        <div class="hero-content">
+      <span class="hero-badge">Costa y playa de las Rías Baixas</span>
       <h1>Ginkanas en <span class="text-gradient">Sanxenxo</span></h1>
-      <p class="hero-text">Sol, playa, fiesta y las mejores despedidas de verano. Sanxenxo es el destino top de Galicia cuando llega el calor. Y nosotros estamos aquí.</p>
+      <p class="hero-text">Playas, paseo marítimo y espacios abiertos amplios: Sanxenxo es ideal para juegos de equipo al aire libre, jornadas de empresa y encuentros de grupo en temporada.</p>
       <div class="hero-meta">
-        <span>Desde 25€/persona</span>
+        <span>De 6 a 200 personas</span>
         <span>2 horas</span>
-        <span>Desde 6 personas</span>
+        <span>Empresas y grupos</span>
       </div>
-      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Sanxenxo" class="btn btn-whatsapp btn-lg">Reservar en Sanxenxo</a>
+      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Sanxenxo" class="btn btn-whatsapp btn-lg">Pedir propuesta</a>
+        </div>
+        <img src="/images/fotos/ciudad-sanxenxo.webp" width="800" height="600" alt="Playa de Silgar en Sanxenxo" class="hero-photo" fetchpriority="high" decoding="async">
+      </div>
     </div>
   </section>
   
@@ -180,7 +185,7 @@ const faqs = [
   .hero-city { background: linear-gradient(135deg, #E0F7FA 0%, #fff 100%); padding: var(--space-3xl) 0; }
   .hero-badge { display: inline-block; background: rgba(0,150,136,0.1); color: #00796B; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
   .text-gradient { color: var(--color-primary); }
-  .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
+  .hero-text { font-size: 1.0625rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
   .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
   .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
   .zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
@@ -202,7 +207,7 @@ const faqs = [
   .aviso-temporada p { color: var(--color-text); max-width: 700px; margin: 0 auto; }
   .cta-section { background: linear-gradient(135deg, #00796B, #4DB6AC); color: white; }
   .cta-section h2 { color: white; margin-bottom: var(--space-md); }
-  .cta-section p { opacity: 0.9; font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-section p { opacity: 0.9; font-size: 1.0625rem; margin-bottom: var(--space-xl); }
   @media (max-width: 1024px) { .zones-grid, .reco-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
 </style>

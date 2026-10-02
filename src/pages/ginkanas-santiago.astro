@@ -90,15 +90,20 @@ const faqs = [
   
   <section class="hero-city">
     <div class="container">
+      <div class="hero-split">
+        <div class="hero-content">
       <span class="hero-badge">Ciudad Patrimonio de la Humanidad</span>
       <h1>Ginkanas en <span class="text-gradient">Santiago</span></h1>
-      <p class="hero-text">El casco histórico más impresionante de Galicia como escenario de juego. Calles medievales, misterio y una zona de vinos que no tiene fin.</p>
+      <p class="hero-text">Un casco histórico único como escenario de juego: calles medievales, plazas y leyendas para ginkanas de empresa y de grupo, con pruebas y un monitor que guía la actividad.</p>
       <div class="hero-meta">
-        <span>Desde 25€/persona</span>
+        <span>De 6 a 200 personas</span>
         <span>2 horas</span>
-        <span>Desde 6 personas</span>
+        <span>Empresas y grupos</span>
       </div>
-      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Santiago" class="btn btn-whatsapp btn-lg">Reservar en Santiago</a>
+      <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20info%20sobre%20ginkanas%20en%20Santiago" class="btn btn-whatsapp btn-lg">Pedir propuesta</a>
+        </div>
+        <img src="/images/fotos/ciudad-santiago.webp" width="800" height="600" alt="Catedral de Santiago de Compostela" class="hero-photo" fetchpriority="high" decoding="async">
+      </div>
     </div>
   </section>
   
@@ -112,8 +117,6 @@ const faqs = [
             <p>{z.description}</p>
           </div>
         ))}
-      </div>
-      <img src="/images/fotos/ginkana-lendas.webp" width="1000" height="750" alt="Grupo posando en la plaza del Obradoiro en Santiago" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -174,7 +177,7 @@ const faqs = [
   .hero-city { background: linear-gradient(135deg, #FDF6E3 0%, #fff 100%); padding: var(--space-3xl) 0; }
   .hero-badge { display: inline-block; background: rgba(139,90,43,0.1); color: #8B5A2B; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-lg); }
   .text-gradient { color: var(--color-primary); }
-  .hero-text { font-size: 1.25rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
+  .hero-text { font-size: 1.0625rem; color: var(--color-text-light); margin: var(--space-lg) 0; max-width: 600px; }
   .hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); font-weight: 500; }
   .section-heading { text-align: center; margin-bottom: var(--space-2xl); }
   .zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
@@ -193,7 +196,7 @@ const faqs = [
   .reco-card a { color: var(--color-primary); font-weight: 600; }
   .cta-section { background: linear-gradient(135deg, #8B5A2B, #D4A574); color: white; }
   .cta-section h2 { color: white; margin-bottom: var(--space-md); }
-  .cta-section p { opacity: 0.9; font-size: 1.25rem; margin-bottom: var(--space-xl); }
+  .cta-section p { opacity: 0.9; font-size: 1.0625rem; margin-bottom: var(--space-xl); }
   @media (max-width: 1024px) { .zones-grid, .reco-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
 </style>

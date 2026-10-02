@@ -31,6 +31,21 @@ const manifiesto = [
   // Portadas de despedidas y escape room
   ['despedida-pelucas-dunas.jpg', 'despedidas-hub', 800, 600, 'attention'],
   ['disfraces-cine-investigacion.jpg', 'escape-room', 800, 600, 'attention'],
+  // Ciudades (portada 4:3 y tarjeta 3:2)
+  ['ciudades/coruna-gincanas-ayuntamiento.png', 'ciudad-coruna', 800, 600, 'attention'],
+  ['ciudades/coruna-gincanas-ayuntamiento.png', 'ciudad-coruna-card', 600, 400, 'attention'],
+  ['ciudades/ginkanas-ourense-puente-rio.jpg', 'ciudad-ourense', 800, 600, 'attention'],
+  ['ciudades/ginkanas-ourense-puente-rio.jpg', 'ciudad-ourense-card', 600, 400, 'attention'],
+  ['ciudades/lugo-muralla-gincanas-empresas.jpeg', 'ciudad-lugo', 800, 600, 'attention'],
+  ['ciudades/lugo-muralla-gincanas-empresas.jpeg', 'ciudad-lugo-card', 600, 400, 'attention'],
+  ['ciudades/pontevedra-ginca-nas-rio-lerez-puentes.jpg', 'ciudad-pontevedra', 800, 600, 'attention'],
+  ['ciudades/pontevedra-ginca-nas-rio-lerez-puentes.jpg', 'ciudad-pontevedra-card', 600, 400, 'attention'],
+  ['ciudades/que-ver-en-vigo-gincanas-panoramica.jpg', 'ciudad-vigo', 800, 600, 'attention'],
+  ['ciudades/que-ver-en-vigo-gincanas-panoramica.jpg', 'ciudad-vigo-card', 600, 400, 'attention'],
+  ['ciudades/santiago-compostela-catedral.jpg', 'ciudad-santiago', 800, 600, 'attention'],
+  ['ciudades/santiago-compostela-catedral.jpg', 'ciudad-santiago-card', 600, 400, 'attention'],
+  ['ciudades/sanxenxo-gincanas-empresas-despedidas-playa-silgar.webp', 'ciudad-sanxenxo', 800, 600, 'attention'],
+  ['ciudades/sanxenxo-gincanas-empresas-despedidas-playa-silgar.webp', 'ciudad-sanxenxo-card', 600, 400, 'attention'],
   // Imagen para compartir en redes (1200 x 630)
   ['tablas-equilibrio-playa.jpg', 'og-empresas', 1200, 630, 'centre'],
 ];
