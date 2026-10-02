@@ -91,20 +91,9 @@ Las 7 páginas de ciudad se mantienen y su bloque de empresa pasa a ir primero.
 - Menú: Empresas · Despedidas y grupos · Juegos (experiencias) · Blog · Contacto. «Despedidas y grupos» engloba despedidas, cumpleaños y quedadas; las URLs de despedidas y adultos no cambian.
 - **No competir con Mil Eventos Galicia.** Mil Eventos hace la jornada completa (regata, gastronomía, bodegas, outdoor, producción, 200-300+). Ginkanas.es hace el juego (60-180 minutos): ginkana, misión, retos, concurso, escape room. Ambas se enlazan («¿necesitas jornada completa? Mil Eventos Galicia»). Para no canibalizarse en Google: Mil Eventos apunta a «team building Galicia», «eventos de empresa», «incentivos»; Ginkanas.es apunta a «ginkana para empresas», «juegos de equipo», «escape room para empresas», «juego de investigación» y «team building con juegos» como secundaria.
 
-### Catálogo de empresas adaptado a Ginkanas.es (juegos, sin copiar textos ni nombres de marca de Mil Eventos)
-| Formato en Ginkanas.es | Origen en el catálogo | Tamaño | Duración | Lugar |
-|---|---|---|---|---|
-| Ginkana de empresa | Ginkana urbana (ya existe) | 10-200 | 2-3 h | Centro de la ciudad |
-| Misión e investigación | Mission / Investigation + Cluedo | 20-200 | 60-120 min | Interior o ciudad |
-| Retos por equipos | Challenge | 20-300+ | 60-180 min | Interior / exterior |
-| Juegos olímpicos de equipo | Team Olympics + Supervivientes | 30-300 | 75-150 min | Interior / exterior |
-| Concurso en directo (game show) | Big Game Show / Company Game Show | 30-500 | 60-120 min | Interior |
-| Reto estratégico | Business Challenge | 20-150 | 90-150 min | Interior |
-| Laboratorio creativo | Creative Lab | 20-150 | 90-150 min | Interior |
-| Construir y competir | Build & Race | 20-150 | 120-180 min | Interior / exterior |
-| Escape room | Ya existe | 6-100 | 60-90 min | Local o móvil |
+### Catálogo de Mil Eventos: solo referencia
 
-**Se derivan a Mil Eventos Galicia:** regata corporativa, gastronomía y mastercook, vino y bodegas, outdoor, jornadas completas (Team Day, Corporate Grand Day, aniversario, Executive Experience) e incentivos.
+El catálogo de Mil Eventos Galicia era un ejemplo para tener información. No se publica ni se adapta como lista de formatos. En ginkanas.es solo se describe lo que realmente ofrecemos: ginkana, juego de investigación, competición por equipos, escape room y juego a medida, para grupos de 6 a 200 personas. Lo que sea jornada completa, outdoor, gastronomía o más de 200 personas se deriva a mileventosgalicia.com.
 
 ### Fotos subidas (34 archivos, no 36)
 - Están en `public/` de `main`, **sin optimizar (8 MB)** y con nombres con espacios, ñ y mayúsculas. Al estar en `public/`, ya se sirven desde la web aunque no estén enlazadas.

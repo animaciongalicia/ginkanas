@@ -22,7 +22,7 @@ faqs:
   - pregunta: "¿Cuánto dura una ginkana urbana?"
     respuesta: "Las nuestras duran unas dos horas: 10-15 minutos de briefing del monitor y el resto, pruebas por el centro de la ciudad. En general, una ginkana puede durar entre 1,5 y 3 horas según el tipo."
   - pregunta: "¿Cuántas personas hacen falta?"
-    respuesta: "Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas, de 10 a 200."
+    respuesta: "Desde 6 personas en la mayoría de experiencias (algunas piden 8). Para empresas, de 6 a 200."
   - pregunta: "¿Cuánto cuesta una ginkana?"
     respuesta: "Desde 25 € por persona en despedidas, cumpleaños y grupos. Para empresas, el presupuesto es a medida."
   - pregunta: "¿Se puede hacer si llueve?"

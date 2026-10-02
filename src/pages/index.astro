@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 
-const title = 'Ginkanas en Galicia | Despedidas, Empresas y Grupos';
-const description = 'Ginkanas urbanas en Galicia para despedidas, empresas y grupos. Monitor incluido, unas 2 horas de juego, desde 6 personas. Desde 25 €/persona.';
+const title = 'Ginkanas y juegos de equipo para empresas y grupos en Galicia';
+const description = 'Ginkanas, escape room y juegos de equipo para empresas en Galicia, de 6 a 200 personas. También despedidas y grupos desde 25 €/persona. Monitor incluido.';
 
 const experiencias = [
   {
@@ -60,27 +60,6 @@ const ciudades = [
   { name: 'Lugo', href: '/ginkanas-lugo/' },
 ];
 
-const testimonios = [
-  {
-    text: 'La mejor despedida que hemos organizado nunca. El grupo flipó con la ginkana de Harry Potter. Repetiremos seguro.',
-    author: 'María G.',
-    location: 'Despedida en Santiago',
-    rating: 5
-  },
-  {
-    text: 'Contratamos la ginkana para un team building y fue un acierto. El equipo se descojonó y se conocieron de verdad.',
-    author: 'Carlos R.',
-    location: 'Empresa en Vigo',
-    rating: 5
-  },
-  {
-    text: 'Cumplí 40 y mis amigas me regalaron la ginkana Cluedo. Brutal. Dos horas que pasaron volando.',
-    author: 'Laura P.',
-    location: 'Cumpleaños en Coruña',
-    rating: 5
-  },
-];
-
 const faqs = [
   {
     question: '¿Cuánto dura una ginkana?',
@@ -113,20 +92,19 @@ const faqs = [
     <div class="container hero-container">
       <div class="hero-content">
         <span class="hero-badge">Más de 15 años organizando experiencias en Galicia</span>
-        <h1>Ginkanas en Galicia: la forma más <span class="text-gradient">divertida</span> de jugar en grupo</h1>
+        <h1>Ginkanas y juegos de equipo para <span class="text-gradient">empresas</span> y grupos en Galicia</h1>
         <p class="hero-text">
-          Ginkanas para despedidas, empresas y grupos que quieren algo más que lo de siempre. 
-          Pruebas, risas, vacile sano y recuerdos que duran.
+          Tu equipo no necesita otra cena: necesita jugar junto. Ginkanas, juegos de investigación, competiciones y escape room con monitor, para grupos de 6 a 200 personas. Y si lo tuyo es una despedida o una quedada de amigos, también tenemos tu puerta.
         </p>
         <div class="hero-cta">
-          <a href="https://wa.me/34678288284" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20una%20propuesta%20de%20juegos%20para%20mi%20empresa" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
-            Reservar por WhatsApp
+            Pedir propuesta para mi empresa
           </a>
-          <a href="/experiencias/" class="btn btn-outline btn-lg">
-            Ver todas las ginkanas
+          <a href="/ginkanas-despedidas/" class="btn btn-outline btn-lg">
+            Despedidas y grupos
           </a>
         </div>
         <div class="hero-stats">
@@ -139,19 +117,14 @@ const faqs = [
             <span class="stat-label">grupos organizados</span>
           </div>
           <div class="stat">
-            <span class="stat-number">7</span>
-            <span class="stat-label">ciudades en Galicia</span>
+            <span class="stat-number">6-200</span>
+            <span class="stat-label">personas por grupo</span>
           </div>
         </div>
       </div>
       <div class="hero-image">
         <div class="hero-image-wrapper">
-          <div class="glyph-panel hero-glyph" aria-hidden="true"><Icon name="route" size={132} stroke={1.05} /></div>
-          <div class="hero-price-badge">
-            <span class="price-from">Despedidas y grupos desde</span>
-            <span class="price-amount">25€</span>
-            <span class="price-unit">/persona</span>
-          </div>
+          <img src="/images/fotos/hero-empresas.webp" width="1000" height="833" alt="Equipo de empresa jugando una ginkana en la playa en Galicia" fetchpriority="high" decoding="async" class="hero-photo">
         </div>
       </div>
     </div>
@@ -162,7 +135,7 @@ const faqs = [
     <div class="container">
       <h2 id="resumen-h">¿Qué es Ginkanas.es?</h2>
       <p class="summary-lead">
-        Ginkanas.es organiza <strong>ginkanas urbanas en Galicia</strong>: un juego por equipos de unas 2 horas por el casco histórico de tu ciudad, con pruebas, pistas y un monitor que guía a todo el grupo. Sirve para <strong>despedidas de soltera y soltero</strong>, <strong>team building de empresa</strong>, cumpleaños y grupos de amigos. Forma parte del grupo Animación Galicia.
+        Ginkanas.es organiza <strong>ginkanas urbanas en Galicia</strong>: un juego por equipos de unas 2 horas por el casco histórico de tu ciudad, con pruebas, pistas y un monitor que guía a todo el grupo. Sirve para <strong>despedidas de soltera y soltero</strong>, <strong>team building de empresa</strong> (de 6 a 200 personas), cumpleaños y grupos de amigos. Forma parte del grupo Animación Galicia.
       </p>
     </div>
   </section>
@@ -171,33 +144,25 @@ const faqs = [
   <section class="section section-alt">
     <div class="container">
       <div class="section-title">
-        <h2>¿Para quién son nuestras ginkanas?</h2>
-        <p>Da igual el motivo. Si queréis pasarlo bien, esto es para vosotros.</p>
+        <h2>¿Para quién son nuestros juegos?</h2>
+        <p>Dos puertas. Elige la tuya.</p>
       </div>
       
       <div class="audience-grid">
-        <a href="/ginkanas-despedidas/" class="audience-card">
-          <div class="audience-icon"><Icon name="glass" size={40} stroke={1.5} /></div>
-          <h3>Despedidas</h3>
-          <p>La novia o el novio van a flipar. Pruebas, vacile sano y momentos que recordaréis siempre.</p>
-          <span class="audience-price">Desde 25€/persona</span>
-          <span class="audience-link">Ver ginkanas despedidas →</span>
-        </a>
-        
         <a href="/ginkanas-empresas/" class="audience-card">
           <div class="audience-icon"><Icon name="building" size={40} stroke={1.5} /></div>
           <h3>Empresas</h3>
-          <p>Team building que funciona de verdad. Tu equipo se conocerá, reirá y trabajará mejor después.</p>
-          <span class="audience-price">Presupuesto a medida</span>
-          <span class="audience-link">Ver ginkanas empresas →</span>
+          <p>Ginkanas, juegos de investigación, competiciones por equipos y escape room para tu plantilla. De 6 a 200 personas, con monitor y a medida.</p>
+          <span class="audience-price">Propuesta a medida</span>
+          <span class="audience-link">Ver juegos para empresas →</span>
         </a>
-        
-        <a href="/ginkanas-adultos/" class="audience-card">
-          <div class="audience-icon"><Icon name="cake" size={40} stroke={1.5} /></div>
-          <h3>Grupos y cumpleaños</h3>
-          <p>Cumples, reencuentros, quedadas. Cualquier excusa es buena para organizar algo diferente.</p>
+
+        <a href="/ginkanas-despedidas/" class="audience-card">
+          <div class="audience-icon"><Icon name="glass" size={40} stroke={1.5} /></div>
+          <h3>Despedidas y grupos</h3>
+          <p>Despedidas de soltera y soltero, cumpleaños y quedadas. Pruebas, vacile sano y momentos que recordaréis siempre.</p>
           <span class="audience-price">Desde 25€/persona</span>
-          <span class="audience-link">Ver ginkanas adultos →</span>
+          <span class="audience-link">Ver despedidas y grupos →</span>
         </a>
       </div>
     </div>
@@ -280,31 +245,6 @@ const faqs = [
           <h3>Disfruta</h3>
           <p>El día D, un monitor os recibe, os explica todo y... ¡que empiece el show!</p>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- TESTIMONIOS -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-title">
-        <h2>Lo que dicen de nosotros</h2>
-        <p>No lo decimos nosotros. Lo dicen ellos.</p>
-      </div>
-      
-      <div class="testimonials-grid">
-        {testimonios.map((t) => (
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              {'★'.repeat(t.rating)}
-            </div>
-            <p class="testimonial-text">"{t.text}"</p>
-            <div class="testimonial-author">
-              <span class="author-name">{t.author}</span>
-              <span class="author-location">{t.location}</span>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   </section>
@@ -510,7 +450,7 @@ const faqs = [
     opacity: 0.9;
   }
   
-  .hero-glyph { aspect-ratio: 6 / 5; }
+  .hero-photo { display: block; width: 100%; height: auto; aspect-ratio: 1000 / 833; object-fit: cover; }
   .summary-section { padding-bottom: 0; }
   .summary-section h2 { margin-bottom: var(--space-md); }
   .summary-lead { font-size: 1.1875rem; max-width: 860px; color: var(--color-text); }
@@ -527,7 +467,7 @@ const faqs = [
   /* AUDIENCE CARDS */
   .audience-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-xl);
   }
   

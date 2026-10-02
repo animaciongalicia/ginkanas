@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Prose from '../../components/Prose.astro';
-import Icon from '../../components/Icon.astro';
 
 const title = 'Despedida de soltera en Galicia con ginkana';
 const description = 'Despedida de soltera en Galicia con ginkana: pruebas divertidas con la novia de protagonista, monitor incluido y unas 2 horas por el centro. Desde 25 €/persona.';
@@ -78,7 +77,7 @@ const schema = {
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20organizar%20una%20despedida%20de%20soltera" class="btn btn-whatsapp btn-lg">Organizar despedida de soltera</a>
       </div>
       <div class="hero-image">
-        <div class="glyph-panel" aria-hidden="true"><Icon name="glass" size={128} stroke={1.1} /></div>
+        <img src="/images/fotos/despedidas.webp" width="1000" height="750" alt="Grupo de despedida disfrazado durante una ginkana" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -171,6 +170,7 @@ const schema = {
 </Layout>
 
 <style>
+  .hero-photo { display: block; width: 100%; height: auto; aspect-ratio: 1000 / 750; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
   .hero-soltera {
     background: linear-gradient(135deg, #FFE4EC 0%, #fff 100%);
     padding: var(--space-3xl) 0;

@@ -105,9 +105,9 @@ const ampliado = [
               <label for="type">¿Qué celebras?</label>
               <select id="type" name="ocasion">
                 <option value="">Selecciona una opción</option>
+                <option value="Evento de empresa o team building">Evento de empresa o team building</option>
                 <option value="Despedida de soltera">Despedida de soltera</option>
                 <option value="Despedida de soltero">Despedida de soltero</option>
-                <option value="Evento de empresa o team building">Evento de empresa o team building</option>
                 <option value="Cumpleaños">Cumpleaños</option>
                 <option value="Quedada de grupo">Quedada de grupo</option>
                 <option value="Otro">Otro</option>
@@ -163,6 +163,10 @@ const ampliado = [
   const EMAIL = 'animaciongalicia@gmail.com';
   const WHATSAPP = '34678288284';
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  if (new URLSearchParams(location.search).get('tipo') === 'empresa') {
+    const sel = document.getElementById('type') as HTMLSelectElement | null;
+    if (sel) sel.value = 'Evento de empresa o team building';
+  }
 
   function mensaje(): { asunto: string; texto: string } {
     const d = new FormData(form!);

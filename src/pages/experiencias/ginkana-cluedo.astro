@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Icon from '../../components/Icon.astro';
 import Prose from '../../components/Prose.astro';
 
 const title = 'Ginkana Cluedo en Galicia: misterio por la ciudad';
@@ -92,7 +91,7 @@ const schema = {
         <a href="https://wa.me/34678288284?text=Hola!%20Quiero%20reservar%20la%20Ginkana%20Cluedo" class="btn btn-whatsapp btn-lg">Reservar Ginkana Cluedo</a>
       </div>
       <div class="hero-image">
-        <div class="glyph-panel" aria-hidden="true"><Icon name="search" size={128} stroke={1.1} /></div>
+        <img src="/images/fotos/ginkana-cluedo.webp" width="800" height="600" alt="Grupo investigando pistas sobre un mapa en una ginkana de misterio" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -165,6 +164,7 @@ const schema = {
 </Layout>
 
 <style>
+  .hero-photo { display: block; width: 100%; height: auto; aspect-ratio: 800 / 600; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
   .hero-exp { background: linear-gradient(135deg, #E8EAF6 0%, #fff 100%); padding: var(--space-3xl) 0; }
   .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3xl); align-items: center; }
   .exp-tag { display: inline-block; background: #303F9F; color: white; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md); }
