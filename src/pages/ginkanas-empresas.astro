@@ -3,7 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Prose from '../components/Prose.astro';
 import FaqSection from '../components/FaqSection.astro';
 import Icon from '../components/Icon.astro';
+import QuickLinks from '../components/QuickLinks.astro';
 import { ACTIVIDADES } from '../data/actividades';
+
+const accesos = [
+  ...ACTIVIDADES.map((a) => ({ label: a.nombre.replace(': paintball, rafting, karts y barcos', ''), href: `/team-building-${a.slug}/`, icon: a.icono })),
+  { label: 'Escape room', href: '/escape-room/', icon: 'key' },
+  { label: 'Ginkanas y experiencias', href: '/experiencias/', icon: 'map' },
+];
 
 const title = 'Team building y juegos para empresas en Galicia';
 const description = 'Team building y juegos para empresas en Galicia: ginkanas, retos, construcción en equipo, indoor, outdoor y aventura. De 6 a 200 personas.';
@@ -137,6 +144,8 @@ const schema = {
       </div>
     </div>
   </section>
+
+  <QuickLinks label="Actividades para empresas" links={accesos} />
   
   <!-- BENEFICIOS -->
   <section class="section">
@@ -162,7 +171,7 @@ const schema = {
     <div class="container">
       <div class="section-title">
         <h2>Actividades de team building</h2>
-        <p>Seis familias de actividades. Se combinan entre sí para montar la jornada que tu equipo necesita.</p>
+        <p>Todas nuestras actividades para empresas. Se combinan entre sí para montar la jornada que tu equipo necesita.</p>
       </div>
 
       <div class="act-grid">
@@ -182,6 +191,22 @@ const schema = {
             </div>
           </a>
         ))}
+        <a href="/escape-room/" class="act-card">
+          <div class="act-media"><img src="/images/fotos/escape-room-urbano-card.webp" alt="Grupo en una prueba de escape room urbano" width="640" height="480" loading="lazy" decoding="async"></div>
+          <div class="act-body">
+            <h3>Escape room</h3>
+            <p>En salas temáticas de cada ciudad o móvil en vuestra oficina, hotel o finca.</p>
+            <span class="act-link">Ver escape room →</span>
+          </div>
+        </a>
+        <a href="/experiencias/" class="act-card">
+          <div class="act-media"><img src="/images/fotos/ginkana-cluedo.webp" alt="Equipo resolviendo pistas en una ginkana" width="800" height="600" loading="lazy" decoding="async"></div>
+          <div class="act-body">
+            <h3>Ginkanas y experiencias</h3>
+            <p>Cluedo, Supervivientes, Lendas y el resto de ginkanas, también para equipos de empresa.</p>
+            <span class="act-link">Ver experiencias →</span>
+          </div>
+        </a>
       </div>
       <p class="act-note">¿Algo que no ves aquí? <a href="/contacto/?tipo=empresa">Cuéntanos qué buscas</a> y diseñamos un juego a medida.</p>
     </div>
