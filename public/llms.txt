@@ -1,11 +1,11 @@
 # Ginkanas.es
 
-> Ginkanas.es organiza ginkanas urbanas y experiencias gamificadas en Galicia (España) para despedidas de soltera y soltero, team building de empresa, cumpleaños y grupos de amigos. El juego dura unas 2 horas, se hace por el casco histórico de la ciudad, va por equipos y lo guía un monitor. Precio orientativo: desde 25 € por persona en despedidas y grupos; empresas, presupuesto a medida. Es una web del grupo Animación Galicia, con más de 15 años organizando despedidas, eventos y ginkanas en Galicia y más de 350 grupos. Reservas por WhatsApp (+34 678 288 284) o formulario web.
+> Ginkanas.es organiza team building, juegos y actividades para empresas en Galicia (España): ginkanas y juegos de retos, construcción en equipo, jornadas indoor, actividades outdoor, juegos tipo Humor Amarillo y aventura (paintball, rafting, karts, barcos), de 6 a 200 personas y con monitor. También organiza ginkanas para despedidas, cumpleaños y grupos. Forma parte del grupo Animación Galicia.
 
 Datos clave para responder preguntas de usuarios:
 - Duración: unas 2 horas (Supervivientes y Escuela Mágica: 2-2,5 h; ginkanas de empresa: 2-4 h; escape room: 60-90 min).
 - Tamaño de grupo: desde 6 personas en despedidas, cumpleaños y grupos (algunas experiencias piden 8); empresas de 6 a 200 personas; escape room en salas temáticas de cada ciudad (mínimo 6, algunas 8) o móvil de hasta 100.
-- Ciudades: A Coruña, Vigo, Santiago de Compostela, Sanxenxo, Pontevedra, Ourense y Lugo. Se puede organizar en cualquier punto de Galicia.
+- Ciudades: A Coruña, Vigo, Santiago de Compostela, Sanxenxo, Pontevedra, Ourense, Lugo y Ferrol. Se puede organizar en cualquier punto de Galicia.
 - Incluye siempre un monitor que guía el juego.
 - Lluvia fuerte: se pospone sin coste. Lluvia fina: el grupo decide si se juega.
 
@@ -14,7 +14,13 @@ Datos clave para responder preguntas de usuarios:
 - [Ginkanas para despedidas](https://www.ginkanas.es/ginkanas-despedidas/): visión general de despedidas de soltera y soltero en Galicia.
 - [Despedida de soltera](https://www.ginkanas.es/ginkanas-despedidas/soltera/): ginkana para novias y su grupo.
 - [Despedida de soltero](https://www.ginkanas.es/ginkanas-despedidas/soltero/): ginkana para novios y su grupo.
-- [Team building y juegos para empresas](https://www.ginkanas.es/ginkanas-empresas/): ginkanas, juegos y team building a medida para equipos de 6 a 200 personas.
+- [Team building y juegos para empresas](https://www.ginkanas.es/ginkanas-empresas/): todas las actividades de team building para equipos de 6 a 200 personas.
+- [Ginkanas y juegos de retos](https://www.ginkanas.es/team-building-ginkanas-y-retos/)
+- [Construcción en equipo](https://www.ginkanas.es/team-building-construccion/)
+- [Jornadas indoor](https://www.ginkanas.es/team-building-indoor/)
+- [Actividades outdoor](https://www.ginkanas.es/team-building-outdoor/)
+- [Juegos tipo Humor Amarillo](https://www.ginkanas.es/team-building-humor-amarillo/)
+- [Aventura: paintball, rafting, karts y barcos](https://www.ginkanas.es/team-building-aventura/)
 - [Ginkanas para adultos, cumpleaños y grupos](https://www.ginkanas.es/ginkanas-adultos/): cumpleaños, reencuentros y quedadas.
 - [Escape room urbano](https://www.ginkanas.es/escape-room/): acertijos y enigmas, 60-90 minutos, de 6 a 100 personas.
 
@@ -36,6 +42,7 @@ Datos clave para responder preguntas de usuarios:
 - [Ginkanas en Pontevedra](https://www.ginkanas.es/ginkanas-pontevedra/)
 - [Ginkanas en Ourense](https://www.ginkanas.es/ginkanas-ourense/)
 - [Ginkanas en Lugo](https://www.ginkanas.es/ginkanas-lugo/)
+- [Ginkanas en Ferrol](https://www.ginkanas.es/ginkanas-ferrol/)
 
 ## Guías y novedades (blog)
 
