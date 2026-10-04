@@ -1,9 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Prose from '../components/Prose.astro';
+import QuickLinks from '../components/QuickLinks.astro';
 
-const title = 'Ginkanas para cumpleaños y grupos de adultos';
-const description = 'Ginkanas para cumpleaños, quedadas y grupos de amigos en Galicia. La forma más divertida de celebrar cualquier excusa. Desde 25€/persona.';
+const accesos = [
+  { label: 'Despedida de soltera', href: '/ginkanas-despedidas/soltera/', icon: 'glass' },
+  { label: 'Despedida de soltero', href: '/ginkanas-despedidas/soltero/', icon: 'trophy' },
+  { label: 'Todas las despedidas', href: '/ginkanas-despedidas/', icon: 'flag' },
+  { label: 'Cumpleaños', href: '#ocasiones', icon: 'cake' },
+  { label: 'Experiencias', href: '/experiencias/', icon: 'map' },
+];
+
+const title = 'Ginkanas para grupos, cumpleaños y despedidas en Galicia';
+const description = 'Ginkanas para grupos en Galicia: cumpleaños, quedadas, reencuentros y despedidas de soltera y soltero. Monitor incluido. Desde 25 €/persona.';
 
 const ampliado = [
   {
@@ -50,7 +59,7 @@ const schema = {
       <div class="hero-split">
       <div class="hero-content">
         <span class="hero-badge">Para cualquier excusa para juntarse</span>
-        <h1>Ginkanas para <span class="text-gradient">Adultos</span></h1>
+        <h1>Ginkanas para <span class="text-gradient">grupos</span></h1>
         <p class="hero-text">
           Cumples, quedadas, reencuentros, "porque llevamos mucho sin vernos"... 
           Cualquier excusa es buena para organizar algo diferente.
@@ -70,8 +79,10 @@ const schema = {
       </div>
     </div>
   </section>
+
+  <QuickLinks label="Planes para grupos" links={accesos} />
   
-  <section class="section">
+  <section class="section" id="ocasiones">
     <div class="container">
       <div class="section-title">
         <h2>¿Para qué ocasión?</h2>
@@ -100,6 +111,20 @@ const schema = {
   </section>
   
   <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Despedidas de soltera y soltero</h2>
+        <p>Si lo que celebráis es una despedida, estas son vuestras páginas.</p>
+      </div>
+      <div class="desp-grid">
+        <a href="/ginkanas-despedidas/soltera/" class="desp-card"><h3>Despedida de soltera</h3><p>Pruebas, complicidad y la novia como protagonista.</p><span>Ver despedidas de soltera →</span></a>
+        <a href="/ginkanas-despedidas/soltero/" class="desp-card"><h3>Despedida de soltero</h3><p>Competición, retos y el novio en el centro.</p><span>Ver despedidas de soltero →</span></a>
+        <a href="/ginkanas-despedidas/" class="desp-card"><h3>Todas las despedidas</h3><p>Qué ginkana elegir, ciudades y cómo reservar.</p><span>Ver todas las despedidas →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container">
       <div class="section-title">
         <h2>Ginkanas favoritas para grupos</h2>
@@ -148,6 +173,13 @@ const schema = {
 </Layout>
 
 <style>
+  .desp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); }
+  .desp-card { display: flex; flex-direction: column; gap: var(--space-sm); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-lg); color: var(--color-text); text-decoration: none; }
+  .desp-card:hover { border-color: var(--color-secondary); color: var(--color-text); box-shadow: var(--shadow-md); }
+  .desp-card h3 { margin: 0; }
+  .desp-card p { color: var(--color-text-light); margin: 0; flex-grow: 1; font-size: 0.9375rem; }
+  .desp-card span { color: var(--color-primary); font-weight: 600; font-size: 0.875rem; }
+  @media (max-width: 768px) { .desp-grid { grid-template-columns: minmax(0, 1fr); } }
   .hero-inner {
     background: linear-gradient(135deg, #F0FDF4 0%, var(--color-bg) 100%);
     padding: var(--space-3xl) 0;

@@ -1,27 +1,9 @@
 ---
-import { ACTIVIDADES } from '../data/actividades';
-
 const currentPath = Astro.url.pathname;
 
-const navItems = [
-  {
-    label: 'Empresas',
-    href: '/ginkanas-empresas/',
-    children: [
-      { label: 'Todas las actividades', href: '/ginkanas-empresas/' },
-      ...ACTIVIDADES.map((a) => ({ label: a.nombre, href: `/team-building-${a.slug}/` })),
-      { label: 'Escape room', href: '/escape-room/' },
-    ]
-  },
-  {
-    label: 'Despedidas y grupos',
-    href: '/ginkanas-despedidas/',
-    children: [
-      { label: 'Despedidas de Soltera', href: '/ginkanas-despedidas/soltera/' },
-      { label: 'Despedidas de Soltero', href: '/ginkanas-despedidas/soltero/' },
-      { label: 'Cumpleaños y grupos', href: '/ginkanas-adultos/' },
-    ]
-  },
+const navItems: { label: string; href: string; children?: { label: string; href: string }[] }[] = [
+  { label: 'Empresas', href: '/ginkanas-empresas/' },
+  { label: 'Grupos', href: '/ginkanas-adultos/' },
   { label: 'Experiencias', href: '/experiencias/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contacto', href: '/contacto/' },
@@ -29,7 +11,8 @@ const navItems = [
 
 function isActive(href: string): boolean {
   if (href === '/') return currentPath === '/';
-  if (href === '/ginkanas-empresas/') return currentPath.startsWith(href) || currentPath.startsWith('/team-building-');
+  if (href === '/ginkanas-empresas/') return currentPath.startsWith(href) || currentPath.startsWith('/team-building-') || currentPath.startsWith('/escape-room/');
+  if (href === '/ginkanas-adultos/') return currentPath.startsWith(href) || currentPath.startsWith('/ginkanas-despedidas/');
   return currentPath.startsWith(href);
 }
 ---

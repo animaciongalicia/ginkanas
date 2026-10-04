@@ -53,7 +53,7 @@ const SEGMENT_NAMES: Record<string, string> = {
   soltera: 'Despedida de soltera',
   soltero: 'Despedida de soltero',
   'ginkanas-empresas': 'Ginkanas para empresas',
-  'ginkanas-adultos': 'Ginkanas para adultos y cumpleaños',
+  'ginkanas-adultos': 'Grupos',
   'escape-room': 'Escape room urbano',
   'ginkanas-coruna': 'Ginkanas en A Coruña',
   'ginkanas-vigo': 'Ginkanas en Vigo',
