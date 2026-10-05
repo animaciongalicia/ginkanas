@@ -49,40 +49,18 @@ const ampliado = [
       <div class="contact-grid">
 
         <div class="contact-form-wrapper">
-          <h2>O rellena esto y lo enviamos por ti</h2>
-          <p class="form-lead">Cuatro datos bastan para darte una propuesta. Al final eliges si enviarlo por WhatsApp o por correo.</p>
+          <h2>O déjanos estos datos</h2>
+          <p class="form-lead">Con un contacto, la fecha y el número de personas te preparamos una propuesta. Eliges si enviarlo por WhatsApp o por correo.</p>
 
           <form class="contact-form" id="contact-form" novalidate>
-            <fieldset class="form-group full-width occasion">
-              <legend>¿Qué necesitas?</legend>
-              <div class="chips">
-                <label class="chip"><input type="radio" name="ocasion" value="Evento de empresa o team building"><span>Empresa / team building</span></label>
-                <label class="chip"><input type="radio" name="ocasion" value="Despedida de soltera"><span>Despedida de soltera</span></label>
-                <label class="chip"><input type="radio" name="ocasion" value="Despedida de soltero"><span>Despedida de soltero</span></label>
-                <label class="chip"><input type="radio" name="ocasion" value="Cumpleaños o quedada de grupo"><span>Cumpleaños / grupo</span></label>
-                <label class="chip"><input type="radio" name="ocasion" value="Otro"><span>Otro</span></label>
-              </div>
-            </fieldset>
-
             <div class="form-group">
-              <label for="people">¿Cuántas personas?</label>
-              <input type="number" id="people" name="personas" min="1" inputmode="numeric" placeholder="Ej.: 25">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="tu@empresa.com">
             </div>
 
             <div class="form-group">
-              <label for="city">¿En qué ciudad?</label>
-              <select id="city" name="ciudad">
-                <option value="">Selecciona una ciudad</option>
-                <option value="A Coruña">A Coruña</option>
-                <option value="Vigo">Vigo</option>
-                <option value="Santiago">Santiago</option>
-                <option value="Sanxenxo">Sanxenxo</option>
-                <option value="Pontevedra">Pontevedra</option>
-                <option value="Ourense">Ourense</option>
-                <option value="Lugo">Lugo</option>
-                <option value="Ferrol">Ferrol</option>
-                <option value="Otra">Otra</option>
-              </select>
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="telefono" autocomplete="tel" inputmode="tel" placeholder="600 000 000">
             </div>
 
             <div class="form-group">
@@ -91,23 +69,8 @@ const ampliado = [
             </div>
 
             <div class="form-group">
-              <label for="name">Tu nombre *</label>
-              <input type="text" id="name" name="nombre" autocomplete="name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Teléfono</label>
-              <input type="tel" id="phone" name="telefono" autocomplete="tel" inputmode="tel">
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email">
-            </div>
-
-            <div class="form-group full-width">
-              <label for="message">¿Algo más que debamos saber?</label>
-              <textarea id="message" name="mensaje" rows="4" placeholder="Objetivo de la actividad, tipo de juego que os interesa, lugar o cualquier detalle."></textarea>
+              <label for="people">¿Cuántas personas?</label>
+              <input type="number" id="people" name="personas" min="1" inputmode="numeric" placeholder="Ej.: 25">
             </div>
 
             <div class="form-actions full-width">
@@ -161,29 +124,20 @@ const ampliado = [
   const EMAIL = 'animaciongalicia@gmail.com';
   const WHATSAPP = '34678288284';
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
-
-  if (new URLSearchParams(location.search).get('tipo') === 'empresa') {
-    const r = form?.querySelector<HTMLInputElement>('input[name="ocasion"][value^="Evento de empresa"]');
-    if (r) r.checked = true;
-  }
+  const empresa = new URLSearchParams(location.search).get('tipo') === 'empresa';
 
   function mensaje(): { asunto: string; texto: string } {
     const d = new FormData(form!);
     const v = (k: string) => String(d.get(k) ?? '').trim();
-    const empresa = v('ocasion').startsWith('Evento de empresa');
-    const lineas = [empresa ? 'Hola, me gustaría recibir una propuesta de juegos para mi empresa.' : 'Hola, me gustaría información sobre una ginkana.', ''];
+    const lineas = [empresa ? 'Hola, me gustaría recibir una propuesta para mi empresa.' : 'Hola, me gustaría recibir información.', ''];
     const campos: [string, string][] = [
-      ['Nombre', v('nombre')],
       ['Email', v('email')],
       ['Teléfono', v('telefono')],
-      ['Necesito', v('ocasion')],
-      ['Personas', v('personas')],
-      ['Ciudad', v('ciudad')],
       ['Fecha aproximada', v('fecha')],
+      ['Personas', v('personas')],
     ];
     campos.forEach(([k, val]) => { if (val) lineas.push(`${k}: ${val}`); });
-    if (v('mensaje')) lineas.push('', v('mensaje'));
-    const asunto = [empresa ? 'Propuesta para empresa' : 'Consulta sobre ginkanas', v('ciudad')].filter(Boolean).join(' - ');
+    const asunto = [empresa ? 'Propuesta para empresa' : 'Consulta desde ginkanas.es', v('personas') && `${v('personas')} personas`].filter(Boolean).join(' - ');
     return { asunto, texto: lineas.join('\n') };
   }
 
@@ -213,8 +167,8 @@ const ampliado = [
 
   .contact-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
   .form-group { display: flex; flex-direction: column; min-width: 0; border: 0; padding: 0; margin: 0; }
-  .form-group.full-width { grid-column: 1 / -1; }
-  .form-group label, .occasion legend { font-weight: 600; margin-bottom: var(--space-sm); padding: 0; }
+  .form-group.full-width, .contact-form .full-width { grid-column: 1 / -1; }
+  .form-group label { font-weight: 600; margin-bottom: var(--space-sm); padding: 0; }
   .form-group input:not([type="radio"]), .form-group select, .form-group textarea {
     padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md);
     font-family: var(--font-primary); font-size: 1rem; width: 100%; background: #fff; transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -223,13 +177,6 @@ const ampliado = [
     outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.18);
   }
 
-  .chips { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
-  .chip { position: relative; margin: 0 !important; font-weight: 500 !important; }
-  .chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
-  .chip span { display: inline-block; padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-full); background: #fff; transition: all var(--transition-fast); }
-  .chip:hover span { border-color: var(--color-primary); }
-  .chip input:checked + span { background: var(--color-bg-dark); border-color: var(--color-bg-dark); color: #fff; }
-  .chip input:focus-visible + span { box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.3); }
 
   .form-actions { display: flex; flex-wrap: wrap; gap: var(--space-md); }
   .form-note { color: var(--color-text-light); font-size: 0.875rem; margin: 0; }

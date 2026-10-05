@@ -1,4 +1,5 @@
 ---
+import ActividadesGrid from '../components/ActividadesGrid.astro';
 import Layout from '../layouts/Layout.astro';
 import Prose from '../components/Prose.astro';
 import FaqSection from '../components/FaqSection.astro';
@@ -174,40 +175,7 @@ const schema = {
         <p>Todas nuestras actividades para empresas. Se combinan entre sí para montar la jornada que tu equipo necesita.</p>
       </div>
 
-      <div class="act-grid">
-        {ACTIVIDADES.map((a) => (
-          <a href={`/team-building-${a.slug}/`} class="act-card">
-            <div class="act-media">
-              {a.img
-                ? <img src={a.img.src} alt={a.img.alt} width={a.img.w} height={a.img.h} loading="lazy" decoding="async">
-                : a.mascota
-                  ? <img src={`/images/mascota/${a.mascota}.webp`} alt="" width="240" height="280" loading="lazy" decoding="async" class="act-mascot">
-                  : <Icon name={a.icono} size={48} stroke={1.2} />}
-            </div>
-            <div class="act-body">
-              <h3>{a.nombre}</h3>
-              <p>{a.resumen}</p>
-              <span class="act-link">Ver ejemplos →</span>
-            </div>
-          </a>
-        ))}
-        <a href="/escape-room/" class="act-card">
-          <div class="act-media"><img src="/images/fotos/escape-room-urbano-card.webp" alt="Grupo en una prueba de escape room urbano" width="640" height="480" loading="lazy" decoding="async"></div>
-          <div class="act-body">
-            <h3>Escape room</h3>
-            <p>En salas temáticas de cada ciudad o móvil en vuestra oficina, hotel o finca.</p>
-            <span class="act-link">Ver escape room →</span>
-          </div>
-        </a>
-        <a href="/experiencias/" class="act-card">
-          <div class="act-media"><img src="/images/fotos/ginkana-cluedo.webp" alt="Equipo resolviendo pistas en una ginkana" width="800" height="600" loading="lazy" decoding="async"></div>
-          <div class="act-body">
-            <h3>Ginkanas y experiencias</h3>
-            <p>Cluedo, Supervivientes, Lendas y el resto de ginkanas, también para equipos de empresa.</p>
-            <span class="act-link">Ver experiencias →</span>
-          </div>
-        </a>
-      </div>
+      <ActividadesGrid />
       <p class="act-note">¿Algo que no ves aquí? <a href="/contacto/?tipo=empresa">Cuéntanos qué buscas</a> y diseñamos un juego a medida.</p>
     </div>
   </section>
@@ -343,16 +311,6 @@ const schema = {
   .gallery-grid img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius-md); }
   .format-card { grid-column: span 2; }
   .format-card:nth-child(n+4) { grid-column: span 3; }
-  .act-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); }
-  .act-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; color: var(--color-text); text-decoration: none; transition: box-shadow var(--transition-normal), border-color var(--transition-normal); }
-  .act-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-secondary); color: var(--color-text); }
-  .act-media { height: 180px; display: flex; align-items: center; justify-content: center; background: var(--color-bg-alt); color: var(--color-secondary); overflow: hidden; }
-  .act-media img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
-  .act-media img.act-mascot { flex: 0 0 auto; width: auto; height: 160px; object-fit: contain; }
-  .act-body { padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-sm); flex-grow: 1; }
-  .act-body h3 { margin: 0; }
-  .act-body p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; flex-grow: 1; }
-  .act-link { color: var(--color-primary); font-weight: 600; font-size: 0.875rem; }
   .act-note { text-align: center; margin: var(--space-xl) 0 0; color: var(--color-text-light); }
   .format-link { display: inline-block; margin-top: var(--space-md); font-weight: 600; }
   .hero-content {
@@ -552,8 +510,7 @@ const schema = {
   
   @media (max-width: 1024px) {
     .hero-split { grid-template-columns: 1fr; }
-    .act-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .benefits-grid {
       grid-template-columns: repeat(2, 1fr);
     }

@@ -14,6 +14,8 @@ const { slug } = Astro.params;
 const a = getActividad(slug!)!;
 const otras = ACTIVIDADES.filter((x) => x.slug !== a.slug);
 const extra = EXTRA[a.slug];
+const ogPropios = ['ginkanas-y-retos', 'indoor', 'outdoor', 'humor-amarillo'];
+const ogImage = `/images/fotos/og-${ogPropios.includes(a.slug) ? a.slug : 'empresas'}.jpg`;
 const secciones = [...a.secciones, ...(extra?.secciones ?? [])];
 const faqs = [...a.faqs, ...(extra?.faqs ?? [])];
 
@@ -28,7 +30,7 @@ const schema = {
 const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero información sobre: ' + a.nombre + ' para mi empresa')}`;
 ---
 
-<Layout title={a.title} description={a.description} schema={schema} faqs={faqs} breadcrumbName={a.nombre}>
+<Layout title={a.title} description={a.description} schema={schema} faqs={faqs} breadcrumbName={a.nombre} ogImage={ogImage}>
 
   <section class="hero-act">
     <div class="container">
