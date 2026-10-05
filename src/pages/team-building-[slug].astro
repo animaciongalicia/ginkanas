@@ -14,8 +14,7 @@ const { slug } = Astro.params;
 const a = getActividad(slug!)!;
 const otras = ACTIVIDADES.filter((x) => x.slug !== a.slug);
 const extra = EXTRA[a.slug];
-const ogPropios = ['ginkanas-y-retos', 'indoor', 'outdoor', 'humor-amarillo'];
-const ogImage = `/images/fotos/og-${ogPropios.includes(a.slug) ? a.slug : 'empresas'}.jpg`;
+const ogImage = `/images/fotos/og-${a.slug}.jpg`;
 const secciones = [...a.secciones, ...(extra?.secciones ?? [])];
 const faqs = [...a.faqs, ...(extra?.faqs ?? [])];
 
@@ -78,6 +77,11 @@ const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero in
           </div>
         ))}
       </div>
+      {a.galeria && (
+        <div class="ej-galeria">
+          {a.galeria.map((g) => <img src={g.src} width={g.w} height={g.h} alt={g.alt} sizes="(max-width: 640px) calc(100vw - 32px), 580px" loading="lazy" decoding="async">)}
+        </div>
+      )}
       {extra && (
         <div class="tabla-wrap">
           <h2>{extra.tabla.titulo}</h2>
@@ -139,6 +143,8 @@ const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero in
   .hero-mascot img { max-height: 340px; width: auto; }
 
   .ej-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); }
+  .ej-galeria { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
+  .ej-galeria img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius-lg); }
   .ej-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-lg); }
   .ej-card h3 { margin-bottom: var(--space-sm); color: var(--color-secondary); }
   .ej-card p { color: var(--color-text-light); margin: 0; font-size: 0.9375rem; }
@@ -166,5 +172,5 @@ const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero in
   .btn-outline-light:hover { background: #fff; color: var(--color-bg-dark); }
 
   @media (max-width: 1024px) { .ej-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 640px) { .ej-grid { grid-template-columns: minmax(0, 1fr); } .hero-actions .btn { width: 100%; } }
+  @media (max-width: 640px) { .ej-grid, .ej-galeria { grid-template-columns: minmax(0, 1fr); } .hero-actions .btn { width: 100%; } }
 </style>

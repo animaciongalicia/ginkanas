@@ -163,7 +163,7 @@ const juegos = [
       <div class="experiences-grid">
         {experiencias.map((exp) => (
           <a href={exp.href} class="experience-card" style={`--card-color: ${exp.color}`}>
-            {exp.img && <img src={exp.img} alt={exp.title} width="640" height="480" loading="lazy" decoding="async" class="card-photo">}
+            {exp.img && <img src={exp.img} alt={exp.title} width="640" height="480" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(50vw - 40px), 380px" loading="lazy" decoding="async" class="card-photo">}
             <span class="exp-tag">{exp.tag}</span>
             <h3>{exp.title}</h3>
             <p>{exp.description}</p>
@@ -193,7 +193,7 @@ const juegos = [
       <div class="games-grid">
         {juegos.map((j) => (
           <div class="game-card">
-            <img src={j.img} alt={j.alt} width="640" height="480" loading="lazy" decoding="async">
+            <img src={j.img} alt={j.alt} width="640" height="480" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(50vw - 40px), 380px" loading="lazy" decoding="async">
             <div>
               <h3>{j.title}</h3>
               <p>{j.text}</p>

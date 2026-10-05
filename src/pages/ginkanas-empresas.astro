@@ -141,7 +141,7 @@ const schema = {
           </a>
         </div>
       </div>
-      <img src="/images/fotos/hero-empresas.webp" width="1000" height="833" alt="Equipo de empresa jugando una ginkana en la playa" class="hero-photo" fetchpriority="high" decoding="async">
+      <img src="/images/fotos/empresas-equipo-red.webp" width="1000" height="750" alt="Equipo de empresa sosteniendo a un compañero sobre una red de cuerdas" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -189,7 +189,7 @@ const schema = {
       </div>
       <div class="gallery-grid">
         {galeria.map((g) => (
-          <img src={g.src} width={g.w} height={g.h} alt={g.alt} loading="lazy" decoding="async">
+          <img src={g.src} width={g.w} height={g.h} alt={g.alt} sizes="(max-width: 1024px) calc(50vw - 24px), 290px" loading="lazy" decoding="async">
         ))}
       </div>
     </div>

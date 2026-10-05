@@ -2,10 +2,14 @@
 // Uso: node scripts/optimizar-fotos.mjs
 // Para añadir una foto: copia el original a fotos-originales/, añade una línea al manifiesto y ejecuta el script.
 import sharp from 'sharp';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 
 const OUT = 'public/images/fotos/';
 mkdirSync(OUT, { recursive: true });
+
+// Versiones más pequeñas (ancho en px) para srcset: el navegador descarga la que necesita según la pantalla.
+const ANCHOS = [480, 720];
+const variantes = {}; // nombre -> anchos disponibles, lo usa astro.config.mjs para añadir srcset
 
 // [archivo original, nombre de salida, ancho, alto, recorte]  (recorte: 'attention' = zona más interesante, 'centre' = centro)
 const manifiesto = [
@@ -51,6 +55,13 @@ const manifiesto = [
   ['gincana-magica-harry-potter.jpeg', 'ginkana-escuela-magica', 700, 525, 'attention'],
   ['scape-room-urbano.jpg', 'escape-room-urbano', 800, 600, 'attention'],
   ['scape-room-urbano.jpg', 'escape-room-urbano-card', 640, 480, 'attention'],
+  // Fotos de actividades de empresa (sustituyen al personaje en aventura, construcción y juego a medida)
+  ['actividades/teambuilding.jpg', 'empresas-equipo-red', 1000, 750, 'attention'],
+  ['actividades/karting-karts-galicia.jpg', 'act-aventura', 800, 600, 'attention'],
+  ['actividades/galicia-construccion-puentes-team-Building.jpg', 'act-construccion', 800, 600, 'attention'],
+  ['actividades/construccion-coches-team-building.jpg', 'construccion-coches', 720, 480, 'attention'],
+  ['actividades/team-building-construccion-de-puentes-1024x420.jpg', 'construccion-puente', 630, 420, 'attention'],
+  ['actividades/team-building-low-cost-economico.jpg', 'juego-a-medida', 640, 480, 'attention'],
   // Imagen para compartir en redes (1200 x 630)
   ['tablas-equilibrio-playa.jpg', 'og-empresas', 1200, 630, 'centre'],
   ['ciudades/coruna-gincanas-ayuntamiento.png', 'og-ciudad-coruna', 1200, 630, 'attention'],
@@ -66,6 +77,8 @@ const manifiesto = [
   ['cuerda-equipo-pradera.jpg', 'og-outdoor', 1200, 630, 'attention'],
   ['juegos-hinchables-equipos.jpg', 'og-humor-amarillo', 1200, 630, 'attention'],
   ['scape-room-urbano.jpg', 'og-escape-room', 1200, 630, 'attention'],
+  ['actividades/karting-karts-galicia.jpg', 'og-aventura', 1200, 630, 'attention'],
+  ['actividades/galicia-construccion-puentes-team-Building.jpg', 'og-construccion', 1200, 630, 'attention'],
   ['despedida-pelucas-dunas.jpg', 'og-despedidas', 1200, 630, 'attention'],
 
 ];
@@ -79,4 +92,13 @@ for (const [src, nombre, w, h, pos] of manifiesto) {
   const ext = og ? 'jpg' : 'webp';
   const info = await (og ? base.jpeg({ quality: 80, mozjpeg: true }) : base.webp({ quality: 72 })).toFile(OUT + nombre + '.' + ext);
   console.log(`${nombre}.${ext}  ${w}x${h}  ${(info.size / 1024).toFixed(0)} KB`);
+  if (og) continue;
+  variantes[nombre] = [w];
+  for (const aw of ANCHOS.filter((a) => a <= w - 80)) {
+    const ah = Math.round((h * aw) / w);
+    await sharp(OUT + nombre + '.webp').resize(aw, ah).webp({ quality: 72 }).toFile(`${OUT}${nombre}-${aw}.webp`);
+    variantes[nombre].unshift(aw);
+  }
+  variantes[nombre].sort((a, b) => a - b);
 }
+writeFileSync('src/data/fotos-variantes.json', JSON.stringify(variantes, null, 1) + '\n');
