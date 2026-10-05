@@ -204,7 +204,7 @@ const faqs = [
           <a href={exp.href} class="experience-card">
             <div class="experience-image">
               {exp.img
-                ? <img src={exp.img} alt={exp.title} width="640" height="480" loading="lazy" decoding="async" class="exp-photo">
+                ? <img src={exp.img} alt={exp.title} width="640" height="480" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(50vw - 40px), 380px" loading="lazy" decoding="async" class="exp-photo">
                 : <Icon name={exp.icon} size={56} stroke={1.25} />}
               <span class="experience-tag">{exp.tag}</span>
             </div>
@@ -234,7 +234,7 @@ const faqs = [
       <div class="cities-grid">
         {ciudades.map((ciudad) => (
           <a href={ciudad.href} class="city-card">
-            <img src={`/images/fotos/ciudad-${ciudad.img}-card.webp`} alt={`Ginkanas y juegos de equipo en ${ciudad.name}`} width="600" height="400" loading="lazy" decoding="async">
+            <img src={`/images/fotos/ciudad-${ciudad.img}-card.webp`} alt={`Ginkanas y juegos de equipo en ${ciudad.name}`} width="600" height="400" sizes="(max-width: 1024px) calc(50vw - 24px), 290px" loading="lazy" decoding="async">
             <span class="city-name">{ciudad.name}</span>
           </a>
         ))}

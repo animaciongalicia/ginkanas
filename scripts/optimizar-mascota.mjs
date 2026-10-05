@@ -22,7 +22,7 @@ const poses = [
   ['orzanizador-despedidas-galicia-agencia.png', 'piensa'],
 ];
 
-const H = 560; // alto final en px (se muestran a 120-280 px; así se ven nítidos en pantallas retina)
+const H = 400; // alto final en px (se muestran a 120-200 px; así se ven nítidos en pantallas retina)
 
 // Quita el fondo blanco solo si toca el borde (relleno desde los bordes), para no borrar blancos del dibujo (ojos, brillos).
 // Los nombres con ñ pueden venir con otra normalización Unicode según el sistema: se busca el archivo real.
@@ -48,6 +48,6 @@ async function sinFondo(file) {
 
 for (const [src, nombre] of poses) {
   const img = await sinFondo(src);
-  const info = await img.trim({ threshold: 5 }).resize({ height: H, fit: 'inside' }).webp({ quality: 80, alphaQuality: 90 }).toFile(OUT + nombre + '.webp');
+  const info = await img.trim({ threshold: 5 }).resize({ height: H, fit: 'inside' }).webp({ quality: 75, alphaQuality: 85 }).toFile(OUT + nombre + '.webp');
   console.log(`${nombre}.webp  ${info.width}x${info.height}  ${(info.size / 1024).toFixed(0)} KB`);
 }

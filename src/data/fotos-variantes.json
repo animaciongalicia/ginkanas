@@ -1,0 +1,192 @@
+{
+ "hero-empresas": [
+  480,
+  720,
+  1000
+ ],
+ "ginkana-cluedo": [
+  480,
+  720,
+  800
+ ],
+ "ginkana-supervivientes": [
+  480,
+  720,
+  880
+ ],
+ "ginkana-lendas": [
+  480,
+  720,
+  1000
+ ],
+ "ginkana-loca": [
+  480,
+  569
+ ],
+ "despedidas": [
+  480,
+  720,
+  1000
+ ],
+ "galeria-mapa": [
+  480,
+  720
+ ],
+ "galeria-investigacion": [
+  480,
+  720
+ ],
+ "galeria-playa": [
+  480,
+  696
+ ],
+ "galeria-cuerda": [
+  535
+ ],
+ "juego-cubos": [
+  480,
+  640
+ ],
+ "juego-esquis": [
+  480,
+  640
+ ],
+ "juego-agua": [
+  480,
+  640
+ ],
+ "juego-cuerda": [
+  480,
+  640
+ ],
+ "juego-cuerda-empresa": [
+  480,
+  640
+ ],
+ "juego-equilibrio": [
+  480,
+  640
+ ],
+ "despedidas-hub": [
+  480,
+  720,
+  800
+ ],
+ "escape-room": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-coruna": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-coruna-card": [
+  480,
+  600
+ ],
+ "ciudad-ourense": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-ourense-card": [
+  480,
+  600
+ ],
+ "ciudad-lugo": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-lugo-card": [
+  480,
+  600
+ ],
+ "ciudad-pontevedra": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-pontevedra-card": [
+  480,
+  600
+ ],
+ "ciudad-vigo": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-vigo-card": [
+  480,
+  600
+ ],
+ "ciudad-santiago": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-santiago-card": [
+  480,
+  600
+ ],
+ "ciudad-sanxenxo": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-sanxenxo-card": [
+  480,
+  600
+ ],
+ "ciudad-ferrol": [
+  480,
+  720,
+  800
+ ],
+ "ciudad-ferrol-card": [
+  480,
+  600
+ ],
+ "ginkana-escuela-magica": [
+  480,
+  700
+ ],
+ "escape-room-urbano": [
+  480,
+  720,
+  800
+ ],
+ "escape-room-urbano-card": [
+  480,
+  640
+ ],
+ "empresas-equipo-red": [
+  480,
+  720,
+  1000
+ ],
+ "act-aventura": [
+  480,
+  720,
+  800
+ ],
+ "act-construccion": [
+  480,
+  720,
+  800
+ ],
+ "construccion-coches": [
+  480,
+  720
+ ],
+ "construccion-puente": [
+  480,
+  630
+ ],
+ "juego-a-medida": [
+  480,
+  640
+ ]
+}

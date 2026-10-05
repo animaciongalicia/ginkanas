@@ -27,7 +27,7 @@ const tarjetas = [
   {
     href: '/contacto/?tipo=empresa', titulo: 'Juego a medida', enlace: 'Pedir propuesta →', icono: 'sparkles',
     texto: 'Diseñamos un juego para vuestro objetivo, vuestro espacio y vuestro equipo, con pruebas sobre vuestra empresa.',
-    mascota: 'oficina',
+    img: { src: '/images/fotos/juego-a-medida.webp', w: 640, h: 480, alt: 'Manos de un equipo sujetando juntas una barra' },
   },
 ];
 ---
@@ -37,7 +37,7 @@ const tarjetas = [
     <a href={t.href} class="act-card">
       <div class="act-media">
         {t.img
-          ? <img src={t.img.src} alt={t.img.alt} width={t.img.w} height={t.img.h} loading="lazy" decoding="async">
+          ? <img src={t.img.src} alt={t.img.alt} width={t.img.w} height={t.img.h} sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(50vw - 40px), 380px" loading="lazy" decoding="async">
           : t.mascota
             ? <img src={`/images/mascota/${t.mascota}.webp`} alt="" width="240" height="280" loading="lazy" decoding="async" class="act-mascot">
             : <Icon name={t.icono} size={48} stroke={1.2} />}

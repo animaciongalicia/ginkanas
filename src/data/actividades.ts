@@ -10,6 +10,7 @@ export interface Actividad {
   intro: string;
   resumen: string;         // texto de la tarjeta
   img?: { src: string; w: number; h: number; alt: string };
+  galeria?: { src: string; w: number; h: number; alt: string }[]; // fotos extra bajo los ejemplos
   mascota?: string;        // pose de /images/mascota/<pose>.webp si no hay foto
   icono: string;
   ejemplos: { titulo: string; texto: string }[];
@@ -61,7 +62,11 @@ export const ACTIVIDADES: Actividad[] = [
     h1: 'Team building de construcción en equipo',
     intro: 'El equipo construye algo tangible con materiales, tiempo limitado y un objetivo común. Se ve enseguida quién planifica, quién ejecuta y quién ordena.',
     resumen: 'Construir algo juntos con materiales y un objetivo común. Muy visual.',
-    mascota: 'piensa',
+    img: { src: '/images/fotos/act-construccion.webp', w: 800, h: 600, alt: 'Manos de un equipo construyendo una estructura con piezas de madera' },
+    galeria: [
+      { src: '/images/fotos/construccion-coches.webp', w: 720, h: 480, alt: 'Vehículo construido por un equipo con tubos de PVC y ruedas' },
+      { src: '/images/fotos/construccion-puente.webp', w: 630, h: 420, alt: 'Equipo junto al puente de madera que ha construido' },
+    ],
     icono: 'building',
     ejemplos: [
       { titulo: 'Puentes y estructuras', texto: 'Cada equipo diseña y construye una estructura que debe aguantar una prueba.' },
@@ -198,7 +203,7 @@ export const ACTIVIDADES: Actividad[] = [
     h1: 'Team building de aventura para empresas',
     intro: 'Paintball, rafting, karts, barcos y otras actividades de aventura. Las organizamos de principio a fin, para que tú solo reúnas al equipo.',
     resumen: 'Paintball, rafting, karts, barcos y más. Jornadas completas de aventura.',
-    mascota: 'karts',
+    img: { src: '/images/fotos/act-aventura.webp', w: 800, h: 600, alt: 'Circuito de karts preparado para una jornada de empresa' },
     icono: 'compass',
     ejemplos: [
       { titulo: 'Paintball', texto: 'Estrategia y comunicación por equipos en un escenario controlado.' },
