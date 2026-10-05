@@ -4,13 +4,21 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
-  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+  return posts.map((post) => {
+    // Artículos relacionados: primero los del mismo tema, después los más recientes.
+    const otros = posts.filter((p) => p.slug !== post.slug);
+    const relacionados = [
+      ...otros.filter((p) => p.data.tema === post.data.tema),
+      ...otros.filter((p) => p.data.tema !== post.data.tema),
+    ].slice(0, 3);
+    return { params: { slug: post.slug }, props: { post, relacionados } };
+  });
 }
 
-const { post } = Astro.props;
-const { Content } = await post.render();
+const { post, relacionados } = Astro.props;
+const { Content, headings } = await post.render();
 ---
 
-<BlogPost post={post}>
+<BlogPost post={post} headings={headings} relacionados={relacionados}>
   <Content />
 </BlogPost>
