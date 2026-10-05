@@ -4,6 +4,7 @@ import Icon from '../components/Icon.astro';
 import Prose from '../components/Prose.astro';
 import FaqSection from '../components/FaqSection.astro';
 import { ACTIVIDADES, getActividad } from '../data/actividades';
+import { EXTRA } from '../data/actividades-extra';
 
 export function getStaticPaths() {
   return ACTIVIDADES.map((a) => ({ params: { slug: a.slug } }));
@@ -12,6 +13,9 @@ export function getStaticPaths() {
 const { slug } = Astro.params;
 const a = getActividad(slug!)!;
 const otras = ACTIVIDADES.filter((x) => x.slug !== a.slug);
+const extra = EXTRA[a.slug];
+const secciones = [...a.secciones, ...(extra?.secciones ?? [])];
+const faqs = [...a.faqs, ...(extra?.faqs ?? [])];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -24,7 +28,7 @@ const schema = {
 const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero información sobre: ' + a.nombre + ' para mi empresa')}`;
 ---
 
-<Layout title={a.title} description={a.description} schema={schema} faqs={a.faqs} breadcrumbName={a.nombre}>
+<Layout title={a.title} description={a.description} schema={schema} faqs={faqs} breadcrumbName={a.nombre}>
 
   <section class="hero-act">
     <div class="container">
@@ -50,6 +54,14 @@ const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero in
     </div>
   </section>
 
+  {extra && (
+    <section class="resumen-wrap">
+      <div class="container">
+        <p class="resumen"><strong>En resumen:</strong> {extra.resumen}</p>
+      </div>
+    </section>
+  )}
+
   <section class="section">
     <div class="container">
       <div class="section-title">
@@ -64,12 +76,23 @@ const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero in
           </div>
         ))}
       </div>
+      {extra && (
+        <div class="tabla-wrap">
+          <h2>{extra.tabla.titulo}</h2>
+          <div class="tabla-scroll">
+            <table>
+              <thead><tr>{extra.tabla.cabecera.map((c) => <th scope="col">{c}</th>)}</tr></thead>
+              <tbody>{extra.tabla.filas.map((f) => <tr>{f.map((c, i) => i === 0 ? <th scope="row">{c}</th> : <td>{c}</td>)}</tr>)}</tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   </section>
 
-  <Prose sections={a.secciones} />
+  <Prose sections={secciones} />
 
-  <FaqSection faqs={a.faqs} />
+  <FaqSection faqs={faqs} />
 
   <section class="section section-alt">
     <div class="container">
@@ -118,6 +141,15 @@ const wa = `https://wa.me/34678288284?text=${encodeURIComponent('Hola! Quiero in
   .ej-card h3 { margin-bottom: var(--space-sm); color: var(--color-secondary); }
   .ej-card p { color: var(--color-text-light); margin: 0; font-size: 0.9375rem; }
 
+  .resumen-wrap { padding: var(--space-xl) 0 0; }
+  .resumen { max-width: 860px; margin: 0 auto; border-left: 3px solid var(--color-secondary); background: var(--color-bg-alt); padding: var(--space-md) var(--space-lg); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: 1.0625rem; line-height: 1.7; }
+  .tabla-wrap { margin-top: var(--space-2xl); }
+  .tabla-wrap h2 { text-align: center; margin-bottom: var(--space-lg); }
+  .tabla-scroll { overflow-x: auto; }
+  .tabla-wrap table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+  .tabla-wrap th, .tabla-wrap td { text-align: left; padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--color-border); }
+  .tabla-wrap thead th { background: var(--color-bg-alt); font-weight: 600; }
+  .tabla-wrap tbody th { font-weight: 600; color: var(--color-secondary); }
   .otras-grid { display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center; }
   .otra-card { display: inline-flex; align-items: center; gap: var(--space-sm); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); color: var(--color-text); font-weight: 600; text-decoration: none; }
   .otra-card:hover { border-color: var(--color-secondary); color: var(--color-secondary); }
