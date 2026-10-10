@@ -117,7 +117,7 @@ const schema = {
         <div class="leyendas-grid">
           {leyendas.map((l) => (
             <div class="leyenda">
-              <h4>{l.nombre}</h4>
+              <h3 class="h4">{l.nombre}</h3>
               <p>{l.desc}</p>
             </div>
           ))}
@@ -130,7 +130,7 @@ const schema = {
       
       <div class="content-side">
         <div class="info-box">
-          <h4>Incluye</h4>
+          <h3 class="h4">Incluye</h3>
           <ul>
             <li>Monitor/Narrador</li>
             <li>Guía de leyendas</li>
@@ -139,7 +139,7 @@ const schema = {
           </ul>
         </div>
         <div class="info-box">
-          <h4>Ideal para</h4>
+          <h3 class="h4">Ideal para</h3>
           <ul>
             <li>Amantes de Galicia</li>
             <li>Turistas curiosos</li>
@@ -148,7 +148,7 @@ const schema = {
           </ul>
         </div>
         <div class="queimada-box">
-          <h4>Extra: Queimada</h4>
+          <h3 class="h4">Extra: Queimada</h3>
           <p>Podemos terminar con una queimada tradicional, con conjuro incluido. Consultar precio.</p>
         </div>
       </div>
@@ -163,7 +163,7 @@ const schema = {
       <div class="faqs-grid">
         {faqs.map((faq) => (
           <div class="faq-card">
-            <h4>{faq.q}</h4>
+            <h3 class="h4">{faq.q}</h3>
             <p>{faq.a}</p>
           </div>
         ))}
@@ -203,22 +203,22 @@ const schema = {
   
   .leyendas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin: var(--space-xl) 0; }
   .leyenda { background: #F8F4FF; padding: var(--space-lg); border-radius: var(--radius-md); border-left: 4px solid #9B59B6; }
-  .leyenda h4 { margin-bottom: var(--space-xs); color: #1A1A2E; font-size: 1rem; }
+  .leyenda h3 { margin-bottom: var(--space-xs); color: #1A1A2E; font-size: 1rem; }
   .leyenda p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
   
   .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
   .info-box { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
-  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box h3 { margin-bottom: var(--space-md); }
   .info-box ul { list-style: none; }
   .info-box li { padding: var(--space-xs) 0; color: var(--color-text-light); }
   
   .queimada-box { background: linear-gradient(135deg, #D35400, #E74C3C); color: white; padding: var(--space-xl); border-radius: var(--radius-lg); }
-  .queimada-box h4 { margin-bottom: var(--space-sm); }
+  .queimada-box h3 { margin-bottom: var(--space-sm); }
   .queimada-box p { opacity: 0.9; margin: 0; font-size: 0.9375rem; }
   
   .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
   .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
-  .faq-card h4 { margin-bottom: var(--space-sm); color: #9B59B6; }
+  .faq-card h3 { margin-bottom: var(--space-sm); color: #9B59B6; }
   .faq-card p { color: var(--color-text-light); margin: 0; }
   
   .cta-section { background: linear-gradient(135deg, #1A1A2E, #2D2D44); }

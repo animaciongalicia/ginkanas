@@ -85,19 +85,7 @@ const ampliado = [
         </div>
 
         <aside class="contact-aside">
-          <img src="/images/mascota/llamada.webp" alt="" width="140" height="530" class="aside-mascot" loading="lazy" decoding="async">
-          <div class="aside-card">
-            <h3>Qué pasa después</h3>
-            <ol class="aside-steps">
-              <li><strong>Te respondemos</strong> y te hacemos las preguntas que falten.</li>
-              <li><strong>Te mandamos una propuesta</strong> con formato, duración y precio.</li>
-              <li><strong>Ajustamos</strong> lo que quieras y cerramos fecha.</li>
-            </ol>
-          </div>
-          <div class="aside-card">
-            <h3>Horario</h3>
-            <p>Todos los días de 9:00 a 21:00. Fuera de horario, déjanos un WhatsApp y te respondemos en cuanto podamos.</p>
-          </div>
+          <img src="/images/mascota/llamada.webp" alt="" width="188" height="400" class="aside-mascot" loading="lazy" decoding="async">
           <div class="aside-card">
             <h3>Datos</h3>
             <p class="aside-data">
@@ -118,33 +106,27 @@ const ampliado = [
 
   <Prose sections={ampliado} />
 
-</Layout>
-
-<script>
-  const EMAIL = 'animaciongalicia@gmail.com';
+  <script is:inline>
+(() => {
+const EMAIL = 'animaciongalicia@gmail.com';
   const WHATSAPP = '34678288284';
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const form = document.getElementById('contact-form');
   const empresa = new URLSearchParams(location.search).get('tipo') === 'empresa';
+  if (!form) return;
 
-  function mensaje(): { asunto: string; texto: string } {
-    const d = new FormData(form!);
-    const v = (k: string) => String(d.get(k) ?? '').trim();
+  function mensaje() {
+    const d = new FormData(form);
+    const v = (k) => String(d.get(k) ?? '').trim();
     const lineas = [empresa ? 'Hola, me gustaría recibir una propuesta para mi empresa.' : 'Hola, me gustaría recibir información.', ''];
-    const campos: [string, string][] = [
-      ['Email', v('email')],
-      ['Teléfono', v('telefono')],
-      ['Fecha aproximada', v('fecha')],
-      ['Personas', v('personas')],
-    ];
-    campos.forEach(([k, val]) => { if (val) lineas.push(`${k}: ${val}`); });
+    [['Email', v('email')], ['Teléfono', v('telefono')], ['Fecha aproximada', v('fecha')], ['Personas', v('personas')]]
+      .forEach(([k, val]) => { if (val) lineas.push(`${k}: ${val}`); });
     const asunto = [empresa ? 'Propuesta para empresa' : 'Consulta desde ginkanas.es', v('personas') && `${v('personas')} personas`].filter(Boolean).join(' - ');
     return { asunto, texto: lineas.join('\n') };
   }
 
-  form?.addEventListener('click', (e) => {
-    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-send]');
-    if (!btn || !form) return;
-    if (!form.reportValidity()) return;
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-send]');
+    if (!btn || !form.reportValidity()) return;
     const { asunto, texto } = mensaje();
     if (btn.dataset.send === 'whatsapp') {
       window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
@@ -152,7 +134,10 @@ const ampliado = [
       window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(texto.replace(/\n/g, '\r\n'))}`;
     }
   });
+})();
 </script>
+</Layout>
+
 
 <style>
   .hero-inner { background: var(--color-bg-alt); padding: var(--space-2xl) 0; text-align: center; }
@@ -186,7 +171,6 @@ const ampliado = [
   .aside-card { background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-lg); }
   .aside-card h3 { font-size: 1.0625rem; margin-bottom: var(--space-sm); }
   .aside-card p { color: var(--color-text-light); margin: 0; font-size: 0.9375rem; }
-  .aside-steps { padding-left: 1.2em; margin: 0; color: var(--color-text-light); font-size: 0.9375rem; display: grid; gap: var(--space-sm); }
   .aside-data { line-height: 1.7; overflow-wrap: anywhere; }
   .aside-data span { display: block; margin-top: var(--space-sm); }
   .aside-alt { border: 1px dashed var(--color-border); background: transparent; }

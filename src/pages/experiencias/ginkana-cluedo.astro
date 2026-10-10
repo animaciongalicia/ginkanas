@@ -131,7 +131,7 @@ const schema = {
       
       <div class="content-side">
         <div class="info-box">
-          <h4>Incluye</h4>
+          <h3 class="h4">Incluye</h3>
           <ul>
             <li>Monitor/Game Master</li>
             <li>Dosier de investigación</li>
@@ -140,7 +140,7 @@ const schema = {
           </ul>
         </div>
         <div class="info-box">
-          <h4>Ideal para</h4>
+          <h3 class="h4">Ideal para</h3>
           <ul>
             <li>Cumpleaños originales</li>
             <li>Grupos de amigos</li>
@@ -160,7 +160,7 @@ const schema = {
       <div class="faqs-grid">
         {faqs.map((faq) => (
           <div class="faq-card">
-            <h4>{faq.q}</h4>
+            <h3 class="h4">{faq.q}</h3>
             <p>{faq.a}</p>
           </div>
         ))}
@@ -202,13 +202,13 @@ const schema = {
   
   .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
   .info-box { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
-  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box h3 { margin-bottom: var(--space-md); }
   .info-box ul { list-style: none; }
   .info-box li { padding: var(--space-xs) 0; color: var(--color-text-light); }
   
   .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
   .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
-  .faq-card h4 { margin-bottom: var(--space-sm); color: #303F9F; }
+  .faq-card h3 { margin-bottom: var(--space-sm); color: #303F9F; }
   .faq-card p { color: var(--color-text-light); margin: 0; }
   
   .cta-section { background: linear-gradient(135deg, #303F9F, #5C6BC0); }

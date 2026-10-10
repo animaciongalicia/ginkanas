@@ -121,7 +121,7 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
         <div class="pruebas-grid">
           {pruebas.map((p) => (
             <div class="prueba">
-              <h4>{p.nombre}</h4>
+              <h3 class="h4">{p.nombre}</h3>
               <p>{p.desc}</p>
             </div>
           ))}
@@ -133,7 +133,7 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
       
       <div class="content-side">
         <div class="info-box">
-          <h4>Incluye</h4>
+          <h3 class="h4">Incluye</h3>
           <ul>
             <li>Monitores/árbitros</li>
             <li>Todo el material de pruebas</li>
@@ -142,7 +142,7 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
           </ul>
         </div>
         <div class="info-box">
-          <h4>Ideal para</h4>
+          <h3 class="h4">Ideal para</h3>
           <ul>
             <li>Equipos de ventas</li>
             <li>Grupos deportivos</li>
@@ -151,7 +151,7 @@ blandos. Pruebas físicas, mentales y de equipo. Competición real, ranking en v
           </ul>
         </div>
         <div class="warning-box">
-          <h4>Aviso</h4>
+          <h3 class="h4">Aviso</h3>
           <p>Esta ginkana saca el
 
 espíritu competitivo. Si tu grupo tiene rivalidades, prepárate para que afloren. Con
@@ -170,7 +170,7 @@ cariño, eso sí.</p>
       <div class="faqs-grid">
         {faqs.map((faq) => (
           <div class="faq-card">
-            <h4>{faq.q}</h4>
+            <h3 class="h4">{faq.q}</h3>
             <p>{faq.a}</p>
           </div>
         ))}
@@ -210,22 +210,22 @@ cariño, eso sí.</p>
   
   .pruebas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
   .prueba { background: #E8F5E9; padding: var(--space-lg); border-radius: var(--radius-md); border-left: 4px solid #2E7D32; }
-  .prueba h4 { margin-bottom: var(--space-xs); color: #1B5E20; font-size: 1rem; }
+  .prueba h3 { margin-bottom: var(--space-xs); color: #1B5E20; font-size: 1rem; }
   .prueba p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
   
   .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
   .info-box { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }
-  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box h3 { margin-bottom: var(--space-md); }
   .info-box ul { list-style: none; }
   .info-box li { padding: var(--space-xs) 0; color: var(--color-text-light); }
   
   .warning-box { background: #FFF3E0; border: 2px solid #FF9800; padding: var(--space-xl); border-radius: var(--radius-lg); }
-  .warning-box h4 { color: #E65100; margin-bottom: var(--space-sm); }
+  .warning-box h3 { color: #BF360C; margin-bottom: var(--space-sm); }
   .warning-box p { color: var(--color-text); margin: 0; font-size: 0.9375rem; }
   
   .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
   .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
-  .faq-card h4 { margin-bottom: var(--space-sm); color: #1B5E20; }
+  .faq-card h3 { margin-bottom: var(--space-sm); color: #1B5E20; }
   .faq-card p { color: var(--color-text-light); margin: 0; }
   
   .cta-section { background: linear-gradient(135deg, #1B5E20, #2E7D32); }

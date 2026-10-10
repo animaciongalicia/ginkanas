@@ -132,7 +132,7 @@ const faqs = [
         {porque.map((p) => (
           <div class="why-card">
             <span class="why-icon">{p.icon}</span>
-            <h4>{p.titulo}</h4>
+            <h3 class="h4">{p.titulo}</h3>
             <p>{p.texto}</p>
           </div>
         ))}
@@ -191,7 +191,7 @@ const faqs = [
   .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
   .why-card { text-align: center; padding: var(--space-lg); }
   .why-icon { font-size: 2.5rem; display: block; margin-bottom: var(--space-md); }
-  .why-card h4 { margin-bottom: var(--space-sm); }
+  .why-card h3 { margin-bottom: var(--space-sm); }
   .why-card p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
   .reco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
   .reco-card { background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); }

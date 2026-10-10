@@ -91,7 +91,7 @@ const experiencias = [
     price: 'Desde 25€',
     tag: 'Despedidas',
     href: '/experiencias/ginkana-loca/',
-    color: '#FF6B35'
+    color: '#C2410C'
   },
   {
     title: 'Ginkana Cluedo',
@@ -118,7 +118,7 @@ const experiencias = [
     price: 'Desde 25€',
     tag: 'Galicia',
     href: '/experiencias/ginkana-lendas/',
-    color: '#9B59B6'
+    color: '#7D3C98'
   },
   {
     title: 'Ginkana Supervivientes',
@@ -160,6 +160,7 @@ const juegos = [
   
   <section class="section">
     <div class="container">
+      <h2 class="section-heading">Elige tu experiencia</h2>
       <div class="experiences-grid">
         {experiencias.map((exp) => (
           <a href={exp.href} class="experience-card" style={`--card-color: ${exp.color}`}>

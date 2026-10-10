@@ -118,7 +118,7 @@ const enlacesTema = servicios[d.tema] ?? servicios.general;
         )}
 
         <div class="post-cta">
-          <img src="/images/mascota/ok.webp" alt="" width="110" height="180" loading="lazy" decoding="async" class="post-cta-mascot">
+          <img src="/images/mascota/ok.webp" alt="" width="244" height="400" loading="lazy" decoding="async" class="post-cta-mascot">
           <div>
             <h2>{cta.titulo}</h2>
             <p>{cta.texto}</p>
@@ -182,12 +182,11 @@ const enlacesTema = servicios[d.tema] ?? servicios.general;
       </section>
     )}
   </article>
-</Layout>
-
-<script>
-  // Barra de progreso de lectura
+  <script is:inline>
+(() => {
+// Barra de progreso de lectura
   const bar = document.getElementById('read-progress-bar');
-  const article = document.querySelector<HTMLElement>('.post-main');
+  const article = document.querySelector('.post-main');
   const update = () => {
     if (!bar || !article) return;
     const r = article.getBoundingClientRect();
@@ -199,22 +198,25 @@ const enlacesTema = servicios[d.tema] ?? servicios.general;
   update();
 
   // Índice: marca la sección visible
-  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-toc]'));
+  const links = Array.from(document.querySelectorAll('a[data-toc]'));
   if (links.length && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) links.forEach((l) => l.classList.toggle('active', l.dataset.toc === e.target.id));
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
-    links.forEach((l) => { const h = document.getElementById(l.dataset.toc!); if (h) io.observe(h); });
+    links.forEach((l) => { const h = document.getElementById(l.dataset.toc); if (h) io.observe(h); });
   }
 
   // Copiar enlace
-  document.querySelector<HTMLButtonElement>('.copy-link')?.addEventListener('click', async (e) => {
-    const btn = e.currentTarget as HTMLButtonElement;
-    try { await navigator.clipboard.writeText(btn.dataset.url!); btn.textContent = 'Enlace copiado'; } catch { btn.textContent = btn.dataset.url!; }
+  const copy = document.querySelector('.copy-link');
+  copy && copy.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(copy.dataset.url); copy.textContent = 'Enlace copiado'; } catch { copy.textContent = copy.dataset.url; }
   });
+})();
 </script>
+</Layout>
+
 
 <style is:global>
   .read-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 200; pointer-events: none; }
@@ -251,6 +253,7 @@ const enlacesTema = servicios[d.tema] ?? servicios.general;
   .blog-post .post-content th, .blog-post .post-content td { padding: var(--space-sm) var(--space-md); text-align: left; border-bottom: 1px solid var(--color-border); }
   .blog-post .post-content th { background: var(--color-bg-alt); font-weight: 600; }
   .blog-post .post-content table.price-table tr.total { background: var(--color-primary); color: white; }
+  .blog-post .post-content table.price-table tr.total strong { color: white; }
   @media (max-width: 640px) { .blog-post .post-content table { display: block; overflow-x: auto; } }
 
   .toc-mobile { display: none; background: var(--color-bg-alt); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); margin-bottom: var(--space-xl); }
