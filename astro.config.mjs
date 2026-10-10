@@ -16,6 +16,7 @@ for (const file of fs.readdirSync(blogDir)) {
 const newest = Object.values(lastmod).sort().at(-1);
 if (newest) lastmod[`${SITE}/blog/`] = newest;
 
+// Ajustes al HTML final: srcset en las fotos y enlaces externos en pestaña nueva.
 // Añade srcset a las fotos de /images/fotos/ que tienen versiones pequeñas (las genera scripts/optimizar-fotos.mjs),
 // para que el móvil no descargue la foto grande. Solo en imágenes con `sizes` o en las portadas (.hero-photo).
 const variantes = JSON.parse(fs.readFileSync(new URL('./src/data/fotos-variantes.json', import.meta.url), 'utf8'));
@@ -38,7 +39,10 @@ const srcsetFotos = {
           const srcset = anchos.map((w) => `/images/fotos/${m[1]}${w === max ? '' : '-' + w}.webp ${w}w`).join(', ');
           return tag.replace('<img', `<img srcset="${srcset}"${tag.includes('sizes=') ? '' : ` sizes="${SIZES_PORTADA}"`}`);
         });
-        if (out !== html) fs.writeFileSync(file, out);
+        // Enlaces a otras webs (y WhatsApp): siempre en pestaña nueva, para no sacar al visitante de la web.
+        const final = out.replace(/<a\b[^>]*href="https?:\/\/(?!(?:www\.)?ginkanas\.es)[^"]*"[^>]*>/g, (tag) =>
+          tag.includes('target=') ? tag : tag.replace('<a', '<a target="_blank"' + (tag.includes('rel=') ? '' : ' rel="noopener"')));
+        if (final !== html) fs.writeFileSync(file, final);
       }
     },
   },

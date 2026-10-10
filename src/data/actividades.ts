@@ -187,7 +187,7 @@ export const ACTIVIDADES: Actividad[] = [
         'Estaciones de juego con rotación por equipos.',
         'Monitores en cada prueba, con puntuación en vivo.',
         'Premios y foto de grupo al final.'] },
-      { h: 'Combinarlo', p: ['Se combina con una <a href="/team-building-ginkanas-y-retos/">ginkana</a> por la mañana y una comida al aire libre, o con actividades <a href="/team-building-outdoor/">outdoor</a> de equipo.'] },
+      { h: 'Combinarlo', p: ['Se combina con una <a href="/team-building-ginkanas-y-retos/">ginkana</a> por la mañana y una comida al aire libre, o con actividades <a href="/team-building-outdoor/">outdoor</a> de equipo. Si lo que buscas es el formato clásico en la ciudad, mira <a href="https://www.humoramarillocoruna.com/">Humor Amarillo en Coruña</a>.'] },
     ],
     faqs: [
       { q: '¿Qué espacio hace falta?', a: 'Una explanada, un parque o una finca. Los hinchables y estaciones se montan según el espacio.' },
