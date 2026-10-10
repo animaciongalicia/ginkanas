@@ -97,29 +97,30 @@ const ampliado = [
     </div>
   </section>
 
+  <script is:inline>
+(() => {
+const bar = document.getElementById('blog-filters');
+  const cards = Array.from(document.querySelectorAll('.post-card, .featured'));
+  const none = document.getElementById('no-results');
+  if (!bar) return;
+  bar.hidden = false;
+  bar.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-filtro]');
+    if (!btn) return;
+    const f = btn.dataset.filtro;
+    bar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    let visibles = 0;
+    cards.forEach((c) => {
+      const ok = f === 'todo' || (f === 'novedad' ? c.dataset.tipo === 'novedad' : c.dataset.tema === f);
+      c.hidden = !ok;
+      if (ok) visibles++;
+    });
+    if (none) none.hidden = visibles > 0;
+  });
+})();
+</script>
 </Layout>
 
-<script>
-  const bar = document.getElementById('blog-filters');
-  const cards = Array.from(document.querySelectorAll<HTMLElement>('.post-card, .featured'));
-  const none = document.getElementById('no-results');
-  if (bar) {
-    bar.hidden = false;
-    bar.addEventListener('click', (e) => {
-      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-filtro]');
-      if (!btn) return;
-      const f = btn.dataset.filtro;
-      bar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-      let visibles = 0;
-      cards.forEach((c) => {
-        const ok = f === 'todo' || (f === 'novedad' ? c.dataset.tipo === 'novedad' : c.dataset.tema === f);
-        c.hidden = !ok;
-        if (ok) visibles++;
-      });
-      if (none) none.hidden = visibles > 0;
-    });
-  }
-</script>
 
 <style>
   .hero-blog { background: var(--color-bg-alt); padding: var(--space-3xl) 0 var(--space-2xl); text-align: center; }

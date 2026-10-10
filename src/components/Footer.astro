@@ -71,7 +71,7 @@ const websHermanas = [
       
       <!-- Empresas -->
       <div class="footer-column">
-        <h4 class="footer-title">Empresas</h4>
+        <h2 class="footer-title">Empresas</h2>
         <ul class="footer-links">
           {empresas.map((item) => (
             <li><a href={item.href}>{item.label}</a></li>
@@ -81,7 +81,7 @@ const websHermanas = [
 
       <!-- Servicios -->
       <div class="footer-column">
-        <h4 class="footer-title">Servicios</h4>
+        <h2 class="footer-title">Servicios</h2>
         <ul class="footer-links">
           {servicios.map((item) => (
             <li><a href={item.href}>{item.label}</a></li>
@@ -91,7 +91,7 @@ const websHermanas = [
 
       <!-- Ciudades -->
       <div class="footer-column">
-        <h4 class="footer-title">Ciudades</h4>
+        <h2 class="footer-title">Ciudades</h2>
         <ul class="footer-links">
           {ciudades.map((item) => (
             <li><a href={item.href}>{item.label}</a></li>
@@ -101,7 +101,7 @@ const websHermanas = [
 
       <!-- Webs hermanas -->
       <div class="footer-column">
-        <h4 class="footer-title">Nuestras Webs</h4>
+        <h2 class="footer-title">Nuestras Webs</h2>
         <ul class="footer-links">
           {websHermanas.map((item) => (
             <li>
@@ -233,11 +233,11 @@ const websHermanas = [
     align-items: center;
     gap: var(--space-md);
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.72);
   }
   
   .footer-experience {
-    color: var(--color-primary);
+    color: #FDBA74;
     font-weight: 500;
   }
   
@@ -278,5 +278,5 @@ const websHermanas = [
       justify-content: center;
     }
   }
-  .footer-company { font-size: 0.8125rem; opacity: 0.75; }
+  .footer-company { font-size: 0.8125rem; }
 </style>

@@ -64,6 +64,17 @@ function isActive(href: string): boolean {
   </div>
 </header>
 
+<script is:inline>
+(() => {
+const toggle = document.querySelector('.mobile-toggle');
+  const nav = document.querySelector('.nav');
+  toggle && toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(nav.classList.contains('open')));
+  });
+})();
+</script>
+
 <style>
   .header {
     position: sticky;
@@ -261,26 +272,3 @@ function isActive(href: string): boolean {
   }
 </style>
 
-<script>
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const nav = document.querySelector('.nav');
-  const dropdownItems = document.querySelectorAll('.has-dropdown');
-  
-  mobileToggle?.addEventListener('click', () => {
-    nav?.classList.toggle('open');
-    const isOpen = nav?.classList.contains('open');
-    mobileToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-  
-  dropdownItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      if (window.innerWidth <= 1024) {
-        const link = item.querySelector('.nav-link');
-        if (e.target === link || link?.contains(e.target as Node)) {
-          e.preventDefault();
-          item.classList.toggle('open');
-        }
-      }
-    });
-  });
-</script>

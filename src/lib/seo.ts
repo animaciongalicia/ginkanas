@@ -22,7 +22,7 @@ export const organizationSchema = {
     addressRegion: 'Galicia',
     addressCountry: 'ES',
   },
-  email: 'info@ginkanas.es',
+  email: 'animaciongalicia@gmail.com',
   logo: { '@type': 'ImageObject', url: `${SITE}/logo-512.png`, width: 512, height: 512 },
   image: `${SITE}/images/og-default.png`,
   description:

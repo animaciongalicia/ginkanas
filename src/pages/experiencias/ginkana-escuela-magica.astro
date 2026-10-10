@@ -114,7 +114,7 @@ const schema = {
         <div class="actividades-grid">
           {actividades.map((a) => (
             <div class="actividad">
-              <h4>{a.nombre}</h4>
+              <h3 class="h4">{a.nombre}</h3>
               <p>{a.desc}</p>
             </div>
           ))}
@@ -126,7 +126,7 @@ const schema = {
       
       <div class="content-side">
         <div class="info-box gryffindor">
-          <h4>Incluye</h4>
+          <h3 class="h4">Incluye</h3>
           <ul>
             <li>Monitor/Profesor de magia</li>
             <li>Material mágico (varitas, pergaminos)</li>
@@ -135,7 +135,7 @@ const schema = {
           </ul>
         </div>
         <div class="info-box slytherin">
-          <h4>Ideal para</h4>
+          <h3 class="h4">Ideal para</h3>
           <ul>
             <li>Fans de Harry Potter</li>
             <li>Cumpleaños temáticos</li>
@@ -155,7 +155,7 @@ const schema = {
       <div class="faqs-grid">
         {faqs.map((faq) => (
           <div class="faq-card">
-            <h4>{faq.q}</h4>
+            <h3 class="h4">{faq.q}</h3>
             <p>{faq.a}</p>
           </div>
         ))}
@@ -195,20 +195,20 @@ const schema = {
   
   .actividades-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-bottom: var(--space-xl); }
   .actividad { background: var(--color-bg-alt); padding: var(--space-lg); border-radius: var(--radius-md); border-left: 4px solid #7B1FA2; }
-  .actividad h4 { margin-bottom: var(--space-xs); color: #4A148C; font-size: 1rem; }
+  .actividad h3 { margin-bottom: var(--space-xs); color: #4A148C; font-size: 1rem; }
   .actividad p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; }
   
   .content-side { display: flex; flex-direction: column; gap: var(--space-lg); }
   .info-box { padding: var(--space-xl); border-radius: var(--radius-lg); }
   .info-box.gryffindor { background: linear-gradient(135deg, #740001, #AE0001); color: white; }
   .info-box.slytherin { background: linear-gradient(135deg, #1A472A, #2A623D); color: white; }
-  .info-box h4 { margin-bottom: var(--space-md); }
+  .info-box h3 { margin-bottom: var(--space-md); }
   .info-box ul { list-style: none; }
   .info-box li { padding: var(--space-xs) 0; opacity: 0.9; }
   
   .faqs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
   .faq-card { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
-  .faq-card h4 { margin-bottom: var(--space-sm); color: #4A148C; }
+  .faq-card h3 { margin-bottom: var(--space-sm); color: #4A148C; }
   .faq-card p { color: var(--color-text-light); margin: 0; }
   
   .cta-section { background: linear-gradient(135deg, #4A148C, #7B1FA2); }
