@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/quienes-somos", "destination": "/sobre-nosotros/", "permanent": true },
+    { "source": "/quienes-somos/", "destination": "/sobre-nosotros/", "permanent": true }
+  ]
+}
