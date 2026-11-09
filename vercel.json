@@ -1,6 +1,15 @@
 {
   "redirects": [
     { "source": "/quienes-somos", "destination": "/sobre-nosotros/", "permanent": true },
-    { "source": "/quienes-somos/", "destination": "/sobre-nosotros/", "permanent": true }
+    { "source": "/quienes-somos/", "destination": "/sobre-nosotros/", "permanent": true },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "ginkanas.vercel.app" }],
+      "destination": "https://www.ginkanas.es/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml" }
   ]
 }
