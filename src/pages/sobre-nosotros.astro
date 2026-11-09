@@ -10,19 +10,13 @@ const description = 'Ginkanas.es es una web del grupo Animación Galicia: más d
 const ampliado = [
   {
     h: 'Ginkanas.es en una frase',
-    p: ['Ginkanas.es es la web de ginkanas urbanas y escape rooms del <strong>grupo Animación Galicia</strong>. Organizamos ginkanas para despedidas, cumpleaños, grupos de amigos y empresas en toda Galicia, con un monitor que guía el juego durante unas dos horas.'],
+    p: ['Ginkanas.es es la web de <strong>team building, juegos para empresas y ginkanas</strong> del <strong>grupo Animación Galicia</strong>. Organizamos ginkanas, retos, construcción en equipo, jornadas indoor, actividades outdoor y aventura para empresas, y ginkanas para despedidas, cumpleaños y grupos en toda Galicia, siempre con monitores que guían el juego.'],
   },
   {
     h: 'El grupo Animación Galicia',
     p: [
-      'Animación Galicia es donde empezamos. Desde allí llevamos <strong>más de 15 años</strong> organizando despedidas, eventos y ginkanas en Galicia. Con el tiempo hemos creado varias webs propias del grupo, y cada una tiene su enfoque: unas para posicionar una <strong>ciudad</strong> y otras para un <strong>tipo de actividad</strong>.',
+      'Animación Galicia es donde empezamos. Desde allí llevamos <strong>más de 15 años</strong> organizando despedidas, eventos y ginkanas en Galicia. Con el tiempo hemos creado varias webs propias del grupo, y cada una tiene su enfoque: unas pensadas para una <strong>ciudad</strong> y otras para un <strong>tipo de actividad</strong>. Más abajo te contamos qué encontrarás en cada una.',
     ],
-    ul: [
-      '<strong>Webs de despedidas por ciudad y zona:</strong> <a href="https://www.despedidasgalicia.es" target="_blank" rel="noopener">Despedidas Galicia</a> (toda la comunidad), <a href="https://www.despedidascoruna.es" target="_blank" rel="noopener">Despedidas Coruña</a>, <a href="https://www.despedidasvigo.com" target="_blank" rel="noopener">Despedidas Vigo</a> y <a href="https://www.despedidas-sanxenxo.com" target="_blank" rel="noopener">Despedidas Sanxenxo</a>. Cada una está pensada para quien busca una despedida en esa ciudad.',
-      '<strong>Webs por tipo de actividad:</strong> <a href="https://www.animaciongalicia.com" target="_blank" rel="noopener">Animación Galicia</a>, con animaciones y eventos, y otras webs del grupo dedicadas a packs de despedida y actividades en barco.',
-      '<strong>Ginkanas.es:</strong> la web del grupo dedicada a las ginkanas, una de las actividades que ofrecemos junto a otras muchas. Aquí encuentras todas las ginkanas y experiencias gamificadas, para cualquier público (despedidas, cumpleaños, grupos y empresas).',
-    ],
-    after: ['Si buscas una despedida en una ciudad concreta, empieza por la web de esa ciudad. Si lo que quieres es una ginkana, estás en el sitio correcto.'],
   },
   {
     h: 'Nuestra trayectoria en cifras',
@@ -46,9 +40,29 @@ const ampliado = [
   },
 ];
 
+const webs = [
+  { nombre: 'Animación Galicia', url: 'https://www.animaciongalicia.com', tipo: 'El origen del grupo',
+    texto: 'Donde empezamos hace más de 15 años. Animaciones y eventos en Galicia, y la web madre de la que salen el resto de proyectos del grupo.' },
+  { nombre: 'Mil Eventos Galicia', url: 'https://www.mileventosgalicia.com', tipo: 'Eventos de empresa',
+    texto: 'Para eventos de empresa de día completo: jornadas outdoor, regatas, experiencias gastronómicas y eventos muy grandes. Si tu evento va más allá de un juego de equipo, empieza por aquí.' },
+  { nombre: 'Humor Amarillo Coruña', url: 'https://www.humoramarillocoruna.com/', tipo: 'Juegos tipo Humor Amarillo',
+    texto: 'Pruebas por equipos inspiradas en el mítico programa de televisión, en A Coruña. El formato clásico de risas, caídas y competición sana.' },
+  { nombre: 'Despedidas Galicia', url: 'https://www.despedidasgalicia.es', tipo: 'Despedidas en toda Galicia',
+    texto: 'La web de despedidas de soltera y soltero para toda la comunidad, con actividades y planes para organizar la despedida en cualquier punto de Galicia.' },
+  { nombre: 'Despedidas Coruña', url: 'https://www.despedidascoruna.es', tipo: 'Despedidas en A Coruña',
+    texto: 'Despedidas de soltera y soltero pensadas para A Coruña, con actividades y planes en la ciudad.' },
+  { nombre: 'Despedidas Vigo', url: 'https://www.despedidasvigo.com', tipo: 'Despedidas en Vigo',
+    texto: 'Despedidas de soltera y soltero en Vigo y alrededores, con actividades y planes para el grupo.' },
+  { nombre: 'Despedidas Sanxenxo', url: 'https://www.despedidas-sanxenxo.com', tipo: 'Despedidas en Sanxenxo',
+    texto: 'Despedidas de soltera y soltero en Sanxenxo, uno de los destinos de verano más buscados de Galicia.' },
+  { nombre: 'Ginkanas.es', url: '/ginkanas-empresas/', tipo: 'Estás aquí',
+    texto: 'Team building y juegos para empresas, y ginkanas para despedidas, cumpleaños y grupos en toda Galicia.' },
+];
+
 const faqs = [
   { q: '¿Quién está detrás de Ginkanas.es?', a: 'Ginkanas.es es una web del grupo Animación Galicia. La empresa titular es INVERSIONES SHISO SL, con sede en A Coruña.' },
   { q: '¿Ginkanas.es y Animación Galicia son lo mismo?', a: 'Animación Galicia es donde empezamos y el grupo al que pertenece Ginkanas.es. Ginkanas.es reúne en una sola web las ginkanas y experiencias del grupo.' },
+  { q: '¿Qué otras webs tiene el grupo?', a: 'Animación Galicia, Mil Eventos Galicia (eventos de empresa), Humor Amarillo Coruña y las webs de despedidas de Galicia, Coruña, Vigo y Sanxenxo. Cada una está centrada en un tipo de actividad o en una ciudad.' },
   { q: '¿Cuánta experiencia tenéis?', a: 'Más de 15 años organizando despedidas, eventos y ginkanas en Galicia.' },
   { q: '¿Cuántos grupos habéis organizado?', a: 'Más de 350 grupos, con entre 50 y 100 cada año.' },
   { q: '¿Cómo puedo contactar con vosotros?', a: 'Por WhatsApp o teléfono en el 678 288 284, por correo en animaciongalicia@gmail.com o con el formulario de la página de contacto.' },
@@ -73,6 +87,28 @@ const schema = {
   <Prose sections={ampliado} />
 
   <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Las webs del grupo Animación Galicia</h2>
+        <p>Cada web está centrada en un tipo de actividad o en una ciudad, para que encuentres justo lo que buscas.</p>
+      </div>
+      <div class="webs-grid">
+        {webs.map((w) => (
+          <article class="web-card">
+            <span class="web-tipo">{w.tipo}</span>
+            <h3>{w.nombre}</h3>
+            <p>{w.texto}</p>
+            {w.url.startsWith('/')
+              ? <a href={w.url}>Ver team building para empresas →</a>
+              : <a href={w.url} target="_blank" rel="noopener">Visitar {w.nombre} →</a>}
+          </article>
+        ))}
+      </div>
+      <p class="webs-nota">Si buscas team building, juegos para empresas o una ginkana, estás en el sitio correcto: Ginkanas.es reúne todos esos formatos en una sola web.</p>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container">
       <div class="company-box">
         <h2>Datos de la empresa</h2>
@@ -109,6 +145,15 @@ const schema = {
   .company-box dt { font-weight: 600; }
   .company-box dd { margin: 0; color: var(--color-text-light); }
   .company-links { margin-top: var(--space-lg); }
+  .webs-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-lg); }
+  .web-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-sm); }
+  .web-card h3 { margin: 0; }
+  .web-card p { color: var(--color-text-light); font-size: 0.9375rem; margin: 0; flex-grow: 1; }
+  .web-card a { font-weight: 600; font-size: 0.9375rem; }
+  .web-tipo { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-secondary); }
+  .webs-nota { text-align: center; color: var(--color-text-light); max-width: 680px; margin: var(--space-xl) auto 0; }
+  @media (max-width: 1024px) { .webs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .webs-grid { grid-template-columns: minmax(0, 1fr); } }
   .cta-section { background: linear-gradient(135deg, var(--color-secondary), var(--color-bg-dark)); color: #fff; }
   .cta-section h2 { color: #fff; margin-bottom: var(--space-md); }
   .cta-section p { opacity: 0.92; font-size: 1.125rem; max-width: 640px; margin: 0 auto var(--space-xl); }
