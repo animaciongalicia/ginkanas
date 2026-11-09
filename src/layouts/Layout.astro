@@ -66,12 +66,15 @@ const graph: object[] = [
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': ORG_ID },
     primaryImageOfPage: { '@type': 'ImageObject', url: ogImageUrl },
-    breadcrumb: { '@id': `${canonical}#breadcrumb` },
   },
 ];
 
+// Migas solo en páginas interiores: en la home no hay ruta, y una referencia vacía da error en Search Console.
 const crumbs = breadcrumbSchema(pathname, canonical, breadcrumbName ?? title);
-if (crumbs) graph.push(crumbs);
+if (crumbs) {
+  graph[graph.length - 1].breadcrumb = { '@id': crumbs['@id'] };
+  graph.push(crumbs);
+}
 
 const pageSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 for (const s of pageSchemas) graph.push(normalizeSchema(s, canonical, ogImageUrl));
